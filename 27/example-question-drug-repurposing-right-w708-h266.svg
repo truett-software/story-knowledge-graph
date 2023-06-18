@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="708" height="266" viewBox="0 0 530.97 199.849" xml:space="preserve" color-interpolation-filters="sRGB" style="fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3">
+<style>
+  .st1{fill:none;stroke:none;stroke-linecap:butt;stroke-width:.75}
+  .st2{fill:#000;font-family:Noto Sans;font-size:1.5em}
+  .st3{font-size:1em}
+  .st6{fill:#fff;font-family:Noto Sans;font-size:1.5em}
+  .st10,.st11{stroke:#a5a5a5}
+  .st10{marker-start:url(#mrkr5-46);stroke-linecap:round;stroke-linejoin:round;stroke-width:3}
+  .st11{fill:#a5a5a5;fill-opacity:1;stroke-opacity:1;stroke-width:.54347826086957}
+</style>
+<defs id="Markers">
+<marker id="mrkr5-46" class="st11" refX="3.1" orient="auto" markerUnits="strokeWidth" overflow="visible"><use xlink:href="#lend5" transform="scale(1.84)"/></marker>
+<marker id="mrkr5-53" class="st11" refX="-3.22" orient="auto" markerUnits="strokeWidth" overflow="visible"><use xlink:href="#lend5" transform="scale(-1.84)"/></marker>
+<marker id="mrkr5-65" refX="-3.22" orient="auto" markerUnits="strokeWidth" overflow="visible" style="fill:red;fill-opacity:1;stroke:red;stroke-opacity:1;stroke-width:.54347826086957"><use xlink:href="#lend5" transform="scale(-1.84)"/></marker>
+<path d="M2 1 0 0l1.981-.993A2.25 2.25 0 0 0 1.985 1" style="stroke:none" id="lend5"/>
+</defs>
+<g id="shape5-1" transform="translate(.75 -122.425)">
+<path class="st1" d="M0 145.849h104.985v54H0z"/>
+<text x="31.28" y="172.85" class="st2">interacts 
+<tspan x="68.57" dy="1.2em" class="st3">with</tspan></text></g>
+<g id="shape6-5" transform="translate(15.735 -.925)">
+<path class="st1" d="M0 145.849h90v54H0z"/>
+<text x="16.9" y="162.05" class="st2">encoded 
+<tspan x="69.75" dy="1.2em" class="st3">by</tspan></text></g>
+<g id="shape7-9" transform="translate(425.235 -.925)">
+<path class="st1" d="M0 145.849h104.985v54H0z"/>
+<text y="162.05" class="st2">genetic 
+<tspan x="0" dy="1.2em" class="st3">association</tspan></text></g>
+<g id="shape8-13" transform="translate(401.515 -167.425)">
+<path class="st1" d="M0 168.349h82.22v31.5H0z"/>
+<text y="194.45" style="fill:red;font-family:Noto Sans;font-size:1.5em">treats??</text></g>
+<g id="group26-16" transform="translate(195.735 -144.925)">
+<g id="shape4-17">
+<path d="M136.6 199.85H7.4c-4.11 0-7.4-4.5-7.4-9.9v-34.2c0-5.5 3.36-9.9 7.4-9.9h129.2c4.11 0 7.4 4.5 7.4 9.9v34.1c0 5.5-3.29 10-7.4 10Z" style="fill:#00b151;stroke:none;stroke-linecap:butt;stroke-width:.924611"/></g>
+<g id="shape21-19" transform="translate(16.498 -9)">
+<path class="st1" d="M0 163.849h111.003v36H0z"/>
+<text x="31.25" y="187.25" class="st6">?drug</text></g></g>
+<g id="group27-22" transform="translate(44.663 -66.496)">
+<g id="shape2-23">
+<ellipse cx="72" cy="172.849" rx="72" ry="27" style="fill:#ee7d30;stroke:none;stroke-linecap:butt;stroke-width:.924611"/></g>
+<g id="shape22-25" transform="translate(36.769 -11.155)">
+<path class="st1" d="M0 163.849h70.463v36H0z"/>
+<text x="4.33" y="187.25" class="st6">protein</text></g></g>
+<g id="group28-28" transform="translate(346.164 -65.392)">
+<g id="shape3-29">
+<path d="M134.36 199.85H9.64c-5.31 0-9.64-5.36-9.64-11.93v-31.07c0-6.56 4.33-11.92 9.64-11.92h124.72c5.31 0 9.64 5.36 9.64 11.92v31.07c0 6.47-4.33 11.93-9.64 11.93Z" style="fill:#1f64ff;stroke:none;stroke-linecap:butt;stroke-width:.924611"/></g>
+<g id="shape24-31" transform="translate(27 -9.461)">
+<path class="st1" d="M0 163.849h90v36H0z"/>
+<text x="9.41" y="187.25" class="st6">?disease</text></g></g>
+<g id="group29-34" transform="translate(195.735 -.925)">
+<g id="shape1-35">
+<ellipse cx="72" cy="172.849" rx="72" ry="27" style="fill:#ff0100;stroke:none;stroke-linecap:butt;stroke-width:.924611"/></g>
+<g id="shape23-37" transform="translate(27.594 -9)">
+<path class="st1" d="M0 163.849h88.813v36H0z"/>
+<text x="23.16" y="187.25" class="st6">gene</text></g></g>
+<g id="shape30-40" transform="translate(116.664 -120.496)">
+<path d="M0 190.55v-28.63a13.5 13.5 0 0 1 13.5-13.5h65.57" class="st10"/></g>
+<g id="shape31-47" transform="translate(116.664 -66.496)">
+<path d="M0 199.85v19.28a19.286 19.286-180 0 0 19.29 19.29h50.12" style="marker-end:url(#mrkr5-53);stroke:#a5a5a5;stroke-linecap:round;stroke-linejoin:round;stroke-width:3"/></g>
+<g id="shape32-54" transform="translate(412.86 -65.392)">
+<path d="M0 209.15v9.43a18.734 18.734 0 0 1-18.73 18.74h-54.4" class="st10"/></g>
+<g id="shape33-59" transform="translate(339.735 -171.925)">
+<path d="M0 199.85h48.38A23.625 23.625 0 0 1 72 223.47v13.97" style="marker-end:url(#mrkr5-65);stroke:red;stroke-dasharray:9,9;stroke-linecap:round;stroke-linejoin:round;stroke-width:3"/></g>
+</svg>
