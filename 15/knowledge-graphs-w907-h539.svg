@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="907" height="539" viewBox="0 0 680.602 404.117" xml:space="preserve" color-interpolation-filters="sRGB" style="fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3">
+<style>
+  .st1,.st2{fill:#1f64ff;stroke:none;stroke-linecap:butt;stroke-width:.701835}
+  .st2{fill:none;stroke-width:.75}
+  .st3,.st4{fill:#fff;font-family:Noto Sans;font-size:1.5em}
+  .st4{fill:#000}
+</style>
+<g id="shape1-1" transform="translate(170.055 -263.82)">
+<path d="M90.68 264.52 0 404.12h180.86l-90.18-139.6Z" class="st1"/></g>
+<g id="shape2-3" transform="translate(114.399 -178.898)">
+<path d="M238.34 323.05H52.29L0 404.12h291.19l-52.85-81.07Z" class="st1"/></g>
+<g id="shape3-5" transform="translate(60.639 -95.66)">
+<path d="M347.83 324.95H51.87L0 404.12h399.2l-51.37-79.17Z" class="st1"/></g>
+<g id="shape4-7" transform="translate(.702 -.702)">
+<path d="M459.14 312.95H59.94L0 404.12h518.59l-59.45-91.17Z" class="st1"/></g>
+<g id="shape5-9" transform="translate(212.035 -287.338)">
+<path class="st2" d="M0 383.904h101.114v20.213H0z"/>
+<text x="12.43" y="399.41" class="st3">WISDOM</text></g>
+<g id="shape6-12" transform="translate(186.769 -210.323)">
+<path class="st2" d="M0 383.904h151.646v20.213H0z"/>
+<text x="20.17" y="399.41" class="st3">KNOWLEDGE</text></g>
+<g id="shape7-15" transform="translate(169.925 -123.953)">
+<path class="st2" d="M0 383.904h185.334v20.213H0z"/>
+<text x="29.64" y="399.41" class="st3">INFORMATION</text></g>
+<g id="shape8-18" transform="translate(228.879 -32.804)">
+<path class="st2" d="M0 383.904h67.426v20.213H0z"/>
+<text x="10.64" y="399.41" class="st3">DATA</text></g>
+<g id="shape10-22" transform="translate(337.852 -298.081)">
+<path class="st2" d="M0 350.117h302.834v54H0z"/>
+<text y="382.52" class="st4">Knowing what to do with Drug A ...</text></g>
+<g id="shape11-25" transform="translate(410.603 -190.081)">
+<path class="st2" d="M0 332.117h269.249v72H0z"/>
+<text y="362.72" class="st4">Drug A caused Gene X to be 
+<tspan x="0" dy="1.2em" style="font-size:1em">expressed</tspan></text></g>
+<g id="shape12-29" transform="translate(463.852 -118.081)">
+<path class="st2" d="M0 350.117h182.015v54H0z"/>
+<text y="382.52" class="st4">Gene X is expressed</text></g>
+<g id="shape13-32" transform="translate(517.331 -22.058)">
+<path class="st2" d="M0 350.117h145.272v54H0z"/>
+<text y="382.52" class="st4">RNASeq reads</text></g>
+</svg>
