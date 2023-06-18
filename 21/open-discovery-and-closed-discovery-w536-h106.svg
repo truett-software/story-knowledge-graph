@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="536" height="106" viewBox="0 0 402 79.142" xml:space="preserve" color-interpolation-filters="sRGB" style="fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3">
+<style>
+  .st1{fill:none;stroke:none;stroke-linecap:butt;stroke-width:.75}
+  .st2{fill:#000;font-family:Noto Sans;font-size:1.5em}
+  .st4{marker-start:url(#mrkr1-19);stroke:red;stroke-dasharray:6,6;stroke-linecap:round;stroke-linejoin:round;stroke-width:2}
+</style>
+<defs id="Markers">
+<marker id="mrkr1-19" orient="auto" markerUnits="strokeWidth" overflow="visible" style="fill:red;fill-opacity:1;stroke:red;stroke-opacity:1;stroke-width:.44247787610619">
+<use xlink:href="#lend1" transform="scale(2.26)"/></marker>
+<path d="M1-1 0 0l1 1" style="stroke-linecap:round;stroke-linejoin:round;fill:none" id="lend1"/></defs>
+<g id="shape10-1" transform="translate(.75 -.75)">
+<path class="st1" d="M0 43.142h45v36H0z"/>
+<text x="16.75" y="66.54" class="st2">A</text></g>
+<g id="shape12-4" transform="translate(180.75 -.75)">
+<path class="st1" d="M0 43.142h45v36H0z"/>
+<text x="16.65" y="66.54" class="st2">B</text></g>
+<g id="shape13-7" transform="translate(356.25 -.75)">
+<path class="st1" d="M0 43.142h45v36H0z"/>
+<text x="16.81" y="66.54" class="st2">C</text></g>
+<g id="shape14-10" transform="translate(180.75 -36.75)">
+<path class="st1" d="M0 43.142h45v36H0z"/>
+<text x="18.21" y="66.54" style="fill:red;font-family:Noto Sans;font-size:1.5em;font-weight:700">?</text></g>
+<g id="group21-13" transform="translate(23.25 -36.75)">
+<g id="shape22-14">
+<path d="M0 79.14v-18a18 18 0 0 1 18-18h174.38" class="st4"/></g>
+<g id="shape23-20" transform="translate(360)">
+<path d="M0 79.14v-18a18 18-180 0 0-18-18h-149.62" class="st4"/></g></g>
+</svg>
