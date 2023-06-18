@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="766.971" height="295.215" viewBox="0 0 575.228 221.411" xml:space="preserve" color-interpolation-filters="sRGB" style="fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3">
+<style>
+  .st1{fill:none;stroke:none;stroke-linecap:butt;stroke-width:.75}
+  .st2{fill:#000;font-family:Noto Sans;font-size:1.5em}
+  .st3{fill:#1f64ff;stroke:none;stroke-linecap:butt;stroke-width:.495948}
+  .st4{fill:#fff;font-family:Noto Sans;font-size:1.5em}
+  .st5{font-size:1em}
+  .st7{stroke:red;stroke-linecap:round;stroke-linejoin:round;stroke-width:2}
+  .st9{fill:red;fill-opacity:1;stroke:red;stroke-opacity:1;stroke-width:.44247787610619}
+  .st12{marker-start:url(#mrkr1-51);stroke:red;stroke-dasharray:6,6;stroke-linecap:round;stroke-linejoin:round;stroke-width:2}
+  .st13{fill:#000;font-family:Symbol;font-size:1.5em}
+  .st14{font-family:Noto Sans;font-size:1em}
+</style>
+<defs id="Markers">
+<marker id="mrkr3-34" class="st9" orient="auto" markerUnits="strokeWidth" overflow="visible">
+<use xlink:href="#lend3" transform="scale(-2.26)"/></marker>
+<marker id="mrkr3-44" orient="auto" markerUnits="strokeWidth" overflow="visible" style="fill:red;fill-opacity:1;stroke:red;stroke-opacity:1;stroke-width:.58139534883721">
+<use xlink:href="#lend3" transform="scale(-1.72)"/></marker>
+<marker id="mrkr1-51" class="st9" orient="auto" markerUnits="strokeWidth" overflow="visible">
+<use xlink:href="#lend1" transform="scale(2.26)"/></marker>
+<path d="M2 1 0 0l2-1" style="stroke-linecap:round;stroke-linejoin:round;fill:none" id="lend3"/>
+<path d="M1-1 0 0l1 1" style="stroke-linecap:round;stroke-linejoin:round;fill:none" id="lend1"/></defs>
+<g id="shape1-1" transform="translate(.75 -116.019)">
+<path class="st1" d="M0 185.411h229.456v36H0z"/>
+<text y="208.81" class="st2">Co-occurs in an article with</text></g>
+<g id="shape8-4" transform="translate(.954 -9.75)">
+<path class="st3" d="M0 131.411h107.239v90H0z"/></g>
+<g id="shape9-6" transform="translate(7.168 -14.25)">
+<path class="st1" d="M0 140.411h94.81v81H0z"/>
+<text x="4.57" y="175.51" class="st4">Raynaud’s 
+<tspan x="4.12" dy="1.2em" class="st5">Syndrome</tspan></text></g>
+<g id="shape13-10" transform="translate(12.255 -143.019)">
+<path class="st1" d="M0 185.411h45v36H0z"/>
+<text x="16.75" y="208.81" class="st2">A</text></g>
+<g id="shape24-13" transform="translate(318.255 -116.019)">
+<path class="st1" d="M0 185.411h256.223v36H0z"/>
+<text x="28.58" y="208.81" class="st2">Co-occurs in an article with</text></g>
+<g id="shape25-16" transform="translate(268.478 -143.019)">
+<path class="st1" d="M0 185.411h45v36H0z"/>
+<text x="16.65" y="208.81" class="st2">B</text></g>
+<g id="shape26-19" transform="translate(524.978 -143.019)">
+<path class="st1" d="M0 185.411h45v36H0z"/>
+<text x="16.81" y="208.81" class="st2">C</text></g>
+<g id="shape27-22" transform="translate(268.478 -179.019)">
+<path class="st1" d="M0 185.411h45v36H0z"/>
+<text x="18.21" y="208.81" style="fill:red;font-family:Noto Sans;font-size:1.5em;font-weight:700">?</text></g>
+<g id="group40-25" transform="translate(126.728 -39.643)">
+<g id="shape41-26" transform="translate(0 -27)">
+<path d="M0 225.91h20.25a4.5 4.5 0 0 1 4.5 4.5v4.5" class="st7"/></g>
+<g id="shape42-29" transform="translate(24.75 -18)">
+<path d="M0 225.91v4.5a4.5 4.5-180 0 0 4.5 4.5h20.25" style="marker-end:url(#mrkr3-34);stroke:red;stroke-linecap:round;stroke-linejoin:round;stroke-width:2"/></g></g>
+<g id="group49-35" transform="translate(381.201 -60.412)">
+<g id="shape50-36" transform="translate(9.164)">
+<path d="M0 217.47h13.26a5.063 5.063-180 0 0 5.07-5.06v-5.06" class="st7"/></g>
+<g id="shape51-39" transform="translate(27.49 -9)">
+<path d="M0 216.35v-3.94a3.938 3.938 0 0 1 3.94-3.94h30.42" style="marker-end:url(#mrkr3-44);stroke:red;stroke-linecap:round;stroke-linejoin:round;stroke-width:2"/></g></g>
+<g id="group55-45" transform="translate(34.755 -179.019)">
+<g id="shape53-46">
+<path d="M0 221.41v-18a18 18 0 0 1 18-18h255.99" class="st12"/></g>
+<g id="shape54-52" transform="translate(512.723)">
+<path d="M0 221.41v-18a18 18-180 0 0-18-18h-220.74" class="st12"/></g></g>
+<g id="shape59-57" transform="translate(465.094 -9.75)">
+<path class="st3" d="M0 131.411h107.239v90H0z"/></g>
+<g id="shape60-59" transform="translate(471.308 -14.25)">
+<path class="st1" d="M0 140.411h94.81v81H0z"/>
+<text x="16.83" y="175.51" class="st4">Dietary 
+<tspan x="19.69" dy="1.2em" class="st5">fish oil</tspan></text></g>
+<g id="shape5-63" transform="translate(193.523 -70.5)">
+<path class="st1" d="M0 185.411h170.723v36H0z"/>
+<text y="208.93" class="st13">
+<tspan class="st5">·</tspan> 
+<tspan class="st14">platelet inhibition</tspan></text></g>
+<g id="shape6-68" transform="translate(195.094 -36.75)">
+<path class="st1" d="M0 185.411h167.91v36H0z"/>
+<text y="208.93" class="st13">
+<tspan class="st5">·</tspan> 
+<tspan class="st14">vasodilation</tspan></text></g>
+<g id="shape7-73" transform="translate(195.094 -.75)">
+<path class="st1" d="M0 185.411h194.91v36H0z"/>
+<text y="208.93" class="st13">
+<tspan class="st5">·</tspan> 
+<tspan class="st14">lower blood viscosity</tspan></text></g>
+</svg>
