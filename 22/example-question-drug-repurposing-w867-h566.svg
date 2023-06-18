@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="867" height="566" viewBox="0 0 650.059 424.5" xml:space="preserve" color-interpolation-filters="sRGB" style="fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3">
+<style>
+  .st1{fill:none}
+  .st2,.st5{stroke:#527dad;stroke-linecap:butt;stroke-width:3.61446}
+  .st5{fill:none;stroke:none;stroke-width:.75}
+  .st6{fill:#000;font-family:Noto Sans;font-size:1.5em}
+</style>
+<g id="shape1-1" transform="translate(38.28 -364.547)">
+<path d="M.8 408.81c-.22 2.24-.8 12.8 8.81 12.8h50.32c19.3 0 38.53.14 57.83.65 11.85.29 28.99 2.24 28.99-15.33L.8 408.81Z" class="st1"/>
+<path d="M.8 408.81c-.22 2.24-.8 12.8 8.81 12.8h50.32c19.3 0 38.53.14 57.83.65 11.85.29 28.99 2.24 28.99-15.33" class="st2"/></g>
+<g id="shape2-4" transform="translate(39.074 -380.234)">
+<path d="M.07 424.07s0 .14-.07.43l.07-.43Z" class="st1"/>
+<path d="M.07 424.07s0 .14-.07.43" style="stroke:#1a4568;stroke-linecap:butt;stroke-width:3.61446"/></g>
+<g id="shape3-7" transform="rotate(90 240.774 297.836)">
+<path d="M0 424.5h13.73" class="st2"/></g>
+<g id="shape4-10" transform="translate(355.99 -130.836)">
+<path d="M14.1 274.79H0V424.5h14.1V274.79Z" class="st1"/>
+<path d="M14.1 274.79H0V424.5h14.1" class="st2"/></g>
+<g id="shape5-13" transform="translate(355.99 -176.595)">
+<path d="M0 424.5h14.1" class="st2"/></g>
+<g id="shape6-16" transform="translate(356.568 -226.98)">
+<path d="M0 424.5h12.87" class="st2"/></g>
+<g id="shape7-19" transform="rotate(180 178.284 321.673)">
+<path d="M0 424.5h13.59" class="st2"/></g>
+<g id="shape8-22" transform="translate(344.835 -18.75)">
+<path d="M0 424.5h23.64" class="st2"/></g>
+<g id="shape9-25" transform="translate(117.653 -47.486)">
+<path d="m0 159.34 11.2-7.44 146.32 242.6 13.23-8.31-9.04 38.31-38.96-9.83 14.24-8.68L0 159.34Z" style="fill:#1f64ff;stroke:none;stroke-linecap:butt;stroke-width:.722892"/></g>
+<g id="shape10-27" transform="translate(87.667 -324.419)">
+<path class="st5" d="M0 403.681h69.448V424.5H0z"/>
+<text y="419.49" class="st6">DRUG</text></g>
+<g id="shape11-30" transform="translate(.75 -378.75)">
+<path class="st5" d="M0 388.5h69.448v36H0z"/>
+<text x="9.34" y="411.9" class="st6">Name</text></g>
+<g id="shape12-33" transform="translate(71.474 -369.75)">
+<path class="st5" d="M0 370.5h216v54H0z"/>
+<text x="17.75" y="402.9" class="st6">Registered Indication</text></g>
+<g id="shape13-36" transform="translate(377.474 -.75)">
+<path class="st5" d="M0 388.5h151.115v36H0z"/>
+<text y="411.9" class="st6">New Indication</text></g>
+<g id="shape14-39" transform="translate(215.474 -168.981)">
+<path class="st5" d="M0 352.5h126v72H0z"/>
+<text x="10.68" y="383.1" class="st6">repurposing 
+<tspan x="25.19" dy="1.2em" style="font-size:1em">potential</tspan></text></g>
+<g id="shape16-43" transform="translate(258.059 -.75)">
+<path class="st5" d="M0 388.5h83.415v36H0z"/>
+<text y="411.9" class="st6">DISEASE</text></g>
+<g id="shape17-46" transform="translate(373.729 -261.75)">
+<path class="st5" d="M0 388.5h239.789v36H0z"/>
+<text y="411.9" class="st6">Known Drug in DrugBank</text></g>
+<g id="shape18-49" transform="translate(373.729 -207.75)">
+<path class="st5" d="M0 388.5h257.496v36H0z"/>
+<text y="411.9" class="st6">Number of Medline Abstracts</text></g>
+<g id="shape19-52" transform="translate(373.729 -159.981)">
+<path class="st5" d="M0 388.5h275.58v36H0z"/>
+<text y="411.9" class="st6">Number in Clinical Trial Registry</text></g>
+<g id="shape20-55" transform="translate(373.729 -112.904)">
+<path class="st5" d="M0 388.5h204.066v36H0z"/>
+<text y="411.9" class="st6">Repurposing Potential</text></g>
+</svg>
