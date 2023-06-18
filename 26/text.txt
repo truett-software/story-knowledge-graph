@@ -1,0 +1,24 @@
+
+title
+Metformin’s unique id:  Q19484Treats property id: P2175
+
+text
+
+#what disease does the drug treat ?
+SELECT ?disease ?diseaseLabel WHERE {
+  #Metformin wd:Q19484
+  wd:Q19484 wdt:P2175 ?disease .   # drug treats disease
+  #add the labels
+  	SERVICE wikibase:label {
+        bd:serviceParam wikibase:language "en" .
+	}
+}
+
+result set
+
+table
+
+disease			diseaseLabel
+wd:Q271993		hyperglycemia
+wd:Q32147145	maturity-onset diabetes of the young type 2
+
