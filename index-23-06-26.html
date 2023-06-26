@@ -1,0 +1,3023 @@
+<!--
+issues
+  make SPARQL work - outlink
+has unique CSS for PubChem from extractor
+  ./33 is broken - refer to original; missing CSS
+grid is basically correct
+  upgrade to use new terse structure
+-->
+<!DOCTYPE html>
+<html amp lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width"/>
+<link rel="shortcut icon"
+  href="https://ontomatica.io/static/image/logo/onto-symbol-w252-h252.svg"/>
+<title>
+Story template: Knowledge Graph
+</title>
+<link rel="canonical"
+  href="index.html" />
+<script async
+  src="https://cdn.ampproject.org/v0.js"></script>
+<script async custom-element="amp-story"
+  src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
+<script async custom-element="amp-google-document-embed"
+  src="https://cdn.ampproject.org/v0/amp-google-document-embed-0.1.js"></script>
+<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+<link crossorigin rel="preload" as="font" type="font/ttf" 
+  href="https://s3.amazonaws.com/benetta.net/fonts/poppins/Poppins-Black.ttf"/>
+<link crossorigin rel="preload" as="font" type="font/ttf" 
+  href="https://s3.amazonaws.com/benetta.net/fonts/poppins/Poppins-BlackItalic.ttf"/>
+<link crossorigin rel="preload" as="font" type="font/ttf" 
+  href="https://s3.amazonaws.com/benetta.net/fonts/poppins/Poppins-Bold.ttf"/>
+<link crossorigin rel="preload" as="font" type="font/ttf" 
+  href="https://s3.amazonaws.com/benetta.net/fonts/poppins/Poppins-BoldItalic.ttf"/>
+<link crossorigin rel="preload" as="font" type="font/ttf" 
+  href="https://s3.amazonaws.com/benetta.net/fonts/poppins/Poppins-ExtraBold.ttf"/>
+<link crossorigin rel="preload" as="font" type="font/ttf" 
+  href="https://s3.amazonaws.com/benetta.net/fonts/poppins/Poppins-ExtraBoldItalic.ttf"/>
+<link crossorigin rel="preload" as="font" type="font/ttf" 
+  href="https://s3.amazonaws.com/benetta.net/fonts/poppins/Poppins-ExtraLight.ttf"/>
+<link crossorigin rel="preload" as="font" type="font/ttf" 
+  href="https://s3.amazonaws.com/benetta.net/fonts/poppins/Poppins-ExtraLightItalic.ttf"/>
+<link crossorigin rel="preload" as="font" type="font/ttf" 
+  href="https://s3.amazonaws.com/benetta.net/fonts/poppins/Poppins-Italic.ttf"/>
+<link crossorigin rel="preload" as="font" type="font/ttf" 
+  href="https://s3.amazonaws.com/benetta.net/fonts/poppins/Poppins-Light.ttf"/>
+<link crossorigin rel="preload" as="font" type="font/ttf" 
+  href="https://s3.amazonaws.com/benetta.net/fonts/poppins/Poppins-LightItalic.ttf"/>
+<link crossorigin rel="preload" as="font" type="font/ttf" 
+  href="https://s3.amazonaws.com/benetta.net/fonts/poppins/Poppins-Medium.ttf"/>
+<link crossorigin rel="preload" as="font" type="font/ttf" 
+  href="https://s3.amazonaws.com/benetta.net/fonts/poppins/Poppins-MediumItalic.ttf"/>
+<link crossorigin rel="preload" as="font" type="font/ttf" 
+  href="https://s3.amazonaws.com/benetta.net/fonts/poppins/Poppins-Regular.ttf"/>
+<link crossorigin rel="preload" as="font" type="font/ttf" 
+  href="https://s3.amazonaws.com/benetta.net/fonts/poppins/Poppins-SemiBold.ttf"/>
+<link crossorigin rel="preload" as="font" type="font/ttf" 
+  href="https://s3.amazonaws.com/benetta.net/fonts/poppins/Poppins-SemiBoldItalic.ttf"/>
+<link crossorigin rel="preload" as="font" type="font/ttf" 
+  href="https://s3.amazonaws.com/benetta.net/fonts/poppins/Poppins-Thin.ttf"/>
+<link crossorigin rel="preload" as="font" type="font/ttf" 
+  href="https://s3.amazonaws.com/benetta.net/fonts/poppins/Poppins-ThinItalic.ttf"/>
+
+<link crossorigin rel="preload" as="font" type="font/ttf" 
+  href="https://s3.amazonaws.com/benetta.net/fonts/noto-serif/NotoSerif-Black.ttf"/>
+<link crossorigin rel="preload" as="font" type="font/ttf" 
+  href="https://s3.amazonaws.com/benetta.net/fonts/noto-serif/NotoSerif-BlackItalic.ttf"/>
+<link crossorigin rel="preload" as="font" type="font/ttf" 
+  href="https://s3.amazonaws.com/benetta.net/fonts/noto-serif/NotoSerif-Bold.ttf"/>
+<link crossorigin rel="preload" as="font" type="font/ttf" 
+  href="https://s3.amazonaws.com/benetta.net/fonts/noto-serif/NotoSerif-BoldItalic.ttf"/>
+<link crossorigin rel="preload" as="font" type="font/ttf" 
+  href="https://s3.amazonaws.com/benetta.net/fonts/noto-serif/NotoSerif-ExtraBold.ttf"/>
+<link crossorigin rel="preload" as="font" type="font/ttf" 
+  href="https://s3.amazonaws.com/benetta.net/fonts/noto-serif/NotoSerif-ExtraBoldItalic.ttf"/>
+<link crossorigin rel="preload" as="font" type="font/ttf" 
+  href="https://s3.amazonaws.com/benetta.net/fonts/noto-serif/NotoSerif-ExtraLight.ttf"/>
+<link crossorigin rel="preload" as="font" type="font/ttf" 
+  href="https://s3.amazonaws.com/benetta.net/fonts/noto-serif/NotoSerif-ExtraLightItalic.ttf"/>
+<link crossorigin rel="preload" as="font" type="font/ttf" 
+  href="https://s3.amazonaws.com/benetta.net/fonts/noto-serif/NotoSerif-Italic.ttf"/>
+<link crossorigin rel="preload" as="font" type="font/ttf" 
+  href="https://s3.amazonaws.com/benetta.net/fonts/noto-serif/NotoSerif-Light.ttf"/>
+<link crossorigin rel="preload" as="font" type="font/ttf" 
+  href="https://s3.amazonaws.com/benetta.net/fonts/noto-serif/NotoSerif-LightItalic.ttf"/>
+<link crossorigin rel="preload" as="font" type="font/ttf" 
+  href="https://s3.amazonaws.com/benetta.net/fonts/noto-serif/NotoSerif-Medium.ttf"/>
+<link crossorigin rel="preload" as="font" type="font/ttf" 
+  href="https://s3.amazonaws.com/benetta.net/fonts/noto-serif/NotoSerif-MediumItalic.ttf"/>
+<link crossorigin rel="preload" as="font" type="font/ttf" 
+  href="https://s3.amazonaws.com/benetta.net/fonts/noto-serif/NotoSerif-Regular.ttf"/>
+<link crossorigin rel="preload" as="font" type="font/ttf" 
+  href="https://s3.amazonaws.com/benetta.net/fonts/noto-serif/NotoSerif-SemiBold.ttf"/>
+<link crossorigin rel="preload" as="font" type="font/ttf" 
+  href="https://s3.amazonaws.com/benetta.net/fonts/noto-serif/NotoSerif-SemiBoldItalic.ttf"/>
+<link crossorigin rel="preload" as="font" type="font/ttf" 
+  href="https://s3.amazonaws.com/benetta.net/fonts/noto-serif/NotoSerif-Thin.ttf"/>
+<link crossorigin rel="preload" as="font" type="font/ttf" 
+  href="https://s3.amazonaws.com/benetta.net/fonts/noto-serif/NotoSerif-ThinItalic.ttf"/>
+
+<link crossorigin rel="preload" as="font" type="font/woff"
+  href="https://s3.amazonaws.com/benetta.net/fonts/calibri/Calibri.woff"/>
+
+<style amp-custom>
+
+:root {
+
+  --space-unit-v: 1rem;
+  --space-xxxxs:  calc(0.125 * var(--space-unit-v)); 
+  --space-xxxs:   calc(0.25  * var(--space-unit-v));
+  --space-xxs:    calc(0.375 * var(--space-unit-v));
+  --space-xs:     calc(0.5   * var(--space-unit-v));
+  --space-sm:     calc(0.75  * var(--space-unit-v));
+  --space-md:     calc(1.25  * var(--space-unit-v));
+  --space-lg:     calc(2.0   * var(--space-unit-v));
+  --space-xl:     calc(3.25  * var(--space-unit-v));
+  --space-xxl:    calc(5.25  * var(--space-unit-v));
+  --space-xxxl:   calc(8.5   * var(--space-unit-v));
+  --space-xxxxl:  calc(13.75 * var(--space-unit-v));
+
+  --space-unit-h: 1rem;
+  --space-05:     calc(0.5 * var(--space-unit-h)); /*  8px */
+  --space-10:     calc(1.0 * var(--space-unit-h)); /* 16px */
+  --space-15:     calc(1.5 * var(--space-unit-h)); /* 24px */
+  --space-20:     calc(2.0 * var(--space-unit-h)); /* 32px */
+
+  --margin-10: 1.0em;
+  --margin-12: 1.2em;
+  --margin-20: 2.0em;
+
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+
+  --on-000000:#000000;
+  --on-0000ff:#0000ff;
+  --on-0003ff:#0003ff;
+  --on-005001:#005001;
+  --on-007f7f:#007f7f;
+  --on-007fb2:#007fb2;
+  --on-00ffff:#00ffff;
+  --on-07a1e1:#07a1e1;
+  --on-0b87a3:#0b87a3;
+  --on-0bda9b:#0bda9b;
+  --on-1275ac:#1275ac;
+  --on-130f30:#130f30;
+  --on-151515:#151515;
+  --on-191919:#191919;
+  --on-1aa3ff:#1aa3ff;
+  --on-1b88cd:#1b88cd;
+  --on-1f64ff:#1f64ff;
+  --on-262162:#262162;
+  --on-29323c:#29323c;
+  --on-2a794a:#2a794a;
+  --on-2f9f4b:#2f9f4b;
+  --on-32935d:#32935d;
+  --on-333333:#333333;
+  --on-33945e:#33945e;
+  --on-3ba7e5:#3ba7e5;
+  --on-3d3d3d:#3d3d3d;
+  --on-3d444d:#3d444d;
+  --on-3e3898:#3e3898;
+  --on-4151a6:#4151a6;
+  --on-440044:#440044;
+  --on-550a1e:#550a1e;
+  --on-6baf40:#6baf40;
+  --on-6c757d:#6c757d;
+  --on-6caf42:#6caf42;
+  --on-6db5a7:#6db5a7;
+  --on-6fa08b:#6fa08b;
+  --on-74b341:#74b341;
+  --on-763517:#763517;
+  --on-7d420a:#7d420a;
+  --on-7eba98:#7eba98;
+  --on-7f0000:#7f0000;
+  --on-7f142e:#7f142e;
+  --on-7f4100:#7f4100;
+  --on-83c803:#83c803;
+  --on-87331b:#87331b;
+  --on-8abc43:#8abc43;
+  --on-8e1421:#8e1421;
+  --on-92c4cb:#92c4cb;
+  --on-971328:#971328;
+  --on-a4a4a4:#a4a4a4;
+  --on-a71520:#a71520;
+  --on-a9c937:#a9c937;
+  --on-b51d34:#b51d34;
+  --on-b69d7e:#b69d7e;
+  --on-b9b9b9:#b9b9b9;
+  --on-bbc871:#bbc871;
+  --on-bf0000:#bf0000;
+  --on-bf6200:#bf6200;
+  --on-c2dbce:#c2dbce;
+  --on-c41622:#c41622;
+  --on-c51431:#c51431;
+  --on-c52433:#c52433;
+  --on-c5ae8c:#c5ae8c;
+  --on-c70000:#c70000;
+  --on-cb5b2d:#cb5b2d;
+  --on-cccccc:#cccccc;
+  --on-ced146:#ced146;
+  --on-d2b373:#d2b373;
+  --on-d5bd97:#d5bd97;
+  --on-dba171:#dba171;
+  --on-dcaa7d:#dcaa7d;
+  --on-ddcaa9:#ddcaa9;
+  --on-dedede:#dedede;
+  --on-dfe0e2:#dfe0e2;
+  --on-e1ffad:#e1ffad;
+  --on-e4b992:#e4b992;
+  --on-e5e5e5:#e5e5e5;
+  --on-e6e6e6:#e6e6e6;
+  --on-e6e6fa:#e6e6fa;
+  --on-e6e7e9:#e6e7e9;
+  --on-e9ebeb:#e9ebeb;
+  --on-ecf4f7:#ecf4f7;
+  --on-ededed:#ededed;
+  --on-edeef0:#edeef0;
+  --on-efd520:#efd520;
+  --on-f1c9a5:#f1c9a5;
+  --on-f3f4a8:#f3f4a8;
+  --on-f4f044:#f4f044;
+  --on-f5e43c:#f5e43c;
+  --on-f9f9f9:#f9f9f9;
+  --on-ff0000:#ff0000;
+  --on-ff69b4:#ff69b4;
+  --on-ffd700:#ffd700;
+  --on-fffe7f:#fffe7f;
+  --on-ffffff:#ffffff;
+}
+
+/* use mnemonic for target/theme color */
+.c-white {color:var(--on-ffffff)}
+.on-logo {color:var(--on-1f64ff)}
+
+@font-face {
+  font-family:Poppins-100-Normal;
+  src:
+    url("https://s3.amazonaws.com/benetta.net/fonts/poppins/Poppins-Thin.ttf") format("truetype");
+  font-weight:100;
+  font-style:normal;
+  font-display:swap;
+}
+
+@font-face {
+  font-family:Poppins-100-Italic;
+  src:
+    url("https://s3.amazonaws.com/benetta.net/fonts/poppins/Poppins-ThinItalic.ttf") format("truetype");
+  font-weight:100;
+  font-style:italic;
+  font-display:swap;
+}
+
+@font-face {
+  font-family:Poppins-200-Normal;
+  src:
+    url("https://s3.amazonaws.com/benetta.net/fonts/poppins/Poppins-ExtraLight.ttf") format("truetype");
+  font-weight:200;
+  font-style:normal;
+  font-display:swap;
+}
+
+@font-face {
+  font-family:Poppins-200-Italic;
+  src:
+    url("https://s3.amazonaws.com/benetta.net/fonts/poppins/Poppins-ExtraLightItalic.ttf") format("truetype");
+  font-weight:200;
+  font-style:italic;
+  font-display:swap;
+}
+
+@font-face {
+  font-family:Poppins-300-Normal;
+  src:
+    url("https://s3.amazonaws.com/benetta.net/fonts/poppins/Poppins-Light.ttf") format("truetype");
+  font-weight:300;
+  font-style:normal;
+  font-display:swap;
+}
+
+@font-face {
+  font-family:Poppins-300-Italic;
+  src:
+    url("https://s3.amazonaws.com/benetta.net/fonts/poppins/Poppins-LightItalic.ttf") format("truetype");
+  font-weight:300;
+  font-style:italic;
+  font-display:swap;
+}
+
+@font-face {
+  font-family:Poppins-400-Normal;
+  src:
+    url("https://s3.amazonaws.com/benetta.net/fonts/poppins/Poppins-Regular.ttf") format("truetype");
+  font-weight:400;
+  font-style:normal;
+  font-display:swap;
+}
+
+@font-face {
+  font-family:Poppins-400-Italic;
+  src:
+    url("https://s3.amazonaws.com/benetta.net/fonts/poppins/Poppins-Italic.ttf") format("truetype");
+  font-weight:400;
+  font-style:italic;
+  font-display:swap;
+}
+
+@font-face {
+  font-family:Poppins-500-Normal;
+  src:
+    url("https://s3.amazonaws.com/benetta.net/fonts/poppins/Poppins-Medium.ttf") format("truetype");
+  font-weight:500;
+  font-style:normal;
+  font-display:swap;
+}
+
+@font-face {
+  font-family:Poppins-500-Italic;
+  src:
+    url("https://s3.amazonaws.com/benetta.net/fonts/poppins/Poppins-MediumItalic.ttf") format("truetype");
+  font-weight:500;
+  font-style:italic;
+  font-display:swap;
+}
+
+@font-face {
+  font-family:Poppins-600-Normal;
+  src:
+    url("https://s3.amazonaws.com/benetta.net/fonts/poppins/Poppins-SemiBold.ttf") format("truetype");
+  font-weight:600;
+  font-style:normal;
+  font-display:swap;
+}
+
+@font-face {
+  font-family:Poppins-600-Italic;
+  src:
+    url("https://s3.amazonaws.com/benetta.net/fonts/poppins/Poppins-SemiBoldItalic.ttf") format("truetype");
+  font-weight:600;
+  font-style:italic;
+  font-display:swap;
+}
+
+@font-face {
+  font-family:Poppins-700-Normal;
+  src:
+    url("https://s3.amazonaws.com/benetta.net/fonts/poppins/Poppins-Bold.ttf") format("truetype");
+  font-weight:700;
+  font-style:normal;
+  font-display:swap;
+}
+
+@font-face {
+  font-family:Poppins-700-Italic;
+  src:
+    url("https://s3.amazonaws.com/benetta.net/fonts/poppins/Poppins-BoldItalic.ttf") format("truetype");
+  font-weight:700;
+  font-style:italic;
+  font-display:swap;
+}
+
+@font-face {
+  font-family:Poppins-800-Normal;
+  src:
+    url("https://s3.amazonaws.com/benetta.net/fonts/poppins/Poppins-ExtraBold.ttf") format("truetype");
+  font-weight:800;
+  font-style:normal;
+  font-display:swap;
+}
+
+@font-face {
+  font-family:Poppins-800-Italic;
+  src:
+    url("https://s3.amazonaws.com/benetta.net/fonts/poppins/Poppins-ExtraBoldItalic.ttf") format("truetype");
+  font-weight:800;
+  font-style:italic;
+  font-display:swap;
+}
+
+@font-face {
+  font-family:Poppins-900-Normal;
+  src:
+    url("https://s3.amazonaws.com/benetta.net/fonts/poppins/Poppins-Black.ttf") format("truetype");
+  font-weight:900;
+  font-style:normal;
+  font-display:swap;
+}
+
+@font-face {
+  font-family:Poppins-900-Italic;
+  src:
+    url("https://s3.amazonaws.com/benetta.net/fonts/poppins/Poppins-BlackItalic.ttf") format("truetype");
+  font-weight:900;
+  font-style:italic;
+  font-display:swap;
+}
+
+/* Poppins style */
+.popn-100-reg {font-family:Poppins-100-Normal;font-style:normal;font-weight:100;}
+.popn-100-ita {font-family:Poppins-100-Italic;font-style:italic;font-weight:100;}
+
+.popn-200-reg {font-family:Poppins-200-Normal;font-style:normal;font-weight:200;}
+.popn-200-ita {font-family:Poppins-200-Italic;font-style:italic;font-weight:200;}
+
+.popn-300-reg {font-family:Poppins-300-Normal;font-style:normal;font-weight:300;}
+.popn-300-ita {font-family:Poppins-300-Italic;font-style:italic;font-weight:300;}
+
+.popn-400-reg {font-family:Poppins-400-Normal;font-style:normal;font-weight:400;}
+.popn-400-ita {font-family:Poppins-400-Italic;font-style:italic;font-weight:400;}
+
+.popn-500-reg {font-family:Poppins-500-Normal;font-style:normal;font-weight:500;}
+.popn-500-ita {font-family:Poppins-500-Italic;font-style:italic;font-weight:500;}
+
+.popn-600-reg {font-family:Poppins-600-Normal;font-style:normal;font-weight:600;}
+.popn-600-ita {font-family:Poppins-600-Italic;font-style:italic;font-weight:600;}
+
+.popn-700-reg {font-family:Poppins-700-Normal;font-style:normal;font-weight:700;}
+.popn-700-ita {font-family:Poppins-700-Italic;font-style:italic;font-weight:700;}
+
+.popn-800-reg {font-family:Poppins-800-Normal;font-style:normal;font-weight:800;}
+.popn-800-ita {font-family:Poppins-800-Italic;font-style:italic;font-weight:800;}
+
+.popn-900-reg {font-family:Poppins-900-Normal;font-style:normal;font-weight:900;}
+.popn-900-ita {font-family:Poppins-900-Italic;font-style:italic;font-weight:900;}
+
+.fs-10{font-size:calc(1.0 * var(--story-page-vw));}
+.fs-11{font-size:calc(1.1 * var(--story-page-vw));}
+.fs-12{font-size:calc(1.2 * var(--story-page-vw));}
+.fs-13{font-size:calc(1.3 * var(--story-page-vw));}
+.fs-14{font-size:calc(1.4 * var(--story-page-vw));}
+.fs-15{font-size:calc(1.5 * var(--story-page-vw));}
+.fs-16{font-size:calc(1.6 * var(--story-page-vw));}
+.fs-17{font-size:calc(1.7 * var(--story-page-vw));}
+.fs-18{font-size:calc(1.8 * var(--story-page-vw));}
+.fs-19{font-size:calc(1.9 * var(--story-page-vw));}
+.fs-20{font-size:calc(2.0 * var(--story-page-vw));}
+.fs-21{font-size:calc(2.1 * var(--story-page-vw));}
+.fs-22{font-size:calc(2.2 * var(--story-page-vw));}
+.fs-23{font-size:calc(2.3 * var(--story-page-vw));}
+.fs-24{font-size:calc(2.4 * var(--story-page-vw));}
+.fs-25{font-size:calc(2.5 * var(--story-page-vw));}
+.fs-26{font-size:calc(2.6 * var(--story-page-vw));}
+.fs-27{font-size:calc(2.7 * var(--story-page-vw));}
+.fs-28{font-size:calc(2.8 * var(--story-page-vw));}
+.fs-29{font-size:calc(2.9 * var(--story-page-vw));}
+.fs-30{font-size:calc(3.0 * var(--story-page-vw));}
+.fs-31{font-size:calc(3.1 * var(--story-page-vw));}
+.fs-32{font-size:calc(3.2 * var(--story-page-vw));}
+.fs-33{font-size:calc(3.3 * var(--story-page-vw));}
+.fs-34{font-size:calc(3.4 * var(--story-page-vw));}
+.fs-35{font-size:calc(3.5 * var(--story-page-vw));}
+.fs-36{font-size:calc(3.6 * var(--story-page-vw));}
+.fs-37{font-size:calc(3.7 * var(--story-page-vw));}
+.fs-38{font-size:calc(3.8 * var(--story-page-vw));}
+.fs-39{font-size:calc(3.9 * var(--story-page-vw));}
+.fs-40{font-size:calc(4.0 * var(--story-page-vw));}
+.fs-41{font-size:calc(4.1 * var(--story-page-vw));}
+.fs-42{font-size:calc(4.2 * var(--story-page-vw));}
+.fs-43{font-size:calc(4.3 * var(--story-page-vw));}
+.fs-44{font-size:calc(4.4 * var(--story-page-vw));}
+.fs-45{font-size:calc(4.5 * var(--story-page-vw));}
+.fs-46{font-size:calc(4.6 * var(--story-page-vw));}
+.fs-47{font-size:calc(4.7 * var(--story-page-vw));}
+.fs-48{font-size:calc(4.8 * var(--story-page-vw));}
+.fs-49{font-size:calc(4.9 * var(--story-page-vw));}
+.fs-50{font-size:calc(5.0 * var(--story-page-vw));}
+.fs-51{font-size:calc(5.1 * var(--story-page-vw));}
+.fs-52{font-size:calc(5.2 * var(--story-page-vw));}
+.fs-53{font-size:calc(5.3 * var(--story-page-vw));}
+.fs-54{font-size:calc(5.4 * var(--story-page-vw));}
+.fs-55{font-size:calc(5.5 * var(--story-page-vw));}
+.fs-56{font-size:calc(5.6 * var(--story-page-vw));}
+.fs-57{font-size:calc(5.7 * var(--story-page-vw));}
+.fs-58{font-size:calc(5.8 * var(--story-page-vw));}
+.fs-59{font-size:calc(5.9 * var(--story-page-vw));}
+.fs-60{font-size:calc(6.0 * var(--story-page-vw));}
+.fs-61{font-size:calc(6.1 * var(--story-page-vw));}
+.fs-62{font-size:calc(6.2 * var(--story-page-vw));}
+.fs-63{font-size:calc(6.3 * var(--story-page-vw));}
+.fs-64{font-size:calc(6.4 * var(--story-page-vw));}
+.fs-65{font-size:calc(6.5 * var(--story-page-vw));}
+.fs-66{font-size:calc(6.6 * var(--story-page-vw));}
+.fs-67{font-size:calc(6.7 * var(--story-page-vw));}
+.fs-68{font-size:calc(6.8 * var(--story-page-vw));}
+.fs-69{font-size:calc(6.9 * var(--story-page-vw));}
+.fs-70{font-size:calc(7.0 * var(--story-page-vw));}
+
+/*************
+ * line-height
+ */
+.lh-06 {line-height: calc(0.6rem + 0.1rem);}
+.lh-08 {line-height: calc(0.8rem + 0.2rem);}
+.lh-10 {line-height: calc(1.0rem + 0.3rem);}
+.lh-12 {line-height: calc(1.2rem + 0.4rem);}
+.lh-14 {line-height: calc(1.4rem + 0.5rem);}
+.lh-16 {line-height: calc(1.6rem + 0.6rem);}
+.lh-18 {line-height: calc(1.8rem + 0.7rem);}
+.lh-20 {line-height: calc(2.0rem + 0.7rem);}
+.lh-22 {line-height: calc(2.2rem + 0.7rem);}
+.lh-24 {line-height: calc(2.4rem + 0.7rem);}
+.lh-26 {line-height: calc(2.6rem + 0.7rem);}
+.lh-28 {line-height: calc(2.8rem + 0.7rem);}
+.lh-30 {line-height: calc(3.0rem + 0.7rem);}
+.lh-32 {line-height: calc(3.2rem + 0.7rem);}
+.lh-34 {line-height: calc(3.4rem + 0.7rem);}
+
+/* spacers, vertical */
+.v-sp-1  {height: var(--space-xxxxs)}
+.v-sp-2  {height: var(--space-xxxs)}
+.v-sp-3  {height: var(--space-xxs)}
+.v-sp-4  {height: var(--space-xs)}
+.v-sp-5  {height: var(--space-sm)}
+.v-sp-6  {height: var(--space-md)}
+.v-sp-7  {height: var(--space-lg)}
+.v-sp-8  {height: var(--space-xl)}
+.v-sp-9  {height: var(--space-xxl)}
+.v-sp-10 {height: var(--space-xxxl)}
+.v-sp-11 {height: var(--space-xxxxl)}
+
+/* spacers, horizontal */
+.h-sp-08 {width: var(--space-05)}
+.h-sp-16 {width: var(--space-10)}
+.h-sp-24 {width: var(--space-15)}
+.h-sp-32 {width: var(--space-20)}
+
+/*
+  Font: Noto Serif
+  add: @font-face generated
+  add: nser-100-reg
+ */
+
+@font-face {
+  font-family: NotoSerif;
+  src:
+    url("https://s3.amazonaws.com/benetta.net/fonts/noto-serif/NotoSerif-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-display: swap;
+}
+
+/*************
+ *  title page
+ *  switch to logical labels - color
+ */
+
+.noedge{padding:0;}
+.c-bottom{align-content:end;}
+.mb{margin-bottom:1em;}
+
+.paper{box-shadow:0 1px 1px 0 rgba(0,0,0,.14),0 1.5px .5px -1px rgba(0,0,0,.2),0 0 2.5px 0 rgba(0,0,0,.12);-webkit-box-shadow:0 1px 1px 0 rgba(0,0,0,.14),0 1.5px .5px -1px rgba(0,0,0,.2),0 0 2.5px 0 rgba(0,0,0,.12);-moz-box-shadow:0 1px 1px 0 rgba(0,0,0,.14),0 1.5px .5px -1px rgba(0,0,0,.2),0 0 2.5px 0 rgba(0,0,0,.12);}
+
+.co-s{color:var(--on-6c757d);}
+.bg-w{background-color:var(--on-ffffff);}
+
+.cover-70{width:70%;}
+.cover-50{width:50%;}
+
+.d-flex{display:flex;display:-ms-flexbox;}
+.flex-fill{flex:1 1 auto;}
+.pt{padding-top:1em;}
+.pb{color:var(--on-440044);padding-bottom:1em;}
+.ml-s{margin-left:.5em;}
+.co-p{color:var(--on-ff0000);}
+.co-h1{color:var(--on-440044);}
+.w-80{width:80%;}
+.w-50{width:50%;}
+.mx-a{margin-left:auto;margin-right:auto;}
+.sep-v{border-left:24px solid var(--on-ff0000);}
+
+
+/* for background, dark */
+.hcolor-light {
+  color: var(--on-ffffff);
+}
+
+/* for background, light */
+.hcolor-dark {
+  color: var(--on-595775);
+}
+
+/* constellation original */
+.shadow-text {
+  text-shadow: 0px 4px 4px rgb(0 0 0 / .95);
+}
+
+/* for background, light: shadow-text-back-light - stbl */
+.stbl {
+  text-shadow: 3px 4px 7px rgba(81,67,21,0.8);
+}
+
+/* for background, dark: shadow-text-back-dark - stbd */
+.stbd {
+  text-shadow: 2px 7px 5px rgba(0,0,0,0.3), 0px -4px 10px rgba(255,255,255,0.3);
+}
+
+/*
+ *  updated to new structure
+ *  text-shadow: 0px 4px 4px rgb(0 0 0 / .95);
+ *  Poppins
+ */
+
+h2,h3,h4,h5 {
+  display: inline-block;
+  border: none;
+}
+
+/* move size to body */
+p {
+  font-family: Poppins-400-Normal;
+  font-size: calc(1.4 * var(--story-page-vw));
+}
+
+/* move size to body */
+/* move line-height to body */
+dt {
+  font-family: NotoSerif;
+  font-size: calc(1.4 * var(--story-page-vw));
+  font-weight: 400;
+  line-height: 2em;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin-left: 1em;
+  border: none;
+}
+
+/* move size to body */
+/* move line-height to body */
+dd {
+  font-family: NotoSerif;
+  font-size: calc(1.4 * var(--story-page-vw));
+  font-weight: 300;
+  line-height: 1.4em;
+  margin-left: 2em;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  border: none;
+}
+
+/* source: https://css-tricks.com/snippets/css/simple-and-nice-blockquote-styling/ */
+/* move line-height to body */
+blockquote {
+  font-family: NotoSerif;
+  line-height: 1.4em;
+  background: var(--on-f9f9f9);
+  border-left: 10px solid var(--on-cccccc);
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D";
+}
+
+/* move size to body */
+/* move line-height to body */
+/* move color to body */
+blockquote:before {
+  color: var(--on-cccccc);
+  content: open-quote;
+  font-size: 4em; /* update to use var(--story-page-vw) */
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
+/****************
+ *  anchor custom
+ */
+
+.uline {
+  text-decoration: none;
+  position: relative;
+}
+
+.uline::before {
+  position: absolute;
+  content: "";
+  height: 2px;
+  bottom: -4px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  width: 50%;
+  background: var(--on-e6e6e6);
+  -o-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.uline:hover::before {
+  width: 70%;
+  background: var(--on-1f64ff);
+}
+
+/* switch to ta-l ta-c ta-r */
+
+.ta-c {
+  text-align: center;
+}
+.ta-r {
+  text-align: right;
+}
+.ta-l {
+  text-align: left;
+}
+
+
+/***************************
+ *  id: grid-knowledge-graph
+ *  alt
+ *      grid-template-rows: fit-content(40%);
+ */
+
+
+.grid-knowledge-graph {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto minmax(min-content, auto) minmax(min-content, auto) minmax(min-content, auto);
+  row-gap: 3em;
+  position: fixed;
+  top: 30px;
+}
+.row-1 {
+  grid-column-start: 1;
+  grid-column-end: 12;
+}
+.row-left {
+  grid-column-start: 2;
+  grid-column-end: 6;
+  color: var(--on-ffffff);
+  text-align: right;
+}
+.row-middle {
+  grid-column-start: 6;
+  grid-column-end: 6;
+  color: var(--on-ffffff);
+  font-size: 3.5em;
+  text-align: center;
+  padding-top: 12px;
+}
+.row-right {
+  grid-column-start: 7;
+  grid-column-end: 12;
+}
+
+.box-1 {
+  background-color: var(--on-1f64ff);
+  padding-left: 32px;
+  padding-bottom: 18px;
+}
+
+/***************
+ *  PubChem grid
+ *  verbose
+ *    '.grid-pc' set grid type
+ */
+
+/* change element name */
+/* move size to body */
+/* move color to body */
+.recursive-casual {
+  font-family: Poppins-400-Normal;
+  font-size: calc(2 * var(--story-page-vw));
+  color: var(--on-ffffff);
+  margin-top: 1em;
+  border: none;
+}
+
+.grid-pc {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(11, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  grid-column-gap: 1.5em;
+  grid-row-gap: 1em;
+}
+
+.g-d {
+  grid-column-start: 4;
+  grid-column-end: 8;
+  grid-row-start: 1;
+  grid-row-end: 6;
+}
+
+.g-1-1 {
+  text-align: right;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.g-2-1 {
+  text-align: right;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+.g-3-1 {
+  text-align: right;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 3;
+  grid-row-end: 4;
+}
+.g-4-1 {
+  text-align: right;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 4;
+  grid-row-end: 5;
+}
+.g-5-1 {
+  text-align: right;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 5;
+  grid-row-end: 6;
+}
+.g-6-1 {
+  text-align: right;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 6;
+  grid-row-end: 7;
+}
+
+.g-1-4 {
+  grid-column-start: 9;
+  grid-column-end: 12;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+.g-2-4 {
+  grid-column-start: 9;
+  grid-column-end: 12;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+.g-3-4 {
+  grid-column-start: 9;
+  grid-column-end: 12;
+  grid-row-start: 3;
+  grid-row-end: 4;
+}
+.g-4-4 {
+  grid-column-start: 9;
+  grid-column-end: 12;
+  grid-row-start: 4;
+  grid-row-end: 5;
+}
+.g-5-4 {
+  grid-column-start: 9;
+  grid-column-end: 12;
+  grid-row-start: 5;
+  grid-row-end: 6;
+}
+.g-6-4 {
+  grid-column-start: 9;
+  grid-column-end: 12;
+  grid-row-start: 6;
+  grid-row-end: 7;
+}
+
+/**************************
+ *  two column grid - IMAGE
+ *  source
+ *  https://medium.com/@mandy.michael/you-dont-need-a-media-query-for-that-2-responsive-columns-2582c6ea8700
+ *  https://codepen.io/mandymichael/pen/XWJPdoo
+ *  Mobile responsive
+ */
+
+.grid-block-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 9px;
+}
+.grid-block-group div {
+  height: 200px;
+}
+
+/*********
+ * Truett
+ * controls PubChem illustrations
+ */
+
+#myContainer {
+  zoom: 0.53;
+  -moz-transform: scale(0.53);
+}
+
+/*********************************
+ * unique to PubChem illustrations
+ */
+
+@font-face {
+  font-family: ff1;
+  src: local("Calibri"), url("https://s3.amazonaws.com/benetta.net/fonts/calibri/Calibri.woff") format("woff");
+  font-style: normal;
+  font-display: swap;
+}
+.ff1 {
+  font-family: ff1;
+  line-height: 0.895996;
+  font-style: normal;
+  font-weight: 400;
+  visibility: visible;
+}
+
+/********************
+ *  PubChem placement
+ *  DO NOT CHANGE
+ *  missing: ./33/
+ */
+
+::selection {background: rgba(127, 255, 255, 0.4);}
+::-moz-selection {background: rgba(127, 255, 255, 0.4);}
+
+.bi {
+  position: absolute;
+  border: 0;
+  margin: 0;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.ls0 {
+  letter-spacing: 0;
+}
+.m0 {
+  transform: matrix(0.375, 0, 0, 0.375, 0, 0);
+  -ms-transform: matrix(0.375, 0, 0, 0.375, 0, 0);
+  -webkit-transform: matrix(0.375, 0, 0, 0.375, 0, 0);
+}
+.m2 {
+  transform: matrix(0, 0.375, -0.375, 0, 0, 0);
+  -ms-transform: matrix(0, 0.375, -0.375, 0, 0, 0);
+  -webkit-transform: matrix(0, 0.375, -0.375, 0, 0, 0);
+}
+.m3 {
+  transform: matrix(0, -0.375, 0.375, 0, 0, 0);
+  -ms-transform: matrix(0, -0.375, 0.375, 0, 0, 0);
+  -webkit-transform: matrix(0, -0.375, 0.375, 0, 0, 0);
+}
+.pf {
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  border: 0;
+}
+.sc0 {
+  text-shadow: -0.015em 0 transparent, 0 0.015em transparent,
+  0.015em 0 transparent, 0 -0.015em transparent;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .sc0 {
+  -webkit-text-stroke: 0.015em transparent;
+  text-shadow: none;
+  }
+}
+
+.t {
+  position: absolute;
+  white-space: pre;
+  font-size: 1px;
+  transform-origin: 0 100%;
+  -ms-transform-origin: 0 100%;
+  -webkit-transform-origin: 0 100%;
+  -moz-font-feature-settings: "liga" 0;
+  unicode-bidi: bidi-override;
+}
+.t:after {
+  content: "";
+}
+.t:before {
+  content: "";
+  display: inline-block;
+}
+
+/*************************
+ *  do not change sequence
+ */
+
+.fc2 {color: #000;}
+.fs7 {font-size: 44.16px;}
+.y0  {bottom: 0;}
+.h9  {height: 31.696875px;}
+.h0  {height: 810px;}
+.w0  {width: 1080px;}
+.x0  {left: 0;}
+.x11 {left: 805.68px;}
+.x3f {left: 86.976px;}
+.x40 {left: 443.625px;}
+.x41 {left: 470.235px;}
+.x42 {left: 490.755px;}
+.x43 {left: 236.73px;}
+.x44 {left: 260.64px;}
+.x45 {left: 573.15px;}
+.x46 {left: 551.91px;}
+.x48 {left: 278.79px;}
+.x4b {left: 733.575px;}
+.x4f {left: 790.53px;}
+.y01 {bottom: 590px;}
+.y02 {bottom: 335px; left: 165.625px;}
+.y03 {bottom: 93px; left: 155.235px;}
+.y04 {bottom: 543px; left: 403.755px;}
+.y05 {bottom: 470px; left: 643.73px;}
+.y06 {bottom: 361px; left: 855.64px;}
+.y0a {bottom: 200px; left: 838.79px;}
+.y0b {left: 158.91px; bottom: 385.91px;}
+.y0c {left: 223.91px; bottom: 145.91px;}
+.y78 {left: 541.15px; bottom: 494.47px;}
+.y79 {left: 541.15px; bottom: 212.47px;}
+.z01 {bottom: 642px; left: 155.976px;}
+.z02 {bottom: 251px; left: 42.625px;}
+.z03 {bottom: 79px; left: 461.235px;}
+.z04 {bottom: 531px; left: 389.755px;}
+.z05 {bottom: 641px; left: 770.73px;}
+.z06 {bottom: 542px; left: 838.64px;}
+.z07 {bottom: 251px; left: 373.755px;}
+.z0a {bottom: 265px; left: 855.79px;}
+.z6f {left: 722.575px; bottom: 548px;}
+.z6g {left: 740.575px; bottom: 266px;}
+.z6h {left: 217.575px; bottom: 266px;}
+
+.b01 {bottom: 473px; left: 96.976px;}
+.b0a {bottom: 281px; left: 733.79px;}
+.b02 {bottom: 344px; left: 230.625px;}
+.b03 {bottom: 132px; left: 455.235px;}
+.b04 {bottom: 474px; left: 445.755px;}
+.b05 {bottom: 659px; left: 395.73px;}
+.b06 {bottom: 484px; left: 761.64px;}
+.b07 {bottom: 278px; left: 405.755px;}
+.b67 {left: 294.64px; bottom: 494.27px;}
+.b68 {left: 510.15px; bottom: 434.47px;}
+.b69 {left: 490.91px; bottom: 520.91px;}
+.b6f {left: 588.575px; bottom: 490.45px;}
+.b6g {left: 704.575px; bottom: 134px;}
+.b6h {left: 171.575px; bottom: 125px;}
+.b71 {left: 507.68px; bottom: 234.95px;}
+.b74 {left: 790.53px; bottom: 178.235px;}
+
+.e01 {left: 469.235px;}
+.e02 {left: 259.625px;}
+.e03 {left: 640.755px;}
+.e04 {left: 106.73px;}
+.e05 {left: 290.985px;}
+.e06 {left: 425.625px;}
+.e07 {left: 690.72px;}
+.e08 {left: 306.645px;}
+.e09 {left: 253.62px;}
+.e10 {left: 847.45px;}
+.e11 {left: 454.64px;}
+.e12 {left: 646.575px;}
+.e13 {left: 858.655px;}
+.e14 {left: 933.68px;}
+.e15 {left: 522.645px;}
+.e16 {left: 641.085px;}
+.e17 {left: 634.395px;}
+
+.f01 {bottom: 106.936px;}
+.f02 {bottom: 439.635px;}
+.f03 {bottom: 640.69px;}
+.f04 {bottom: 235.41px;}
+.f05 {bottom: 249.015px;}
+.f06 {bottom: 450.93px;}
+.f07 {bottom: 474.375px;}
+.f08 {bottom: 478.725px;}
+.f09 {bottom: 649.755px;}
+.f10 {bottom: 236.415px;}
+.f11 {bottom: 234.445px;}
+.f12 {bottom: 438.45px;}
+.f13 {bottom: 100.25px;}
+.f14 {bottom: 199.95px;}
+.f15 {bottom: 204.12px;}
+.f16 {bottom: 250.845px;}
+.f17 {bottom: 214.23px;}
+
+.g07 {bottom: 538px;}
+.g08 {bottom: 542px;}
+.g09 {bottom: 342px;}
+.g10 {bottom: 630px;}
+.g11 {bottom: 598px;}
+.g12 {bottom: 631px;}
+.g61 {bottom: 82px;}
+.g63 {bottom: 497px;}
+.g65 {bottom: 658px;}
+.g66 {bottom: 293px;}
+.g67 {bottom: 137px;}
+.g69 {bottom: 491px;}
+.g6c {bottom: 204px;}
+.g6d {bottom: 269px;}
+.g6f {bottom: 521px;}
+.g70 {bottom: 105px;}
+.g71 {bottom: 254px;}
+.g73 {bottom: 370px;}
+.g74 {bottom: 419px;}
+
+.i01 {left: 107.28px;}
+.i03 {left: 500.55px;}
+.i02 {left: 264.165px;}
+.i10 {left: 141.516px;}
+.i04 {left: 714.27px;}
+.i05 {left: 509.25px;}
+.i06 {left: 167.37px;}
+.i07 {left: 344.775px;}
+.i08 {left: 684.435px;}
+.i09 {left: 918.15px;}
+.i11 {left: 410.07px;}
+.i12 {left: 679.86px;}
+.i13 {left: 467.28px;}
+.i14 {left: 926.205px;}
+.i15 {left: 353.775px;}
+.i16 {left: 674.355px;}
+.i17 {left: 520.41px;}
+.i18 {left: 848.49px;}
+.i19 {left: 864.54px;}
+.i20 {left: 864.54px;}
+.i21 {left: 886.14px;}
+.i22 {left: 880.38px;}
+.i23 {left: 864.54px;}
+
+.ka1 {left: 86.976px;}
+.ka2 {left: 442.755px;}
+.ka3 {left: 870.976px;}
+.ka4 {left: 471.976px;}
+.ka5 {left: 489.976px;}
+.ka6 {left: 237.976px;}
+.ka7 {left: 629.976px;}
+.ka8 {left: 280.976px;}
+.ka9 {left: 734.976px;}
+.ka0 {left: 724.976px;}
+
+.kb0 {bottom: 332.69px;}
+.kb1 {bottom: 544.69px;}
+.kb2 {bottom: 542.69px;}
+.kb3 {bottom: 538.69px;}
+.kb4 {bottom: 371.69px;}
+.kb5 {bottom: 667.69px;}
+.kb6 {bottom: 201.69px;}
+.kb7 {bottom: 202.69px;}
+.kb8 {bottom: 73.69px;}
+.kb9 {bottom: 38.69px;}
+
+.k01 {bottom: 676.59px;}
+.k02 {bottom: 630.87px;}
+.k03 {bottom: 689.37px;}
+.k04 {bottom: 612.87px;}
+.k05 {bottom: 549.87px;}
+.k06 {bottom: 504.825px;}
+.k07 {bottom: 467.43px;}
+.k08 {bottom: 478.365px;}
+.k09 {bottom: 477.285px;}
+.k10 {bottom: 329.43px;}
+.k11 {bottom: 325.365px;}
+.k12 {bottom: 329.43px;}
+.k13 {bottom: 231.735px;}
+.k14 {bottom: 216.285px;}
+.k15 {bottom: 126.216px;}
+.k16 {bottom: 122.256px;}
+.k17 {bottom: 37.008px;}
+.k18 {bottom: 132.336px;}
+.k18 {bottom: 129px;}
+.k19 {bottom: 108px;}
+.k20 {bottom: 88px;}
+.k21 {bottom: 69px;}
+.k22 {bottom: 51px;}
+.k23 {bottom: 33px;}
+
+.n1c {left: 851px;}
+.n07 {left: 100px;}
+.n08 {left: 417px;}
+.n09 {left: 100px;}
+.n10 {left: 55px;}
+.n11 {left: 904px;}
+.n12 {left: 368px;}
+.n40 {left: 342px;}
+.n41 {left: 381px;}
+.n42 {left: 619px;}
+.n43 {left: 65px;}
+.n44 {left: 355px;}
+.n46 {left: 59px;}
+.n49 {left: 73px;}
+.n4a {left: 966px;}
+.n4b {left: 784px;}
+.n4c {left: 757px;}
+.n4e {left: 766px;}
+.n4f {left: 828px;}
+
+.sv0 {left: 806.976px;}
+.sv1 {left: 269.976px;}
+.sv2 {left: 269.976px;}
+.sv3 {left: 441.976px;}
+.sv4 {left: 441.976px;}
+.sv5 {left: 743.976px;}
+.sv6 {left: 332.976px;}
+.sv7 {left: 786.976px;}
+.sv8 {left: 550.976px;}
+.sv9 {left: 573.976px;}
+
+.sj0 {bottom: 166.69px;}
+.sj1 {bottom: 557.69px;}
+.sj2 {bottom: 523.69px;}
+.sj3 {bottom: 217.69px;}
+.sj4 {bottom: 181.69px;}
+.sj5 {bottom: 557.69px;}
+.sj6 {bottom: 168.69px;}
+.sj7 {bottom: 245.69px;}
+.sj8 {bottom: 581.69px;}
+.sj9 {bottom: 505.69px;}
+
+.c01 {bottom: 625px;left: 129.976px;}
+.c02 {bottom: 329px;left: 90.625px;}
+.c03 {bottom: 161px;left: 452.235px;}
+.c04 {bottom: 515px;left: 366.755px;}
+.c05 {bottom: 624px;left: 751.73px;}
+.c06 {bottom: 516px;left: 803.64px;}
+.c0a {bottom: 329px;left: 779.79px;}
+.c07 {bottom: 307px;left: 460.755px;}
+.c6f {bottom: 398px;left: 435.575px;}
+.c6g {bottom: 134px;left: 801.575px;}
+.c6h {bottom: 125px;left: 114.575px;}
+.c68 {bottom: 260.47px;left: 195.15px;}
+.c69 {bottom: 260.47px;left: 881.15px;}
+
+</style>
+
+</head>
+<body>
+<amp-story
+  standalone
+  title="Knowledge Graphs"
+  publisher="ontomatica"
+  publisher-logo-src="https://ontomatica.io/static/image/logo/onto-symbol-w252-h252.svg"
+  poster-portrait-src="https://benetta.net/media/background-svg/background-sun-tornado-w2000-h1500.svg"
+  poster-square-src="https://benetta.net/media/background-svg/background-sun-tornado-w2000-h1500.svg"
+  poster-landscape-src="https://benetta.net/media/background-svg/background-sun-tornado-w2000-h1500.svg"
+  supports-landscape
+>
+
+<amp-story-page id="kg-10" data-item-label="cover-page" data-item-source="ontomatica">
+
+<amp-story-grid-layer template="fill"><amp-img id="" data-item-role="background" data-item-type="static" data-item-label="background-neural-network-440044-FFE1FFW" src="https://s3.amazonaws.com/benetta.net/truett/story-knowledge-graph/background-webp/background-neural-network-440044-w400-h371.webp" width="400" height="371" layout="responsive"></amp-img></amp-story-grid-layer>
+
+<amp-story-grid-layer class="noedge c-bottom mb" template="vertical">
+<div class="paper co-s bg-w cover-70 d-flex">
+<div class="flex-fill pt pb">
+<hgroup class="ml-s">
+<div class="popn-400-reg fs-14 co-p">part of education series: connecting the dots</div>
+<h1  class="popn-800-ita fs-20 co-h1">Solve Problems with Knowledge Graphs</h1>
+</hgroup>
+<div class="popn-500-reg fs-16 w-80 mx-a">by Paula Perez</div>
+</div>
+<div class="sep-v"></div>
+</div>
+</amp-story-grid-layer>
+
+</amp-story-page>
+
+<amp-story-page id="kg-11" data-item-label="knowledge graph" data-item-source="paula perez">
+
+<amp-story-grid-layer template="fill"><amp-img id="constellation-130F30" data-item-role="background" data-item-type="static" data-item-label="background-130F30-constellation" src="https://s3.amazonaws.com/benetta.net/truett/story-knowledge-graph/background-webp/background-130F30-constellation-w997-h997.webp" width="997" height="997" layout="responsive"></amp-img></amp-story-grid-layer>
+
+<amp-story-grid-layer template="vertical">
+<div class="hcolor-light">
+
+<!-- GRID -->
+<div class="grid-knowledge-graph">
+
+<div class="row-1">
+<div class="ta-c">
+<div animate-in="fade-in" animate-in-duration="4s">
+<h2 class="popn-700-reg fs-30 stbd">A knowledge graph is a way to represent knowledge</h2>
+<h3 class="popn-300-ita fs-24 stbd">It helps us visualize information in a more intuitive way</h3>
+</div>
+</div>
+</div>
+
+<div class="row-left">
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="0.5s">
+<h4 class="popn-400-reg fs-24 stbd" style="margin-top:0.6em;">
+It helps to find objects
+</h4>
+</div>
+</div>
+
+<div class="row-middle">
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="0.5s">
+&#x21DD;
+</div>
+</div>
+
+<div class="row-right">
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="0.5s">
+<div class="box-1">
+<h4 class="popn-400-ita fs-22 stbd">
+controlled vocabularies (MeSH)&#x003B; ontologies (Gene Ontology)
+</h4>
+</div>
+</div>
+</div>
+
+<div class="row-left">
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="1.5s">
+<h4 class="popn-400-reg fs-24 stbd" style="margin-top:0.6em;">
+It answers questions
+</h4>
+</div>
+</div>
+
+<div class="row-middle">
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="1.5s">
+&#x21DD;
+</div>
+</div>
+
+<div class="row-right">
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="1.5s">
+<div class="box-1">
+<h4 class="popn-400-ita fs-22 stbd">
+knowledge graphs on the Web&#x003B; SPARQL query language
+</h4>
+</div>
+</div>
+</div>
+
+<div class="row-left">
+<div animate-in="fade-in" animate-in-duration="4s"animate-in-delay="2.5s">
+<h4 class="popn-400-reg fs-24 stbd" style="margin-top:0.6em;">
+It generates hypotheses
+</h4>
+</div>
+</div>
+
+<div class="row-middle">
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="2.5s">
+&#x21DD;
+</div>
+</div>
+
+<div class="row-right">
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="2.5s">
+<div class="box-1">
+<h4 class="popn-400-ita fs-22">
+knowledge plus computation &#x003D; inference; ABC model
+</h4>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</amp-story-grid-layer>
+</amp-story-page>
+
+<amp-story-page id="kg-12" data-item-label="ontology" data-item-source="paula perez">
+
+<amp-story-grid-layer template="vertical" aspect-ratio="4:3">
+<div class="hcolor-light">
+
+<div animate-in="fade-in" animate-in-duration="4s">
+<div class="ta-c">
+<h2 class="popn-600-reg fs-36 lh-28 stbd">
+Objects in knowledge graphs are organized in ontologies
+</h2>
+</div>
+</div>
+
+<div class="v-sp-8"></div>
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="1s">
+<div class="ta-c">
+<h3 class="popn-300-ita fs-26 lh-18 stbd">
+An ontology is defined as &#x201C;the branch of metaphysics dealing with the nature of being&#x201D;
+</h3>
+</div>
+</div>
+
+<div class="v-sp-8"></div>
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="2s">
+<div class="ta-c">
+<h3 class="popn-300-reg fs-26 lh-18 stbd">
+In practice, it is a set of concepts, definitions and inter&#x2010;relationships
+</h3>
+</div>
+</div>
+
+<div class="v-sp-1"></div>
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="3s">
+<div class="ta-c">
+<h3 class="popn-300-reg fs-24 lh-18 stbd">
+There are hundreds of ontologies in life sciences
+</h3>
+</div>
+</div>
+
+</div>
+</amp-story-grid-layer>
+
+</amp-story-page>
+
+<amp-story-page id="kg-13" data-item-label="example gene ontology" data-item-source="Benjamin Good">
+
+<amp-story-grid-layer template="fill">
+<amp-img id="" data-item-role="background" data-item-type="static" data-item-label="background-fractal-noise" src="fractal-noise-w1000-h1000.svg" width="1000" height="1000" layout="responsive"></amp-img>
+</amp-story-grid-layer>
+
+<amp-story-grid-layer class="darken" template="vertical" position="landscape-half-left">
+<div animate-in="fade-in" animate-in-duration="4s">
+
+<amp-img
+  src="./13/GO-0033038-w1369-w1742-transparent.png"
+  width="1369"
+  height="1742"
+  layout="responsive"
+></amp-img>
+
+</div>
+</amp-story-grid-layer>
+
+<amp-story-grid-layer template="vertical" position="landscape-half-right">
+<div class="hcolor-dark">
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="0.5s">
+<h2 class="popn-600-reg fs-36 stbd">
+Example&#x003A; Gene Ontology
+</h2>
+</div>
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="1s">
+<h3 class="popn-500-ita fs-18 lh-14 ta-l stbd">
+Started in 1999 as a collaboration among three Model Organism Databases
+</h3>
+
+<amp-img
+  src="./13/flybase-w877-h200-transparent.png"
+  width="877"
+  height="200"
+  layout="responsive"
+></amp-img>
+</div>
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="1.5s">
+<h3 class="popn-500-ita fs-18 lh-14 ta-l stbd">
+GO is a set of concepts and their relationships to each other organized within a hierarchy.
+</h3>
+</div>
+
+<div class="v-sp-6"></div>
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="2s">
+<h3 class="popn-500-ita fs-18 lh-14 ta-l stbd">
+GO is a way to capture biological knowledge for individual gene products in a way computers understand.
+</h3>
+</div>
+
+</div>
+</amp-story-grid-layer>
+
+<!-- improve attachment -->
+<amp-story-page-attachment layout="nodisplay" cta-image="https://s3.amazonaws.com/benetta.net/media/logo/ontomatica/ontomatica-symbol-w33-h36-color-1F64FF-bgnd-white.svg" cta-text="Credits" data-title="Credits and Reference">
+
+<section>
+
+<div class="popn-400-reg">
+<p>
+Improve treatment of credits and references
+</p>
+
+<p>
+Ontology Slide credit: M&#x00E9;lanie Courtot, Ph.D.
+</p>
+
+<p>
+https://www.ebi.ac.uk/QuickGO/
+</p>
+</div>
+
+</section>
+</amp-story-page-attachment>
+
+</amp-story-page>
+
+<!-- hcolor-dark -->
+<amp-story-page id="kg-14" data-item-label="gene ontology branches" data-item-source="Benjamin Good">
+
+<amp-story-grid-layer template="fill">
+<div style="background-color:white"></div>
+</amp-story-grid-layer>
+
+<amp-story-grid-layer class="darken" template="vertical" position="landscape-half-left">
+
+<div animate-in="fade-in" animate-in-duration="4s">
+
+<div style="width:70%; height:70%; padding-left:60px;">
+<amp-img
+  src="./14/gene-ontology-branches-w553-h728.svg"
+  width="553"
+  height="728"
+  layout="responsive"
+></amp-img>
+</div>
+
+</div>
+</amp-story-grid-layer>
+
+<amp-story-grid-layer template="vertical" position="landscape-half-right">
+<div class="hcolor-dark">
+
+<div animate-in="fade-in" animate-in-duration="4s">
+<h2 class="popn-700-reg fs-42 stbd">
+GO Branches
+</h2>
+</div>
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="1s">
+<h3 class="popn-400-ita fs-18 lh-14 ta-l stbd">
+An ontology like GO allows us to define different aspects of biological knowledge
+</h3>
+</div>
+
+<div class="v-sp-7"></div>
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="2s">
+<h4 class="popn-500-reg fs-24 stbd">
+Molecular Function
+</h4>
+<p>
+An elemental activity or task or job
+</p>
+</div>
+
+<div class="v-sp-7"></div>
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="3s">
+<h4 class="popn-500-reg fs-24 stbd">
+Biological Process
+</h4>
+<p>
+A commonly recognized series of events
+</p>
+</div>
+
+<div class="v-sp-7"></div>
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="4s">
+<h4 class="popn-500-reg fs-24 stbd">
+Cellular Component
+</h4>
+<p>
+Where a gene is located
+</p>
+</div>
+
+</div>
+</amp-story-grid-layer>
+
+</amp-story-page>
+
+<!-- hcolor-dark -->
+<amp-story-page id="kg-15" data-item-label="knowledge graph detail" data-item-source="paula perez">
+
+<amp-story-grid-layer template="fill">
+<amp-img id="" data-item-role="background" data-item-type="static" data-item-label="background-fractal-noise" src="fractal-noise-w1000-h1000.svg" width="1000" height="1000" layout="responsive"></amp-img>
+</amp-story-grid-layer>
+
+<amp-story-grid-layer class="darken" template="vertical" position="landscape-half-left">
+<!-- inline SVG -->
+<div animate-in="fade-in" animate-in-duration="4s">
+
+<amp-img
+  src="./15/knowledge-graphs-w907-h539.svg"
+  width="907"
+  height="539"
+  layout="responsive"
+></amp-img>
+
+</div>
+</amp-story-grid-layer>
+
+<amp-story-grid-layer template="vertical" position="landscape-half-right">
+<div class="hcolor-dark">
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="0s">
+<h2 class="popn-700-reg fs-32 lh-22 stbd">
+But at times&#x002C; an ontology like GO is not enough
+</h2>
+</div>
+
+<div class="v-sp-7"></div>
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="1s">
+<div class="popn-500-reg fs-24 stbd">
+<h3>
+Knowledge graphs&#x002C; or knowledge bases&#x002C; go one step further than ontologies or databases.
+</h3>
+</div>
+</div>
+
+<div class="v-sp-7"></div>
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="2s">
+<div class="popn-500-reg fs-24 stbd">
+<h3>
+It is an integrated collection of claims that can be represented in a graph.
+</h3>
+</div>
+</div>
+
+<div class="v-sp-7"></div>
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="3s">
+<div class="popn-500-reg fs-24 stbd">
+<h3>
+They help with the communication between machines and humans, and allow for more organic and implicit information to be interpreted.
+</h3>
+</div>
+</div>
+
+</div>
+</amp-story-grid-layer>
+
+</amp-story-page>
+
+<amp-story-page id="kg-16" data-item-label="why knowledge graph 1" data-item-source="paula perez">
+
+<amp-story-grid-layer template="vertical" aspect-ratio="4:3">
+<div class="hcolor-light">
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="0s">
+<div class="ta-c">
+<h2 class="popn-800-reg fs-42 stbd">
+Why knowledge graphs&#x003F;
+</h2>
+</div>
+</div>
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="1s">
+<div class="ta-c">
+<h3 class="popn-500-reg fs-28 lh-20 stbd">
+To answer explicit questions from the user.
+</h3>
+</div>
+</div>
+
+<div class="v-sp-7"></div>
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="2s">
+<div class="ta-c">
+<h3 class="popn-500-reg fs-28 lh-20 stbd">
+To uncover implicit relationships that are &#x201C;hidden&#x201D; within daily language and context.
+</h3>
+</div>
+</div>
+
+<div class="v-sp-7"></div>
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="3s">
+<div class="ta-c">
+<h3 class="popn-500-reg fs-28 lh-20 stbd">
+To go deeper in the information provided to the user.
+</h3>
+</div>
+</div>
+
+</div>
+</amp-story-grid-layer>
+
+</amp-story-page>
+
+<amp-story-page id="kg-17" data-item-label="example knowledge graphs" data-item-source="paula perez">
+
+
+<amp-story-grid-layer template="thirds" aspect-ratio="4:3">
+<div grid-area="upper-third">
+<div class="hcolor-light">
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="0s">
+<div class="ta-c">
+<h2 class="popn-800-reg fs-42 lh-28 stbd">
+Some famous knowledge graphs
+</h2>
+</div>
+</div>
+
+<div class="v-sp-4"></div>
+
+<div class="ta-c">
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="1s">
+<h3 class="popn-500-ita fs-22 stbd">
+Wikidata: the Wikipedia Foundation knowledge graph
+</h3>
+</div>
+
+<div class="v-sp-2"></div>
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="2s">
+<h3 class="popn-500-ita fs-22 stbd">
+UniProt Protein knowledge base
+</h3>
+</div>
+
+<div class="v-sp-2"></div>
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="3s">
+<h3 class="popn-500-ita fs-22 stbd">
+Google Knowledge Graph
+</h3>
+</div>
+
+<div class="v-sp-2"></div>
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="4s">
+<h3 class="popn-500-ita fs-22 stbd">
+PubChem from US National Institutes of Health (NIH)
+</h3>
+</div>
+
+</div>
+</div>
+</div>
+</amp-story-grid-layer>
+</amp-story-page>
+
+<amp-story-page id="kg-18" data-item-label="google knowledge graph" data-item-source="paula perez">
+
+<amp-story-grid-layer template="fill"><amp-img id="constellation-130F30" data-item-role="background" data-item-type="static" data-item-label="background-130F30-constellation" src="https://s3.amazonaws.com/benetta.net/truett/story-knowledge-graph/background-webp/background-130F30-constellation-w997-h997.webp" width="997" height="997" layout="responsive"></amp-img></amp-story-grid-layer>
+
+<amp-story-grid-layer class="darken" template="vertical" position="landscape-half-left">
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="0.5s">
+
+<amp-img
+  src="./18/example-google-knowledge-graph-w651-h432.svg"
+  width="651"
+  height="432"
+  layout="responsive"
+></amp-img>
+
+</div>
+</amp-story-grid-layer>
+
+<amp-story-grid-layer template="vertical" position="landscape-half-right">
+<div class="hcolor-light">
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="0s">
+<h2 class="popn-800-reg fs-32 lh-28 stbd">
+Google Knowledge Graph
+</h2>
+</div>
+
+<div class="v-sp-6"></div>
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="1s">
+<h3 class="popn-500-reg fs-28 stbd">
+<i>search for&#x003A;</i>&nbsp;&nbsp;&nbsp;Vemurafenib
+</h3>
+</div>
+
+<div class="v-sp-8"></div>
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="2s">
+<h4 class="popn-400-ita fs-28 stbd">
+2,310,000 results
+</h4>
+</div>
+
+<div class="v-sp-6"></div>
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="3s">
+<h4 class="popn-400-ita fs-28 stbd">
+1 infobox
+</h4>
+</div>
+
+<div class="v-sp-6"></div>
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="4s">
+<h4 class="popn-400-ita fs-28 lh-18 stbd">
+1 node in Google Knowledge Graph
+</h4>
+</div>
+
+</div>
+</amp-story-grid-layer>
+
+</amp-story-page>
+
+<amp-story-page id="kg-19" data-item-label="why knowledge graph 2" data-item-source="paula perez">
+
+<amp-story-grid-layer template="fill">
+<amp-img id="" data-item-role="background" data-item-type="static" data-item-label="background-fractal-noise" src="fractal-noise-w1000-h1000.svg" width="1000" height="1000" layout="responsive"></amp-img>
+</amp-story-grid-layer>
+
+<amp-story-grid-layer template="vertical">
+<div class="hcolor-dark">
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="0s">
+<div class="ta-c">
+<h2 class="popn-800-reg fs-48 lh-28 stbd">
+Why use a Knowledge Graphs&#x003F;
+</h2>
+</div>
+</div>
+
+<div class="v-sp-2"></div>
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="1s">
+<div class="ta-c">
+<h3 class="popn-500-ita fs-28 stbd">
+Answer explicit questions&#x003B; uncover implicit relations
+</h3>
+</div>
+</div>
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="2s">
+<div style="width:80%; height:80%; padding-left:14vw;">
+
+<amp-img
+  src="./19/why-knowledge-graphs-w818-h428.svg"
+  width="818"
+  height="428"
+  layout="responsive"
+></amp-img>
+
+</div>
+</div>
+
+</div>
+</amp-story-grid-layer>
+</amp-story-page>
+
+<!-- hcolor-dark -->
+<amp-story-page id="kg-20" data-item-label="implicit relations for hypothesis generation 1" data-item-source="">
+
+<amp-story-grid-layer template="fill">
+<amp-img id="" data-item-role="background" data-item-type="static" data-item-label="background-fractal-noise" src="fractal-noise-w1000-h1000.svg" width="1000" height="1000" layout="responsive"></amp-img>
+</amp-story-grid-layer>
+
+<amp-story-grid-layer template="vertical">
+<div class="hcolor-dark">
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="0s">
+<div class="ta-c">
+<h2 class="popn-800-reg fs-48 lh-28 stbd">
+Implicit relations for hypothesis generation
+</h2>
+</div>
+</div>
+
+<div class="v-sp-8"></div>
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="1s">
+<div class="ta-c">
+<h3 class="popn-500-ita fs-28 stbd">
+ABC model
+</h3>
+</div>
+</div>
+
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="2s">
+<div style="width:80%; height:80%; padding-left:16vw;">
+
+<amp-img
+  src="./20/implicit-relations-for-hypothesis-generation-w767-h295.svg"
+  width="767"
+  height="295"
+  layout="responsive"
+></amp-img>
+
+</div>
+</div>
+</div>
+</amp-story-grid-layer>
+
+</amp-story-page>
+
+<!-- hcolor-dark -->
+<amp-story-page id="kg-21" data-item-label="open discovery and closed discovery" data-item-source="Benjamin Good">
+
+<amp-story-grid-layer template="fill">
+<amp-img id="" data-item-role="background" data-item-type="static" data-item-label="background-fractal-noise" src="fractal-noise-w1000-h1000.svg" width="1000" height="1000" layout="responsive"></amp-img>
+</amp-story-grid-layer>
+
+<amp-story-grid-layer template="vertical" aspect-ratio="16:9">
+<div class="hcolor-dark">
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="0s">
+<div class="ta-c">
+<h2 class="popn-800-reg fs-48 lh-28 stbd">
+Open Discovery and Closed Discovery
+</h2>
+</div>
+</div>
+
+<!--
+arrow
+&#x1F826;
+-->
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="1s">
+<div class="ta-c">
+<h3 class="popn-500-ita fs-18 stbd">
+Open, you don&#x0027;t know what C or B is (&#x0065;&#x002E;&#x0067;&#x002E; disease &#x1F826; &#x003F;drug)
+</h3>
+</div>
+</div>
+
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="2s">
+<div class="ta-c">
+<h3 class="popn-500-ita fs-18 stbd">
+Closed, you know what C is and are looking for B (&#x0065;&#x002E;&#x0067;&#x002E; disease – why&#x003F; – drug)
+</h3>
+</div>
+</div>
+
+<div class="v-sp-4"></div>
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="3s">
+
+<amp-img
+  src="./21/open-discovery-and-closed-discovery-w536-h106.svg"
+  width="536"
+  height="106"
+  layout="responsive"
+></amp-img>
+
+</div>
+</div>
+</amp-story-grid-layer>
+
+</amp-story-page>
+
+<!-- hcolor-dark -->
+<amp-story-page id="kg-22" data-item-label="question: drug repurposing 1" data-item-source="Benjamin Good">
+
+<amp-story-grid-layer template="fill">
+<amp-img id="" data-item-role="background" data-item-type="static" data-item-label="background-fractal-noise" src="fractal-noise-w1000-h1000.svg" width="1000" height="1000" layout="responsive"></amp-img>
+</amp-story-grid-layer>
+
+<amp-story-grid-layer class="darken" template="vertical" position="landscape-half-left">
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="0s">
+
+<amp-img
+  src="./22/example-question-drug-repurposing-w867-h566.svg"
+  width="867"
+  height="566"
+  layout="responsive"
+></amp-img>
+
+</div>
+</amp-story-grid-layer>
+
+<amp-story-grid-layer template="vertical" position="landscape-half-right">
+<div class="hcolor-dark">
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="0s">
+<h2 class="popn-800-reg fs-40 stbd">
+Example question&#x003A;
+</h2>
+</div>
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="0s">
+<p class="popn-600-reg fs-22 stbd">
+&nbsp;&nbsp;drug repurposing
+</p>
+</div>
+
+<div class="v-sp-8"></div>
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="1s">
+<h3 class="popn-400-ita fs-20 lh-14 stbd">
+For a given drug, what diseases might it be used to treat&#x003F;
+</h3>
+</div>
+
+<div class="v-sp-6"></div>
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="2s">
+<h3 class="popn-400-ita fs-20 lh-14 stbd">
+Detail
+</h3>
+</div>
+
+<div class="v-sp-6"></div>
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="3s">
+<h3 class="popn-400-ita fs-20 lh-14 stbd">
+Detail
+</h3>
+</div>
+
+<div class="v-sp-6"></div>
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="4s">
+<h3 class="popn-400-ita fs-20 lh-14 stbd">
+Detail
+</h3>
+</div>
+
+</div>
+</amp-story-grid-layer>
+
+</amp-story-page>
+
+<amp-story-page id="kg-23" data-item-label="implicit relations for hypothesis generation 2" data-item-source="">
+
+<amp-story-grid-layer template="fill">
+<div style="background-color:white"></div>
+</amp-story-grid-layer>
+
+<amp-story-grid-layer template="vertical">
+<div class="hcolor-dark">
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="0s">
+<div class="ta-c">
+<h2 class="popn-800-reg fs-36 stbd">
+Implicit relations for hypothesis generation
+</h2>
+</div>
+</div>
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="1s">
+<div class="ta-c">
+<h3 class="popn-500-ita fs-28 stbd">
+ABC model for drug repurposing
+</h3>
+</div>
+</div>
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="2s">
+<div style="width:75%; height:75%; padding-left:25vw;">
+
+<amp-img
+  src="./23/implicit-relations-for-hypothesis-generation-w771-h538.svg"
+  width="771"
+  height="538"
+  layout="responsive"
+></amp-img>
+
+</div>
+</div>
+
+</div>
+</amp-story-grid-layer>
+
+</amp-story-page>
+
+<amp-story-page id="kg-24" data-item-label="query knowledge graph with sparql" data-item-source="Benjamin Good">
+
+<amp-story-grid-layer template="fill">
+<amp-img id="" data-item-role="background" data-item-type="static" data-item-label="background-fractal-noise" src="fractal-noise-w1000-h1000.svg" width="1000" height="1000" layout="responsive"></amp-img>
+</amp-story-grid-layer>
+
+<amp-story-grid-layer class="darken" template="vertical" position="landscape-half-left">
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="0s">
+<div style="width:80%; height:80%">
+
+<amp-img
+  src="./24/querying-knowledge-graph-with-sparql-w591-h615.svg"
+  width="591"
+  height="615"
+  layout="responsive"
+></amp-img>
+
+</div>
+
+</div>
+</amp-story-grid-layer>
+
+<amp-story-grid-layer template="vertical" position="landscape-half-right">
+<div class="hcolor-dark">
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="0s">
+<h2 class="popn-800-reg fs-40 lh-30 stbd">
+Query a knowledge graph with SPARQL
+</h2>
+</div>
+
+<div class="v-sp-8"></div>
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="1s">
+<h3 class="popn-500-reg fs-18 lh-14 stbd">
+SPARQL protocol and RDF query language
+</h3>
+</div>
+
+<div class="v-sp-6"></div>
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="2s">
+<h3 class="popn-500-reg fs-18 lh-14 stbd">
+RDF: Resource Description Framework (common standard for storing knowledge graphs)
+</h3>
+</div>
+
+<div class="v-sp-6"></div>
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="3s">
+<h3 class="popn-500-reg fs-18 lh-14 stbd">
+A SPARQL query &#x003D; a partially completed graph
+</h3>
+</div>
+
+<div class="v-sp-6"></div>
+
+<dl>
+<dt></dt>
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="4s">
+<dd class="popn-400-reg fs-18 lh-14 stbd">
+&#x003F;'s show what you are looking for
+</dd>
+</div>
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="5s">
+<dd class="popn-400-reg fs-18 lh-14 stbd">
+remainder constrains the search
+</dd>
+</div>
+</dl>
+</div>
+
+</amp-story-grid-layer>
+
+</amp-story-page>
+
+<amp-story-page id="kg-25" data-item-label="metformin identifiers 1" data-item-source="Benjamin Good">
+
+<amp-story-grid-layer template="fill">
+<amp-img id="" data-item-role="background" data-item-type="static" data-item-label="background-fractal-noise" src="fractal-noise-w1000-h1000.svg" width="1000" height="1000" layout="responsive"></amp-img>
+</amp-story-grid-layer>
+
+<amp-story-grid-layer template="vertical">
+<div class="hcolor-dark">
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="0s">
+<div class="ta-c">
+<h2 class="popn-800-reg fs-32 lh-20 stbd">
+Using Wikidata, Metformin&#x2019;s unique id&#x003A; Q19484 <br><i>treats</i> property id&#x003A; P2175
+</h2>
+</div>
+</div>
+
+<div class="v-sp-8"></div>
+
+<div animate-in="fade-in" animate-in-duration="4s">
+<div style="width:90%; height:90%; padding-left:10vw;">
+
+<amp-img
+  src="./25/metformin-identifiers-w752-h272.svg"
+  width="752"
+  height="272"
+  layout="responsive"
+></amp-img>
+
+</div>
+</div>
+
+</div>
+</amp-story-grid-layer>
+
+</amp-story-page>
+
+<amp-story-page id="kg-26" data-item-label="metformin identifiers 2" data-item-source="Benjamin Good">
+
+<amp-story-grid-layer template="fill">
+<amp-img id="" data-item-role="background" data-item-type="static" data-item-label="background-fractal-noise" src="fractal-noise-w1000-h1000.svg" width="1000" height="1000" layout="responsive"></amp-img>
+</amp-story-grid-layer>
+
+<amp-story-grid-layer template="vertical">
+<div class="hcolor-dark">
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="0s">
+<div class="ta-c">
+<h2 class="popn-800-reg fs-32 lh-20 stbd">
+Adding human readable labels to the SPARQL query
+</h2>
+</div>
+</div>
+
+<div class="v-sp-8"></div>
+
+<div animate-in="fade-in" animate-in-duration="4s">
+<div style="width:80%; height:80%; padding-left:14vw;">
+
+<amp-img
+  src="./26/metformin-identifiers-w942-h439.svg"
+  width="942"
+  height="439"
+  layout="responsive"
+></amp-img>
+
+</div>
+</div>
+
+</div>
+</amp-story-grid-layer>
+</amp-story-page>
+
+<amp-story-page id="kg-27" data-item-label="question: drug repurposing 2" data-item-source="Benjamin Good">
+
+<amp-story-grid-layer template="fill">
+<amp-img id="" data-item-role="background" data-item-type="static" data-item-label="background-fractal-noise" src="fractal-noise-w1000-h1000.svg" width="1000" height="1000" layout="responsive"></amp-img>
+</amp-story-grid-layer>
+
+<amp-story-grid-layer template="vertical">
+<div class="hcolor-dark">
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="0s">
+<h2 class="popn-800-reg fs-44 stbd">
+Query a knowledge graph with SPARQL
+</h2>
+</div>
+
+<div class="v-sp-2"></div>
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="1s">
+<h3 class="popn-500-reg fs-18 stbd">
+Our question&#x003A; &#x201C;For a given drug, what diseases might it be used to treat&#x003F;&#x201D;
+</h3>
+</div>
+
+<div class="v-sp-6"></div>
+
+<div class="grid-block-group">
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="3s">
+
+<amp-img
+  src="./27/example-question-drug-repurposing-left-w956-h624.svg"
+  width="956"
+  height="624"
+  layout="responsive"
+></amp-img>
+
+</div>
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="5s">
+<div style="padding-top:4em;">
+
+<amp-img
+  src="./27/example-question-drug-repurposing-right-w708-h266.svg"
+  width="708"
+  height="266"
+  layout="responsive"
+></amp-img>
+
+</div>
+</div>
+</div>
+</div>
+</amp-story-grid-layer>
+</amp-story-page>
+
+<amp-story-page id="kg-28" data-item-label="answer: repurposing metformin" data-item-source="Benjamin Good">
+
+<amp-story-grid-layer template="fill">
+<amp-img id="" data-item-role="background" data-item-type="static" data-item-label="background-fractal-noise" src="fractal-noise-w1000-h1000.svg" width="1000" height="1000" layout="responsive"></amp-img>
+</amp-story-grid-layer>
+
+<amp-story-grid-layer template="vertical" position="landscape-half-left">
+<div class="darken">
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="1s">
+
+<amp-img
+  src="./28/example-question-repurposing-metformin-w961-h703.svg"
+  width="961"
+  height="703"
+  layout="responsive"
+></amp-img>
+
+</div>
+</div>
+</amp-story-grid-layer>
+
+<amp-story-grid-layer template="vertical" position="landscape-half-right">
+<div class="hcolor-dark">
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="0s">
+<h2 class="popn-800-reg fs-36 stbd">
+Answer to our question&#x003A;
+</h2>
+</div>
+
+<div class="v-sp-6"></div>
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="1s">
+<h3 class="popn-500-reg fs-18 lh-14 stbd">
+&#x201C;For a given drug, what diseases might it be used to treat&#x003F;&#x201D;
+</h3>
+</div>
+
+
+<div class="v-sp-6"></div>
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="2s">
+<h4 class="popn-400-ita fs-14 stbd">
+detail
+</h4>
+</div>
+
+<div class="v-sp-6"></div>
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="3s">
+<h4 class="popn-400-ita fs-14 stbd">
+detail
+</h4>
+</div>
+
+<div class="v-sp-6"></div>
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="4s">
+<h4 class="popn-400-ita fs-14 stbd">
+detail
+</h4>
+</div>
+
+</div>
+</amp-story-grid-layer>
+
+<amp-story-page-attachment layout="nodisplay" cta-image="https://s3.amazonaws.com/benetta.net/media/logo/ontomatica/ontomatica-symbol-w33-h36-color-1F64FF-bgnd-white.svg" cta-text="SPARQL query" data-title="SPARQL query">
+<amp-google-document-embed 
+  src="https://afdsi.com/___tmp-5/SPARQL-graphs.pdf"
+  height="500"
+  layout="fixed-height"
+></amp-google-document-embed>
+</amp-story-page-attachment>
+
+</amp-story-page>
+
+<amp-story-page id="kg-29" data-item-label="introduce pubchem" data-item-source="paula perez">
+
+<amp-story-grid-layer template="thirds">
+<div grid-area="upper-third">
+<div class="hcolor-light">
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="0s">
+<div class="ta-c">
+<h2 class="popn-700-reg fs-36 stbd">
+PubChem is a biochemistry knowledge base
+</h2>
+</div>
+</div>
+
+<div class="v-sp-2"></div>
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="1s">
+<div class="ta-c">
+<h3 class="popn-600-reg fs-28 stbd">
+The following pages show how to use PubChem to&#x003A;
+</h3>
+</div>
+</div>
+
+<div class="v-sp-6"></div>
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="2s">
+<div class="ta-c">
+<h4 class="popn-400-ita fs-20 stbd">
+identify an item by measurement value
+</h4>
+</div>
+</div>
+
+<div class="v-sp-4"></div>
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="3s">
+<div class="ta-c">
+<h4 class="popn-400-ita fs-20 stbd">
+link an item to similar items
+</h4>
+</div>
+</div>
+
+<div class="v-sp-4"></div>
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="4s">
+<div class="ta-c">
+<h4 class="popn-400-ita fs-20 stbd">
+define measurement methods to link an item to similar items
+</h4>
+</div>
+</div>
+
+<div class="v-sp-4"></div>
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="5s">
+<div class="ta-c">
+<h4 class="popn-400-ita fs-20 stbd">
+identify a specific dataset from an investigation
+</h4>
+</div>
+</div>
+
+<div class="v-sp-4"></div>
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="6s">
+<div class="ta-c">
+<h4 class="popn-400-ita fs-20 stbd">
+identify a specific study and its evidence
+</h4>
+</div>
+</div>
+
+<div class="v-sp-4"></div>
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="7s">
+<div class="ta-c">
+<h4 class="popn-400-ita fs-20 stbd">
+provide additional information about a bioassay from an investigation
+</h4>
+</div>
+</div>
+</div>
+</div>
+</amp-story-grid-layer>
+</amp-story-page>
+
+<amp-story-page id="kg-30" data-item-label="identify unique item by measurement value" data-item-source="PubChem">
+
+<amp-story-grid-layer template="vertical">
+<div class="hcolor-light">
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="0s">
+<div class="ta-c">
+<h2 class="popn-800-reg fs-36 stbd">
+Identify a unique item
+</h2>
+</div>
+</div>
+
+<div class="v-sp-6"></div>
+
+<div class="grid-pc popn-400-reg fs-18 stbd">
+<div class="g-1-1" animate-in="fade-in" animate-in-delay="2.0s">Atorvastatin (CID60823)</div>
+<div class="g-2-1" animate-in="fade-in" animate-in-delay="2.5s">identified by InChIKey XUKUURHRXDUEBC-KAYWLYCHSA-N</div>
+<div class="g-3-1" animate-in="fade-in" animate-in-delay="3.0s"></div>
+
+<div class="g-1-4" animate-in="fade-in" animate-in-delay="4.0s">as defined by molar mass unit (obo:UO_0000055)</div>
+<div class="g-2-4" animate-in="fade-in" animate-in-delay="4.5s">expressed as double floating point</div>
+<div class="g-3-4" animate-in="fade-in" animate-in-delay="5.0s">also identified in ChEBI (SID103554720)</div>
+
+
+<div class="g-d" animate-in="fade-in" animate-in-delay="1s">
+  <div id="myContainer">
+      <div class="pf w0 h0">
+          <amp-img
+              class="bi x0 y0 w0 h0"
+              src="./30/pc-item-21-w1440-h1080.png"
+              width="1420"
+              height="1080"
+              layout="responsive"
+          ></amp-img>
+          <div class="t m0 ka1 h9 kb1 ff1 fs7 fc2 sc0 ls0 ws0">compound:CID60823</div>
+          <div class="t m0 ka2 h9 kb2 ff1 fs7 fc2 sc0 ls0 ws0">descr:CID60823_Molecular_Weight</div>
+          <div class="t m0 ka3 h9 kb3 ff1 fs7 fc2 sc0 ls0 ws0">obo:UO_0000055 </div>
+          <div class="t m0 ka4 h9 kb4 ff1 fs7 fc2 sc0 ls0 ws0">&#x201C;558.639803&#x201D;^^xsd:double</div>
+          <div class="t m0 ka5 h9 kb5 ff1 fs7 fc2 sc0 ls0 ws0">sio:CHEMINF_000334</div>
+          <div class="t m0 ka6 h9 kb6 ff1 fs7 fc2 sc0 ls0 ws0">substance:SID103554720</div>
+          <div class="t m0 ka7 h9 kb7 ff1 fs7 fc2 sc0 ls0 ws0">syno:MD5_9a05646d461669f86de312d88ab5748a</div>
+          <div class="t m0 ka8 h9 kb8 ff1 fs7 fc2 sc0 ls0 ws0">ChEBI:39548</div>
+          <div class="t m0 ka9 h9 kb9 ff1 fs7 fc2 sc0 ls0 ws0">&#x201C;atorvastatin&#x201D;@en</div>
+          <div class="t m0 ka0 h9 kb0 ff1 fs7 fc2 sc0 ls0 ws0">sio:CHEMINF_000339</div>
+          <div class="t m0 sv1 h9 sj1 ff1 fs7 fc2 sc0 ls0 ws0">sio:has-attribute</div>
+          <div class="t m0 sv2 h9 sj2 ff1 fs7 fc2 sc0 ls0 ws0">sio:is-attribute-of</div>
+          <div class="t m0 sv3 h9 sj3 ff1 fs7 fc2 sc0 ls0 ws0">sio:has-attribute</div>
+          <div class="t m0 sv4 h9 sj4 ff1 fs7 fc2 sc0 ls0 ws0">sio:is-attribute-of</div>
+          <div class="t m0 sv5 h9 sj5 ff1 fs7 fc2 sc0 ls0 ws0">sio:has-unit</div>
+          <div class="t m2 sv6 h9 sj6 ff1 fs7 fc2 sc0 ls0 ws0">rdf:type</div>
+          <div class="t m3 sv7 h9 sj7 ff1 fs7 fc2 sc0 ls0 ws0">rdf:type</div>
+          <div class="t m3 sv8 h9 sj8 ff1 fs7 fc2 sc0 ls0 ws0">rdf:type</div>
+          <div class="t m2 sv9 h9 sj9 ff1 fs7 fc2 sc0 ls0 ws0">sio:has-value </div>
+          <div class="t m2 sv0 h9 sj0 ff1 fs7 fc2 sc0 ls0 ws0">sio:has-value </div>
+      </div>
+  </div>
+</div>
+</div>
+</div>
+</amp-story-grid-layer>
+</amp-story-page>
+
+<amp-story-page id="kg-31" data-item-label="link item to similar items" data-item-source="PubChem">
+
+<amp-story-grid-layer template="vertical">
+<div class="hcolor-light">
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="0s">
+<div class="ta-c">
+<h2 class="popn-800-reg fs-36 stbd">
+Link an item to similar items
+</h2>
+</div>
+</div>
+
+<div class="v-sp-6"></div>
+
+<div class="grid-pc popn-400-reg fs-18 stbd">
+<div class="g-1-1" animate-in="fade-in" animate-in-delay="2.0s">Express similarity:</div>
+<div class="g-2-1" animate-in="fade-in" animate-in-delay="2.5s">by molecular formula &amp; bonds</div>
+<div class="g-3-1" animate-in="fade-in" animate-in-delay="3.0s">by isotopic composition</div>
+
+<div class="g-1-4" animate-in="fade-in" animate-in-delay="4.0s">by connectivity</div>
+<div class="g-2-4" animate-in="fade-in" animate-in-delay="4.5s">by 2 dimension shape</div>
+<div class="g-3-4" animate-in="fade-in" animate-in-delay="5.0s">by 3 dimension shape</div>
+
+<div class="g-d" animate-in="fade-in" animate-in-delay="1s">
+  <div id="myContainer">
+      <div class="pf w0 h0" data-page-no="">
+          <amp-img
+              class="bi x0 y0 w0 h0"
+              src="./31/pc-item-22-w1440-h1080.png"
+              width="1420"
+              height="1080"
+              layout="responsive"
+          ></amp-img>
+          <div class="t m0 x3f h9 y01 ff1 fs7 fc2 sc0 ls0 ws0">compound:CID10507504</div>
+          <div class="t m0 x40 h9 y02 ff1 fs7 fc2 sc0 ls0 ws0">compound:CID60823</div>
+          <div class="t m0 x41 h9 y03 ff1 fs7 fc2 sc0 ls0 ws0">compound:CID23665101</div>
+          <div class="t m0 x42 h9 y04 ff1 fs7 fc2 sc0 ls0 ws0">compound:CID10507504</div>
+          <div class="t m0 x43 h9 y05 ff1 fs7 fc2 sc0 ls0 ws0">compound:CID10507504</div>
+          <div class="t m0 x44 h9 y06 ff1 fs7 fc2 sc0 ls0 ws0">compound:CID10030610</div>
+          <div class="t m0 x48 h9 y0a ff1 fs7 fc2 sc0 ls0 ws0">compound:CID11330946</div>
+          <div class="t m3 x46 h9 y0b ff1 fs7 fc2 sc0 ls0 ws0">sio:is_stereoisomer_of</div>
+          <div class="t m3 x46 h9 y0c ff1 fs7 fc2 sc0 ls0 ws0">sio:has_component</div>
+      </div>
+  </div>
+</div>
+</div>
+</div>
+</amp-story-grid-layer>
+
+<amp-story-page-attachment layout="nodisplay" cta-image="https://s3.amazonaws.com/benetta.net/media/logo/ontomatica/ontomatica-symbol-w33-h36-color-1F64FF-bgnd-white.svg" cta-text="More information" data-title="Attachments include information that complements slide content.">
+<section class="p-s">
+<p>
+More about linking similar items.
+</p>
+<hr>
+<dl class="chartlegend">
+
+<div class="av">Similarity to other substances</div>
+
+<dt>item-1</dt>
+
+<dd><span class="c-c0334d mr-s"></span>(3R,5R)-7-[2-(4-fluorophenyl)-3-phenyl-4-(phenylcarbamoyl)-5-propan-2-yl(314C)pyrrol-1-yl]-3,5-dihydroxyheptanoic acid</dd>
+<dd><span class="c-f3d480 mr-s"></span>XUKUURHRXDUEBC-IEILOPHXSA-N</dd>
+<!-- <dd><span class="c-f1931b mr-s"></span>Everybody knows bird is word</dd> -->
+
+<!-- <div class="av">Caramel Sensation</div> -->
+
+<dt>item-2</dt>
+
+<dd><span class="c-8f715b mr-s"></span>(3R,5R)-7-[2-cyclopropyl-5-(4-fluorophenyl)-4-phenyl-3-(phenylcarbamoyl)pyrrol-1-yl]-3,5-dihydroxyheptanoic acid</dd>
+<dd><span class="c-78d68c mr-s"></span>WDKDRVHIGPVFCW-KAYWLYCHSA-N</dd>
+<!-- <dd><span class="c-720017 mr-s"></span>Got some popsicles in the cellar</dd> -->
+
+<!-- <div class="av">Elusive Enchantment</div> -->
+
+<dt>item-3</dt>
+
+<dd><span class="c-d8d583 mr-s"></span>(E,3R,5S)-7-[5-[(3-chlorophenyl)carbamoyl]-3,4-bis(4-fluorophenyl)-1-propan-2-ylpyrrol-2-yl]-3,5-dihydroxyhept-6-enoic acid</dd>
+<dd><span class="c-d98c2a mr-s"></span>JNJZDKOQTIGNNB-FDFRSNTISA-N</dd>
+<!-- <dd><span class="c-36688d mr-s"></span>Last chance for one last dance</dd> -->
+
+<div class="av">Has component</div>
+
+<!-- <dt>Hershey's Kiss</dt> -->
+
+<dd><span class="c-a3586d mr-s"></span>Atorvastatin sodium</dd>
+<dd><span class="c-aba6bf mr-s"></span>VVRPOCPLIUDBSA-CNZCJKERSA-M</dd>
+<!-- <dd><span class="c-595775 mr-s"></span>Live like there is no tomorrow</dd> -->
+
+<!-- <div class="av">Ice Cream Mix</div> -->
+
+<!-- <dt>Jack Daniels</dt> -->
+
+<!-- <dd><span class="c-84a45a mr-s"></span>Make it up as you go</dd> -->
+<!-- <dd><span class="c-583e2e mr-s"></span>Moms cookies make everything</dd> -->
+<!-- <dd><span class="c-bf988f mr-s"></span>My room is an organized mess</dd> -->
+
+<!-- <div class="av">Kitty Hawk</div> -->
+
+<!-- <dt>Last Man Standing</dt> -->
+
+<!-- <dd><span class="c-a7414a mr-s"></span>Pluto is still a planet</dd> -->
+<!-- <dd><span class="c-6a8a82 mr-s"></span>Six words can mean the world</dd> -->
+<!-- <dd><span class="c-a37c27 mr-s"></span>Sleeping with a giant bear</dd> -->
+
+<!-- <div class="av">Made You Look</div> -->
+
+<!-- <dt>Nabisco Cracker</dt> -->
+
+<!-- <dd><span class="c-4fd993 mr-s"></span>Sour candy makes me twitch</dd> -->
+<!-- <dd><span class="c-704404 mr-s"></span>The sky is not the limit</dd> -->
+<!-- <dd><span class="c-4e7ba7 mr-s"></span>There always gonna be another</dd> -->
+
+<!-- <div class="av">One in a Million</div> -->
+
+<!-- <dt>Peach Blossom</dt> -->
+
+<!-- <dd><span class="c-d28f1b mr-s"></span>There no place like grandmas</dd> -->
+<!-- <dd><span class="c-1ecfd6 mr-s"></span>Why whisper what you shout</dd> -->
+<!-- <dd><span class="c-edd179 mr-s"></span>Your the apple to my pie</dd> -->
+
+</dl>
+</section>
+</amp-story-page-attachment>
+
+</amp-story-page>
+
+<amp-story-page id="kg-32" data-item-label="define measurement to link similar items" data-item-source="PubChem">
+
+<amp-story-grid-layer template="vertical">
+<div class="hcolor-light">
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="0s">
+<div class="ta-c">
+<h2 class="popn-800-reg fs-36 stbd">
+Define measurement to link similar items
+</h2>
+</div>
+</div>
+
+<div class="v-sp-6"></div>
+
+<div class="grid-pc popn-400-reg fs-18 stbd">
+<div class="g-1-1" animate-in="fade-in" animate-in-delay="2.0s">Define items:</div>
+<div class="g-2-1" animate-in="fade-in" animate-in-delay="2.5s">similar to Atorvastatin</div>
+<div class="g-3-1" animate-in="fade-in" animate-in-delay="3.0s">by chemical structure</div>
+
+<div class="g-1-4" animate-in="fade-in" animate-in-delay="4.0s">by fingerprint</div>
+<div class="g-2-4" animate-in="fade-in" animate-in-delay="4.5s">using TanimotoScore</div>
+<div class="g-3-4" animate-in="fade-in" animate-in-delay="5.0s">expressed as a double precision decimal</div>
+
+<div class="g-d" animate-in="fade-in" animate-in-delay="1s">
+  <div id="myContainer">
+      <div class="pf w0 h0">
+          <amp-img
+              class="bi x0 y0 w0 h0"
+              src="./32/pc-item-23-w1440-h1080.png"
+              width="1420"
+              height="1080"
+              layout="responsive"
+          ></amp-img>
+          <div class="t m0 x3f h9 z01 ff1 fs7 fc2 sc0 ls0 ws0">compound:CID60823</div>
+          <div class="t m0 x40 h9 z02 ff1 fs7 fc2 sc0 ls0 ws0">sio:CHEMINF_000333</div>
+          <div class="t m0 x41 h9 z03 ff1 fs7 fc2 sc0 ls0 ws0">&#x201C;0.98&#x201C;^^xsd:double</div>
+          <div class="t m0 x42 h9 z04 ff1 fs7 fc2 sc0 ls0 ws0">nbr:CID60823_CID10030610_2DSimilarity</div>
+          <div class="t m0 x43 h9 z05 ff1 fs7 fc2 sc0 ls0 ws0">compound:CID10030610</div>
+          <div class="t m0 x44 h9 z06 ff1 fs7 fc2 sc0 ls0 ws0">vocab:2D_structural</br>_similarity</div>
+          <div class="t m0 x48 h9 z0a ff1 fs7 fc2 sc0 ls0 ws0">vocab:2D_Fingerprint</br>_TanimotoScore</div>
+          <div class="t m0 x42 h9 z07 ff1 fs7 fc2 sc0 ls0 ws0">nbr:CID60823_CID10030610_2DTanimotoScore</div>
+          <div class="t m0 x4b h9 z6f ff1 fs7 fc2 sc0 ls0 ws0">rdf: type</div>
+          <div class="t m0 x4b h9 z6g ff1 fs7 fc2 sc0 ls0 ws0">rdf: type</div>
+          <div class="t m0 x4b h9 z6h ff1 fs7 fc2 sc0 ls0 ws0">sio:is-output-of</div>
+          <div class="t m2 x45 h9 y78 ff1 fs7 fc2 sc0 ls0 ws0">sio:has-measurement-value</div>
+          <div class="t m2 x45 h9 y79 ff1 fs7 fc2 sc0 ls0 ws0">sio:has-value</div>
+      </div>
+  </div>
+</div>
+</div>
+</div>
+</amp-story-grid-layer>
+</amp-story-page>
+
+<!-- missing CSS from original -->
+<amp-story-page id="kg-33" data-item-label="identify specific dataset from investigation" data-item-source="PubChem">
+
+<amp-story-grid-layer template="vertical">
+<div class="hcolor-light">
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="0s">
+<div class="ta-c">
+<h2 class="popn-800-reg fs-36 stbd">
+Identify a specific dataset from an investigation
+</h2>
+</div>
+</div>
+
+<div class="v-sp-6"></div>
+
+<div class="grid-pc popn-400-reg fs-18 stbd">
+<div class="g-1-1" animate-in="fade-in" animate-in-delay="2.0s">A dataset about &#x2026;</div>
+<div class="g-2-1" animate-in="fade-in" animate-in-delay="2.5s">Atorvastatin</div>
+<div class="g-3-1" animate-in="fade-in" animate-in-delay="3.0s">recorded for the ChEMBL data source</div>
+
+<div class="g-1-4" animate-in="fade-in" animate-in-delay="4.0s">provided by the EBI organization</div>
+<div class="g-2-4" animate-in="fade-in" animate-in-delay="4.5s">about a concept assigned the label:</div>
+<div class="g-3-4" animate-in="fade-in" animate-in-delay="5.0s">&#x201C;Biological Properties&#x201D;</div>
+
+<div class="g-d" animate-in="fade-in" animate-in-delay="1s">
+  <div id="myContainer">
+      <div class="pf w0 h0">
+          <amp-img
+              class="bi x0 y0 w0 h0"
+              src="./33/pc-item-24-w1440-h1080.png"
+              width="1420"
+              height="1080"
+              layout="responsive"
+          ></amp-img>
+          <div class="t m0 x3f h9 c01 ff1 fs7 fc2 sc0 ls0 ws0">compound:CID60823</div>
+          <div class="t m0 x40 h9 c02 ff1 fs7 fc2 sc0 ls0 ws0">nbr:CID60823_CID11330946<br>_3DShapeTanimotoScore</div>
+          <div class="t m0 x41 h9 c03 ff6 fs7 fc2 sc0 ls0 ws0">sio:CHEMINF_000333</div>
+          <div class="t m0 x42 h9 c04 ff1 fs7 fc2 sc0 ls0 ws0">nbr:CID60823_CID11330946_3DSimilarity</div>
+          <div class="t m0 x43 h9 c05 ff1 fs7 fc2 sc0 ls0 ws0">compound:CID11330946</div>
+          <div class="t m0 x44 h9 c06 ff1 fs7 fc2 sc0 ls0 ws0">vocab:3D_structural_similarity</div>
+          <div class="t m0 x48 h9 c0a ff1 fs7 fc2 sc0 ls0 ws0">nbr:CID60823_CID11330946</br>_3DFeatureTanimotoScore</div>
+          <div class="t m0 x42 h9 c07 ff1 fs7 fc2 sc0 ls0 ws0">vocab:3D_Feature_</br>TanimotoScore</div>
+          <div class="t m0 x4b h9 c6f ff1 fs7 fc2 sc0 ls0 ws0">vocab:3D_Shape_</br>TanimotoScore</div>
+          <div class="t m0 x4b h9 c6g ff1 fs7 fc2 sc0 ls0 ws0">“0.59”^^xsd:double</div>
+          <div class="t m0 x4b h9 c6h ff1 fs7 fc2 sc0 ls0 ws0">“0.88”^^xsd:double</div>
+          <div class="t m2 x45 h9 c68 ff1 fs7 fc2 sc0 ls0 ws0">sio:has-value</div>
+          <div class="t m2 x45 h9 c69 ff1 fs7 fc2 sc0 ls0 ws0">sio:has-value</div>
+      </div>
+  </div>
+</div>
+</div>
+</div>
+</amp-story-grid-layer>
+</amp-story-page>
+
+<amp-story-page id="kg-34" data-item-label="identify specific study and evidence" data-item-source="PubChem">
+
+<amp-story-grid-layer template="vertical">
+<div class="hcolor-light">
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="0s">
+<div class="ta-c">
+<h2 class="popn-800-reg fs-36 stbd">
+Identify a specific study and its evidence
+</h2>
+</div>
+</div>
+
+<div class="v-sp-6"></div>
+
+<div class="grid-pc popn-400-reg fs-18 stbd">
+<div class="g-1-1" animate-in="fade-in" animate-in-delay="2.0s">Study summarized as: &#x201C;A new class of anti-inflammatory ester prodrugs&#x201D;</div>
+<div class="g-2-1" animate-in="fade-in" animate-in-delay="2.5s">published by DiscoveryGate</div>
+<div class="g-3-1" animate-in="fade-in" animate-in-delay="3.0s"></div>
+
+<div class="g-1-4" animate-in="fade-in" animate-in-delay="4.0s">about SID103164874 (CHEBI:15365) and related compound &#x2013; aspirin</div>
+<div class="g-2-4" animate-in="fade-in" animate-in-delay="4.5s">based on a bioassay with the title &#x201C;Inhibition of ovine COX1 by enzyme immunoassay&#x201D;</div>
+<div class="g-3-4" animate-in="fade-in" animate-in-delay="5.0s"></div>
+
+<div class="g-d" animate-in="fade-in" animate-in-delay="1s">
+  <div id="myContainer">
+      <div class="pf w0 h0">
+          <amp-img
+              class="bi x0 y0 w0 h0"
+              src="./34/pc-item-25-w1440-h1080.png"
+              width="1420"
+              height="1080"
+              layout="responsive"
+          ></amp-img>
+          <div class="t m0 n41 h9 g61 ff1 fs7 fc2 sc0 ls0 ws0">bao:measure-group</div>
+          <div class="t m0 n40 h9 g63 ff1 fs7 fc2 sc0 ls0 ws0">reference:PMID19500994</div>
+          <div class="t m0 n42 h9 g65 ff1 fs7 fc2 sc0 ls0 ws0">http://www.ncbi.nlm.nih.gov/pubmed/19500994</div>
+          <div class="t m0 n43 h9 g66 ff1 fs7 fc2 sc0 ls0 ws0">&#x201C;Prostaglandin</br>G/H synthase 1&#x201D;@en</div>
+          <div class="t m0 n46 h9 g69 ff1 fs7 fc2 sc0 ls0 ws0">protein:GI548481</div>
+          <div class="t m3 n07 h9 g07 ff1 fs7 fc2 sc0 ls0 ws0">rdf:type</div>
+          <div class="t m3 n08 h9 g08 ff1 fs7 fc2 sc0 ls0 ws0">rdf:type</div>
+          <div class="t m3 n09 h9 g09 ff1 fs7 fc2 sc0 ls0 ws0">dcterms:title</div>
+          <div class="t m0 n10 h9 g10 ff1 fs7 fc2 sc0 ls0 ws0">pr:PR_000006933</div>
+          <div class="t m0 n11 h9 g11 ff1 fs7 fc2 sc0 ls0 ws0">&#x201C;0.35&#x201D;^^xsd:double</div>
+          <div class="t m0 n12 h9 g12 ff1 fs7 fc2 sc0 ls0 ws0">fabio:JournalArticle</div>
+          <div class="t m0 n49 h9 g67 ff1 fs7 fc2 sc0 ls0 ws0">&#x201C;Inhibition of ovine COX1</br>by enzyme immunoassay&#x201D;@en</div>
+          <div class="t m0 n4a h9 g6c ff1 fs7 fc2 sc0 ls0 ws0">bao:ic50</div>
+          <div class="t m0 n44 h9 g6d ff1 fs7 fc2 sc0 ls0 ws0">measuregroup:</br>AID447528</div>
+          <div class="t m0 n4b h9 g6f ff1 fs7 fc2 sc0 ls0 ws0">ops:Micromolar</div>
+          <div class="t m0 n4c h9 g70 ff1 fs7 fc2 sc0 ls0 ws0">substance:SID103164874</div>
+          <div class="t m2 n1c h9 g71 ff1 fs7 fc2 sc0 ls0 ws0">iao:is-about</div>
+          <div class="t m0 n4e h9 g73 ff1 fs7 fc2 sc0 ls0 ws0">endpoint:</br>SID10316487_AID447528</div>
+          <div class="t m3 n4f h9 g74 ff1 fs7 fc2 sc0 ls0 ws0">qudt:unit</div>
+      </div>
+  </div>
+</div>
+</div>
+</div>
+</amp-story-grid-layer>
+</amp-story-page>
+
+<amp-story-page id="kg-35" data-item-label="provide additional information about bioassay" data-item-source="PubChem">
+
+<amp-story-grid-layer template="vertical">
+<div class="hcolor-light">
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="0s">
+<div class="ta-c">
+<h2 class="popn-800-reg fs-36 stbd">
+Provide additional information about a bioassay
+</h2>
+</div>
+</div>
+
+<div class="v-sp-6"></div>
+
+<div class="grid-pc popn-400-reg fs-18 stbd">
+<div class="g-1-1" animate-in="fade-in" animate-in-delay="2.0s">Bioassay title: &#x201C;Primary Cell-based assay for inhibitors of the Retinoic Acid Receptor-related orphan receptor A (RORA)&#x201D;</div>
+<div class="g-2-1" animate-in="fade-in" animate-in-delay="2.5s"></div>
+<div class="g-3-1" animate-in="fade-in" animate-in-delay="3.0s"></div>
+
+<div class="g-1-4" animate-in="fade-in" animate-in-delay="4.0s">summarized as: &#x201C;probe development efforts to identify novel modulators of ROR&#x201D; as measured by dose-response cell-based assay for RORA inhibitors</div>
+<div class="g-2-4" animate-in="fade-in" animate-in-delay="4.5s"></div>
+<div class="g-3-4" animate-in="fade-in" animate-in-delay="5.0s"></div>
+
+<div class="g-d" animate-in="fade-in" animate-in-delay="1s">
+  <div id="myContainer">
+      <div class="pf w0 h0" data-page-no="">
+          <amp-img
+              class="bi x0 y0 w0 h0"
+              src="./35/pc-item-26-w1440-h1080.png"
+              width="1420"
+              height="1080"
+              layout="responsive"
+          ></amp-img>
+          <div class="t m0 e01 h9 f01 ff1 fs7 fc2 sc0 ls0 ws0">bao:bioassay</div>
+          <div class="t m0 e02 h9 f02 ff1 fs7 fc2 sc0 ls0 ws0">bioassay:AID2139</div>
+          <div class="t m0 e03 h9 f03 ff1 fs7 fc2 sc0 ls0 ws0">bao:primary-assay</div>
+          <div class="t m0 e04 h9 f04 ff1 fs7 fc2 sc0 ls0 ws0">bao:confirmatory-assay</div>
+          <div class="t m0 e05 h9 f05 ff1 fs7 fc2 sc0 ls0 ws0">bao:has-assay-stage</div>
+          <div class="t m0 e06 h9 f06 ff1 fs7 fc2 sc0 ls0 ws0">bao:has-summary-assay</div>
+          <div class="t m3 e07 h9 f07 ff1 fs7 fc2 sc0 ls0 ws0">bao:has-assay-stage</div>
+          <div class="t m3 e08 h9 f08 ff1 fs7 fc2 sc0 ls0 ws0">bao:has-assay-stage</div>
+          <div class="t m0 e09 h9 f09 ff1 fs7 fc2 sc0 ls0 ws0">bao:summary-assay</div>
+          <div class="t m0 e10 h9 f10 ff1 fs7 fc2 sc0 ls0 ws0">measuregroup:AID610</div>
+          <div class="t m0 e11 h9 f11 ff1 fs7 fc2 sc0 ls0 ws0">bioassay:AID610</div>
+          <div class="t m0 e12 h9 f12 ff1 fs7 fc2 sc0 ls0 ws0">bioassay:AID561</div>
+          <div class="t m0 e13 h9 f13 ff1 fs7 fc2 sc0 ls0 ws0">bao:measure-group</div>
+          <div class="t m2 e14 h9 f14 ff1 fs7 fc2 sc0 ls0 ws0">rdf:type</div>
+          <div class="t m2 e15 h9 f15 ff1 fs7 fc2 sc0 ls0 ws0">rdf:type</div>
+          <div class="t m0 e16 h9 f16 ff1 fs7 fc2 sc0 ls0 ws0">bao:has-measure-group</div>
+          <div class="t m0 e17 h9 f17 ff1 fs7 fc2 sc0 ls0 ws0">bao:is-measure-group-of</div>
+      </div>
+  </div>
+</div>
+</div>
+</div>
+</amp-story-grid-layer>
+</amp-story-page>
+
+<amp-story-page id="kg-36" data-item-label="links among pubchem subdomains" data-item-source="PubChem">
+
+<amp-story-grid-layer template="vertical">
+<div class="hcolor-light">
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="0s">
+<div class="ta-c">
+<h2 class="popn-800-reg fs-36 stbd">
+Links among PubChem subdomains
+</h2>
+</div>
+</div>
+
+<div class="v-sp-6"></div>
+
+<div class="grid-pc popn-400-reg fs-18 stbd">
+<div class="g-1-1" animate-in="fade-in" animate-in-delay="2.0s">At the center: measurments and evidence (bioassays)</div>
+<div class="g-2-1" animate-in="fade-in" animate-in-delay="2.5s"></div>
+<div class="g-3-1" animate-in="fade-in" animate-in-delay="3.0s">Biologics are proteins and genes from specific sources</div>
+
+<div class="g-1-4" animate-in="fade-in" animate-in-delay="4.0s">Items are chemical compounds and substances</div>
+<div class="g-2-4" animate-in="fade-in" animate-in-delay="4.5s"></div>
+<div class="g-3-4" animate-in="fade-in" animate-in-delay="5.0s">Evidence is documented in a study (reference)</div>
+
+<div class="g-d" animate-in="fade-in" animate-in-delay="1s">
+  <div id="myContainer">
+      <div class="pf w0 h0">
+          <amp-img
+              class="bi x0 y0 w0 h0"
+              src="./36/pc-item-27-w1440-h1080.png"
+              width="1420"
+              height="1080"
+              layout="responsive"
+          ></amp-img>
+          <div class="t m0 i01 h9 k01 ff1 fs7 fc2 sc0 ls0 ws0">similar protein</div>
+          <div class="t m0 i02 h9 k02 ff1 fs7 fc2 sc0 ls0 ws0">protein</div>
+          <div class="t m0 i03 h9 k03 ff1 fs7 fc2 sc0 ls0 ws0">biosystem</div>
+          <div class="t m0 i04 h9 k04 ff1 fs7 fc2 sc0 ls0 ws0">domain</div>
+          <div class="t m0 i05 h9 k05 ff1 fs7 fc2 sc0 ls0 ws0">neighbor</div>
+          <div class="t m0 i06 h9 k06 ff1 fs7 fc2 sc0 ls0 ws0">gene</div>
+          <div class="t m0 i07 h9 k07 ff1 fs7 fc2 sc0 ls0 ws0">measuregroup</div>
+          <div class="t m0 i08 h9 k08 ff1 fs7 fc2 sc0 ls0 ws0">endpoint</div>
+          <div class="t m0 i09 h9 k09 ff1 fs7 fc2 sc0 ls0 ws0">reference</div>
+          <div class="t m0 i10 h9 k10 ff1 fs7 fc2 sc0 ls0 ws0">bioassay</div>
+          <div class="t m0 i11 h9 k11 ff1 fs7 fc2 sc0 ls0 ws0">source</div>
+          <div class="t m0 i12 h9 k12 ff1 fs7 fc2 sc0 ls0 ws0">substance</div>
+          <div class="t m0 i13 h9 k13 ff1 fs7 fc2 sc0 ls0 ws0">synonym</div>
+          <div class="t m0 i14 h9 k14 ff1 fs7 fc2 sc0 ls0 ws0">descriptor</div>
+          <div class="t m0 i15 h9 k15 ff1 fs7 fc2 sc0 ls0 ws0">inchikey</div>
+          <div class="t m0 i16 h9 k16 ff1 fs7 fc2 sc0 ls0 ws0">compound</div>
+          <div class="t m0 i17 h9 k17 ff1 fs7 fc2 sc0 ls0 ws0">neighbor</div>
+          <div class="t m0 i18 h9 k18 ff1 fs7 fc2 sc0 ls0 ws0">component compound</div>
+          <div class="t m0 i19 h9 k19 ff1 fs7 fc2 sc0 ls0 ws0">parent compound</div>
+          <div class="t m0 i20 h9 k20 ff1 fs7 fc2 sc0 ls0 ws0">same connectivity</div>
+          <div class="t m0 i21 h9 k21 ff1 fs7 fc2 sc0 ls0 ws0">isotopomer</div>
+          <div class="t m0 i22 h9 k22 ff1 fs7 fc2 sc0 ls0 ws0">stereoisomer</div>
+          <div class="t m0 i23 h9 k23 ff1 fs7 fc2 sc0 ls0 ws0">similar compound</div>
+      </div>
+  </div>
+</div>
+</div>
+</div>
+</amp-story-grid-layer>
+</amp-story-page>
+
+<amp-story-page id="kg-37" data-item-label="pubchem in one picture" data-item-source="PubChem">
+<amp-story-grid-layer template="vertical">
+<div class="hcolor-light">
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="0s">
+<div class="ta-c">
+<h2 class="popn-800-reg fs-36 stbd">
+PubChem in a Single Picture
+</h2>
+</div>
+</div>
+
+<div class="v-sp-2"></div>
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="1s">
+<div style="padding-left:10vw;">
+<div class="pf w0 h0">
+<!--
+          media="(min-width: 650px)"
+-->
+      <amp-img
+          src="./37/pc-item-28-w5975-h3013.jpg"
+          width="5975"
+          height="3013"
+          heights="(min-width:500px) 500px, 30%"
+          layout="responsive"
+      ></amp-img>
+  </div>
+</div>
+</div>
+</div>
+</amp-story-grid-layer>
+
+<amp-story-page-outlink
+      layout="nodisplay" 
+      theme="custom" 
+      cta-accent-color="#1F64FF" 
+      cta-accent-element="text"
+>
+<a href="https://s3.amazonaws.com/benetta.net/truett/story-knowledge-graph/story-outlink/index.html">More about PubChem RDF</a>
+
+</amp-story-page-outlink>
+
+</amp-story-page>
+
+<amp-story-page id="kg-38" data-item-label="conclusion" data-item-source="paula perez">
+
+<amp-story-grid-layer template="thirds" aspect-ratio="4:3">
+
+<div grid-area="upper-third">
+<div class="hcolor-light">
+
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="0s">
+<div class="ta-c">
+<h2 class="popn-800-reg fs-46 stbd">
+Conclusion
+</h2>
+</div>
+</div>
+
+<div class="ta-c">
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="1s">
+<h3 class="popn-400-reg fs-22 lh-14 stbd">
+A knowledge graph helps us solve problems.
+</h3>
+</div>
+</div>
+
+<div class="v-sp-6"></div>
+
+<div class="ta-c">
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="2s">
+<h3 class="popn-400-reg fs-22 lh-14 stbd">
+We used questions from life sciences to illustrate problem solving.
+</h3>
+</div>
+</div>
+
+<div class="v-sp-6"></div>
+
+<div class="ta-c">
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="3s">
+<h3 class="popn-400-reg fs-22 lh-14 stbd">
+Knowledge graphs help us discover information that often is difficult to find.
+</h3>
+</div>
+</div>
+
+<div class="v-sp-6"></div>
+
+<div class="ta-c">
+<div animate-in="fade-in" animate-in-duration="4s" animate-in-delay="4s">
+<h3 class="popn-400-reg fs-22 lh-14 stbd">
+Knowledge graphs help us connect the dots to see new possibilities and solutions.
+</h3>
+</div>
+</div>
+
+</div>
+</div>
+</amp-story-grid-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>
