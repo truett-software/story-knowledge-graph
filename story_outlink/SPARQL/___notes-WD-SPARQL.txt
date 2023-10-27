@@ -1,0 +1,18 @@
+
+Cross check with SGvizler version
+
+Find drugs that may treat disease
+• according to the drug->gene->disease model
+• constrained to focus on cancers
+
+• ?disease wdt:P279* wd:Q12078 .
+• limited to genes related to cell proliferation
+• ?gene_product wdt:P682 ?biological_process
+• ?biological_process wdt:P279* wd:Q14818032
+
+disease - subClass of (P279) - cancer (Q12078)
+gene - is involved in the biological process (P682) - biological_process
+biological_process - subClass of (P279) - cell proliferation (Q14818032)
+
+https://query.wikidata.org/#%23cases%20where%20a%20drug%20physically%20interacts%20with%20the%20product%20of%20gene%20known%20to%20be%20genetically%20associated%20a%20disease%0A%23these%20cases%20may%20show%20opportunities%20to%20repurpose%20a%20drug%20for%20a%20new%20disease%0A%23See%20http%3A%2F%2Fdatabase.oxfordjournals.org%2Fcontent%2F2016%2Fbaw083.long%20%20and%0A%23http%3A%2F%2Fdrug-repurposing.nationwidechildrens.org%2Fsearch%0A%23an%20example%20that%20was%20recently%20validated%20involved%20a%20new%20link%20between%20Metformin%20wd%3AQ19484%20and%20cancer%20survival%0A%23https%3A%2F%2Fjamia.oxfordjournals.org%2Fcontent%2F22%2F1%2F179%0A%23currently%20set%20up%20to%20find%20drugs%20for%20cancers%20that%20target%20genes%20related%20to%20cell%20proliferation%0A%23adapt%20by%20changing%20constraints%20%28e.g.%20to%20%27heart%20disease%27%20Q190805%29%20or%20removing%20them%0ASELECT%20%3FdrugLabel%20%3FgeneLabel%20%3Fbiological_processLabel%20%3FdiseaseLabel%0AWHERE%20%7B%0A%20%20%3Fdrug%20wdt%3AP129%20%3Fgene_product%20.%20%20%20%23%20drug%20interacts%20with%20a%20gene_product%0A%20%20%3Fgene%20wdt%3AP688%20%3Fgene_product%20.%20%20%23%20gene_product%20%28usually%20a%20protein%29%20is%20a%20product%20of%20a%20gene%20%28a%20region%20of%20DNA%29%0A%20%20%3Fdisease%20%20wdt%3AP2293%20%3Fgene%20.%20%20%20%20%23%20genetic%20association%20between%20disease%20and%20gene%0A%20%20%3Fdisease%20wdt%3AP279%2A%20%20wd%3AQ12078%20.%20%20%23%20limit%20to%20cancers%20wd%3AQ12078%20%28the%20%2A%20operator%20runs%20up%20a%20transitive%20relation..%29%0A%20%20%3Fgene_product%20wdt%3AP682%20%3Fbiological_process%20.%20%23add%20information%20about%20the%20GO%20biological%20processes%20that%20the%20gene%20is%20related%20to%20%0A%20%20%0A%20%20%20%3Fbiological_process%20%28wdt%3AP361%7Cwdt%3AP279%29%2A%20wd%3AQ189101%20.%20%20%23%20chain%20down%20subclass%2Fpart-of%0A%20%20%20%23Change%20the%20last%20statement%20%28wd%3AQ14818032%29%20to%20limit%20to%20genes%20related%20to%20certain%20biological%20processes%20%28and%20their%20sub-processes%29%3A%0A%20%20%20%20%20%20%23cell%20proliferation%20wd%3AQ14818032%20%28Current%20example%29%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%23apoptosis%20wd%3AQ14599311%0A%0A%20%20%20%20%23uncomment%20the%20next%20line%20to%20find%20a%20subset%20of%20the%20known%20true%20positives%20%28there%20are%20not%20a%20lot%20of%20them%20in%20here%20yet%3B%20will%20lead%20to%204%20drugs%20if%20biological%20process%20is%20cell%20proliferation%202018-12-17%29%0A%20%20%23%3Fdisease%20wdt%3AP2176%20%3Fdrug%20.%20%20%20%23%20disease%20is%20treated%20by%20a%20drug%0A%20%20%20%20SERVICE%20wikibase%3Alabel%20%7B%0A%20%20%20%20%20%20%20%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22%20.%0A%20%20%7D%0A%7D%0ALIMIT%201000
+

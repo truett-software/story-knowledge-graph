@@ -1,0 +1,98 @@
+=======
+slide 1
+Identity a unique item by label and measurement value
+
+PubChem identifier
+	CID60823
+
+compound
+	Atorvastatin
+	XUKUURHRXDUEBC-KAYWLYCHSA-N
+
+as defined by
+	molar mass unit
+
+expressed as
+	double floating point
+	xsd:double is double (64 bits) floating-point number as defined by the IEEE (Institute of Electrical and Electronic Engineers).
+
+substance
+	ChEBI
+
+=======
+slide 2
+Link an item to similar items
+
+similarity to other substances
+
+	(3R,5R)-7-[2-(4-fluorophenyl)-3-phenyl-4-(phenylcarbamoyl)-5-propan-2-yl(314C)pyrrol-1-yl]-3,5-dihydroxyheptanoic acid
+	XUKUURHRXDUEBC-IEILOPHXSA-N
+
+	(3R,5R)-7-[2-cyclopropyl-5-(4-fluorophenyl)-4-phenyl-3-(phenylcarbamoyl)pyrrol-1-yl]-3,5-dihydroxyheptanoic acid
+	WDKDRVHIGPVFCW-KAYWLYCHSA-N
+
+	(E,3R,5S)-7-[5-[(3-chlorophenyl)carbamoyl]-3,4-bis(4-fluorophenyl)-1-propan-2-ylpyrrol-2-yl]-3,5-dihydroxyhept-6-enoic acid
+	JNJZDKOQTIGNNB-FDFRSNTISA-N
+
+has component
+	Atorvastatin sodium
+	VVRPOCPLIUDBSA-CNZCJKERSA-M
+
+=======
+slide 3
+Define measurement to link similar items
+
+Define chemical structure
+	https://en.wikipedia.org/wiki/Chemical_structure
+
+Define fingerprint
+	using TanimotoScore
+	https://en.wikipedia.org/wiki/Jaccard_index#Tanimoto_similarity_and_distance
+
+=======
+slide 4
+Identify a specific dataset
+
+item
+	Atorvastatin
+source 
+	CHEMBL
+dataset content
+	biological properties
+
+=======
+slide 5
+
+Identify a specific study and its evidence
+
+title
+	Diazen-1-ium-1,2-diolated nitric oxide donor ester prodrugs of 5-(4-carboxymethylphenyl)-1-(4-methanesulfonylphenyl)-3-trifluoromethyl-1H-pyrazole and its aminosulfonyl analog: Synthesis, biological evaluation and nitric oxide release studies
+summary
+	A new class of hybrid nitric oxide-releasing anti-inflammatory (AI) ester prodrugs
+
+study source is DiscoveryGate
+
+study topic is SID103164874 (CHEBI:15365)
+
+study topic is related to aspirin
+
+based on bioassay name
+	https://pubchem.ncbi.nlm.nih.gov/bioassay/447528
+	Inhibition of ovine COX1 by enzyme immunoassay
+
+-------
+slide 6
+Provide more information about a bioassay
+
+primary bioassay
+	https://pubchem.ncbi.nlm.nih.gov/bioassay/561
+	Primary Cell-based High Throughput Screening assay for inhibitors of the Retinoic Acid Receptor-related orphan receptor A (RORA)
+
+summarized here
+	https://pubchem.ncbi.nlm.nih.gov/bioassay/2139
+	Summary of probe development efforts to identify novel modulators of the Retinoic acid receptor-related Orphan Receptors (ROR).
+
+as measured by
+	https://pubchem.ncbi.nlm.nih.gov/bioassay/610
+	Dose-response cell-based assay for inhibitors of the Retinoic Acid Receptor-related orphan receptor A (RORA)
+

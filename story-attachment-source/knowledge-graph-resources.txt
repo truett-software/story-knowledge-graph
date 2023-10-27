@@ -1,0 +1,55 @@
+
+#TBD
+
+Chem complexity of diet
+  https://isolveit.github.io/chem-complexity-diet/
+
+#TBD
+
+A Tutorial on the History of Knowledge Graph's Main Ideas
+  https://dl.acm.org/doi/abs/10.1145/3340531.3412176
+  https://onlinelibrary.wiley.com/doi/10.1002/aaai.12033
+  http://ai.stanford.edu/blog/introduction-to-knowledge-graphs/
+
+
+#TBD
+
+FAIR and Knowledge graphs
+  https://faircookbook.elixir-europe.org/content/recipes/introduction/FAIR-and-knowledge-graphs.html
+
+
+#10
+
+Building a PubMed knowledge graph
+
+  https://www.nature.com/articles/s41597-020-0543-2
+
+  Xu, J., Kim, S., Song, M. et al. Building a PubMed knowledge graph. Sci Data 7, 205 (2020). https://doi.org/10.1038/s41597-020-0543-2
+  
+  PubMed is an essential resource for the medical domain, but useful concepts are either difficult to extract or are ambiguous, which has significantly hindered knowledge discovery. To address this issue, we constructed a PubMed knowledge graph (PKG) by extracting bio-entities from 29 million PubMed abstracts, disambiguating author names, integrating funding data through the National Institutes of Health (NIH), collecting affiliation history and educational background of authors, and identifying fine-grained affiliation data. 
+  
+
+Wikidata as a knowledge graph for the life sciences
+
+  https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7077981/
+
+  Waagmeester A, Stupp G, Burgstaller-Muehlbacher S, Good BM, Griffith M, Griffith OL, Hanspers K, Hermjakob H, Hudson TS, Hybiske K, Keating SM, Manske M, Mayers M, Mietchen D, Mitraka E, Pico AR, Putman T, Riutta A, Queralt-Rosinach N, Schriml LM, Shafee T, Slenter D, Stephan R, Thornton K, Tsueng G, Tu R, Ul-Hasan S, Willighagen E, Wu C, Su AI. Wikidata as a knowledge graph for the life sciences. Elife. 2020 Mar 17;9:e52614. doi: 10.7554/eLife.52614. PMID: 32180547; PMCID: PMC7077981.
+
+  Wikidata is a community-maintained knowledge base that has been assembled from repositories in the fields of genomics, proteomics, genetic variants, pathways, chemical compounds, and diseases, and that adheres to the FAIR principles of findability, accessibility, interoperability and reusability. Here we describe the breadth and depth of the biomedical knowledge contained within Wikidata, and discuss the open-source tools we have built to add information to Wikidata and to synchronize it with source databases. We also demonstrate several use cases for Wikidata, including the crowdsourced curation of biomedical ontologies, phenotype-based diagnosis of disease, and drug repurposing.
+
+
+WikiPathways: Integrating Pathway Knowledge with Clinical Data
+
+  https://link.springer.com/chapter/10.1007/978-3-030-67727-5_73
+
+  Slenter, D.N., Kutmon, M., Willighagen, E.L. (2022). WikiPathways: Integrating Pathway Knowledge with Clinical Data. In: Blau, N., Dionisi Vici, C., Ferreira, C.R., Vianey-Saban, C., van Karnebeek, C.D.M. (eds) Physician's Guide to the Diagnosis, Treatment, and Follow-Up of Inherited Metabolic Diseases. Springer, Cham. https://doi.org/10.1007/978-3-030-67727-5_73
+
+  Pathways are used to visualize how genetically inheritable metabolic disorders are related. These pathways provide common conceptual models which explain groups of chemical reactions within their biological context. Visual representations of the reactions in biological pathway diagrams provide intuitive ways to study the complex metabolic processes. In order to link (clinical) data to these pathways, they have to be understood by computers. Understanding how to move from a regular pathway drawing to its machine-readable counterpart is pertinent for creating proper models. This chapter outlines the various aspects of the digital counterparts of the pathway diagrams, connecting them to databases and using them in data integration and analysis.
+
+
+Key players in our business
+  https://link.springer.com/search?dc.creator=Egon%20L.%20Willighagen
+and
+  https://link.springer.com/search?dc.creator=Andra%20Waagmeester
+  https://cris.maastrichtuniversity.nl/en/persons/andra-waagmeester
+both are at Maastricht University

@@ -1,0 +1,9 @@
+
+Validating drug repurposing signals using electronic health records:
+  a case study of metformin associated with reduced cancer mortality
+  https://academic.oup.com/jamia/article/22/1/179/833449
+
+Objectives
+Drug repurposing, which finds new indications for existing drugs, has received great attention recently.
+The goal of our work is to assess the feasibility of using electronic health records (EHRs) and automated informatics methods to efficiently validate a recent drug repurposing association of metformin with reduced cancer mortality.
+

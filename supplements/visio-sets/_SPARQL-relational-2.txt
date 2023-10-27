@@ -1,0 +1,5 @@
+
+
+https://www.stardog.com/labs/blog/joins-and-nulls-in-sparql/
+
+https://www.bobdc.com/blog/sparqlcsvjoin/

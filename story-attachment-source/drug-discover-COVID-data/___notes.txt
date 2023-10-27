@@ -1,0 +1,197 @@
+COVID story
+
+ProteinKG25
+
+Datasets
+
+  E:\content\__JSON-LD\_chemicals-datasets_examples
+
+  E:\content\__JSON-LD\_chemicals-datasets_examples\_chemicals-datasets__main
+
+see Cooper for
+  DS3_Wikidata_RDFa.html
+    SMV valid
+
+
+  https://megen.top/
+  https://github.com/lszeremeta/MEgen
+
+=== Main datasets ====
+
+DS1
+No. of molecules: 125228
+No. of RDF triples: 1148490
+Input format: SDF
+Input format specification: https://www.daylight.com/meetings/mug05/Kappler/ctfile.pdf
+Input source: ChEBI
+Input source URL: ftp://ftp.ebi.ac.uk/pub/databases/chebi/
+Input source license: https://creativecommons.org/licenses/by/4.0/
+Input source version: rel198
+Input source dataset type: complete
+Access date: 2021-04-14
+Converter: SDFEater
+Converter version: 2.0.0
+Converter URL: https://github.com/lszeremeta/SDFEater 
+Generate command: java -jar SDFEater-2.0.0-jar-with-dependencies.jar -f jsonld -i ChEBI_complete.sdf > DS1_ChEBI_complete.jsonld
+Output format: JSON-LD
+Output format specification: https://www.w3.org/TR/2020/REC-json-ld11-20200716/
+Output file name: DS1_ChEBI_complete.jsonld
+
+DS2
+No. of molecules: 9137
+No. of RDF triples: 86345
+Input format: SDF
+Input format specification: https://www.daylight.com/meetings/mug05/Kappler/ctfile.pdf
+Input source: DrugBank
+Input source URL: https://go.drugbank.com/releases/5-1-8#structures
+Input source license: https://creativecommons.org/licenses/by-nc/4.0/
+Input source version: 5.1.8
+Input source dataset type: Structures, All (3D)
+Access date: 2021-04-14
+Converter: SDFEater
+Converter version: 2.0.0
+Converter URL: https://github.com/lszeremeta/SDFEater
+Generate command: java -jar SDFEater-2.0.0-jar-with-dependencies.jar -f jsonld -i 3D\ structures.sdf > DS2_DrugBank_3D.jsonld
+Output format: JSON-LD
+Output format specification: https://www.w3.org/TR/2020/REC-json-ld11-20200716/
+Output file name: DS2_DrugBank_3D.jsonld
+
+DS3
+No. of molecules: 300
+No. of RDF triples: 3099
+Input format: CSV
+Input format specification: https://tools.ietf.org/html/rfc4180
+Input source: Wikidata
+Input source URL: https://w.wiki/3C4a (SPARQL query)
+Input source license: https://creativecommons.org/publicdomain/zero/1.0/
+Access date: 2021-03-29
+Converter: Molstruct
+Converter version: 3.0.0
+Converter URL: https://github.com/lszeremeta/molstruct
+Generate command: molstruct -c --name compoundLabel --molecularFormula formula --smiles smiles --inChIKey inchikey --inChI inchi --molecularWeight mass --url compound --sameAs sameas --image image -f rdfa wikidata.csv > DS3_Wikidata_RDFa.html
+Output format: RDFa (HTML)
+Output format specification: https://www.w3.org/TR/2015/REC-rdfa-core-20150317/
+Output file name: DS3_Wikidata_RDFa.html
+
+DS4
+No. of molecules: 200
+No. of RDF triples: 2115
+Input format: CSV
+Input format specification: https://tools.ietf.org/html/rfc4180
+Input source: DrugBank
+Input source URL: https://go.drugbank.com/releases/latest#open-data
+Input source license: https://creativecommons.org/publicdomain/zero/1.0/
+Input source version: 5.1.8
+Input source dataset type: DrugBank Vocabulary
+Access date: 2021-04-14
+Generate command: molstruct -p drugbank-open -l 200 -f rdfa drugbank\ vocabulary.csv > DS4_DrugBank_CC0_200_RDFa.html
+Converter: Molstruct
+Converter version: 3.0.0
+Converter URL: https://github.com/lszeremeta/molstruct
+Output format: RDFa (HTML)
+Output format specification: https://www.w3.org/TR/2015/REC-rdfa-core-20150317/
+Output file name: DS4_DrugBank_CC0_200_RDFa.html
+
+DS5
+No. of molecules: 50
+No. of RDF triples: 513 (after conversion to RDF)
+Input format: None (manual)
+Input format specification: None
+Input source: based on PubChem (COVID-19)
+Input source URL: https://pubchem.ncbi.nlm.nih.gov/#query=covid-19
+Input source license: https://www.ncbi.nlm.nih.gov/home/about/policies/
+Access date: 2021-04-10
+Generate command: None (web app: https://megen.top/)
+Converter: MEgen
+Converter version: 2.0.0
+Converter URL: https://github.com/lszeremeta/MEgen
+Output format: Microdata (HTML)
+Output format specification: https://html.spec.whatwg.org/multipage/microdata.html
+Output file name: DS5_PubChem_Covid19_Microdata.html
+Notes: uuid subject type
+
+
+=== Small datasets ====
+
+DS1s
+Input format: SDF
+Input format specification: https://www.daylight.com/meetings/mug05/Kappler/ctfile.pdf
+Input source: ChEBI
+Input source URL: ftp://ftp.ebi.ac.uk/pub/databases/chebi/
+Input source license: https://creativecommons.org/licenses/by/4.0/
+Input source version: rel198
+Input source dataset type: complete
+Access date: 2021-04-14
+Converter: SDFEater
+Converter version: 2.0.0
+Converter URL: https://github.com/lszeremeta/SDFEater 
+Generate command: java -jar SDFEater-2.0.0-jar-with-dependencies.jar -f rdfa -s uuid -i chebi0.sdf > chebi0_rdfa.html
+Output format: RDFa (HTML)
+Output format specification: https://www.w3.org/TR/2015/REC-rdfa-core-20150317/
+Output file name: chebi{0..9}_rdfa.html
+Notes: uuid subject type
+
+DS2s
+Input format: SDF
+Input format specification: https://www.daylight.com/meetings/mug05/Kappler/ctfile.pdf
+Input source: DrugBank
+Input source URL: https://go.drugbank.com/releases/5-1-8#structures
+Input source license: https://creativecommons.org/licenses/by-nc/4.0/
+Input source version: 5.1.8
+Input source dataset type: Structures, All (3D)
+Access date: 2021-04-14
+Converter: SDFEater
+Converter version: 2.0.0
+Converter URL: https://github.com/lszeremeta/SDFEater
+Generate command: java -jar SDFEater-2.0.0-jar-with-dependencies.jar -f microdata -i drugbank0.sdf > drugbank0_microdata.html
+Output format: Microdata (HTML)
+Output format specification: https://html.spec.whatwg.org/multipage/microdata.html
+Output file name: drugbank{0..9}_microdata.html
+
+DS3s
+Input format: CSV
+Input format specification: https://tools.ietf.org/html/rfc4180
+Input source: Wikidata
+Input source URL: https://w.wiki/3C4a (SPARQL query)
+Input source license: https://creativecommons.org/publicdomain/zero/1.0/
+Access date: 2021-03-29
+Converter: Molstruct
+Converter version: 3.0.0
+Converter URL: https://github.com/lszeremeta/molstruct
+Generate command: molstruct -c --name compoundLabel --molecularFormula formula --smiles smiles --inChIKey inchikey --inChI inchi --molecularWeight mass --url compound --sameAs sameas --image image -f jsonldhtml wikidata0.csv > wikidata0_jsonld.html
+Output format: JSON-LD
+Output format https://www.w3.org/TR/2020/REC-json-ld11-20200716/
+Output file name: wikidata{0..9}_jsonld.html
+
+DS4s
+Input format: CSV
+Input format specification: https://tools.ietf.org/html/rfc4180
+Input source: DrugBank
+Input source URL: https://go.drugbank.com/releases/latest#open-data
+Input source license: https://creativecommons.org/publicdomain/zero/1.0/
+Input source version: 5.1.8
+Input source dataset type: DrugBank Vocabulary
+Access date: 2021-04-14
+Generate command: molstruct -p drugbank-open -f microdata drugbank0.csv > drugbank_open_0_microdata.html
+Converter: Molstruct
+Converter version: 3.0.0
+Converter URL: https://github.com/lszeremeta/molstruct
+Output format: Microdata (HTML)
+Output format specification: https://html.spec.whatwg.org/multipage/microdata.html
+Output file name: drugbank_open_{0..9}_microdata.html
+
+DS5s
+Input format: None (manual)
+Input format specification: None
+Input source: based on PubChem (COVID-19)
+Input source URL: https://pubchem.ncbi.nlm.nih.gov/#query=covid-19
+Input source license: https://www.ncbi.nlm.nih.gov/home/about/policies/
+Access date: 2021-04-10
+Generate command: None (web app: https://megen.top/)
+Converter: MEgen
+Converter version: 2.0.0
+Converter URL: https://github.com/lszeremeta/MEgen
+Output format: RDFa (HTML)
+Output format specification: https://www.w3.org/TR/2015/REC-rdfa-core-20150317/
+Output file name: pubchem{0..9}_rdfa.html
+Notes: uuid subject type

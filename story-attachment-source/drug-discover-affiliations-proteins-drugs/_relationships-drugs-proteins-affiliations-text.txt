@@ -1,0 +1,37 @@
+3 - Affiliations
+----------------
+
+Ortholog groups
+
+Orthologs are genes in different species that evolved from a common ancestral gene by speciation.
+For example, 18,968 human genes have orthologs among 11 vertebrates (chimpanzee, mouse, cow, chicken, zebrafish, etc.)
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2238928/
+
+Pfam domains
+
+Pfam is a database of protein families that includes their annotations and multiple sequence alignments.
+It is used by experimental biologists researching specific proteins, by structural biologists to identify new targets for structure determination, by computational biologists to organize sequences and by evolutionary biologists tracing the origins of proteins.
+https://en.wikipedia.org/wiki/Pfam
+
+Metabolic pathway
+
+A metabolic pathway is a linked series of chemical reactions occurring within a cell. The reactants, products, and intermediates of an enzymatic reaction are known as metabolites, which are modified by a sequence of chemical reactions catalyzed by enzymes. In most cases of a metabolic pathway, the product of one enzyme acts as the substrate for the next. These enzymes often require dietary minerals, vitamins, and other cofactors to function.
+https://en.wikipedia.org/wiki/Metabolic_pathway
+
+2 - Proteins
+------------
+
+Proteins (targets)
+
+Proteins are large biomolecules and macromolecules that comprise one or more long chains of amino acid residues. Proteins perform a vast array of functions within organisms, including catalysing metabolic reactions, DNA replication, responding to stimuli, providing structure to cells and organisms, and transporting molecules from one location to another. Proteins differ from one another primarily in their sequence of amino acids, which is dictated by the nucleotide sequence of their genes, and which usually results in protein folding into a specific 3D structure that determines its activity.
+https://en.wikipedia.org/wiki/Protein
+
+1 - Drugs
+---------
+
+Drugs (bioactive compounds)
+
+A bioactive compound has an effect on a living organism, tissue or cell, usually demonstrated by basic research in vitro or in vivo in the laboratory.
+A drug is any chemical substance that when consumed causes a change in an organism's physiology and psychology.
+https://en.wikipedia.org/wiki/Bioactive_compound
+https://en.wikipedia.org/wiki/Drug
