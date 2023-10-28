@@ -1,0 +1,1107 @@
+<!--
+localize images
+-->
+<!doctype html>
+<html amp lang="en-us">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>
+Neural Networking With Cocktails
+</title>
+
+<link rel="canonical"
+  href="https://thedatageneralist.com/neural-networking-with-cocktails/" />
+
+<link rel="icon"
+  href="https://ontomatica.io/static/image/logo/onto-symbol-w252-h252.svg"/>
+<link rel="preload"
+  href="https://cdn.ampproject.org/v0.js" as="script"/>
+
+<link rel="preload" as="font"
+  href="https://s3.amazonaws.com/benetta.net/fonts/noto-sans/NotoSans-Medium.ttf" crossorigin />
+
+<script async
+  src="https://cdn.ampproject.org/v0.js"></script>
+<script async custom-element="amp-iframe"
+  src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+
+<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
+<style amp-custom>
+/** @format */
+
+@font-face {
+  font-family: NotoSans-Medium-500;
+  font-style: normal;
+  font-weight: 500;
+  src: url("https://s3.amazonaws.com/benetta.net/fonts/noto-sans/NotoSans-Medium.ttf")
+    format("truetype");
+  font-display: swap;
+}
+
+:root {
+  --glsr-white: #fff;
+  --glsr-gray-100: #f5f5f5;
+  --glsr-gray-200: #e5e5e5;
+  --glsr-gray-300: #d4d4d4;
+  --glsr-gray-400: #a3a3a3;
+  --glsr-gray-500: #737373;
+  --glsr-gray-600: #525252;
+  --glsr-gray-700: #404040;
+  --glsr-gray-800: #262626;
+  --glsr-gray-900: #171717;
+  --glsr-black: #000;
+  --glsr-blue: #1c64f2;
+  --glsr-green: #057a55;
+  --glsr-red: #e02424;
+  --glsr-yellow: #faca15;
+  --glsr-duration-slow: 0.3s;
+  --glsr-duration-fast: 0.15s;
+  --glsr-gap-xs: 0.25em;
+  --glsr-gap-sm: 0.5em;
+  --glsr-gap-md: 0.75em;
+  --glsr-gap-lg: 1em;
+  --glsr-gap-xl: 2em;
+  --glsr-leading: 1.5;
+  --glsr-px: 1.25em;
+  --glsr-py: 1.25em;
+  --glsr-radius: 3px;
+  --glsr-text-base: 1em;
+  --glsr-text-sm: 0.875em;
+  --glsr-text-md: 1em;
+  --glsr-text-lg: 1.25em;
+  --glsr-review-star: 1.25em;
+  --glsr-review-verified: var(--glsr-green);
+  --glsr-bar-bg: var(--glsr-yellow);
+  --glsr-bar-leading: 1.5;
+  --glsr-bar-opacity: 0.1;
+  --glsr-max-w: 48ch;
+  --glsr-summary-star: 1.5em;
+  --glsr-summary-text: var(--gl-text-sm);
+  --glsr-choice-h: 1.125em;
+  --glsr-choice-w: 1.125em;
+  --glsr-description-text: var(--glsr-text-sm);
+  --glsr-form-error: var(--glsr-red);
+  --glsr-form-star: 2em;
+  --glsr-form-success: var(--glsr-green);
+  --glsr-input-b: 1px solid var(--glsr-gray-400);
+  --glsr-input-bg: var(--glsr-white);
+  --glsr-input-color: var(--glsr-gray-900);
+  --glsr-input-px: 0.75em;
+  --glsr-input-py: 0.5em;
+  --glsr-input-radius: 3px;
+  --glsr-input-transition: border-color var(--glsr-duration-fast) ease-in-out;
+  --glsr-label-text: var(--glsr-text-sm);
+  --glsr-label-weight: 600;
+  --glsr-toggle-bg-0: currentColor;
+  --glsr-toggle-bg-1: currentColor;
+  --glsr-toggle-color: var(--glsr-white);
+  --glsr-toggle-h: 1.25em;
+  --glsr-toggle-opacity-0: 0.15;
+  --glsr-toggle-opacity-1: 1;
+  --glsr-toggle-p: 3px;
+  --glsr-toggle-radius: 999px;
+  --glsr-toggle-shadow-color: rgba(0, 0, 0, 0.2);
+  --glsr-toggle-size: calc(var(--glsr-toggle-h) - var(--glsr-toggle-p) * 2);
+  --glsr-toggle-text: 1em;
+  --glsr-toggle-w: calc(var(--glsr-toggle-h) * 2 - var(--glsr-toggle-p) * 2);
+  --glsr-modal-bg: var(--glsr-white);
+  --glsr-modal-radius: 3px;
+  --glsr-tooltip-border-radius: 4px;
+  --glsr-tooltip-font-size: 0.875rem;
+  --glsr-tooltip-font-weight: 400;
+  --glsr-tooltip-line-height: 1;
+  --glsr-tooltip-margin: 12px;
+  --glsr-tooltip-padding: 0.5em 1em;
+  --glsr-tooltip-size: 6px;
+  --wpforms-field-border-radius: 3px;
+  --wpforms-field-background-color: #ffffff;
+  --wpforms-field-border-color: rgba(0, 0, 0, 0.25);
+  --wpforms-field-text-color: rgba(0, 0, 0, 0.7);
+  --wpforms-label-color: rgba(0, 0, 0, 0.85);
+  --wpforms-label-sublabel-color: rgba(0, 0, 0, 0.55);
+  --wpforms-label-error-color: #d63637;
+  --wpforms-button-border-radius: 3px;
+  --wpforms-button-background-color: #066aab;
+  --wpforms-button-text-color: #ffffff;
+  --wpforms-field-size-input-height: 43px;
+  --wpforms-field-size-input-spacing: 15px;
+  --wpforms-field-size-font-size: 16px;
+  --wpforms-field-size-line-height: 19px;
+  --wpforms-field-size-padding-h: 14px;
+  --wpforms-field-size-checkbox-size: 16px;
+  --wpforms-field-size-sublabel-spacing: 5px;
+  --wpforms-field-size-icon-size: 1;
+  --wpforms-label-size-font-size: 16px;
+  --wpforms-label-size-line-height: 19px;
+  --wpforms-label-size-sublabel-font-size: 14px;
+  --wpforms-label-size-sublabel-line-height: 17px;
+  --wpforms-button-size-font-size: 17px;
+  --wpforms-button-size-height: 41px;
+  --wpforms-button-size-padding-h: 15px;
+  --wpforms-button-size-margin-top: 10px;
+}
+html {
+  font-family: NotoSans-Medium-500, sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+body {
+  font-size: 15px;
+  line-height: 150%;
+  font-family: NotoSans-Medium-500, sans-serif;
+  color: #555;
+  margin: 0;
+  overflow-x: hidden;
+}
+*,
+:after,
+:before {
+  padding: 0;
+  margin: 0;
+}
+article,
+figure,
+header {
+  display: block;
+}
+a {
+  background-color: transparent;
+}
+a:active,
+a:hover {
+  outline: 0;
+}
+strong {
+  font-weight: 700;
+}
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+img {
+  border: 0;
+}
+hr {
+  box-sizing: content-box;
+  height: 0;
+}
+code {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+:focus {
+  outline: 0;
+}
+a:link {
+  -webkit-tap-highlight-color: #ff5e99;
+}
+td {
+  padding: 0;
+}
+h1,
+h3,
+h4 {
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #000;
+  font-family: NotoSans-Medium-500, sans-serif;
+}
+h1 {
+  font-size: 28px;
+  line-height: 1.4;
+}
+h3 {
+  font-size: 22px;
+  line-height: 1.4;
+}
+h4 {
+  font-size: 20px;
+  line-height: 1.4;
+}
+p {
+  margin-bottom: 1.5em;
+}
+em {
+  font-style: italic;
+}
+code {
+  font-family: Monaco, Consolas, monospace;
+  font-size: 15px;
+  font-size: 0.9375rem;
+}
+html {
+  box-sizing: border-box;
+}
+*,
+:after,
+:before {
+  box-sizing: inherit;
+}
+body {
+  background: #eee;
+}
+hr {
+  background-color: #ccc;
+  border: 0;
+  height: 1px;
+  margin-bottom: 1.5em;
+}
+img {
+  height: auto;
+  max-width: 100%;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  margin-bottom: 15px;
+}
+td {
+  padding: 5px 15px;
+  border: 1px solid #e2e2e2;
+  text-align: left;
+}
+.main-container {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 100%;
+  clear: both;
+}
+#page {
+  max-width: 1050px;
+  min-width: 240px;
+  overflow: visible;
+  margin: 0 auto;
+  position: relative;
+}
+#page {
+  padding-top: 30px;
+  min-height: 100px;
+  float: none;
+  clear: both;
+}
+.article {
+  width: 68.58%;
+  max-width: 720px;
+  float: left;
+  margin-bottom: 30px;
+}
+.post {
+  float: left;
+  width: 100%;
+}
+.single_post {
+  float: left;
+  width: 100%;
+  box-sizing: border-box;
+}
+.post-single-content {
+  font-size: 15px;
+  line-height: 150%;
+  float: left;
+  width: 100%;
+}
+#content {
+  background: #fff;
+  box-shadow: 0 1px 15px 0 rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 1px 15px 0 rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 1px 15px 0 rgba(0, 0, 0, 0.15);
+  -o-box-shadow: 0 1px 15px 0 rgba(0, 0, 0, 0.15);
+  padding: 20px 30px;
+  margin-bottom: 10px;
+}
+.title {
+  margin-bottom: 5px;
+  margin-top: 15px;
+  font-size: 24px;
+  line-height: 28px;
+  clear: both;
+}
+h1.title {
+  line-height: 130%;
+  font-size: 40px;
+  color: #212121;
+  margin-top: 0;
+}
+article header {
+  margin-bottom: 15px;
+  float: left;
+  width: 100%;
+}
+.single_post header {
+  margin-bottom: 10px;
+  display: inline-block;
+  float: left;
+  width: 100%;
+  text-align: center;
+}
+.single_post header:after {
+  height: 3px;
+  width: 125px;
+  margin: 15px auto 10px auto;
+  background: #333;
+  display: block;
+  content: " ";
+}
+p {
+  margin-bottom: 20px;
+}
+a {
+  text-decoration: none;
+  color: #c69c6d;
+  transition:
+    background-color,
+    color 0.2s linear;
+}
+a:hover {
+  color: #c69c6d;
+}
+a:active,
+a:link,
+a:visited {
+  text-decoration: none;
+}
+::-moz-input-placeholder {
+  color: #585f65;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.4);
+}
+::-ie-input-placeholder {
+  color: #585f65;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.4);
+}
+::-o-input-placeholder {
+  color: #585f65;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.4);
+}
+::input-placeholder {
+  color: #585f65;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.4);
+}
+iframe {
+  max-width: 100%;
+}
+amp-iframe {
+  max-width: 100%;
+}
+@media screen and (max-width: 1100px) {
+  #page {
+    max-width: 96%;
+  }
+}
+@media screen and (max-width: 865px) {
+  .main-container {
+    position: relative;
+    left: 0;
+    transition: left 0.5s ease;
+  }
+}
+@media screen and (max-width: 720px) {
+  h1.title {
+    font-size: 30px;
+  }
+  .article {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #page {
+    padding-top: 25px;
+  }
+}
+@media screen and (max-width: 640px) {
+  .single-title {
+    font-size: 20px;
+  }
+}
+.wp-block-columns {
+  float: left;
+}
+.single_post a,
+a,
+a:hover {
+  color: #fab526;
+}
+.single_post header:after {
+  background-color: #fab526;
+}
+:where(.wp-block-button__link) {
+  border-radius: 9999px;
+  box-shadow: none;
+  padding: calc(0.667em + 2px) calc(1.333em + 2px);
+  text-decoration: none;
+}
+:where(.wp-block-calendartable:not(.has-background)th) {
+  background: #ddd;
+}
+
+/**
+ * resolve !important for @media (min-width: 782px)
+ */
+
+.wp-block-columns {
+  align-items: normal;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+}
+@media (min-width: 782px) {
+  .wp-block-columns {
+    flex-wrap: nowrap !important;
+  }
+}
+@media (max-width: 781px) {
+  .wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column {
+    flex-basis: 100%;
+  }
+}
+@media (min-width: 782px) {
+  .wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column {
+    flex-basis: 0;
+    flex-grow: 1;
+  }
+  .wp-block-columns:not(.is-not-stacked-on-mobile)
+    > .wp-block-column[style*="flex-basis"] {
+    flex-grow: 0;
+  }
+}
+
+:where(.wp-block-columns) {
+  margin-bottom: 1.75em;
+}
+:where(.wp-block-columns.has-background) {
+  padding: 1.25em 2.375em;
+}
+.wp-block-column {
+  flex-grow: 1;
+  min-width: 0;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+:where(.wp-block-cover-image:not(.has-text-color)),
+:where(.wp-block-cover:not(.has-text-color)) {
+  color: #fff;
+}
+:where(.wp-block-cover-image.is-light:not(.has-text-color)),
+:where(.wp-block-cover.is-light:not(.has-text-color)) {
+  color: #000;
+}
+:where(.wp-block-file) {
+  margin-bottom: 1.5em;
+}
+:where(.wp-block-file__button) {
+  border-radius: 2em;
+  display: inline-block;
+  padding: 0.5em 1em;
+}
+:where(.wp-block-file__button):is(a):active,
+:where(.wp-block-file__button):is(a):focus,
+:where(.wp-block-file__button):is(a):hover,
+:where(.wp-block-file__button):is(a):visited {
+  box-shadow: none;
+  color: #fff;
+  opacity: 0.85;
+  text-decoration: none;
+}
+.wp-block-group {
+  box-sizing: border-box;
+}
+.wp-block-image img {
+  box-sizing: border-box;
+  height: auto;
+  max-width: 100%;
+  vertical-align: bottom;
+}
+.wp-block-image.is-style-rounded img {
+  border-radius: 9999px;
+}
+.wp-block-image :where(.has-border-color) {
+  border-style: solid;
+}
+.wp-block-image :where([style*="border-top-color"]) {
+  border-top-style: solid;
+}
+.wp-block-image :where([style*="border-right-color"]) {
+  border-right-style: solid;
+}
+.wp-block-image :where([style*="border-bottom-color"]) {
+  border-bottom-style: solid;
+}
+.wp-block-image :where([style*="border-left-color"]) {
+  border-left-style: solid;
+}
+.wp-block-image :where([style*="border-width"]) {
+  border-style: solid;
+}
+.wp-block-image :where([style*="border-top-width"]) {
+  border-top-style: solid;
+}
+.wp-block-image :where([style*="border-right-width"]) {
+  border-right-style: solid;
+}
+.wp-block-image :where([style*="border-bottom-width"]) {
+  border-bottom-style: solid;
+}
+.wp-block-image :where([style*="border-left-width"]) {
+  border-left-style: solid;
+}
+:where(p.has-text-color:not(.has-link-color)) a {
+  color: inherit;
+}
+:where(.wp-block-post-excerpt) {
+  margin-bottom: var(--wp--style--block-gap);
+  margin-top: var(--wp--style--block-gap);
+}
+:where(.wp-block-pullquote) {
+  margin: 0 0 1em;
+}
+:where(.wp-block-search__button) {
+  border: 1px solid #ccc;
+  padding: 6px 10px;
+}
+.wp-block-separator {
+  border: 1px solid;
+  border-left: none;
+  border-right: none;
+}
+.wp-block-spacer {
+  clear: both;
+}
+.wp-block-table {
+  overflow-x: auto;
+}
+.wp-block-table table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.wp-block-table td {
+  border: 1px solid;
+  padding: 0.5em;
+}
+:where(.wp-block-term-description) {
+  margin-bottom: var(--wp--style--block-gap);
+  margin-top: var(--wp--style--block-gap);
+}
+:where(pre.wp-block-verse) {
+  font-family: inherit;
+}
+:root {
+  --wp--preset--font-size--normal: 16px;
+  --wp--preset--font-size--huge: 42px;
+}
+.has-text-align-center {
+  text-align: center;
+}
+html :where(.has-border-color) {
+  border-style: solid;
+}
+html :where([style*="border-top-color"]) {
+  border-top-style: solid;
+}
+html :where([style*="border-right-color"]) {
+  border-right-style: solid;
+}
+html :where([style*="border-bottom-color"]) {
+  border-bottom-style: solid;
+}
+html :where([style*="border-left-color"]) {
+  border-left-style: solid;
+}
+html :where([style*="border-width"]) {
+  border-style: solid;
+}
+html :where([style*="border-top-width"]) {
+  border-top-style: solid;
+}
+html :where([style*="border-right-width"]) {
+  border-right-style: solid;
+}
+html :where([style*="border-bottom-width"]) {
+  border-bottom-style: solid;
+}
+html :where([style*="border-left-width"]) {
+  border-left-style: solid;
+}
+html :where(img[class*="wp-image-"]) {
+  height: auto;
+  max-width: 100%;
+}
+:where(figure) {
+  margin: 0 0 1em;
+}
+html :where(.is-position-sticky) {
+  --wp-admin--admin-bar--position-offset: var(
+    --wp-admin--admin-bar--height,
+    0px
+  );
+}
+@media screen and (max-width: 600px) {
+  html :where(.is-position-sticky) {
+    --wp-admin--admin-bar--position-offset: 0px;
+  }
+}
+body {
+  --wp--preset--color--black: #000000;
+  --wp--preset--color--cyan-bluish-gray: #abb8c3;
+  --wp--preset--color--white: #ffffff;
+  --wp--preset--color--pale-pink: #f78da7;
+  --wp--preset--color--vivid-red: #cf2e2e;
+  --wp--preset--color--luminous-vivid-orange: #ff6900;
+  --wp--preset--color--luminous-vivid-amber: #fcb900;
+  --wp--preset--color--light-green-cyan: #7bdcb5;
+  --wp--preset--color--vivid-green-cyan: #00d084;
+  --wp--preset--color--pale-cyan-blue: #8ed1fc;
+  --wp--preset--color--vivid-cyan-blue: #0693e3;
+  --wp--preset--color--vivid-purple: #9b51e0;
+  --wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(
+    135deg,
+    rgba(6, 147, 227, 1) 0%,
+    rgb(155, 81, 224) 100%
+  );
+  --wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(
+    135deg,
+    rgb(122, 220, 180) 0%,
+    rgb(0, 208, 130) 100%
+  );
+  --wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(
+    135deg,
+    rgba(252, 185, 0, 1) 0%,
+    rgba(255, 105, 0, 1) 100%
+  );
+  --wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(
+    135deg,
+    rgba(255, 105, 0, 1) 0%,
+    rgb(207, 46, 46) 100%
+  );
+  --wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(
+    135deg,
+    rgb(238, 238, 238) 0%,
+    rgb(169, 184, 195) 100%
+  );
+  --wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(
+    135deg,
+    rgb(74, 234, 220) 0%,
+    rgb(151, 120, 209) 20%,
+    rgb(207, 42, 186) 40%,
+    rgb(238, 44, 130) 60%,
+    rgb(251, 105, 98) 80%,
+    rgb(254, 248, 76) 100%
+  );
+  --wp--preset--gradient--blush-light-purple: linear-gradient(
+    135deg,
+    rgb(255, 206, 236) 0%,
+    rgb(152, 150, 240) 100%
+  );
+  --wp--preset--gradient--blush-bordeaux: linear-gradient(
+    135deg,
+    rgb(254, 205, 165) 0%,
+    rgb(254, 45, 45) 50%,
+    rgb(107, 0, 62) 100%
+  );
+  --wp--preset--gradient--luminous-dusk: linear-gradient(
+    135deg,
+    rgb(255, 203, 112) 0%,
+    rgb(199, 81, 192) 50%,
+    rgb(65, 88, 208) 100%
+  );
+  --wp--preset--gradient--pale-ocean: linear-gradient(
+    135deg,
+    rgb(255, 245, 203) 0%,
+    rgb(182, 227, 212) 50%,
+    rgb(51, 167, 181) 100%
+  );
+  --wp--preset--gradient--electric-grass: linear-gradient(
+    135deg,
+    rgb(202, 248, 128) 0%,
+    rgb(113, 206, 126) 100%
+  );
+  --wp--preset--gradient--midnight: linear-gradient(
+    135deg,
+    rgb(2, 3, 129) 0%,
+    rgb(40, 116, 252) 100%
+  );
+  --wp--preset--font-size--small: 13px;
+  --wp--preset--font-size--medium: 20px;
+  --wp--preset--font-size--large: 36px;
+  --wp--preset--font-size--x-large: 42px;
+  --wp--preset--spacing--20: 0.44rem;
+  --wp--preset--spacing--30: 0.67rem;
+  --wp--preset--spacing--40: 1rem;
+  --wp--preset--spacing--50: 1.5rem;
+  --wp--preset--spacing--60: 2.25rem;
+  --wp--preset--spacing--70: 3.38rem;
+  --wp--preset--spacing--80: 5.06rem;
+  --wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);
+  --wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);
+  --wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);
+  --wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1),
+    6px 6px rgba(0, 0, 0, 1);
+  --wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);
+}
+:where(.is-layout-flex) {
+  gap: 0.5em;
+}
+:where(.is-layout-grid) {
+  gap: 0.5em;
+}
+body .is-layout-flex {
+  display: flex;
+}
+body .is-layout-flex {
+  flex-wrap: wrap;
+  align-items: center;
+}
+body .is-layout-flex > * {
+  margin: 0;
+}
+:where(.wp-block-columns.is-layout-flex) {
+  gap: 2em;
+}
+:where(.wp-block-columns.is-layout-grid) {
+  gap: 2em;
+}
+:where(.wp-block-post-template.is-layout-flex) {
+  gap: 1.25em;
+}
+:where(.wp-block-post-template.is-layout-grid) {
+  gap: 1.25em;
+}
+.has-vivid-cyan-blue-color {
+  color: var(--wp--preset--color--vivid-cyan-blue);
+}
+.has-small-font-size {
+  font-size: var(--wp--preset--font-size--small);
+}
+:where(.wp-block-post-template.is-layout-flex) {
+  gap: 1.25em;
+}
+:where(.wp-block-post-template.is-layout-grid) {
+  gap: 1.25em;
+}
+:where(.wp-block-columns.is-layout-flex) {
+  gap: 2em;
+}
+:where(.wp-block-columns.is-layout-grid) {
+  gap: 2em;
+}
+.single_post a,
+a,
+a:hover {
+  color: #2a9fb0;
+}
+.single_post header:after {
+  background-color: #2a9fb0;
+}
+body.custom-background {
+  background-color: #5e5e5e;
+}
+
+</style>
+</head>
+
+<body class="post-template-default single single-post postid-2792 single-format-standard custom-background wp-custom-logo group-blog">
+
+<div class="main-container">
+<div id="page" class="single">
+<div class="content">
+
+<article class="article">
+<div id="post-2792" class="post post-2792 type-post status-publish format-standard has-post-thumbnail hentry category-data-and-technology category-guest-writers tag-cocktails tag-data-analysis tag-graph tag-graph-theory tag-machine-learning tag-networks tag-neural-networks tag-pandas tag-prediction">
+<div class="single_post">
+
+<div id="content" class="post-single-content box mark-links">
+
+<header>
+<h1 class="title single-title">Neural Networking With Cocktails</h1>
+<!-- <div class="post-date-customizable">Posted On February 26, 2021 </div> -->
+</header>
+
+<p class="has-small-font-size"><strong>By</strong> <a href="https://thedatageneralist.com/about/jefflundy/" target="_blank" rel="noreferrer noopener"><strong>Jeff Lundy</strong></a></p>
+
+<h3 class="has-text-align-center wp-block-heading"><strong>THE OBJECTIVE</strong></h3>
+
+<p>During the pandemic, I got into cocktails which basically combine chemistry with booze.&nbsp;Looking at relationships among cocktail ingredients put me in the mind to brush up on network analysis.&nbsp; As a result, I ended up with some interesting insights into my favorite cocktails, and a method to suggest new cocktails based on the structural similarities among cocktails I already like.</p>
+
+<!--
+<p>While most people took up breadmaking during the pandemic, I got into cocktails. I don’t know how it took me so long to get into cocktails, as it basically combines chemistry with booze.&nbsp; As a nicety for my houseguests (whenever we have those again), I coded a <a href="https://www.jeff-lundy.com/BarMenu/index.php" target="_blank" rel="noreferrer noopener">menu website</a>.</p>
+
+<div class="wp-block-image">
+<figure class="aligncenter size-large is-resized">
+<img decoding="async" fetchpriority="high" src="https://i0.wp.com/jeff-lundy.com/OneOffs/CocktailNetwork/BarSetup.jpg?resize=315%2C419" alt="" width="315" height="419" data-recalc-dims="1" />
+</figure>
+<figcaption><em>My custom bar cabinet (thanks Andy Williams!) – and yes, it does feature a beaker and magnetic stirrer</em></figcaption>
+</div>
+
+<p>The website is powered by a Google spreadsheet that I maintain; and looking at the relationships between cocktail ingredients put me in the mind to brush up on network analysis.&nbsp; As a result, I ended up with some interesting insights into the cocktails Shannon and I like, and a method to suggest new cocktails based on the structural similarities between cocktails we already like.</p>
+-->
+<h3 class="has-text-align-center wp-block-heading"><strong>THE BASIC NETWORK</strong></h3>
+
+<p>Below you see the basic network among our most liked cocktails arranged using the Kamada/Kawai drawing algorithm.&nbsp; Essentially, this ‘force directed’ method treats each connection in the network as if it were a spring, and then ‘shakes’ the network so that nodes fly outward from their most connected neighbors.&nbsp; Loosely-connected nodes that are mainly connected to one ‘neighborhood’ will fly the furthest outward (e.g. Tequila), whereas tightly-connected nodes with connections to many regions of the graph will be pulled inward (e.g. Gin).&nbsp; </p>
+
+<!-- <iframe src="https://jeff-lundy.com/OneOffs/CocktailNetwork/cocktailNetwork.php" style="height:400px;width:650px;border:none;"></iframe> -->
+<amp-iframe
+  width="650"
+  height="400"
+  sandbox="allow-scripts allow-same-origin"
+  layout="responsive"
+  frameborder="0"
+  src="https://jeff-lundy.com/OneOffs/CocktailNetwork/cocktailNetwork.php"
+>
+<amp-img layout="fill" src="https://foo.com/foo.png" placeholder></amp-img>
+</amp-iframe>
+
+<!-- <p>From the basic visual, you can see that Gin is the most central liquor in the network.&nbsp; This is mainly because Gin lies at the intersection of the cocktails that Shannon and I like.&nbsp; You can see that liquors like Tequila and Rum are less central.&nbsp; This is because they are less frequently on our favorite cocktail list, and because they tend to play with only certain sections of the network (e.g. most of the connections to Tequila are to juices).</p> -->
+
+<p>From the basic visual, you can see that Gin is the most central liquor in the network.&nbsp; This is mainly because Gin lies at the intersection of the cocktails that I like.&nbsp; You can see that liquors like Tequila and Rum are less central.&nbsp; This is because they are less frequently on our favorite cocktail list, and because they tend to play with only certain sections of the network (e.g. most of the connections to Tequila are to juices).</p>
+
+<p>Generally, you can see that liquors to the left of the &#8220;WhiteLiquor/Brown Liquor Line&#8221; (shown in red) are brown liquors, and ones to the right are white liquors (the one exception being Scotch; but that’s because I only have one Scotch cocktail on the list, and it’s a non-traditional one).</p>
+
+<p>There are clearly some neighborhoods of similar ingredients.&nbsp; In the top left, there is a ‘French Quarter’ of ingredients often found in New Orleans drinks (e.g. Cognac, Absinthe, Benedictine, Peychaud’s bitters).&nbsp; Similarly, there is a juice neighborhood below gin that includes lemon, lime, and grapefruit juices, along with the juice-like ingredients of orange liqueur and orange bitters.</p>
+
+<!-- <iframe src="https://jeff-lundy.com/OneOffs/CocktailNetwork/cocktailNetwork4.php" style="height:400px;width:650px;border:none;"></iframe> -->
+<amp-iframe
+  width="650"
+  height="400"
+  sandbox="allow-scripts allow-same-origin"
+  layout="responsive"
+  frameborder="0"
+  src="https://jeff-lundy.com/OneOffs/CocktailNetwork/cocktailNetwork4.php"
+></amp-iframe>
+
+<h3 class="has-text-align-center wp-block-heading"><strong>USING NETWORKS FOR PREDICTION</strong></h3>
+
+<!-- <p>While basic visualization is one of the most powerful uses of network analysis, another important tool is the ability to predict new connections. Using a bit of network analysis, we should be able to predict new cocktail combinations that Shannon and I are likely to enjoy.</p> -->
+
+<p>While basic visualization is one of the most powerful uses of network analysis, another important tool is the ability to predict new connections. Using a bit of network analysis, we should be able to predict new cocktail combinations that I am likely to enjoy.</p>
+
+<p>When I started this work, I thought I was going try out all kinds of cool ‘missing link’ predictors.&nbsp; These are varieties of the tools that Facebook and LinkedIn use to say: if Alice knows Bob, and Bob knows Carol, then maybe Alice knows Carol (or if she doesn’t, she might want to).</p>
+
+<p>However, it didn’t take long for me to realize that there were already many novel cocktails just sitting in the network, without any missing link prediction!&nbsp; Consider the following example.</p>
+
+<!-- <iframe src="https://jeff-lundy.com/OneOffs/CocktailNetwork/cocktailNetwork2.php" style="height:300px;width:650px;border:none;"></iframe> -->
+<amp-iframe
+  width="550"
+  height="160"
+  sandbox="allow-scripts allow-same-origin"
+  layout="responsive"
+  frameborder="0"
+  src="https://jeff-lundy.com/OneOffs/CocktailNetwork/cocktailNetwork2.php"
+></amp-iframe>
+
+<p>In the subgraph above, you can see that Gin is connected to Lemon Juice (both are in a Tom Collins, Bee’s Knees, Aviation, etc.), Lemon Juice is connected to Orgeat (through a Saturn and Hawaiian Sunset), Orgeat is connected to Aperol (both are in a Dead Man’s Handle), and Aperol is connected to Gin (through a High Five and a Negroni).&nbsp; In graph theory, when you can draw a complete polygon between a set of nodes, that’s called a cycle.&nbsp; This particular cycle may be of interest to us, because the proximity of the ingredients in the graph is not a coincidence – the Kamada/Kawai algorithm will tend to place ingredients close to each other based on shared relationships to the rest of the network.&nbsp; Also, we have a bit more connectivity here, as Orgeat is also connected to Gin (both are in a Saturn) and Lemon Juice is connected to Aperol (both are in a Part Time Lover).&nbsp; All signs suggest these ingredients play well together.&nbsp; However, there is not a cocktail on my list that includes all these ingredients at once.&nbsp;</p>
+
+<!-- <p>In fact, when I searched Difford’s guide, and then Google, I only found one result for a cocktail using these ingredients (<a href="https://anothercocktailblog.tumblr.com/post/18890714968/another-aperol-cocktail-patricks-panties" target="_blank" rel="noreferrer noopener">this blog post</a>).&nbsp; This suggests that this ingredient combination might be novel to the broader cocktail world, not just to me and Shannon.&nbsp;</p> -->
+
+<p>In fact, when I searched Difford’s guide, and then Google, I only found one result for a cocktail using these ingredients (<a href="https://anothercocktailblog.tumblr.com/post/18890714968/another-aperol-cocktail-patricks-panties" target="_blank" rel="noreferrer noopener">this blog post</a>).&nbsp; This suggests that this ingredient combination might be novel to the broader cocktail world, not just to me.&nbsp;</p>
+
+<p>Reading the blog post, the author said he was trying to cross a Negroni with a Sour (clearly, he also wanted to play up the fruitiness of the drink, given his use of the Tiki ingredient Orgeat). The hybridization the author mentions is probably no accident.&nbsp; Interestingly, cocktail creation is not unlike the world of music composition.&nbsp;</p>
+
+<h3 class="has-text-align-center wp-block-heading">ORIGINALITY<strong> AND AUTHENTICITY</strong></h3>
+
+<p>When I was getting my undergrad degree in music composition, I wrote a piece that played off the similarity between a typical blues riff and the pentatonic scale employed in Russian folk music (Stravinsky uses it liberally in <em>The Rite of Spring</em>).&nbsp; It sounds like an odd fit, but because the two shared a similar 5-note structure, you got a piece that sounded both familiar and new at the same time.</p>
+
+<p>The challenge of creating new combinations that are both pleasant and novel is something Richard Peterson wrote about in his great book <em>Creating Country Music</em>.&nbsp; Peterson mentioned that the A&amp;M men who invented country music in the early 20<sup>th</sup> century had a saying: “Originality, Originality, and Authenticity.”&nbsp; This phrase expressed the seemingly contradictory challenge of their work.&nbsp; On the one hand, they needed original songs – people want to hear new things, and you can only copyright original pieces of music. However, they also needed songs that sounded like they were authentically old-timey – because that’s what was selling.&nbsp;</p>
+
+<p>We face a similar situation as those A&amp;M men: we want to identify combinations of ingredients that share a lot of similarity to past cocktails (so that they likely taste good together), but if we look for too much similarity to past cocktails, we won’t have any originality (we’ll make obvious swaps like switching out bourbon for rye in a Manhattan, or swapping vodka for gin in a Martini).&nbsp;</p>
+
+<p>Fortunately, the search for new suggestions is helped by two factors: 1) the cocktail network is quite connected (there are lots of ways of finding new combinations among close connections), and 2) cocktails are usually only made of four or five ingredients.&nbsp; With just four or five nodes to connect, there are only a limited number of ways they can be connected in our graph, and we don’t need any fancy algorithms to identify strong interconnections.</p>
+
+<p>When I ran the necessary code to identify combinations of four or five ingredients that are strongly connected in the network, I got back 8,508 results.&nbsp; Obviously, many of these subgraphs represent existing recipes or will share a great degree of similarity with them.&nbsp; Hence, to only find matches that exhibit enough originality, I removed all subgraphs sharing 3 or more ingredients with an existing recipe. The result is that we now have four- and five-ingredient cocktail recipes, that only overlap a pre-existing cocktail by at most two ingredients, but which have a strong chance of being tasty, given their network proximity to known good cocktails.</p>
+
+<hr class="wp-block-separator"/>
+
+<p class="has-text-align-center has-vivid-cyan-blue-color has-text-color"><strong>TECHNICAL DEEP DIVE (SKIP IF YOU DON’T CARE HOW THIS WORKS)</strong></p>
+
+<p class="has-vivid-cyan-blue-color has-text-color">To find ingredients of interest in our original network graph, we are looking for signs of strong interconnection among 4- and 5-node groups.</p>
+
+<p class="has-vivid-cyan-blue-color has-text-color">So first, we want all 4- and 5-node cycles and cliques (i.e. where every node is connected to every other node).</p>
+
+<div class="wp-block-group">
+<div class="wp-block-group__inner-container is-layout-flow wp-block-group-is-layout-flow">
+<div class="wp-block-columns is-layout-flex wp-container-4 wp-block-columns-is-layout-flex">
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:33.34%">
+<figure class="wp-block-image size-large">
+<img decoding="async" src="https://i0.wp.com/jeff-lundy.com/OneOffs/CocktailNetwork/FiveNodeCycle.png?w=678" alt="" data-recalc-dims="1"/></figure>
+</div>
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:33.34%">
+<figure class="wp-block-image size-large">
+<img decoding="async" src="https://i0.wp.com/jeff-lundy.com/OneOffs/CocktailNetwork/FourNodeClique.png?w=678" alt="" data-recalc-dims="1"/></figure>
+</div>
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:33.33%">
+<figure class="wp-block-image size-large">
+<img decoding="async" src="https://i0.wp.com/jeff-lundy.com/OneOffs/CocktailNetwork/FiveNodeClique.png?w=678" alt="" data-recalc-dims="1"/></figure>
+</div>
+
+</div>
+</div>
+</div>
+
+<p class="has-vivid-cyan-blue-color has-text-color">Also, for our 4-node subgraphs we want those with at least 5 connections (called edges or vertices in graph theory). There can only be 6 total edges between 4 nodes, so ones with at least 5 edges have a high degree of interconnectivity.</p>
+
+<div class="wp-block-columns is-layout-flex wp-container-8 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:50%">
+<figure class="wp-block-image size-large">
+<img decoding="async" src="https://i0.wp.com/jeff-lundy.com/OneOffs/CocktailNetwork/FourNodesFiveEdges1.png?w=678" alt="" data-recalc-dims="1"/></figure>
+</div>
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:50%">
+<figure class="wp-block-image size-large">
+<img decoding="async" src="https://i0.wp.com/jeff-lundy.com/OneOffs/CocktailNetwork/FourNodesFiveEdges2.png?w=678" alt="" data-recalc-dims="1"/></figure>
+</div>
+</div>
+
+<p class="has-vivid-cyan-blue-color has-text-color">For our 5-node subgraphs, the most limited form of interconnectivity we want is called a bowtie graph. The bowtie graph has only 6 edges for the five nodes, out of a total of 10 possible. Despite having a lower degree of connectivity, its structural relationship still suggests we might find a good hybrid, due to it combining two triangles. We also want any 5-node subgraphs with 7 or more edges (as those are just better-connected variants of the bowtie).</p>
+
+<div class="wp-block-columns is-layout-flex wp-container-11 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:50%">
+<figure class="wp-block-image size-large">
+<img decoding="async" src="https://i0.wp.com/jeff-lundy.com/OneOffs/CocktailNetwork/FiveNodesEightEdges.png?w=678" alt="" data-recalc-dims="1"/></figure>
+</div>
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:50%">
+<figure class="wp-block-image size-large">
+<img decoding="async" src="https://i0.wp.com/jeff-lundy.com/OneOffs/CocktailNetwork/Bowtie.png?w=678" alt="" data-recalc-dims="1"/></figure>
+</div>
+</div>
+
+<p class="has-vivid-cyan-blue-color has-text-color">A quick note to data scientists on the usefulness of Python sets (or more technically, frozensets).&nbsp; An issue you face with many network projects is that practices to create linkages between nodes will generally create two sets of connections for each edge.&nbsp; For instance, I discovered a great hack to create the linkages between all nodes in the dataset: just use Pandas merge between a dataframe and itself – e.g. <code>pd.Merge(cocktailIngredients, cocktailIngredients, on="COCKTAIL"</code>).&nbsp; However, this naturally results in two rows for each ingredient combination, e.g.: Gin -&gt; Aperol and Aperol -&gt; Gin; which means that the same undirected link between Gin and Aperol is being expressed twice.&nbsp; Rather than do anything complicated to sort these out, I discovered the usefulness of Pandas’ sets.</p>
+
+<p class="has-vivid-cyan-blue-color has-text-color">If you make a new column filled with the frozenset of the combinations in each row, then the Gin -&gt; Aperol and Aperol -&gt; Gin rows will both now contain the same frozenset: <code>{Gin, Aperol}</code>.&nbsp; You must use a frozenset instead of a set, because Pandas can only iterate over sets that are stored as a frozenset.&nbsp; Then, applying the <code>drop_duplicates</code> function to this column you will be left with just one of the rows, no matter how they were ordered originally, because they now contain the same value.&nbsp; Similarly, my original function to identify all cycles included the starting node twice, e.g. Gin-&gt;Aperol-&gt;Lemon Juice-&gt;Orgeat-&gt;Gin.&nbsp; Converting to a set automatically fixed the issue, because the second Gin was automatically dropped once the first Gin was already a member.</p>
+
+<hr class="wp-block-separator"/>
+
+<h3 class="has-text-align-center wp-block-heading"><strong>HOW TO FIND THE BEST OF THE BEST?</strong></h3>
+
+<p>Even after filtering, there were 166 strong candidates for potentially tasty cocktails.&nbsp; How to sort those according to the greatest likelihood for tastiness?&nbsp; Well, what’s good for the goose is good for the gander.</p>
+
+<p>Originally, I created a graph to understand the underlying structure of the cocktails we like, and to see which ingredients are more isolated to the extremities.&nbsp; We can use the same trick again by drawing a graph among our strong candidate cocktails to see which ingredients are most novel (i.e. at the extremity of the graph).</p>
+
+<!-- <iframe src="https://jeff-lundy.com/OneOffs/CocktailNetwork/cocktailNetwork3.php" style="height:400px;width:650px;border:none;"></iframe> -->
+<amp-iframe
+  width="650"
+  height="400"
+  sandbox="allow-scripts allow-same-origin"
+  layout="responsive"
+  frameborder="0"
+  src="https://jeff-lundy.com/OneOffs/CocktailNetwork/cocktailNetwork3.php"
+></amp-iframe>
+
+<p>I have to admit, I was surprised that this graph still exhibits a high degree of connectivity.&nbsp; Most nodes are connected to many other nodes, and there aren’t distinct neighborhoods or articulation points where one or two nodes link disparate parts of the graph.&nbsp; At this point, the visualization is only so helpful, and we need to turn to a couple of quantitative measures to help us.&nbsp;</p>
+
+<p>Essentially, there are two ways we might find particularly strong candidates among our candidate list.&nbsp; One way is to look for combinations that likely taste good.&nbsp; To do this we can look at how ‘close’ the ingredients were in our original Kamada/Kawai graph.&nbsp; Ingredients that were closer in average distance will likely play better together. The other way we can hunt for the best candidates is to find those that are the most original.&nbsp; To do this, we sort for combinations that are closer to the extremity in our new graph of strong candidates.</p>
+
+<hr class="wp-block-separator"/>
+
+<p class="has-text-align-center has-vivid-cyan-blue-color has-text-color"><strong>TECHNICAL DEEP DIVE (SKIP IF YOU DON’T CARE HOW THIS WORKS)</strong></p>
+
+<p class="has-vivid-cyan-blue-color has-text-color">Finding the ‘closeness’ of ingredients in our Kamada/Kawai graph is fairly easy to implement, as the closeness of the dots is just the area of the polygon they form. You can use the shoelace formula to find that area, once you get the x and y coordinates of each point from Networkx. &nbsp;Then you can divide their area by the number of nodes in the subgraph, to account for the fact that 5-node combinations will inherently be larger than 4-node combinations.</p>
+
+<p class="has-vivid-cyan-blue-color has-text-color">To quantify combinations that are closer to the extremity of the graph, we need to find the ‘group betweenness centrality’ (GBC) for the nodes in each combination.&nbsp; In short, if you find the shortest path between each node in the network, you can then count what proportion of these shortest paths go through any node.&nbsp; A node has a lot of betweenness if many of the shortest paths run through it.&nbsp; If you add together the betweenness centrality for each node among our strong candidates, you get their GBC. Again, getting this number is fairly easy as Networkx includes a <code>group_betweenness_centrality </code>function.</p>
+
+<p class="has-vivid-cyan-blue-color has-text-color">Once you have the GBC for each strong candidate, you can divide them by the number of nodes in the subgraph, to account for the fact that the sum of betweenness in 5-node combinations will inherently be greater than 4-node combinations.&nbsp; Then, we can sort by those with the lowest score.&nbsp; These are the cocktails at the extremities, because they represent cocktails with lower betweenness to the rest of the good candidate network.&nbsp;</p>
+
+<hr class="wp-block-separator"/>
+
+<h3 class="has-text-align-center wp-block-heading"><strong>THE WINNERS</strong></h3>
+
+<p>Let me now introduce you to some delicious new cocktails…</p>
+
+<div style="height:33px" aria-hidden="true" class="wp-block-spacer"></div>
+
+<h4 class="has-text-align-center wp-block-heading"><strong>The Graph Theory #1</strong></h4>
+
+<p>This cocktail riffs on a Last Word but swaps the Maraschino and Lime Juice for Aperol and Lemon Juice. The result is a version that adds a beautiful orange flavor and color – proof that the network proximity of Gin, Lemon Juice, and Aperol in the network really does make for a tasty combination.</p>
+
+<div style="height:15px" aria-hidden="true" class="wp-block-spacer"></div>
+
+<div class="wp-block-columns is-layout-flex wp-container-14 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:50%">
+<figure class="wp-block-image size-large is-style-rounded">
+<img decoding="async" src="http://jeff-lundy.com/OneOffs/CocktailNetwork/Graph Theory 1.jpg" alt=""/></figure>
+</div>
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:50%">
+<figure class="wp-block-table"><table><tbody><tr><td>Gin</td><td>1</td><td>oz</td></tr><tr><td>Aperol</td><td>0.66</td><td>oz</td></tr><tr><td>Green Chartreuse</td><td>0.66</td><td>oz</td></tr><tr><td>Lemon Juice</td><td>0.66</td><td>oz</td></tr></tbody></table></figure>
+</div>
+</div>
+
+<div style="height:33px" aria-hidden="true" class="wp-block-spacer"></div>
+
+<h4 class="has-text-align-center wp-block-heading"><strong>The Cycle</strong></h4>
+
+<p>This cocktail is a hybrid of an Elderflower Margarita with a Tequila sunset.&nbsp; Floral flavors make this a less aggressive version of the Margarita.</p>
+
+<div style="height:15px" aria-hidden="true" class="wp-block-spacer"></div>
+
+<div class="wp-block-columns is-layout-flex wp-container-17 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:50%">
+<figure class="wp-block-table"><table><tbody><tr><td>Tequila</td><td>1.5</td><td>oz</td></tr><tr><td>Elderflower Liqueur</td><td>0.5</td><td>oz</td></tr><tr><td>Orgeat</td><td>0.25</td><td>oz</td></tr><tr><td>Grenadine</td><td>0.25</td><td>oz</td></tr><tr><td>Lime Juice</td><td>0.75</td><td>oz</td></tr></tbody></table></figure>
+</div>
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:50%">
+<figure class="wp-block-image size-large is-style-rounded">
+<img decoding="async" src="http://jeff-lundy.com/OneOffs/CocktailNetwork/The Cycle.jpg" alt=""/></figure>
+</div>
+</div>
+
+<div style="height:33px" aria-hidden="true" class="wp-block-spacer"></div>
+
+<h4 class="has-text-align-center wp-block-heading"><strong>The Clique</strong></h4>
+
+<p>Not too revolutionary, but this cocktail swaps the gin in a French 75 for vodka, and then mixes it with a Grapefruit Mimosa<strong>.</strong></p>
+
+<div style="height:15px" aria-hidden="true" class="wp-block-spacer"></div>
+
+<div class="wp-block-columns is-layout-flex wp-container-20 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:50%">
+<figure class="wp-block-image size-large is-style-rounded">
+<img decoding="async" src="http://jeff-lundy.com/OneOffs/CocktailNetwork/The Clique.jpg" alt=""/></figure>
+</div>
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:50%">
+<figure class="wp-block-table"><table><tbody><tr><td>Vodka</td><td>2</td><td>oz</td></tr><tr><td>Grapefruit Juice</td><td>2</td><td>oz</td></tr><tr><td>Aperol</td><td>0.5</td><td>oz</td></tr><tr><td>Champagne</td><td>1</td><td>oz</td></tr></tbody></table></figure>
+</div>
+</div>
+
+<div style="height:33px" aria-hidden="true" class="wp-block-spacer"></div>
+
+<h4 class="has-text-align-center wp-block-heading"><strong>The Bowtie</strong></h4>
+
+<p>A creative combination of an Elderflower Margarita and a Bella Luna (an Aviation riff with Elderflower liqueur).&nbsp; I would never have thought to put these together, but the overlap of Lime Juice and Elderflower liqueur means that this is a match made in heaven.</p>
+
+<div style="height:15px" aria-hidden="true" class="wp-block-spacer"></div>
+
+<div class="wp-block-columns is-layout-flex wp-container-23 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:50%">
+<figure class="wp-block-table"><table><tbody><tr><td>Tequila</td><td>2</td><td>oz</td></tr><tr><td>Elderflower Liqueur</td><td>0.5</td><td>oz</td></tr><tr><td>Creme de Violette</td><td>0.5</td><td>oz</td></tr><tr><td>Maraschino</td><td>0.25</td><td>oz</td></tr><tr><td>Lime Juice</td><td>0.75</td><td>oz</td></tr></tbody></table></figure>
+</div>
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:50%">
+<figure class="wp-block-image size-large is-style-rounded">
+<img decoding="async" src="http://jeff-lundy.com/OneOffs/CocktailNetwork/The Bowtie.jpg" alt=""/></figure>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</article>
+</div>
+</div>
+</div>
+
+</body>
+</html>

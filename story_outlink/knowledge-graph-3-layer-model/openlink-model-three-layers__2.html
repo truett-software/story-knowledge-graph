@@ -1,0 +1,327 @@
+<!--
+edited
+https://jgraph.github.io/mxgraph/
+Version 4.2.2 – 28. October 2020
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+Knowledge Graph Explainer (turtle &amp; JSON-LD)
+</title>
+<meta charset="utf-8"/>
+<link rel="shortcut icon"
+  href="https://ontomatica.io/static/image/logo/onto-symbol-w252-h252.svg"/>
+<script type="text/turtle">
+  @prefix schema: <http://schema.org/> . 
+  @prefix xhv: <http://www.w3.org/1999/xhtml/vocab#> . 
+  @prefix owl: <http://www.w3.org/2002/07/owl#> . 
+  @prefix skos: <http://www.w3.org/2004/02/skos/core#> . 
+  @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> . 
+  @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> . 
+  @prefix dbpedia: <http://dbpedia.org/resource/> . 
+  @prefix dbo: <http://dbpedia.org/ontology/> . 
+  @prefix opldoc: <https://www.openlinksw.com/data/turtle/general/knowledge-graph-manifestation-turtle-jsonld.> . 
+  @prefix drawio: <https://www.openlinksw.com/data/turtle/general/knowledge-graph-manifestation.> . 
+  @prefix drawio-tool: <https://draw.io/> . 
+  @prefix drawio-tool-sketch: <https://i.pinimg.com/originals/a3/10/17/a31017202b404966ba898601b4e1751a.> . 
+  @prefix oplimage: <https://www.openlinksw.com/data/turtle/general/knowledge-graph-manifestation.> . 
+  @prefix kg: <http://data.openlinksw.com/oplweb/glossary-term/KnowledgeGraph#> . 
+  @prefix ld: <http://data.openlinksw.com/oplweb/glossary-term/LinkedData#> . 
+  @prefix semweb: <http://data.openlinksw.com/oplweb/glossary-term/SemanticWeb#> .
+  @prefix rdf: <http://data.openlinksw.com/oplweb/glossary-term/RDF#> .  
+  @prefix reduxd: <https://www.slideshare.net/reduxd/webscale-ia-using-linked-open-data/10#> . 
+  @prefix reduxd-image: <https://i.pinimg.com/originals/7f/d1/b0/7fd1b0cb6fc6b5e69e268b4f9581079d.> . 
+  @prefix reduxd-preso: <https://www.slideshare.net/reduxd/webscale-ia-using-linked-open-data/> . 
+  @prefix carriehane: <https://www.slideshare.net/carriehane/content-models-taxonomies-bffs#> . 
+  @prefix danbri: <https://www.slideshare.net/danbri/semweb-fundamentals-info-linking-layering-in-practice/34#> .
+  @prefix danbri-preso: <https://www.slideshare.net/danbri/semweb-fundamentals-info-linking-layering-in-practice/> . 
+  @prefix danbri-image: <https://i.pinimg.com/originals/f8/2f/09/f82f09fbf1da39ab124789efa297b393.> . 
+  @prefix lysander: <https://www.slideshare.net/lysander07/what-are-and-why-are-we-studying-ontologies/54#> . 
+  @prefix lysander-preso: <https://www.slideshare.net/lysander07/what-are-and-why-are-we-studying-ontologies/> . 
+  @prefix lysander-image: <https://i.pinimg.com/originals/fb/f2/be/fbf2becb2ed036953edde756a9dd17af.> . 
+  @prefix : <#> .
+  
+  :this a schema:WebPage ;
+        schema:name "Knowledge Graph Manifestation and Hypermedia" ;
+        owl:sameAs opldoc:html ;
+        xhv:alternate oplimage:png, drawio:xml ;
+        schema:about dbpedia:Yuri_Gagarin, dbpedia:Neil_Armstrong, dbpedia:Ohio, 
+                     rdf:type, rdfs:subClassOf, skos:related, schema:birthPlace,
+                     dbpedia:Hyperlink, dbpedia:Hypermedia, dbpedia:Hypertext,
+                     kg:this, rdf:this, ld:this, semweb:this, reduxd:this, danbri:this,
+                     lysander:this, drawio:xml ;
+        schema:relatedLink reduxd:this, carriehane:this, danbri:this, lysander:this . 
+  
+  reduxd:this a schema:WebPage ;
+              schema:name "Mike Atherton's Linked Data Presentation -- Slide 10" ;
+              schema:isPartOf reduxd-preso: ;
+              schema:image reduxd-image:png . 
+  
+  danbri:this a schema:WebPage ;
+              schema:name "Dan Brickley's Linked Data Presentation -- Slide 34" ;
+              schema:isPartOf danbri-preso: ;
+              schema:image danbri-image:png . 
+  
+  lysander:this a schema:WebPage ;
+                schema:name "Harold Sack's Linked Data Presentation -- Slide 54" ;
+                schema:isPartOf lysander-preso: ;
+                schema:image lysander-image:png . 
+  
+  drawio:xml a schema:CreativeWork ;
+          schema:name "Draw.io File" ;
+          schema:image drawio-tool-sketch:png ;
+          schema:description """You can download (using curl or 'save as' from your browser) this file for editing using draw.io -- a browser-hosted visual editing tool. """ ;
+          schema:relatedLink drawio-tool: . 
+  
+  
+  rdf:type a rdf:Property, owl:ObjectProperty . 
+  rdfs:subClassOf a rdf:Property, owl:ObjectProperty . 
+  schema:mentions a rdf:Property .
+  skos:related a rdf:Property, owl:ObjectProperty .  
+  schema:birthPlace a rdf:Property. 
+</script>  
+
+<script  type="application/ld+json">
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "xhv": "http://www.w3.org/1999/xhtml/vocab#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "rdf": "http://data.openlinksw.com/oplweb/glossary-term/RDF#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "dbpedia": "http://dbpedia.org/resource/",
+    "dbo": "http://dbpedia.org/ontology/",
+    "opldoc": "https://www.openlinksw.com/data/turtle/general/knowledge-graph-manifestation-turtle-jsonld.",
+    "drawio": "https://www.openlinksw.com/data/turtle/general/knowledge-graph-manifestation.",
+    "drawio-tool": "https://draw.io/",
+    "drawio-tool-sketch": "https://i.pinimg.com/originals/a3/10/17/a31017202b404966ba898601b4e1751a.",
+    "oplimage": "https://www.openlinksw.com/data/turtle/general/knowledge-graph-manifestation.",
+    "kg": "http://data.openlinksw.com/oplweb/glossary-term/KnowledgeGraph#",
+    "ld": "http://data.openlinksw.com/oplweb/glossary-term/LinkedData#",
+    "semweb": "http://data.openlinksw.com/oplweb/glossary-term/SemanticWeb#",
+    "reduxd": "https://www.slideshare.net/reduxd/webscale-ia-using-linked-open-data/10#",
+    "reduxd-image": "https://i.pinimg.com/originals/7f/d1/b0/7fd1b0cb6fc6b5e69e268b4f9581079d.",
+    "reduxd-preso": "https://www.slideshare.net/reduxd/webscale-ia-using-linked-open-data/",
+    "carriehane": "https://www.slideshare.net/carriehane/content-models-taxonomies-bffs#",
+    "danbri": "https://www.slideshare.net/danbri/semweb-fundamentals-info-linking-layering-in-practice/34#",
+    "danbri-preso": "https://www.slideshare.net/danbri/semweb-fundamentals-info-linking-layering-in-practice/",
+    "danbri-image": "https://i.pinimg.com/originals/f8/2f/09/f82f09fbf1da39ab124789efa297b393.",
+    "lysander": "https://www.slideshare.net/lysander07/what-are-and-why-are-we-studying-ontologies/54#",
+    "lysander-preso": "https://www.slideshare.net/lysander07/what-are-and-why-are-we-studying-ontologies/",
+    "lysander-image": "https://i.pinimg.com/originals/fb/f2/be/fbf2becb2ed036953edde756a9dd17af.",
+    "ThisDoc": "https://www.openlinksw.com/data/turtle/general/knowledge-graph-manifestation-turtle-jsonld.html#"
+  },
+  "@graph": [
+    {
+      "@id": "https://www.openlinksw.com/data/turtle/general/knowledge-graph-manifestation-turtle-jsonld.html#",
+      "@type": [
+        "http://schema.org/WebPage"
+      ],
+      "http://schema.org/name": [
+        {
+          "@value": "Knowledge Graph Manifestation and Hypermedia"
+        }
+      ],
+      "http://www.w3.org/2002/07/owl#sameAs": [
+        {
+          "@id": "https://www.openlinksw.com/data/turtle/general/knowledge-graph-manifestation-turtle-jsonld.html"
+        }
+      ],
+      "http://www.w3.org/1999/xhtml/vocab#alternate": [
+        {
+          "@id": "https://www.openlinksw.com/data/turtle/general/knowledge-graph-manifestation.png"
+        },
+        {
+          "@id": "https://www.openlinksw.com/data/turtle/general/knowledge-graph-manifestation.xml"
+        }
+      ],
+      "http://schema.org/about": [
+        {
+          "@id": "http://dbpedia.org/resource/Yuri_Gagarin"
+        },
+        {
+          "@id": "http://dbpedia.org/resource/Neil_Armstrong"
+        },
+        {
+          "@id": "http://dbpedia.org/resource/Ohio"
+        },
+        {
+          "@id": "http://dbpedia.org/resource/Hyperlink"
+        },
+        {
+          "@id": "http://dbpedia.org/resource/Hypermedia"
+        },
+        {
+          "@id": "http://dbpedia.org/resource/Hypertext"
+        },
+        {
+          "@id": "http://data.openlinksw.com/oplweb/glossary-term/KnowledgeGraph#this"
+        },
+        {
+          "@id": "http://data.openlinksw.com/oplweb/glossary-term/RDF#this"
+        },
+        {
+          "@id": "http://data.openlinksw.com/oplweb/glossary-term/LinkedData#this"
+        },
+        {
+          "@id": "http://data.openlinksw.com/oplweb/glossary-term/SemanticWeb#this"
+        },
+        {
+          "@id": "https://www.slideshare.net/reduxd/webscale-ia-using-linked-open-data/10#this"
+        },
+        {
+          "@id": "https://www.slideshare.net/danbri/semweb-fundamentals-info-linking-layering-in-practice/34#this"
+        },
+        {
+          "@id": "https://www.slideshare.net/lysander07/what-are-and-why-are-we-studying-ontologies/54#this"
+        },
+        {
+          "@id": "https://www.openlinksw.com/data/turtle/general/knowledge-graph-manifestation.xml"
+        }
+      ],
+      "http://schema.org/relatedLink": [
+        {
+          "@id": "https://www.slideshare.net/carriehane/content-models-taxonomies-bffs#this"
+        }
+      ]
+    },
+    {
+      "@id": "http://data.openlinksw.com/oplweb/glossary-term/RDF#type",
+      "@type": [
+        "http://data.openlinksw.com/oplweb/glossary-term/RDF#Property",
+        "http://www.w3.org/2002/07/owl#ObjectProperty"
+      ]
+    },
+    {
+      "@id": "http://schema.org/birthPlace",
+      "@type": [
+        "http://data.openlinksw.com/oplweb/glossary-term/RDF#Property"
+      ]
+    },
+    {
+      "@id": "http://schema.org/mentions",
+      "@type": [
+        "http://data.openlinksw.com/oplweb/glossary-term/RDF#Property"
+      ]
+    },
+    {
+      "@id": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+      "@type": [
+        "http://data.openlinksw.com/oplweb/glossary-term/RDF#Property",
+        "http://www.w3.org/2002/07/owl#ObjectProperty"
+      ]
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#related",
+      "@type": [
+        "http://data.openlinksw.com/oplweb/glossary-term/RDF#Property",
+        "http://www.w3.org/2002/07/owl#ObjectProperty"
+      ]
+    },
+    {
+      "@id": "https://www.openlinksw.com/data/turtle/general/knowledge-graph-manifestation.xml",
+      "@type": [
+        "http://schema.org/CreativeWork"
+      ],
+      "http://schema.org/name": [
+        {
+          "@value": "Draw.io File"
+        }
+      ],
+      "http://schema.org/image": [
+        {
+          "@id": "https://i.pinimg.com/originals/a3/10/17/a31017202b404966ba898601b4e1751a.png"
+        }
+      ],
+      "http://schema.org/description": [
+        {
+          "@value": "You can download (using curl or 'save as' from your browser) this file for editing using draw.io -- a browser-hosted visual editing tool. "
+        }
+      ]
+    },
+    {
+      "@id": "https://www.slideshare.net/danbri/semweb-fundamentals-info-linking-layering-in-practice/34#this",
+      "@type": [
+        "http://schema.org/WebPage"
+      ],
+      "http://schema.org/name": [
+        {
+          "@value": "Dan Brickley's Linked Data Presentation -- Slide 34"
+        }
+      ],
+      "http://schema.org/isPartOf": [
+        {
+          "@id": "https://www.slideshare.net/danbri/semweb-fundamentals-info-linking-layering-in-practice/"
+        }
+      ],
+      "http://schema.org/image": [
+        {
+          "@id": "https://i.pinimg.com/originals/f8/2f/09/f82f09fbf1da39ab124789efa297b393.png"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.slideshare.net/lysander07/what-are-and-why-are-we-studying-ontologies/54#this",
+      "@type": [
+        "http://schema.org/WebPage"
+      ],
+      "http://schema.org/name": [
+        {
+          "@value": "Harold Sack's Linked Data Presentation -- Slide 54"
+        }
+      ],
+      "http://schema.org/isPartOf": [
+        {
+          "@id": "https://www.slideshare.net/lysander07/what-are-and-why-are-we-studying-ontologies/"
+        }
+      ],
+      "http://schema.org/image": [
+        {
+          "@id": "https://i.pinimg.com/originals/fb/f2/be/fbf2becb2ed036953edde756a9dd17af.png"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.slideshare.net/reduxd/webscale-ia-using-linked-open-data/10#this",
+      "@type": [
+        "http://schema.org/WebPage"
+      ],
+      "http://schema.org/name": [
+        {
+          "@value": "Mike Atherton's Linked Data Presentation -- Slide 10"
+        }
+      ],
+      "http://schema.org/isPartOf": [
+        {
+          "@id": "https://www.slideshare.net/reduxd/webscale-ia-using-linked-open-data/"
+        }
+      ],
+      "http://schema.org/image": [
+        {
+          "@id": "https://i.pinimg.com/originals/7f/d1/b0/7fd1b0cb6fc6b5e69e268b4f9581079d.png"
+        }
+      ]
+    }
+  ]
+}
+
+</script>
+
+</head>
+<body>
+
+<div
+  class="mxgraph"
+  style="max-width:100%;border:1px solid transparent;"
+  data-mxgraph="{&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;resize&quot;:true,&quot;toolbar&quot;:&quot;zoom layers lightbox&quot;,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;&lt;mxfile host=\&quot;www.draw.io\&quot; modified=\&quot;2019-11-11T17:19:06.762Z\&quot; agent=\&quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.16 Safari/537.36\&quot; etag=\&quot;DaFUBwdJxmrrBxE3kTO3\&quot; version=\&quot;12.2.3\&quot; type=\&quot;device\&quot; pages=\&quot;1\&quot;&gt;&lt;diagram id=\&quot;MBaEbo4rUGrZswL5jbp3\&quot; name=\&quot;Page-1\&quot;&gt;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&lt;/diagram&gt;&lt;/mxfile&gt;&quot;}">
+</div>
+
+<script
+	type="text/javascript"
+	src="https://www.draw.io/js/viewer.min.js"
+></script>
+
+</body>
+</html>

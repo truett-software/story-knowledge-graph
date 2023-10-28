@@ -1,0 +1,7 @@
+
+has SPARQL link
+https://query.wikidata.org/#%23cases%20where%20a%20drug%20physically%20interacts%20with%20the%20product%20of%20gene%20known%20to%20be%20genetically%20associated%20a%20disease%0A%23these%20cases%20may%20show%20opportunities%20to%20repurpose%20a%20drug%20for%20a%20new%20disease%0A%23See%20http%3A%2F%2Fdatabase.oxfordjournals.org%2Fcontent%2F2016%2Fbaw083.long%20%20and%0A%23http%3A%2F%2Fdrug-repurposing.nationwidechildrens.org%2Fsearch%0A%23an%20example%20that%20was%20recently%20validated%20involved%20a%20new%20link%20between%20Metformin%20wd%3AQ19484%20and%20cancer%20survival%20%0A%0ASELECT%20%3Fgene%20%3FgeneLabel%20%3Fdisease%20%3FdiseaseLabel%20WHERE%20%7B%0A%20%20wd%3AQ19484%20wdt%3AP129%20%3Fgene_product%20.%20%20%20%23%20drug%20interacts%20with%20a%20gene_product%20%0A%20%20%3Fgene_product%20wdt%3AP702%20%3Fgene%20.%20%20%23%20gene_product%20is%20encoded%20by%20a%20gene%0A%20%20%3Fgene%09wdt%3AP2293%20%3Fdisease%20.%20%20%20%20%23%20gene%20is%20genetically%20associated%20with%20a%20disease%20%0A%20%20%23%20add%20labels%0A%20%20%09SERVICE%20wikibase%3Alabel%20%7B%0A%20%20%20%20%20%20%20%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22%20.%0A%09%7D%0A%7D%0Alimit%201000
+
+18 pages
+
+uncertain source

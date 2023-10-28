@@ -1,0 +1,25 @@
+
+16:49 9/18/2023
+RDF chart reset
+
+
+TODO
+change font-size for long line length
+  and/or
+increase height of selector
+
+<h3 class="amp-accordion__header primary-bg footer-h3">
+<span>
+Case 1: What protein targets does donepezil (CHEBI_53289) inhibit with an IC50 less than 10 microMolar?
+</span>
+</h3>
+
+other option
+reduce h3
+move text into h4 for the SPARQL section
+
+<p> in <section> must be in <div></div>
+
+
+rationalize
+  when/how to keep two+ selectors open

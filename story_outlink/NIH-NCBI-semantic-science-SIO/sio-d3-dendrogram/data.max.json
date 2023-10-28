@@ -1,0 +1,4565 @@
+{
+  "name": "entity",
+  "children": [
+    {
+      "name": "process",
+      "children": [
+        {
+          "name": "movement",
+          "children": [
+            {
+              "name": "passive movement",
+              "children": [
+                {
+                  "name": "diffusion",
+                  "children": [
+                    {
+                      "name": "brownian motion"
+                    },
+                    {
+                      "name": "osmosis"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "active movement",
+              "children": [
+                {
+                  "name": "locomotion"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "interacting",
+          "children": [
+            {
+              "name": "transporting",
+              "children": [
+                {
+                  "name": "chemical transport",
+                  "children": [
+                    {
+                      "name": "membrane transport",
+                      "children": [
+                        {
+                          "name": "passive transport"
+                        },
+                        {
+                          "name": "active transport",
+                          "children": [
+                            {
+                              "name": "primary active transport"
+                            },
+                            {
+                              "name": "secondary active transport",
+                              "children": [
+                                {
+                                  "name": "symport enabled secondary active transport"
+                                },
+                                {
+                                  "name": "antiport enabled secondary active transport"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "creating",
+              "children": [
+                {
+                  "name": "chemical synthesis",
+                  "children": [
+                    {
+                      "name": "biosynthesis",
+                      "children": [
+                        {
+                          "name": "transcription"
+                        },
+                        {
+                          "name": "translation"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "molecular complex formation"
+                    }
+                  ]
+                },
+                {
+                  "name": "birthing"
+                },
+                {
+                  "name": "evolving"
+                },
+                {
+                  "name": "planning"
+                },
+                {
+                  "name": "learning"
+                },
+                {
+                  "name": "reasoning"
+                },
+                {
+                  "name": "predicting"
+                },
+                {
+                  "name": "reproducing",
+                  "children": [
+                    {
+                      "name": "biological reproduction"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "regulating",
+              "children": [
+                {
+                  "name": "regulation of process",
+                  "children": [
+                    {
+                      "name": "process maintenance"
+                    },
+                    {
+                      "name": "regulation of process frequency",
+                      "children": [
+                        {
+                          "name": "increased frequency of process from increased regulation"
+                        },
+                        {
+                          "name": "decreased frequency of process from increased regulation"
+                        },
+                        {
+                          "name": "maintenance of frequency of process"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "regulation of process duration",
+                      "children": [
+                        {
+                          "name": "increased duration of process from increased regulation"
+                        },
+                        {
+                          "name": "decreased duration of process from increased regulation"
+                        },
+                        {
+                          "name": "maintenance of duration of process"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "regulation of process spatial extent",
+                      "children": [
+                        {
+                          "name": "increased spatial extent of process from increased regulation"
+                        },
+                        {
+                          "name": "decreased spatial extent of process from decreased regulation"
+                        },
+                        {
+                          "name": "maintenance of spatial extent of process"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "regulation of object quantity",
+                      "children": [
+                        {
+                          "name": "regulation of molecular quantity",
+                          "children": [
+                            {
+                              "name": "regulation of molecular production",
+                              "children": [
+                                {
+                                  "name": "increased molecular production from increased regulation"
+                                },
+                                {
+                                  "name": "decreased molecular production from increased regulation"
+                                },
+                                {
+                                  "name": "increased molecular production from decreased regulation"
+                                },
+                                {
+                                  "name": "decreased molecular production from decreased regulation"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "regulation of molecular degradation",
+                              "children": [
+                                {
+                                  "name": "increased molecular degradation from increased regulation"
+                                },
+                                {
+                                  "name": "decreased molecular degradation from decreased regulation"
+                                },
+                                {
+                                  "name": "increased molecular degradation from decreased regulation"
+                                },
+                                {
+                                  "name": "decreased molecular degradation from increased regulation"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "regulation of object consumption",
+                          "children": [
+                            {
+                              "name": "increased object consumption from increased regulation"
+                            },
+                            {
+                              "name": "decreased object consumption from increased regulation"
+                            },
+                            {
+                              "name": "maintenance of level of object consumption"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "regulation of object production",
+                          "children": [
+                            {
+                              "name": "increased object production from increased regulation"
+                            },
+                            {
+                              "name": "decreased object production from increased regulation"
+                            },
+                            {
+                              "name": "maintenance of quantity of object production"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "regulation of biochemical process",
+                      "children": [
+                        {
+                          "name": "regulation of transcription"
+                        },
+                        {
+                          "name": "regulation of translation",
+                          "children": [
+                            {
+                              "name": "protein mediated regulation of translation"
+                            },
+                            {
+                              "name": "rna mediated regulation of translation"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "process up-regulation"
+                    },
+                    {
+                      "name": "process down-regulation"
+                    }
+                  ]
+                },
+                {
+                  "name": "regulation of capability",
+                  "children": [
+                    {
+                      "name": "regulation of catalytic capability",
+                      "children": [
+                        {
+                          "name": "biochemical activation"
+                        },
+                        {
+                          "name": "biochemical inhibition"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "destroying",
+              "children": [
+                {
+                  "name": "dying"
+                },
+                {
+                  "name": "chemical destruction",
+                  "children": [
+                    {
+                      "name": "increased chemical destruction"
+                    },
+                    {
+                      "name": "decreased chemical destruction"
+                    },
+                    {
+                      "name": "molecular complex dissociation"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "comparing"
+            },
+            {
+              "name": "modifying"
+            },
+            {
+              "name": "communicating",
+              "children": [
+                {
+                  "name": "conversing"
+                },
+                {
+                  "name": "gesturing"
+                }
+              ]
+            },
+            {
+              "name": "sampling"
+            },
+            {
+              "name": "measuring"
+            },
+            {
+              "name": "observing",
+              "children": [
+                {
+                  "name": "perception"
+                }
+              ]
+            },
+            {
+              "name": "chemical interaction",
+              "children": [
+                {
+                  "name": "drug effect",
+                  "children": [
+                    {
+                      "name": "drug drug interaction"
+                    }
+                  ]
+                },
+                {
+                  "name": "metabolism",
+                  "children": [
+                    {
+                      "name": "catabolism"
+                    },
+                    {
+                      "name": "anabolism"
+                    }
+                  ]
+                },
+                {
+                  "name": "chemical reaction",
+                  "children": [
+                    {
+                      "name": "molecular modification"
+                    },
+                    {
+                      "name": "acid-base reaction"
+                    },
+                    {
+                      "name": "catalyzed reaction",
+                      "children": [
+                        {
+                          "name": "biochemical reaction"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "redox reaction"
+                    },
+                    {
+                      "name": "inorganic reaction",
+                      "children": [
+                        {
+                          "name": "decomposition reaction"
+                        },
+                        {
+                          "name": "displacement reaction",
+                          "children": [
+                            {
+                              "name": "double displacement reaction"
+                            },
+                            {
+                              "name": "single displacement reaction"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "synthesis reaction"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "organic reaction",
+                      "children": [
+                        {
+                          "name": "addition reaction",
+                          "children": [
+                            {
+                              "name": "polar addition reaction",
+                              "children": [
+                                {
+                                  "name": "nucleophilic addition reaction"
+                                },
+                                {
+                                  "name": "electrophilic addition reaction"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "non-polar addition reaction",
+                              "children": [
+                                {
+                                  "name": "free radical addition"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "isomerization reaction"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "procedure",
+          "children": [
+            {
+              "name": "information processing",
+              "children": [
+                {
+                  "name": "data transformation",
+                  "children": [
+                    {
+                      "name": "parameterized data transformation"
+                    }
+                  ]
+                },
+                {
+                  "name": "sofware execution",
+                  "children": [
+                    {
+                      "name": "web service invocation",
+                      "children": [
+                        {
+                          "name": "SADI web service invocation"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "literature curation"
+                },
+                {
+                  "name": "data analysis"
+                },
+                {
+                  "name": "data collection"
+                }
+              ]
+            },
+            {
+              "name": "investigation",
+              "children": [
+                {
+                  "name": "experiment",
+                  "children": [
+                    {
+                      "name": "observational study",
+                      "children": [
+                        {
+                          "name": "controlled observational cohort study"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "intervention study",
+                      "children": [
+                        {
+                          "name": "clinical trial"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "microarray experiment"
+                    },
+                    {
+                      "name": "mass spectrometry experiment"
+                    }
+                  ]
+                },
+                {
+                  "name": "study"
+                }
+              ]
+            },
+            {
+              "name": "assay"
+            },
+            {
+              "name": "medical procedure",
+              "children": [
+                {
+                  "name": "medical diagnosis"
+                },
+                {
+                  "name": "differential diagnosis"
+                },
+                {
+                  "name": "diagnostic test"
+                },
+                {
+                  "name": "medical screening"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "behaviour",
+          "children": [
+            {
+              "name": "emotion",
+              "children": [
+                {
+                  "name": "positive emotion",
+                  "children": [
+                    {
+                      "name": "love"
+                    },
+                    {
+                      "name": "affection"
+                    },
+                    {
+                      "name": "arousal"
+                    },
+                    {
+                      "name": "awe"
+                    },
+                    {
+                      "name": "boldness"
+                    },
+                    {
+                      "name": "ecstasy"
+                    },
+                    {
+                      "name": "excitement"
+                    },
+                    {
+                      "name": "gratitude"
+                    },
+                    {
+                      "name": "happiness",
+                      "children": [
+                        {
+                          "name": "contentment",
+                          "children": [
+                            {
+                              "name": "satisfaction",
+                              "children": [
+                                {
+                                  "name": "pride"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "euphoria"
+                        },
+                        {
+                          "name": "joy"
+                        },
+                        {
+                          "name": "pleasure"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "hope"
+                    },
+                    {
+                      "name": "interest",
+                      "children": [
+                        {
+                          "name": "desire",
+                          "children": [
+                            {
+                              "name": "intent"
+                            },
+                            {
+                              "name": "curiosity"
+                            },
+                            {
+                              "name": "lust"
+                            },
+                            {
+                              "name": "passion"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "surprise",
+                      "children": [
+                        {
+                          "name": "wonder"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "negative emotion",
+                  "children": [
+                    {
+                      "name": "annoyance",
+                      "children": [
+                        {
+                          "name": "frustration"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "boredom"
+                    },
+                    {
+                      "name": "disappointment"
+                    },
+                    {
+                      "name": "embarassment"
+                    },
+                    {
+                      "name": "envy",
+                      "children": [
+                        {
+                          "name": "jealousy"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "guilt"
+                    },
+                    {
+                      "name": "hostility",
+                      "children": [
+                        {
+                          "name": "disgust",
+                          "children": [
+                            {
+                              "name": "anger",
+                              "children": [
+                                {
+                                  "name": "rage"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "hate"
+                            },
+                            {
+                              "name": "contempt"
+                            },
+                            {
+                              "name": "loathing"
+                            },
+                            {
+                              "name": "resentment"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "hurt",
+                      "children": [
+                        {
+                          "name": "suffering"
+                        },
+                        {
+                          "name": "pain"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "hysteria"
+                    },
+                    {
+                      "name": "loneliness"
+                    },
+                    {
+                      "name": "pity"
+                    },
+                    {
+                      "name": "sadness",
+                      "children": [
+                        {
+                          "name": "depression"
+                        },
+                        {
+                          "name": "despair"
+                        },
+                        {
+                          "name": "grief"
+                        },
+                        {
+                          "name": "misery"
+                        },
+                        {
+                          "name": "sorrow"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "shame"
+                    },
+                    {
+                      "name": "shock"
+                    },
+                    {
+                      "name": "shyness"
+                    },
+                    {
+                      "name": "apprehension",
+                      "children": [
+                        {
+                          "name": "anxiety",
+                          "children": [
+                            {
+                              "name": "angst"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "fear",
+                          "children": [
+                            {
+                              "name": "dread",
+                              "children": [
+                                {
+                                  "name": "terror"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "panic"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "worry",
+                          "children": [
+                            {
+                              "name": "regret",
+                              "children": [
+                                {
+                                  "name": "remorse"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "indifference",
+                  "children": [
+                    {
+                      "name": "apathy"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "attribute",
+      "children": [
+        {
+          "name": "quality",
+          "children": [
+            {
+              "name": "object quality",
+              "children": [
+                {
+                  "name": "compositional quality",
+                  "children": [
+                    {
+                      "name": "homogeneous"
+                    },
+                    {
+                      "name": "heterogeneous"
+                    }
+                  ]
+                },
+                {
+                  "name": "shape",
+                  "children": [
+                    {
+                      "name": "curvature",
+                      "children": [
+                        {
+                          "name": "straight"
+                        },
+                        {
+                          "name": "bent"
+                        },
+                        {
+                          "name": "curved"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "fitness"
+                },
+                {
+                  "name": "biological quality",
+                  "children": [
+                    {
+                      "name": "cellular quality",
+                      "children": [
+                        {
+                          "name": "ploidy"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "ethnicity"
+                    },
+                    {
+                      "name": "race"
+                    },
+                    {
+                      "name": "biological sex",
+                      "children": [
+                        {
+                          "name": "hermaphrodite"
+                        },
+                        {
+                          "name": "male"
+                        },
+                        {
+                          "name": "female"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "phenotype"
+                    },
+                    {
+                      "name": "life status",
+                      "children": [
+                        {
+                          "name": "alive",
+                          "children": [
+                            {
+                              "name": "sick"
+                            },
+                            {
+                              "name": "healthy"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "dead"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "disease"
+                    }
+                  ]
+                },
+                {
+                  "name": "chemical quality",
+                  "children": [
+                    {
+                      "name": "toxicity",
+                      "children": [
+                        {
+                          "name": "toxic"
+                        },
+                        {
+                          "name": "non toxic"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "polar quality",
+                      "children": [
+                        {
+                          "name": "polar"
+                        },
+                        {
+                          "name": "non-polar"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "charge quality",
+                      "children": [
+                        {
+                          "name": "charged",
+                          "children": [
+                            {
+                              "name": "partial charge",
+                              "children": [
+                                {
+                                  "name": "partial positive charge"
+                                },
+                                {
+                                  "name": "partial negative charge"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "complete charge",
+                              "children": [
+                                {
+                                  "name": "positive charge"
+                                },
+                                {
+                                  "name": "negative charge"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "uncharged"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "text quality",
+                  "children": [
+                    {
+                      "name": "written",
+                      "children": [
+                        {
+                          "name": "reviewed",
+                          "children": [
+                            {
+                              "name": "peer-reviewed"
+                            },
+                            {
+                              "name": "editor reviewed"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "draft"
+                        },
+                        {
+                          "name": "finalized"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "structural quality",
+                  "children": [
+                    {
+                      "name": "disordered"
+                    },
+                    {
+                      "name": "rigid"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "process quality",
+              "children": [
+                {
+                  "name": "process status",
+                  "children": [
+                    {
+                      "name": "completed"
+                    },
+                    {
+                      "name": "ongoing"
+                    },
+                    {
+                      "name": "not started",
+                      "children": [
+                        {
+                          "name": "cancelled"
+                        },
+                        {
+                          "name": "planned"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "suspended"
+                    },
+                    {
+                      "name": "aborted"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "normality",
+              "children": [
+                {
+                  "name": "normal"
+                },
+                {
+                  "name": "abnormal",
+                  "children": [
+                    {
+                      "name": "increased"
+                    },
+                    {
+                      "name": "decreased"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "informational quality",
+              "children": [
+                {
+                  "name": "truth value",
+                  "children": [
+                    {
+                      "name": "TRUE"
+                    },
+                    {
+                      "name": "FALSE"
+                    }
+                  ]
+                },
+                {
+                  "name": "agreement quality",
+                  "children": [
+                    {
+                      "name": "agreement",
+                      "children": [
+                        {
+                          "name": "full agreement"
+                        },
+                        {
+                          "name": "consensus"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "disagreement",
+                      "children": [
+                        {
+                          "name": "full disagreement"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "existence quality",
+              "children": [
+                {
+                  "name": "real"
+                },
+                {
+                  "name": "virtual"
+                },
+                {
+                  "name": "unsupported"
+                },
+                {
+                  "name": "hypothetical",
+                  "children": [
+                    {
+                      "name": "predicted"
+                    },
+                    {
+                      "name": "fictional"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "assertional qualifier",
+              "children": [
+                {
+                  "name": "positive"
+                },
+                {
+                  "name": "negative"
+                }
+              ]
+            },
+            {
+              "name": "intensity",
+              "children": [
+                {
+                  "name": "mild"
+                },
+                {
+                  "name": "moderate"
+                },
+                {
+                  "name": "severe"
+                },
+                {
+                  "name": "fatal"
+                },
+                {
+                  "name": "strong"
+                },
+                {
+                  "name": "weak"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "realizable entity",
+          "children": [
+            {
+              "name": "role",
+              "children": [
+                {
+                  "name": "social role",
+                  "children": [
+                    {
+                      "name": "occupational role",
+                      "children": [
+                        {
+                          "name": "academic role",
+                          "children": [
+                            {
+                              "name": "student role"
+                            },
+                            {
+                              "name": "professor role"
+                            },
+                            {
+                              "name": "department chair role"
+                            },
+                            {
+                              "name": "student advisor role",
+                              "children": [
+                                {
+                                  "name": "undergraduate student advisor role"
+                                },
+                                {
+                                  "name": "graduate student advisor role"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "medical role",
+                          "children": [
+                            {
+                              "name": "doctor role"
+                            },
+                            {
+                              "name": "nurse role"
+                            },
+                            {
+                              "name": "patient role"
+                            },
+                            {
+                              "name": "dentist role"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "administrative role",
+                          "children": [
+                            {
+                              "name": "secretary role"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "publishing role",
+                          "children": [
+                            {
+                              "name": "publisher role"
+                            },
+                            {
+                              "name": "author role"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "processual role",
+                  "children": [
+                    {
+                      "name": "chemical entity role",
+                      "children": [
+                        {
+                          "name": "chemical substance role",
+                          "children": [
+                            {
+                              "name": "host role"
+                            },
+                            {
+                              "name": "buffer role"
+                            },
+                            {
+                              "name": "toxic role",
+                              "children": [
+                                {
+                                  "name": "poison role",
+                                  "children": [
+                                    {
+                                      "name": "toxin role"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "reagent role"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "molecular entity role",
+                          "children": [
+                            {
+                              "name": "product role"
+                            },
+                            {
+                              "name": "cofactor role",
+                              "children": [
+                                {
+                                  "name": "co-enzyme role",
+                                  "children": [
+                                    {
+                                      "name": "prosthetic group role"
+                                    },
+                                    {
+                                      "name": "co-substrate role"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "reactant role",
+                              "children": [
+                                {
+                                  "name": "substrate role",
+                                  "children": [
+                                    {
+                                      "name": "co-enzyme role",
+                                      "children": [
+                                        {
+                                          "name": "prosthetic group role"
+                                        },
+                                        {
+                                          "name": "co-substrate role"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "molecular tracer role"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "regulator role",
+                              "children": [
+                                {
+                                  "name": "catalytic role"
+                                },
+                                {
+                                  "name": "inhibitor role"
+                                },
+                                {
+                                  "name": "activator role"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "investigational role",
+                      "children": [
+                        {
+                          "name": "subject role"
+                        },
+                        {
+                          "name": "evaluation role",
+                          "children": [
+                            {
+                              "name": "test role"
+                            },
+                            {
+                              "name": "control role"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "abstract role",
+                  "children": [
+                    {
+                      "name": "positional role"
+                    },
+                    {
+                      "name": "comparative role",
+                      "children": [
+                        {
+                          "name": "variant role",
+                          "children": [
+                            {
+                              "name": "sequence variant role",
+                              "children": [
+                                {
+                                  "name": "insertion variant role"
+                                },
+                                {
+                                  "name": "deletion variant role"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "capability",
+              "children": [
+                {
+                  "name": "disposition",
+                  "children": [
+                    {
+                      "name": "mutual disposition",
+                      "children": [
+                        {
+                          "name": "to interact and to be interacted with"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "function"
+                },
+                {
+                  "name": "dysfunction"
+                },
+                {
+                  "name": "to interact with",
+                  "children": [
+                    {
+                      "name": "to actively interact with",
+                      "children": [
+                        {
+                          "name": "to modify",
+                          "children": [
+                            {
+                              "name": "to separate",
+                              "children": [
+                                {
+                                  "name": "to filter"
+                                },
+                                {
+                                  "name": "to extract"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "to inject",
+                              "children": [
+                                {
+                                  "name": "to infect"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "to change materially",
+                              "children": [
+                                {
+                                  "name": "to cause disease"
+                                },
+                                {
+                                  "name": "to disassemble",
+                                  "children": [
+                                    {
+                                      "name": "to cleave"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "to covalently modify",
+                                  "children": [
+                                    {
+                                      "name": "to remove a covalent bond"
+                                    },
+                                    {
+                                      "name": "to add a covalent bond"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "to combine"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "to change appearance",
+                              "children": [
+                                {
+                                  "name": "to magnify"
+                                },
+                                {
+                                  "name": "to demagnify"
+                                },
+                                {
+                                  "name": "to distort"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "to change energetically",
+                              "children": [
+                                {
+                                  "name": "to supply energy",
+                                  "children": [
+                                    {
+                                      "name": "to heat",
+                                      "children": [
+                                        {
+                                          "name": "to boil"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "to supply electricity"
+                                    },
+                                    {
+                                      "name": "to excite"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "to reduce energy",
+                                  "children": [
+                                    {
+                                      "name": "to cool",
+                                      "children": [
+                                        {
+                                          "name": "to freeze"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "to emit"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "to change the activation energy",
+                                  "children": [
+                                    {
+                                      "name": "to reduce the activation energy"
+                                    },
+                                    {
+                                      "name": "to increase the activation energy"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "to modify electronically",
+                                  "children": [
+                                    {
+                                      "name": "to ionize",
+                                      "children": [
+                                        {
+                                          "name": "to positively charge"
+                                        },
+                                        {
+                                          "name": "to negatively charge"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "to modify oxidation state of",
+                                      "children": [
+                                        {
+                                          "name": "to oxidize"
+                                        },
+                                        {
+                                          "name": "to reduce"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "to change spatially",
+                              "children": [
+                                {
+                                  "name": "to contain",
+                                  "children": [
+                                    {
+                                      "name": "to immobilize"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "to regulate",
+                              "children": [
+                                {
+                                  "name": "to regulate the rate of formation",
+                                  "children": [
+                                    {
+                                      "name": "to increase the rate of formation"
+                                    },
+                                    {
+                                      "name": "to decrease the rate of formation"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "to disassociate"
+                            },
+                            {
+                              "name": "to modify conformation of",
+                              "children": [
+                                {
+                                  "name": "to conformationally activate"
+                                },
+                                {
+                                  "name": "to conformationally inhibit"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "to assemble"
+                        },
+                        {
+                          "name": "to transport"
+                        },
+                        {
+                          "name": "to provide"
+                        },
+                        {
+                          "name": "to investigate",
+                          "children": [
+                            {
+                              "name": "to measure"
+                            },
+                            {
+                              "name": "to identify"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "to consume",
+                          "children": [
+                            {
+                              "name": "to ingest"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "to serve as",
+                          "children": [
+                            {
+                              "name": "to serve as a host"
+                            },
+                            {
+                              "name": "to serve as a template for molecular synthesis",
+                              "children": [
+                                {
+                                  "name": "to serve as a template for protein synthesis"
+                                },
+                                {
+                                  "name": "to serve as a template for RNA synthesis"
+                                },
+                                {
+                                  "name": "to serve as a template for DNA synthesis"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "to serve as a primer for DNA synthesis"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "to associate",
+                          "children": [
+                            {
+                              "name": "to bind to"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "to produce"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "to passively interact with",
+                      "children": [
+                        {
+                          "name": "to record"
+                        },
+                        {
+                          "name": "to observe",
+                          "children": [
+                            {
+                              "name": "to examine",
+                              "children": [
+                                {
+                                  "name": "to compare"
+                                },
+                                {
+                                  "name": "to test a hypothesis"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "to be a member of"
+                        },
+                        {
+                          "name": "to describe",
+                          "children": [
+                            {
+                              "name": "to characterize"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "to translocate"
+                    }
+                  ]
+                },
+                {
+                  "name": "to be interacted with",
+                  "children": [
+                    {
+                      "name": "to be actively interacted with",
+                      "children": [
+                        {
+                          "name": "to luminesce",
+                          "children": [
+                            {
+                              "name": "to fluoresce"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "to be modified",
+                          "children": [
+                            {
+                              "name": "to be cleaved"
+                            },
+                            {
+                              "name": "to be covalently modified",
+                              "children": [
+                                {
+                                  "name": "to gain a covalent bond"
+                                },
+                                {
+                                  "name": "to lose a covalent bond"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "to be combined",
+                              "children": [
+                                {
+                                  "name": "to be a part of"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "to be electronically modified",
+                              "children": [
+                                {
+                                  "name": "to gain an electron"
+                                },
+                                {
+                                  "name": "to lose an electron"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "to be conformationally changed",
+                              "children": [
+                                {
+                                  "name": "to be activated"
+                                },
+                                {
+                                  "name": "to be inhibited"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "to be transported"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "to be passively interacted with",
+                      "children": [
+                        {
+                          "name": "to be observed",
+                          "children": [
+                            {
+                              "name": "to be recorded"
+                            },
+                            {
+                              "name": "to be examined",
+                              "children": [
+                                {
+                                  "name": "to be compared"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "to be translocated"
+                    }
+                  ]
+                },
+                {
+                  "name": "to breathe"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "object",
+      "children": [
+        {
+          "name": "material entity",
+          "children": [
+            {
+              "name": "chemical entity",
+              "children": [
+                {
+                  "name": "submolecular entity",
+                  "children": [
+                    {
+                      "name": "weak submolecular component",
+                      "children": [
+                        {
+                          "name": "hydrogen bond",
+                          "children": [
+                            {
+                              "name": "low barrier hydrogen bond"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "base pair"
+                        },
+                        {
+                          "name": "ionic interaction",
+                          "children": [
+                            {
+                              "name": "cation pi interaction"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "dipole-dipole interaction"
+                        },
+                        {
+                          "name": "van der Waals interaction"
+                        },
+                        {
+                          "name": "base stack"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "strong submolecular component",
+                      "children": [
+                        {
+                          "name": "covalent bond",
+                          "children": [
+                            {
+                              "name": "single bond",
+                              "children": [
+                                {
+                                  "name": "disulfide bond"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "double bond"
+                            },
+                            {
+                              "name": "triple bond"
+                            },
+                            {
+                              "name": "aromatic bond"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "submolecule",
+                      "children": [
+                        {
+                          "name": "monomer"
+                        },
+                        {
+                          "name": "chemical functional group",
+                          "children": [
+                            {
+                              "name": "ring",
+                              "children": [
+                                {
+                                  "name": "aromatic ring"
+                                },
+                                {
+                                  "name": "heterocyclic ring"
+                                },
+                                {
+                                  "name": "homocyclic ring"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "organic submolecule",
+                          "children": [
+                            {
+                              "name": "lipid residue"
+                            },
+                            {
+                              "name": "carbohydrate residue"
+                            },
+                            {
+                              "name": "nucleic acid part",
+                              "children": [
+                                {
+                                  "name": "pseudogene"
+                                },
+                                {
+                                  "name": "cis regulatory element"
+                                },
+                                {
+                                  "name": "trans-regulatory element"
+                                },
+                                {
+                                  "name": "genetic polymorphism"
+                                },
+                                {
+                                  "name": "gene",
+                                  "children": [
+                                    {
+                                      "name": "non-protein coding RNA (ncRNA) gene",
+                                      "children": [
+                                        {
+                                          "name": "ribosomal RNA gene"
+                                        },
+                                        {
+                                          "name": "small cytoplasmic RNA (scRNA) gene"
+                                        },
+                                        {
+                                          "name": "small nuclear RNA (snRNA) gene"
+                                        },
+                                        {
+                                          "name": "small nucleolar RNA (snoRNA) gene"
+                                        },
+                                        {
+                                          "name": "transfer RNA (tRNA) gene"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "protein coding gene"
+                                    },
+                                    {
+                                      "name": "functional rna coding gene"
+                                    },
+                                    {
+                                      "name": "predicted gene"
+                                    },
+                                    {
+                                      "name": "validated gene"
+                                    },
+                                    {
+                                      "name": "dna gene"
+                                    },
+                                    {
+                                      "name": "rna gene"
+                                    },
+                                    {
+                                      "name": "allele"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "haplotype"
+                                },
+                                {
+                                  "name": "nucleotide residue",
+                                  "children": [
+                                    {
+                                      "name": "snp"
+                                    },
+                                    {
+                                      "name": "deoxyribonucleotide residue"
+                                    },
+                                    {
+                                      "name": "ribonucleotide residue"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "operon"
+                                },
+                                {
+                                  "name": "RNA transcript component",
+                                  "children": [
+                                    {
+                                      "name": "start codon"
+                                    },
+                                    {
+                                      "name": "stop codon"
+                                    },
+                                    {
+                                      "name": "splice site",
+                                      "children": [
+                                        {
+                                          "name": "5' splice site"
+                                        },
+                                        {
+                                          "name": "3' splice site"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "gene component",
+                                  "children": [
+                                    {
+                                      "name": "5' untranslated region"
+                                    },
+                                    {
+                                      "name": "3' untranslated region"
+                                    },
+                                    {
+                                      "name": "open reading frame"
+                                    },
+                                    {
+                                      "name": "gene regulatory component",
+                                      "children": [
+                                        {
+                                          "name": "gene enhancer"
+                                        },
+                                        {
+                                          "name": "gene promoter"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "intron"
+                                    },
+                                    {
+                                      "name": "exon"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "protein part",
+                              "children": [
+                                {
+                                  "name": "amino acid residue"
+                                },
+                                {
+                                  "name": "alpha helix"
+                                },
+                                {
+                                  "name": "beta strand"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "atom",
+                  "children": [
+                    {
+                      "name": "boron atom"
+                    },
+                    {
+                      "name": "carbon atom"
+                    },
+                    {
+                      "name": "hydrogen atom"
+                    },
+                    {
+                      "name": "helium atom"
+                    },
+                    {
+                      "name": "lithium atom"
+                    },
+                    {
+                      "name": "beryllium atom"
+                    },
+                    {
+                      "name": "nitrogen atom"
+                    },
+                    {
+                      "name": "oxygen atom"
+                    },
+                    {
+                      "name": "fluorine atom"
+                    },
+                    {
+                      "name": "neon atom"
+                    },
+                    {
+                      "name": "sodium atom"
+                    },
+                    {
+                      "name": "magnesium atom"
+                    },
+                    {
+                      "name": "aluminium atom"
+                    },
+                    {
+                      "name": "silicon atom"
+                    },
+                    {
+                      "name": "phosphorus atom"
+                    },
+                    {
+                      "name": "sulfur atom"
+                    },
+                    {
+                      "name": "chlorine atom"
+                    },
+                    {
+                      "name": "argon atom"
+                    },
+                    {
+                      "name": "potassium atom"
+                    },
+                    {
+                      "name": "calcium atom"
+                    },
+                    {
+                      "name": "scandium atom"
+                    },
+                    {
+                      "name": "titanium atom"
+                    },
+                    {
+                      "name": "vanadium atom"
+                    },
+                    {
+                      "name": "chromium atom"
+                    },
+                    {
+                      "name": "manganese atom"
+                    },
+                    {
+                      "name": "iron atom"
+                    },
+                    {
+                      "name": "cobalt atom"
+                    },
+                    {
+                      "name": "nickel atom"
+                    },
+                    {
+                      "name": "copper atom"
+                    },
+                    {
+                      "name": "zinc atom"
+                    },
+                    {
+                      "name": "gallium atom"
+                    },
+                    {
+                      "name": "germanium atom"
+                    },
+                    {
+                      "name": "arsenic atom"
+                    },
+                    {
+                      "name": "selenium atom"
+                    },
+                    {
+                      "name": "bromine atom"
+                    },
+                    {
+                      "name": "krypton atom"
+                    },
+                    {
+                      "name": "rubidium atom"
+                    },
+                    {
+                      "name": "strontium atom"
+                    },
+                    {
+                      "name": "yttrium atom"
+                    },
+                    {
+                      "name": "zirconium atom"
+                    },
+                    {
+                      "name": "niobium atom"
+                    },
+                    {
+                      "name": "molybdemum atom"
+                    },
+                    {
+                      "name": "technetium atom"
+                    },
+                    {
+                      "name": "ruthenium atom"
+                    },
+                    {
+                      "name": "rhodium atom"
+                    },
+                    {
+                      "name": "palladium atom"
+                    },
+                    {
+                      "name": "silver atom"
+                    },
+                    {
+                      "name": "cadmium atom"
+                    },
+                    {
+                      "name": "indium atom"
+                    },
+                    {
+                      "name": "tin atom"
+                    },
+                    {
+                      "name": "antimony atom"
+                    },
+                    {
+                      "name": "tellurium atom"
+                    },
+                    {
+                      "name": "iodine atom"
+                    },
+                    {
+                      "name": "xenon atom"
+                    },
+                    {
+                      "name": "caesium atom"
+                    },
+                    {
+                      "name": "barium atom"
+                    },
+                    {
+                      "name": "lanthanum atom"
+                    },
+                    {
+                      "name": "hafnium atom"
+                    },
+                    {
+                      "name": "tantalum atom"
+                    },
+                    {
+                      "name": "tungsten atom"
+                    },
+                    {
+                      "name": "rhenium atom"
+                    },
+                    {
+                      "name": "osmium atom"
+                    },
+                    {
+                      "name": "iridium atom"
+                    },
+                    {
+                      "name": "platinum atom"
+                    },
+                    {
+                      "name": "gold atom"
+                    },
+                    {
+                      "name": "mercury atom"
+                    },
+                    {
+                      "name": "thallium atom"
+                    },
+                    {
+                      "name": "lead atom"
+                    },
+                    {
+                      "name": "bismuth atom"
+                    },
+                    {
+                      "name": "polonium atom"
+                    },
+                    {
+                      "name": "astatine atom"
+                    },
+                    {
+                      "name": "radon atom"
+                    },
+                    {
+                      "name": "francium atom"
+                    },
+                    {
+                      "name": "radium atom"
+                    },
+                    {
+                      "name": "actinium atom"
+                    },
+                    {
+                      "name": "rutherfordium atom"
+                    },
+                    {
+                      "name": "dubnium atom"
+                    },
+                    {
+                      "name": "seaborgium atom"
+                    },
+                    {
+                      "name": "bohrium atom"
+                    },
+                    {
+                      "name": "hassium atom"
+                    },
+                    {
+                      "name": "meitnerium atom"
+                    },
+                    {
+                      "name": "darmstadtium atom"
+                    },
+                    {
+                      "name": "roentgenium atom"
+                    },
+                    {
+                      "name": "copernicium atom"
+                    },
+                    {
+                      "name": "unutrium atom"
+                    },
+                    {
+                      "name": "ununquadium atom"
+                    },
+                    {
+                      "name": "ununpentium atom"
+                    },
+                    {
+                      "name": "ununhexium atom"
+                    },
+                    {
+                      "name": "ununseptium atom"
+                    },
+                    {
+                      "name": "ununoctium atom"
+                    },
+                    {
+                      "name": "cerium atom"
+                    },
+                    {
+                      "name": "praseodymium atom"
+                    },
+                    {
+                      "name": "neodymium atom"
+                    },
+                    {
+                      "name": "promethium atom"
+                    },
+                    {
+                      "name": "samarium atom"
+                    },
+                    {
+                      "name": "europium atom"
+                    },
+                    {
+                      "name": "gadolinium atom"
+                    },
+                    {
+                      "name": "terbium atom"
+                    },
+                    {
+                      "name": "dysprosium atom"
+                    },
+                    {
+                      "name": "holmium atom"
+                    },
+                    {
+                      "name": "erbium atom"
+                    },
+                    {
+                      "name": "thulium atom"
+                    },
+                    {
+                      "name": "ytterbium atom"
+                    },
+                    {
+                      "name": "lutetium atom"
+                    },
+                    {
+                      "name": "thorium atom"
+                    },
+                    {
+                      "name": "protactinium atom"
+                    },
+                    {
+                      "name": "uranium atom"
+                    },
+                    {
+                      "name": "neptunium atom"
+                    },
+                    {
+                      "name": "plutonium atom"
+                    },
+                    {
+                      "name": "americium atom"
+                    },
+                    {
+                      "name": "curium atom"
+                    },
+                    {
+                      "name": "berkelium atom"
+                    },
+                    {
+                      "name": "californium atom"
+                    },
+                    {
+                      "name": "einsteinium atom"
+                    },
+                    {
+                      "name": "fermium atom"
+                    },
+                    {
+                      "name": "mendelevium atom"
+                    },
+                    {
+                      "name": "nobelium atom"
+                    },
+                    {
+                      "name": "lawrencium atom"
+                    }
+                  ]
+                },
+                {
+                  "name": "covalently connected entity",
+                  "children": [
+                    {
+                      "name": "molecule",
+                      "children": [
+                        {
+                          "name": "polymer"
+                        },
+                        {
+                          "name": "primer",
+                          "children": [
+                            {
+                              "name": "deoxyribonucleic acid primer"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "drug",
+                          "children": [
+                            {
+                              "name": "poison"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "organic molecule",
+                          "children": [
+                            {
+                              "name": "amino acid"
+                            },
+                            {
+                              "name": "lipid"
+                            },
+                            {
+                              "name": "monosaccharide"
+                            },
+                            {
+                              "name": "organic polymer",
+                              "children": [
+                                {
+                                  "name": "biopolymer"
+                                },
+                                {
+                                  "name": "polypeptide"
+                                },
+                                {
+                                  "name": "nucleic acid",
+                                  "children": [
+                                    {
+                                      "name": "nucleic acid strand",
+                                      "children": [
+                                        {
+                                          "name": "positive nucleic acid strand"
+                                        },
+                                        {
+                                          "name": "negative nucleic acid strand"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "ribonucleic acid",
+                                      "children": [
+                                        {
+                                          "name": "RNA transcript",
+                                          "children": [
+                                            {
+                                              "name": "non-protein coding RNA (ncRNA)",
+                                              "children": [
+                                                {
+                                                  "name": "small cytoplasmic RNA (scRNA)"
+                                                },
+                                                {
+                                                  "name": "transfer RNA (tRNA)"
+                                                },
+                                                {
+                                                  "name": "small nuclear RNA (snRNA)"
+                                                },
+                                                {
+                                                  "name": "small nucleolar RNA (snoRNA)"
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "name": "messenger RNA",
+                                              "children": [
+                                                {
+                                                  "name": "mature mRNA"
+                                                },
+                                                {
+                                                  "name": "pre-mRNA"
+                                                },
+                                                {
+                                                  "name": "mRNA splice variant"
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "deoxyribonucleic acid",
+                                      "children": [
+                                        {
+                                          "name": "deoxyribonucleic acid template"
+                                        },
+                                        {
+                                          "name": "deoxyribonucleic acid primer"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "oligosaccharide"
+                                },
+                                {
+                                  "name": "protein"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "pharmaceutical component",
+                          "children": [
+                            {
+                              "name": "active ingredient"
+                            },
+                            {
+                              "name": "inactive ingredient"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "catalyst",
+                          "children": [
+                            {
+                              "name": "enzyme"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "antigen"
+                        },
+                        {
+                          "name": "molecular regulator",
+                          "children": [
+                            {
+                              "name": "activator"
+                            },
+                            {
+                              "name": "inhibitor"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "signal transducer",
+                          "children": [
+                            {
+                              "name": "receptor"
+                            },
+                            {
+                              "name": "messenger",
+                              "children": [
+                                {
+                                  "name": "second messenger"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "signal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "ion"
+                },
+                {
+                  "name": "molecular complex",
+                  "children": [
+                    {
+                      "name": "chromosome"
+                    },
+                    {
+                      "name": "double stranded nucleic acid",
+                      "children": [
+                        {
+                          "name": "double stranded DNA"
+                        },
+                        {
+                          "name": "double stranded RNA"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "protein complex",
+                      "children": [
+                        {
+                          "name": "antibody"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "chemical substance",
+                  "children": [
+                    {
+                      "name": "chemical complex"
+                    },
+                    {
+                      "name": "centrifugation substance",
+                      "children": [
+                        {
+                          "name": "centrifugation pellet"
+                        },
+                        {
+                          "name": "supernatant"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "heterogeneous substance",
+                      "children": [
+                        {
+                          "name": "wave",
+                          "children": [
+                            {
+                              "name": "sound wave"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "device",
+                          "children": [
+                            {
+                              "name": "data storage device",
+                              "children": [
+                                {
+                                  "name": "hard disk drive",
+                                  "children": [
+                                    {
+                                      "name": "solid state hard drive"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "radar"
+                            },
+                            {
+                              "name": "communication device",
+                              "children": [
+                                {
+                                  "name": "radio receiver"
+                                },
+                                {
+                                  "name": "telephone"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "data collection device",
+                              "children": [
+                                {
+                                  "name": "mass spectrometer"
+                                },
+                                {
+                                  "name": "microarray device"
+                                },
+                                {
+                                  "name": "nmr device"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "sample",
+                          "children": [
+                            {
+                              "name": "specimen"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "liquid solution"
+                        },
+                        {
+                          "name": "biological entity",
+                          "children": [
+                            {
+                              "name": "genome"
+                            },
+                            {
+                              "name": "organism",
+                              "children": [
+                                {
+                                  "name": "strain"
+                                },
+                                {
+                                  "name": "cellular organism",
+                                  "children": [
+                                    {
+                                      "name": "multicellular organism",
+                                      "children": [
+                                        {
+                                          "name": "human",
+                                          "children": [
+                                            {
+                                              "name": "person",
+                                              "children": [
+                                                {
+                                                  "name": "patient"
+                                                },
+                                                {
+                                                  "name": "study subject"
+                                                },
+                                                {
+                                                  "name": "academic",
+                                                  "children": [
+                                                    {
+                                                      "name": "professor"
+                                                    },
+                                                    {
+                                                      "name": "student"
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "name": "medical practitioner",
+                                                  "children": [
+                                                    {
+                                                      "name": "doctor"
+                                                    },
+                                                    {
+                                                      "name": "nurse"
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "name": "mouse"
+                                        },
+                                        {
+                                          "name": "rat"
+                                        },
+                                        {
+                                          "name": "worm"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "unicellular organism",
+                                      "children": [
+                                        {
+                                          "name": "e.coli"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "non-cellular organism",
+                                  "children": [
+                                    {
+                                      "name": "viroid"
+                                    },
+                                    {
+                                      "name": "virus"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "pathogen"
+                                },
+                                {
+                                  "name": "host"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "cell",
+                              "children": [
+                                {
+                                  "name": "unicellular organism",
+                                  "children": [
+                                    {
+                                      "name": "e.coli"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "tissue"
+                            },
+                            {
+                              "name": "organ"
+                            },
+                            {
+                              "name": "biological fluid"
+                            },
+                            {
+                              "name": "cell line"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "reagent",
+                          "children": [
+                            {
+                              "name": "pharmaceutical preparation"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "liquid solution component",
+                          "children": [
+                            {
+                              "name": "buffer"
+                            },
+                            {
+                              "name": "solvent",
+                              "children": [
+                                {
+                                  "name": "polar solvent"
+                                },
+                                {
+                                  "name": "nonpolar solvent"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "solute"
+                            },
+                            {
+                              "name": "acid"
+                            },
+                            {
+                              "name": "base"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "placebo"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "homogeneous substance",
+                      "children": [
+                        {
+                          "name": "chemical element",
+                          "children": [
+                            {
+                              "name": "allotrope",
+                              "children": [
+                                {
+                                  "name": "carbon allotrope",
+                                  "children": [
+                                    {
+                                      "name": "diamond"
+                                    },
+                                    {
+                                      "name": "graphite"
+                                    },
+                                    {
+                                      "name": "fullerene"
+                                    },
+                                    {
+                                      "name": "aggregated carbon nanorods"
+                                    },
+                                    {
+                                      "name": "amorphous carbon"
+                                    },
+                                    {
+                                      "name": "carbon nanofoam"
+                                    },
+                                    {
+                                      "name": "chaoite"
+                                    },
+                                    {
+                                      "name": "glassy carbon"
+                                    },
+                                    {
+                                      "name": "ionsdaleite"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "binary compound",
+                      "children": [
+                        {
+                          "name": "ionic compound"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "specialized material entity"
+            },
+            {
+              "name": "heterogeneous substance",
+              "children": [
+                {
+                  "name": "wave",
+                  "children": [
+                    {
+                      "name": "sound wave"
+                    }
+                  ]
+                },
+                {
+                  "name": "device",
+                  "children": [
+                    {
+                      "name": "data storage device",
+                      "children": [
+                        {
+                          "name": "hard disk drive",
+                          "children": [
+                            {
+                              "name": "solid state hard drive"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "radar"
+                    },
+                    {
+                      "name": "communication device",
+                      "children": [
+                        {
+                          "name": "radio receiver"
+                        },
+                        {
+                          "name": "telephone"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "data collection device",
+                      "children": [
+                        {
+                          "name": "mass spectrometer"
+                        },
+                        {
+                          "name": "microarray device"
+                        },
+                        {
+                          "name": "nmr device"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "sample",
+                  "children": [
+                    {
+                      "name": "specimen"
+                    }
+                  ]
+                },
+                {
+                  "name": "liquid solution"
+                },
+                {
+                  "name": "biological entity",
+                  "children": [
+                    {
+                      "name": "genome"
+                    },
+                    {
+                      "name": "organism",
+                      "children": [
+                        {
+                          "name": "strain"
+                        },
+                        {
+                          "name": "cellular organism",
+                          "children": [
+                            {
+                              "name": "multicellular organism",
+                              "children": [
+                                {
+                                  "name": "human",
+                                  "children": [
+                                    {
+                                      "name": "person",
+                                      "children": [
+                                        {
+                                          "name": "patient"
+                                        },
+                                        {
+                                          "name": "study subject"
+                                        },
+                                        {
+                                          "name": "academic",
+                                          "children": [
+                                            {
+                                              "name": "professor"
+                                            },
+                                            {
+                                              "name": "student"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "name": "medical practitioner",
+                                          "children": [
+                                            {
+                                              "name": "doctor"
+                                            },
+                                            {
+                                              "name": "nurse"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "mouse"
+                                },
+                                {
+                                  "name": "rat"
+                                },
+                                {
+                                  "name": "worm"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "unicellular organism",
+                              "children": [
+                                {
+                                  "name": "e.coli"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "non-cellular organism",
+                          "children": [
+                            {
+                              "name": "viroid"
+                            },
+                            {
+                              "name": "virus"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "pathogen"
+                        },
+                        {
+                          "name": "host"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "cell",
+                      "children": [
+                        {
+                          "name": "unicellular organism",
+                          "children": [
+                            {
+                              "name": "e.coli"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "tissue"
+                    },
+                    {
+                      "name": "organ"
+                    },
+                    {
+                      "name": "biological fluid"
+                    },
+                    {
+                      "name": "cell line"
+                    }
+                  ]
+                },
+                {
+                  "name": "reagent",
+                  "children": [
+                    {
+                      "name": "pharmaceutical preparation"
+                    }
+                  ]
+                },
+                {
+                  "name": "liquid solution component",
+                  "children": [
+                    {
+                      "name": "buffer"
+                    },
+                    {
+                      "name": "solvent",
+                      "children": [
+                        {
+                          "name": "polar solvent"
+                        },
+                        {
+                          "name": "nonpolar solvent"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "solute"
+                    },
+                    {
+                      "name": "acid"
+                    },
+                    {
+                      "name": "base"
+                    }
+                  ]
+                },
+                {
+                  "name": "placebo"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "information content entity",
+          "children": [
+            {
+              "name": "social entity",
+              "children": [
+                {
+                  "name": "social structure",
+                  "children": [
+                    {
+                      "name": "collective",
+                      "children": [
+                        {
+                          "name": "organization",
+                          "children": [
+                            {
+                              "name": "academic organization",
+                              "children": [
+                                {
+                                  "name": "university"
+                                },
+                                {
+                                  "name": "academic department"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "regulatory authority",
+                              "children": [
+                                {
+                                  "name": "drug regulatory authority"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "institute"
+                            },
+                            {
+                              "name": "corporation"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "study group",
+                          "children": [
+                            {
+                              "name": "control group"
+                            },
+                            {
+                              "name": "intervention group"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "population",
+                          "children": [
+                            {
+                              "name": "human population",
+                              "children": [
+                                {
+                                  "name": "ethnic group"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "family"
+                        },
+                        {
+                          "name": "community"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "social relation",
+                  "children": [
+                    {
+                      "name": "affiliation"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "mathematical entity",
+              "children": [
+                {
+                  "name": "algorithm",
+                  "children": [
+                    {
+                      "name": "workflow"
+                    }
+                  ]
+                },
+                {
+                  "name": "pattern",
+                  "children": [
+                    {
+                      "name": "sequence motif"
+                    },
+                    {
+                      "name": "structural motif"
+                    }
+                  ]
+                },
+                {
+                  "name": "logical operator",
+                  "children": [
+                    {
+                      "name": "implies (->)"
+                    },
+                    {
+                      "name": "conjunction (and)"
+                    },
+                    {
+                      "name": "disjunction (or)",
+                      "children": [
+                        {
+                          "name": "exclusive disjunction (xor)"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "negation (not)"
+                    }
+                  ]
+                },
+                {
+                  "name": "set",
+                  "children": [
+                    {
+                      "name": "class"
+                    },
+                    {
+                      "name": "list",
+                      "children": [
+                        {
+                          "name": "data series"
+                        },
+                        {
+                          "name": "union"
+                        },
+                        {
+                          "name": "intersection"
+                        },
+                        {
+                          "name": "sequence"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "collection",
+                      "children": [
+                        {
+                          "name": "collection of documents",
+                          "children": [
+                            {
+                              "name": "book series"
+                            },
+                            {
+                              "name": "periodical",
+                              "children": [
+                                {
+                                  "name": "magazine"
+                                },
+                                {
+                                  "name": "journal"
+                                },
+                                {
+                                  "name": "newspaper"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "website"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "collection of points"
+                        },
+                        {
+                          "name": "vocabulary"
+                        },
+                        {
+                          "name": "catalog"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "empty set"
+                    },
+                    {
+                      "name": "interval",
+                      "children": [
+                        {
+                          "name": "left open interval",
+                          "children": [
+                            {
+                              "name": "open interval"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "right open interval",
+                          "children": [
+                            {
+                              "name": "open interval"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "right closed interval",
+                          "children": [
+                            {
+                              "name": "closed interval"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "left closed interval",
+                          "children": [
+                            {
+                              "name": "closed interval"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "number",
+                  "children": [
+                    {
+                      "name": "measurement value",
+                      "children": [
+                        {
+                          "name": "quantity",
+                          "children": [
+                            {
+                              "name": "unit of measurement"
+                            },
+                            {
+                              "name": "dimensionless quantity",
+                              "children": [
+                                {
+                                  "name": "probability measure",
+                                  "children": [
+                                    {
+                                      "name": "probability value"
+                                    },
+                                    {
+                                      "name": "expected value"
+                                    },
+                                    {
+                                      "name": "standard score"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "count",
+                                  "children": [
+                                    {
+                                      "name": "page total"
+                                    },
+                                    {
+                                      "name": "edition number"
+                                    },
+                                    {
+                                      "name": "volume number"
+                                    },
+                                    {
+                                      "name": "page number"
+                                    },
+                                    {
+                                      "name": "age"
+                                    },
+                                    {
+                                      "name": "member count"
+                                    },
+                                    {
+                                      "name": "number of objects produced"
+                                    },
+                                    {
+                                      "name": "number of objects consumed"
+                                    },
+                                    {
+                                      "name": "difference in number of objects produced",
+                                      "children": [
+                                        {
+                                          "name": "increase in number of objects produced"
+                                        },
+                                        {
+                                          "name": "decrease in number of objects produced"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "generation number"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "ratio",
+                                  "children": [
+                                    {
+                                      "name": "t-statistic"
+                                    },
+                                    {
+                                      "name": "differential gene expression ratio",
+                                      "children": [
+                                        {
+                                          "name": "t-statistic based increased differential gene expression"
+                                        },
+                                        {
+                                          "name": "t-statistic based decreased differential gene expression"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "slope"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "pH"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "dimensional quantity",
+                              "children": [
+                                {
+                                  "name": "spatial quantity",
+                                  "children": [
+                                    {
+                                      "name": "1D extent quantity",
+                                      "children": [
+                                        {
+                                          "name": "depth",
+                                          "children": [
+                                            {
+                                              "name": "thickness"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "name": "height"
+                                        },
+                                        {
+                                          "name": "length"
+                                        },
+                                        {
+                                          "name": "width"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "2D extent quantity",
+                                      "children": [
+                                        {
+                                          "name": "area"
+                                        },
+                                        {
+                                          "name": "length of perimeter",
+                                          "children": [
+                                            {
+                                              "name": "circumference"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "3D extent quantity",
+                                      "children": [
+                                        {
+                                          "name": "volume"
+                                        },
+                                        {
+                                          "name": "concentration"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "mass"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "time measurement",
+                                  "children": [
+                                    {
+                                      "name": "time interval",
+                                      "children": [
+                                        {
+                                          "name": "year"
+                                        },
+                                        {
+                                          "name": "month"
+                                        },
+                                        {
+                                          "name": "day"
+                                        },
+                                        {
+                                          "name": "century"
+                                        },
+                                        {
+                                          "name": "millenium"
+                                        },
+                                        {
+                                          "name": "hour"
+                                        },
+                                        {
+                                          "name": "minute"
+                                        },
+                                        {
+                                          "name": "second"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "time instant",
+                                      "children": [
+                                        {
+                                          "name": "start date"
+                                        },
+                                        {
+                                          "name": "end date"
+                                        },
+                                        {
+                                          "name": "start time"
+                                        },
+                                        {
+                                          "name": "end time"
+                                        },
+                                        {
+                                          "name": "date of database submission"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "dose",
+                                  "children": [
+                                    {
+                                      "name": "effective dose"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "gene expression value"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "uncertainty value"
+                            },
+                            {
+                              "name": "standard deviation"
+                            },
+                            {
+                              "name": "centrality measure",
+                              "children": [
+                                {
+                                  "name": "mean"
+                                },
+                                {
+                                  "name": "median"
+                                },
+                                {
+                                  "name": "mode"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "sum"
+                            },
+                            {
+                              "name": "minimal value"
+                            },
+                            {
+                              "name": "maximal value"
+                            },
+                            {
+                              "name": "likelihood",
+                              "children": [
+                                {
+                                  "name": "log likelihood"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "position",
+                          "children": [
+                            {
+                              "name": "geographic position",
+                              "children": [
+                                {
+                                  "name": "longitude"
+                                },
+                                {
+                                  "name": "latitude"
+                                },
+                                {
+                                  "name": "postal code"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "orientation"
+                            },
+                            {
+                              "name": "coordinate",
+                              "children": [
+                                {
+                                  "name": "cartesian coordinate",
+                                  "children": [
+                                    {
+                                      "name": "3D cartesian coordinate"
+                                    },
+                                    {
+                                      "name": "x cartesian coordinate"
+                                    },
+                                    {
+                                      "name": "y cartesian coordinate"
+                                    },
+                                    {
+                                      "name": "z cartesian coordinate"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "polar coordinate"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "altitude"
+                            },
+                            {
+                              "name": "center of mass"
+                            },
+                            {
+                              "name": "linear position",
+                              "children": [
+                                {
+                                  "name": "ordinal position",
+                                  "children": [
+                                    {
+                                      "name": "process number"
+                                    },
+                                    {
+                                      "name": "character position"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "sequence element position",
+                                  "children": [
+                                    {
+                                      "name": "sequence start position"
+                                    },
+                                    {
+                                      "name": "sequence end position"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "start position",
+                                  "children": [
+                                    {
+                                      "name": "sequence start position"
+                                    },
+                                    {
+                                      "name": "text span start position",
+                                      "children": [
+                                        {
+                                          "name": "word start position"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "end position",
+                                  "children": [
+                                    {
+                                      "name": "sequence end position"
+                                    },
+                                    {
+                                      "name": "text span end position",
+                                      "children": [
+                                        {
+                                          "name": "word end position"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "variable",
+                  "children": [
+                    {
+                      "name": "independent variable",
+                      "children": [
+                        {
+                          "name": "parameter",
+                          "children": [
+                            {
+                              "name": "default parameter"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "dependent variable"
+                    },
+                    {
+                      "name": "control variable"
+                    }
+                  ]
+                },
+                {
+                  "name": "equation",
+                  "children": [
+                    {
+                      "name": "movement equation",
+                      "children": [
+                        {
+                          "name": "diffusion equation"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "differential equation",
+                      "children": [
+                        {
+                          "name": "ordinary differential equation"
+                        },
+                        {
+                          "name": "partial differential equation"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "association",
+                  "children": [
+                    {
+                      "name": "statistical association",
+                      "children": [
+                        {
+                          "name": "correlation"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "gene-disease association",
+                      "children": [
+                        {
+                          "name": "therapeutic gene-disease association"
+                        },
+                        {
+                          "name": "gene-disease biomarker association",
+                          "children": [
+                            {
+                              "name": "gene-disease association linked with genetic variation",
+                              "children": [
+                                {
+                                  "name": "gene-disease association linked with causal mutation"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "gene-disease association linked with altered gene expression"
+                            },
+                            {
+                              "name": "gene-disease association linked with post-translational modification"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "chemical-disease association"
+                    },
+                    {
+                      "name": "database cross-reference",
+                      "children": [
+                        {
+                          "name": "exact cross-reference"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "chemical-pathway association"
+                    },
+                    {
+                      "name": "chemical-gene assocation"
+                    }
+                  ]
+                },
+                {
+                  "name": "interval",
+                  "children": [
+                    {
+                      "name": "page range"
+                    }
+                  ]
+                },
+                {
+                  "name": "set item",
+                  "children": [
+                    {
+                      "name": "collection item"
+                    },
+                    {
+                      "name": "list item",
+                      "children": [
+                        {
+                          "name": "ordered list item"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "language entity",
+              "children": [
+                {
+                  "name": "visual language entity",
+                  "children": [
+                    {
+                      "name": "textual entity",
+                      "children": [
+                        {
+                          "name": "paragraph"
+                        },
+                        {
+                          "name": "document",
+                          "children": [
+                            {
+                              "name": "publication",
+                              "children": [
+                                {
+                                  "name": "book",
+                                  "children": [
+                                    {
+                                      "name": "book volume"
+                                    },
+                                    {
+                                      "name": "conference proceedings"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "novel"
+                                },
+                                {
+                                  "name": "article",
+                                  "children": [
+                                    {
+                                      "name": "peer reviewed article"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "blog"
+                                },
+                                {
+                                  "name": "edited publication",
+                                  "children": [
+                                    {
+                                      "name": "issue"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "manual"
+                                },
+                                {
+                                  "name": "technical report"
+                                },
+                                {
+                                  "name": "thesis document",
+                                  "children": [
+                                    {
+                                      "name": "honor's thesis"
+                                    },
+                                    {
+                                      "name": "master's thesis"
+                                    },
+                                    {
+                                      "name": "phd thesis"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "record",
+                              "children": [
+                                {
+                                  "name": "versioned record"
+                                },
+                                {
+                                  "name": "medical health record"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "ontology document",
+                              "children": [
+                                {
+                                  "name": "OWL ontology"
+                                },
+                                {
+                                  "name": "RDFS ontology"
+                                },
+                                {
+                                  "name": "OBO ontology"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "manuscript"
+                            },
+                            {
+                              "name": "note"
+                            },
+                            {
+                              "name": "patent"
+                            },
+                            {
+                              "name": "booklet"
+                            },
+                            {
+                              "name": "diary"
+                            },
+                            {
+                              "name": "web page"
+                            },
+                            {
+                              "name": "email"
+                            },
+                            {
+                              "name": "letter"
+                            },
+                            {
+                              "name": "report",
+                              "children": [
+                                {
+                                  "name": "medical report"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "document component",
+                          "children": [
+                            {
+                              "name": "document section",
+                              "children": [
+                                {
+                                  "name": "chapter"
+                                },
+                                {
+                                  "name": "abstract section"
+                                },
+                                {
+                                  "name": "acknowledgements section"
+                                },
+                                {
+                                  "name": "author contribution section"
+                                },
+                                {
+                                  "name": "author section"
+                                },
+                                {
+                                  "name": "bibliography section"
+                                },
+                                {
+                                  "name": "copyright section"
+                                },
+                                {
+                                  "name": "correspondence section"
+                                },
+                                {
+                                  "name": "discussion section"
+                                },
+                                {
+                                  "name": "introduction section"
+                                },
+                                {
+                                  "name": "materials and methods section"
+                                },
+                                {
+                                  "name": "materials section"
+                                },
+                                {
+                                  "name": "methods section"
+                                },
+                                {
+                                  "name": "results section"
+                                },
+                                {
+                                  "name": "table of contents"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "citation"
+                            },
+                            {
+                              "name": "reference"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "label",
+                          "children": [
+                            {
+                              "name": "identifier",
+                              "children": [
+                                {
+                                  "name": "positional identifier",
+                                  "children": [
+                                    {
+                                      "name": "address"
+                                    },
+                                    {
+                                      "name": "street name"
+                                    },
+                                    {
+                                      "name": "apartment number"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "version label",
+                                  "children": [
+                                    {
+                                      "name": "document version"
+                                    },
+                                    {
+                                      "name": "software version label",
+                                      "children": [
+                                        {
+                                          "name": "major version number"
+                                        },
+                                        {
+                                          "name": "minor version number"
+                                        },
+                                        {
+                                          "name": "revision number"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "unique identifier"
+                                },
+                                {
+                                  "name": "physical entity identifier",
+                                  "children": [
+                                    {
+                                      "name": "chemical identifier",
+                                      "children": [
+                                        {
+                                          "name": "molecular identifier",
+                                          "children": [
+                                            {
+                                              "name": "microarray probe set identifier"
+                                            },
+                                            {
+                                              "name": "PDB chain identifier"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "informational entity identifier",
+                                  "children": [
+                                    {
+                                      "name": "record identifier",
+                                      "children": [
+                                        {
+                                          "name": "PDB record identifier"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "URL"
+                                    },
+                                    {
+                                      "name": "software process identifier"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "name",
+                              "children": [
+                                {
+                                  "name": "generic name"
+                                },
+                                {
+                                  "name": "preferred name"
+                                },
+                                {
+                                  "name": "common name"
+                                },
+                                {
+                                  "name": "brand name"
+                                },
+                                {
+                                  "name": "scientific name"
+                                },
+                                {
+                                  "name": "first name"
+                                },
+                                {
+                                  "name": "last name"
+                                },
+                                {
+                                  "name": "personal name",
+                                  "children": [
+                                    {
+                                      "name": "legal name"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "label",
+                              "children": [
+                                {
+                                  "name": "identifier",
+                                  "children": [
+                                    {
+                                      "name": "positional identifier",
+                                      "children": [
+                                        {
+                                          "name": "address"
+                                        },
+                                        {
+                                          "name": "street name"
+                                        },
+                                        {
+                                          "name": "apartment number"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "version label",
+                                      "children": [
+                                        {
+                                          "name": "document version"
+                                        },
+                                        {
+                                          "name": "software version label",
+                                          "children": [
+                                            {
+                                              "name": "major version number"
+                                            },
+                                            {
+                                              "name": "minor version number"
+                                            },
+                                            {
+                                              "name": "revision number"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "unique identifier"
+                                    },
+                                    {
+                                      "name": "physical entity identifier",
+                                      "children": [
+                                        {
+                                          "name": "chemical identifier",
+                                          "children": [
+                                            {
+                                              "name": "molecular identifier",
+                                              "children": [
+                                                {
+                                                  "name": "microarray probe set identifier"
+                                                },
+                                                {
+                                                  "name": "PDB chain identifier"
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "title",
+                              "children": [
+                                {
+                                  "name": "document title"
+                                },
+                                {
+                                  "name": "primary title"
+                                },
+                                {
+                                  "name": "secondary title"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "namespace label"
+                            },
+                            {
+                              "name": "numeric label"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "excerpt",
+                          "children": [
+                            {
+                              "name": "quote"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "text span"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "language",
+                  "children": [
+                    {
+                      "name": "sign language"
+                    },
+                    {
+                      "name": "verbal language"
+                    },
+                    {
+                      "name": "written language"
+                    }
+                  ]
+                },
+                {
+                  "name": "character"
+                },
+                {
+                  "name": "word"
+                },
+                {
+                  "name": "description",
+                  "children": [
+                    {
+                      "name": "specification"
+                    },
+                    {
+                      "name": "definition"
+                    },
+                    {
+                      "name": "proposition"
+                    },
+                    {
+                      "name": "answer"
+                    },
+                    {
+                      "name": "syndrome"
+                    },
+                    {
+                      "name": "annotation"
+                    },
+                    {
+                      "name": "history"
+                    }
+                  ]
+                },
+                {
+                  "name": "phrase",
+                  "children": [
+                    {
+                      "name": "sentence"
+                    },
+                    {
+                      "name": "term"
+                    }
+                  ]
+                },
+                {
+                  "name": "verbal language entity",
+                  "children": [
+                    {
+                      "name": "syllable"
+                    },
+                    {
+                      "name": "consonant"
+                    },
+                    {
+                      "name": "vowel"
+                    }
+                  ]
+                },
+                {
+                  "name": "morpheme"
+                },
+                {
+                  "name": "vocabulary"
+                }
+              ]
+            },
+            {
+              "name": "geometric entity",
+              "children": [
+                {
+                  "name": "polyhedral skeleton"
+                },
+                {
+                  "name": "polygonal face"
+                },
+                {
+                  "name": "polyhedral surface"
+                },
+                {
+                  "name": "polygon"
+                },
+                {
+                  "name": "point"
+                },
+                {
+                  "name": "polyline"
+                },
+                {
+                  "name": "collection of points"
+                },
+                {
+                  "name": "curve"
+                }
+              ]
+            },
+            {
+              "name": "computational entity",
+              "children": [
+                {
+                  "name": "namespace"
+                },
+                {
+                  "name": "data item"
+                },
+                {
+                  "name": "software entity"
+                },
+                {
+                  "name": "file"
+                },
+                {
+                  "name": "database"
+                },
+                {
+                  "name": "row"
+                },
+                {
+                  "name": "column"
+                },
+                {
+                  "name": "database table"
+                },
+                {
+                  "name": "cell (informational)"
+                },
+                {
+                  "name": "database entry"
+                },
+                {
+                  "name": "database key"
+                },
+                {
+                  "name": "user account"
+                },
+                {
+                  "name": "ovopub"
+                }
+              ]
+            },
+            {
+              "name": "representation",
+              "children": [
+                {
+                  "name": "symbol"
+                },
+                {
+                  "name": "model"
+                }
+              ]
+            },
+            {
+              "name": "media",
+              "children": [
+                {
+                  "name": "figure"
+                },
+                {
+                  "name": "movie"
+                },
+                {
+                  "name": "figure part"
+                },
+                {
+                  "name": "television program"
+                },
+                {
+                  "name": "audio recording"
+                },
+                {
+                  "name": "slideshow"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "spatial region",
+          "children": [
+            {
+              "name": "site"
+            },
+            {
+              "name": "geographic region"
+            },
+            {
+              "name": "spatial boundary"
+            }
+          ]
+        },
+        {
+          "name": "anatomical entity"
+        }
+      ]
+    }
+  ]
+}

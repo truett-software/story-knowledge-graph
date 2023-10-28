@@ -1,0 +1,16 @@
+
+8 slides
+
+has been corrected/edited to minimize CSS
+
+to control page, must use:
+#myContainer{
+    zoom: 0.9;
+    -moz-transform: scale(0.9);
+}
+
+
+09:23 8/1/2021
+
+elena refactoring: success
+amp-story: small offset issues

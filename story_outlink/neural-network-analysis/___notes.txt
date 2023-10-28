@@ -1,0 +1,12 @@
+
+neural network zoo prequel
+https://www.asimovinstitute.org/neural-network-zoo-prequel-cells-layers/
+
+
+https://www.asimovinstitute.org/neural-network-zoo/
+
+
+Our interest
+Deep Convolution Networks
+
+Deep Convolution Inverse Graphics Networks

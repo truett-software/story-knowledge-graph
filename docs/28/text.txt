@@ -1,0 +1,64 @@
+
+title
+Example question: repurposing Metformin
+
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wds: <http://www.wikidata.org/entity/statement/>
+PREFIX wdv: <http://www.wikidata.org/value/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX bd: <http://www.bigdata.com/rdf#>
+
+SELECT ?gene ?geneLabel ?disease ?diseaseLabel WHERE {
+  wd:Q19484 wdt:P129 ?gene_product .   # drug interacts with a gene_product 
+  ?gene_product wdt:P702 ?gene .  # gene_product is encoded by a gene
+  ?gene	wdt:P2293 ?disease .    # gene is genetically associated with a disease 
+  # add labels
+  	SERVICE wikibase:label {
+        bd:serviceParam wikibase:language "en" .
+	}
+}
+
+CLEAN
+
+  SELECT ?gene ?geneLabel ?disease ?diseaseLabel WHERE {
+  wd:Q19484 wdt:P129 ?gene_product . 
+  ?gene_product wdt:P702 ?gene . 
+  ?gene wdt:P2293 ?disease . 
+  SERVICE wikibase:label {bd:serviceParam wikibase:language 'en' .}}
+
+result
+table
+
+gene			geneLabel	disease			diseaseLabel
+wd:Q18031583	SLC22A3		wd:Q188874		colorectal cancer
+wd:Q18031583	SLC22A3		wd:Q181257		prostate cancer
+wd:Q18031583	SLC22A3		wd:Q154869		hepatitis C
+wd:Q18031585	SLC22A2		wd:Q1054718		kidney disease
+
+PREFIX  p:    <http://www.wikidata.org/prop/>
+PREFIX  pq:   <http://www.wikidata.org/prop/qualifier/>
+PREFIX  bd:   <http://www.bigdata.com/rdf#>
+PREFIX  ps:   <http://www.wikidata.org/prop/statement/>
+PREFIX  wdt:  <http://www.wikidata.org/prop/direct/>
+PREFIX  wds:  <http://www.wikidata.org/entity/statement/>
+PREFIX  wikibase: <http://wikiba.se/ontology#>
+PREFIX  wdv:  <http://www.wikidata.org/value/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  wd:   <http://www.wikidata.org/entity/>
+
+SELECT  ?gene ?geneLabel ?disease ?diseaseLabel
+WHERE
+  { wd:Q19484  wdt:P129  ?gene_product .
+    ?gene_product
+              wdt:P702   ?gene .
+    ?gene     wdt:P2293  ?disease
+    SERVICE wikibase:label
+      { bd:serviceParam
+                  wikibase:language  "en"
+      }
+  }

@@ -1,0 +1,4 @@
+
+neural network article
+  https://www.asimovinstitute.org/neural-network-zoo/
+  use subset

@@ -1,0 +1,90 @@
+COVID story
+
+We all know about COVID and the coronavirus.
+
+Spike protein is one of the major structural proteins of severe acute respiratory syndrome-coronavirus.
+It enables interaction of the virons with host cell receptors and subsequent fusion of the viral envelop with host cell membrane to allow infection.
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7091875/
+
+A specific spike protein-of-interest
+  SQCVNLTTRTQLPPAYTNSFTRGVYYPDKVFRSSVLHSTQDLFLPFFSNVTWF
+
+To learn more about that protein, set's consult the ProteinKG25 database.
+ProteinKG25 is a large-scale Knowledge Graph dataset with aligned descriptions and protein sequences respectively to GO terms and proteins entities.
+ProteinKG25 contains 4,990,097 triplets (4,879,951 Protein-GO triplets and 110,146 GO-GO triplets), 612,483 entities (565,254 proteins and 47,229 GO terms) and 31 relations.
+https://paperswithcode.com/dataset/proteinkg25
+
+Here is a graph describing SQCVNLTTRTQLPPAYTN-SFTRGVYYPDKVFRSSVL
+
+  <SVG here>
+
+In clockwise order, starting at the top
+
+A complex system of membrane-bounded compartments located between endoplasmic reticulum (ER) and the Golgi complex
+GO:0005793
+  https://www.ebi.ac.uk/QuickGO/GTerm?id=GO:0005793
+
+The volume enclosed by the membranes of the endoplasmic reticulum
+GO:0031974
+  https://www.ebi.ac.uk/QuickGO/term/GO:0031974
+
+The process that occurs after viral attachment by which a virus, or viral nucleic acid, breaches the plasma membrane or cell envelope and enters the host cell
+GO:0046718
+  https://www.ebi.ac.uk/QuickGO/term/GO:0046718
+
+The renin-angiotensin hormone system that is a critical regulator of blood volume
+GO:0002016
+  https://www.ebi.ac.uk/QuickGO/term/GO:0002016
+
+Essential counter-regulatory carboxypeptidase of the renin-angiotensin hormone system that is a critical regulator of blood volume
+  https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7097090/
+
+Attaching the virion to the cell membrane by interacting with host receptor, initiating the infection
+GO:0019062
+  https://www.ebi.ac.uk/QuickGO/term/GO:0019062
+
+Lipid bilayer surrounding a virion
+  https://en.wikipedia.org/wiki/Lipid_bilayer
+  https://www.ncbi.nlm.nih.gov/books/NBK26871/
+
+Lipid bilayer surrounding an endocytic vesicle.
+GO:0030139
+  https://www.ebi.ac.uk/QuickGO/term/GO:0030139
+
+
+Research using this Knowledge Graph is summarized here:
+
+* According to the results, the Spike peptide peptides SQCVNLTTRTQLPPAYTNSFTRGVY is predicted to have the highest binding affinity to the B-Cells.
+
+* The Spike peptide FTISVTTEI has the highest binding affinity to the MHC I HLA-B1503 allele.
+
+* The Nucleocapsid peptides KTFPPTEPK and RWYFYYLGTGPEAGL have the highest binding affinity to the MHC I HLA-A0202 allele and the three MHC II alleles HLA-DPA1*01:03/DPB1*02:01, HLA-DQA1*01:02/DQB1-*06:02, HLA-DRB1, respectively.
+
+* Furthermore, those peptides were predicted as non-toxic and non-allergen.
+
+* Therefore, the combination of those peptides is predicted to stimulate better immunological responses with respectable safety.
+
+Authors
+
+Obi Abd Albagi, Sahar & Al-Nour, Mosab & Elhag Mustafa, Mustafa & Abdelhalim, Asaad Tageldein Idris & Haroun, Esraa & Essa, Mohammed Elmujtba & Abubaker, Mustafa & Hassan, Mohamed. (2020). A Multiple Peptides Vaccine against nCOVID-19 Designed from the Nucleocapsid phosphoprotein (N) and Spike Glycoprotein (S) via the Immunoinformatics Approach. 10.1101/2020.05.20.106351. 
+
+Paper
+
+A multiple peptides vaccine against COVID-19 designed from the nucleocapsid phosphoprotein (N) and Spike Glycoprotein (S) via the immunoinformatics approach
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7654333/
+https://pubmed.ncbi.nlm.nih.gov/33200089/
+https://www.researchgate.net/publication/341544064_A_Multiple_Peptides_Vaccine_against_nCOVID-19_Designed_from_the_Nucleocapsid_phosphoprotein_N_and_Spike_Glycoprotein_S_via_the_Immunoinformatics_Approach
+
+Due to the current COVID-19 pandemic, the rapid discovery of a safe and effective vaccine is an essential issue, consequently, this study aims to predict potential COVID-19 peptide-based vaccine utilizing
+  the Nucleocapsid phosphoprotein (N)
+  and Spike Glycoprotein (S)
+  via the Immunoinformatics approach.
+
+
+Also on SVG
+  PDKVFRSSVLHSTQDLFLPFFSNVTWSQCVNLTTRTQLPPAYTNSFTRGVYYF
+
+===========================================
+https://cheng-siyuan.github.io/ProteinKG25/
+  Wikidata5m is a million-scale knowledge graph dataset with aligned corpus. This dataset integrates the Wikidata knowledge graph and Wikipedia pages. Each entity in Wikidata5m is described by a corresponding Wikipedia page, which enables the evaluation of link prediction over unseen entities.
+
