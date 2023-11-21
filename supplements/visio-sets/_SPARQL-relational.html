@@ -1,0 +1,798 @@
+<!--
+missing links
+  Optionals
+  Disjunctions
+convert to AMP
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>A Mapping of SPARQL Onto Conventional SQL</title>
+    <meta name="RCS-Revision" content="$Revision: 1.36 $" />
+    <style type="text/css">
+body {
+  background: white;
+  color: black;
+  font-family: cmr10, Computer Modern, Times, serif;
+  margin: 2em;
+  max-width: 40em;
+  text-align: justify }
+
+p {
+  margin: 0 }
+
+p + p {
+  text-indent: 1.5em }
+
+h1 {
+  string-set: title content();
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.4em;
+  margin: 0 0.5em 0.8cm 0.5em}
+
+p.authors {
+  text-align: center;
+  margin: 0.5cm 0 0.35cm 0 }
+
+h2 {
+  counter-increment: h2;
+  counter-reset: h3;
+  font-weight: bold;
+  font-size: 1.2em;
+  margin: 1em 0 }
+
+h2:before {
+  content: counter(h2);
+  margin-right: 1em }
+
+h3 {
+  counter-increment: h3;
+  font-weight: bold;
+  font-size: 1em;
+  margin: 1.2em 0 0.5em 0 }
+
+h3:before {
+  content: counter(h2) "." counter(h3);
+  margin-right: 1.5em }
+
+h4 {
+  font-weight: bold;
+  font-size: 1em;
+  display: run-in;
+  margin-top: 1.2em }
+
+h4:after {
+  content: ". " }
+
+h4 + * {
+  margin-top: 1.2em }
+
+h2#abstract {
+  display: run-in;
+  counter-increment: none;
+  font-size: 0.9em;
+  font-weight: bold }
+
+h2#abstract:after {
+  content: ". " }
+
+h2#abstract:before {
+  margin-right: 0;
+  content: "" }
+
+h2#abstract + p {
+  font-size: 0.9em;
+  margin: 1.4cm 3em }
+
+table {
+  margin: 1.2em auto;
+  border-collapse: collapse;
+  page-break-inside: avoid }
+
+caption {
+  counter-increment: table;
+  margin: 1.2em 0;
+  font-size: 0.9em }
+
+caption:before {
+  font-weight: bold;
+  content: "Table " counter(table) ". " }
+
+td, th {
+  vertical-align: baseline;
+  text-align: left;
+  padding: 0 0 0 1em }
+
+td:first-child, th:first-child {
+  padding-left: 0 }
+
+thead tr:last-child th {
+  padding-bottom: 0.3em;
+  border-bottom: thin solid }
+
+tbody tr:first-child td, tbody tr:first-child th {
+  padding-top: 0.3em }
+
+ul, ol {
+  padding: 0;
+  margin: 1.2em 0 }
+
+li {
+  padding: 0;
+  margin: 0 0 0 1.5em }
+
+pre {
+  margin: 1.2em 0 }
+  
+.note {
+  text-indent: 0;
+  padding-left: 1em;
+  border-left: thin solid;
+  margin: 1.2em 0 }
+
+.defn {
+  text-indent: 0;
+  margin: 1.2em 0 1.2em 1.5em }
+
+.defn:before {
+  font-family: cmr10, Computer Modern, Times, serif;
+  font-weight: bold;
+  content: "Definition. " }
+
+pre.sql {
+  margin: 1.2em 0 1.2em 1.5em;
+  font-family: cmr10, Computer Modern, Times, serif }
+
+</style>
+
+<style type="text/css" media="print">
+@page {
+  margin: 4.4cm 4.4cm }
+
+@page :first {
+  @top-right {
+    content: "" } }
+
+@page :left {
+  @top-left {
+    font: 10pt/1.2 cmr10, Computer Modern, Times, serif;
+    margin: 0 0 1.2em 0;
+    vertical-align: bottom;
+    content: counter(page) "\2001\2001" string(title) } }
+
+@page :right {
+  @top-right {
+    font: 10pt/1.2 cmr10, Computer Modern, Times, serif;
+    margin: 0 0 1.2em 0;
+    vertical-align: bottom;
+    content: string(title) "\2001\2001" counter(page) } }
+
+body {
+  font-size: 10pt;
+  margin: 0 }
+</style>
+</head>
+
+<body>
+
+    <div class="head">
+
+      <h1 id="main">A Mapping of SPARQL Onto Conventional SQL</h1>
+
+      <p class="authors">Eric Prud'hommeaux (W3C), Alexandre Bertails (W3C)</p>
+
+    </div>
+
+
+    <h2 id="abstract">Abstract</h2>
+
+    <p>This paper documents a semantics for expressing relational data as an <a href="http://www.w3.org/TR/2004/REC-rdf-concepts-20040210/#section-Graph-syntax">RDF graph</a> [RDF] and an algebra for mapping SPARQL SELECT queries over that RDF to SQL queries over the original relational data. The RDF graph, called the <em>stem graph</em>, is constructed from the relational structure and a URI identifier called a <em>stem URI</em>. The algebra specifies a function taking a stem URI, a relational schema and a SPARQL query over the corresponding stem graph, and emitting a relational query, which, when executed over the relational data, produces the same solutions at the SPARQL query executed over the stem graph. Relational databases exposed on the Semantic Web can be queried with SPARQL with the same performance as with SQL.</p>
+
+
+    <h2 id="intro">Introduction</h2>
+
+    <p>Motivations to bridge SPARQL and SQL abound: science, technology and business need to integrate more and more diverse data sources; the far majority of data that we expect machines to interpret are in relational databases; SQL federation extensions like SchemaSQL [SSQL] don't place these databases in the more expressive Semantic Web; etc. These points have motivated many developers to produce mapping tools, but robustness and performance have been a problem, in part because of a lack of a standard semantics for this mapping. In order to draw the desired investment in the Semantic Web, we need to match the performance of conventional relational databases.</p>
+
+    <p>The semantics of a SPARQL query are specified directly in the SPARQL Specification [SPARQL], while the semantics for SQL can be expressed in Extended three-valued Predicate Calculus (E3VPC) [FSQL]. We draw on the body of mappings from SPARQL to SQL triple stores to develop a mapping to conventional relational stores, which are more efficient and compact than triple stores. The crux of this mapping is that a SPARQL Basic Graph Pattern (BGP) can be broken down into a set of conjunctions of triple patterns, where each conjunct matches the attributes of a given relation in the database. These conjuncts can be expressed as a single relvar (see <a href="">Relational Terminology</a> below). An arbitrary SPARQL query, with conjunctions, disjunctions and optionals, can be expressed as a single SQL query and performed with the same efficiency as a conventional SQL query.</p>
+
+    <p>Creating a computable mapping from the SPARQL semantics to SQL semantics provides a SPARQL tool vendors with an implementable and testable specification, and SPARQL users with a sound and complete foundation for the next level of the Semantic Web. It also frees database custodians of a false choice between a mature but insular database technology and a promising but naive newcomer.</p>
+
+
+    <h2 id="rdbTerms">Relational Terminology</h2>
+
+    <p>Our examples reference this example table. As it is not our goal to provide coverage of XML or SQL datatypes, it includes only primary and foreign keys (as integers), strings, and dates.</p>
+
+    <table class="RDB">
+      <caption>Employee</caption>
+<thead>
+<tr><th                      >empid</th><th> lastName </th><th>   birthday </th><th> manager </th><th> department </th></tr>
+</thead>									                                    
+<tbody>										                                    
+<tr id="tb_Person_ID_18" ><td>  18 </td><td>  Johnson </td><td> 1969-11-08 </td><td>   NULL  </td><td>   tools  </td></tr>
+<tr id="tb_Person_ID_253"><td> 253 </td><td>    Smith </td><td> 1979-01-18 </td><td>     18  </td><td>   tools  </td></tr>
+<tr id="tb_Person_ID_255"><td> 255 </td><td>    Jones </td><td> 1981-03-24 </td><td>    253  </td><td>   tools  </td></tr>
+<tr id="tb_Person_ID_19" ><td>  19 </td><td>       Xu </td><td> 1966-11-08 </td><td>   NULL  </td><td>   toys   </td></tr>
+<tr id="tb_Person_ID_254"><td> 254 </td><td>   Ishita </td><td> 1971-10-31 </td><td>    253  </td><td>   toys   </td></tr>
+</tbody>
+    </table>
+
+    <p>There is only one table, in part to keep the reader's context at a minimum, and in part to exercise the appropriate naming for relvars (FROM Employee AS manager).</p>
+
+    <p>A database is a set of <dfn id="defn-relation">relation</dfn>s in a given <dfn id="defn-schema">schema</dfn>. The schema for each relation defines a <dfn id="defn-heading">heading</dfn>, set of <dfn id="defn-attribute">attributes</dfn>, each of some datatype. If the attribute is a <dfn id="defn-foreignKey">foreign key</dfn>, the <dfn id="defn-attrTarget">attribute's target</dfn> is another attribute in some relation. If the attribute is not a foreign key, the attribute is a <dfn id="defn-attrPrimitive">primitive attribute</dfn> and the <dfn id="defn-attrDatatype">attribute's datatype</dfn> is the datatype of all values of that attribute (e.g. CHAR(40), INTEGER).</p>
+
+    <p>As terminology around relational databases varies, we will borrow from one of the simpler definitions. As the expressivity of SPARQL is limited compared to SQL, we need only a subset of the SQL semantics. Borrowing an SQL terminology from the semantics review in [SSQL] (why isn't this in a standard? with a URL?), we parse an SQL query into:</p>
+
+    <pre>SELECT attrList FROM fromList WHERE whereCondition</pre>
+
+    <p>The <dfn id="defn-fromList">fromList</dfn> is a list of tuples mapping relations to variables called <dfn id="defn-relvar">relvars</dfn>. The relvar identifies a multiset of tuples, the tuples from the relation. Conceptually, an aggregate relvar is formed by algebraic combination of the relvars in the fromList. This mapping requires only the two algebraic operators INNER JOIN and LEFT OUTER JOIN, which are indicated by keywords separating tuples in the fromList.
+The <dfn id="defn-whereCondition">whereCondition</dfn> is a constraint expressed in terms of the attributes of the relvars (<dfn id="defn-relvarattr">relvarattrs</dfn>) in the fromList. The whereCondition inludes the conjunction of the expressions connecting foreign keys to primary keys (e.g. <code>employee.address=empAddress.id</code>). The aggregate relvar is restricted to those tuples passing the the whereCondition constraint.
+The <dfn id="defn-attrList">attrList</dfn> selects a set of attribute from the restricted aggregate relvar and renames them to new attribute names, producing a new relation in the schema defined by the attrList</p>
+
+
+    <h2 id="stemMap">Stem Graph</h2>
+
+    <p>While there are many applications where a specific stem graph can be mapped to a non-RDF data model or query language, the most obvious is probaby relational. There are many possible expressions of relational data in RDF; the following one requires as input, a stem URI, a database, and some miscellaneous punctuation for separating components in constructed URIs. In effect, the stem URI creates a web space for the records in the database.</p>
+
+    <p>The <em>relation stem graph</em> is composed by applying a <em>relation map</em> to each of the tuples in a relation. The stem graph is the union of all of the relation stem graphs. A <em>relation map</em> defines an <a href="http://www.w3.org/TR/2004/REC-rdf-concepts-20040210/#dfn-rdf-triple">RDF triple</a> [RDF] for each attribute of a non-null tuple in a relation. For any tuple, the relation map emits triples with the same <a href="http://www.w3.org/TR/2004/REC-rdf-concepts-20040210/#dfn-subject">subject</a> [RDF]. The subject is a URI formed by a <em>node map</em> of the primary key, if the relation has a primary key, or by a novel <a href="http://www.w3.org/TR/2004/REC-rdf-concepts-20040210/#section-blank-nodes">blank node</a> [RDF] otherwise. For each attribute, the corresponding triple has this subject, a <a href="http://www.w3.org/TR/2004/REC-rdf-concepts-20040210/#dfn-predicate">predicate</a> [RDF] formed by a <em>predicate map</em>, and an <a href="http://www.w3.org/TR/2004/REC-rdf-concepts-20040210/#dfn-object">object</a> [RDF] formed by a node map of the referenced primary key if it is a foreign key, or by a <em>literal map</em> otherwise.</p>
+
+    <p>A <dfn id="defn-predMap">predicate map</dfn> is a mapping function which emits a URI derived by concatonating the stem URI, relation name, and the attribute name, separated by puntuation discussed below. The (infinite) set of URIs which are produced by a predicate map given a particular relation are said to be <dfn id="defn-predIn">in</dfn> that relation. A <dfn id="defn-predUnmap">predicate unmap</dfn> is the reverse function, parsing a URI in a relation to derive the stem URI, relation name and attribute name. These are called the <dfn id="defn-predStem">predicate's stem</dfn>,  <dfn id="defn-predRel">predicate's relation</dfn>, and <dfn id="defn-predAttr">predicate's attribute</dfn> respectively. If the predicate's attribute is a foreign key, the <dfn id="defn-predTarget">predicat's target</dfn> is the attribute's target. If the predicate's attribute is not a foreign key, the <dfn id="defn-predDatatype">predicate's datatype</dfn> is the datatype of the predicate's attribute.</p>
+
+    <p>A <dfn id="defn-nodeMap">node map</dfn> is a mapping function emits a URI derived by concatonating the stem URI, the primary key name, and the primary key value, separated by puntuation discussed below. The set of URIs emitted by a node map over a relation are <dfn id="defn-nodeIn">in</dfn> that relation. A <dfn id="defn-nodeUnmap">node unmap</dfn> function derives the stemURI, relation name, primary key name and primary key value of a URI in a relation.  These are called the <dfn id="defn-nodeStem">node's stem</dfn>,  <dfn id="defn-nodeRel">node's relation</dfn>, <dfn id="defn-nodeAttr">node's attribute</dfn>, and <dfn id="defn-nodeKeyValue">node's key value</dfn> respectively.</p>
+
+    <p>The node and predicate maps require some separators to facilitate unmapping. These separators are chosen to be compatible with linked data [LD], that is, the cloud of resources which would be in the same web page is of a reasonable size and practical comprehension.</p>
+
+    <table id="sepEx1">
+      <tr><th>  subject map:</th><td>stem</td><td>'/'</td><td>table</td><td>'/'</td><td>attribute</td><td>'.'</td><td>value</td><td>#</td><td>fragment</td>
+</tr>
+      <tr><th>predicate map:</th><td>stem</td><td>'/'</td><td>table</td><td>'#'</td><td>attribute</td><td colspan="4"></td></tr>
+    </table>
+
+    <p class="note">Note: for simplicity, this treatment does not handle compound primary keys. This algebra may be extended to handle compound keys by specifying that the predicate maps emits a single URI for the set of attributes forming a compound key (sorted lexically), and the node map includes lexically sorted pairs of the key attributes, separated by ';', e.g. <code>http://hr.example/DB/Employee/key1.value1;key2.value2#record</code>.</p>
+
+    <p>A <dfn id="defn-litMap">literal map</dfn> is a mapping function which emits an <a href="http://www.w3.org/TR/2004/REC-rdf-concepts-20040210/#dfn-literal">RDF literal</a> [RDF] with a <a href="http://www.w3.org/TR/2004/REC-rdf-concepts-20040210/#dfn-lexical-form">lexical form</a> equivalent to the lexical value in the tuple, and a <a href="http://www.w3.org/TR/2004/REC-rdf-concepts-20040210/#dfn-datatype-URI">datatype</a> selected from the mapping below
+    :</p>
+
+    <table>
+      <caption></caption>
+      <thead>
+	<tr><th>SQL datatype</th><th>XML Schema datatype</th></tr>
+      </thead>
+      <tbody>
+	<tr><td>CHAR(n)</td><td>xsd:string</td></tr>
+	<tr><td>VARCHAR(n)</td><td>xsd:string</td></tr>
+	<tr><td>INT</td><td>xsd:integer</td></tr>
+	<tr><td>DATE</td><td>xsd:date</td></tr>
+      </tbody>
+    </table>
+
+    <p>RDF literals with no datatype are called <a href="http://www.w3.org/TR/2004/REC-rdf-concepts-20040210/#dfn-plain-literal">RDF Plain literals</a> [RDF].</p>
+
+    <p class="note">It is expected that the upcoming ISO SQL specification will include a bidirectional mapping between SQL datatypes and XML Schema datatypes, including (e.g. numeric) canonicalization requirements, and mapping between SQL character sets and Unicode code points. That mapping will superceed and complete the mapping above. This interim definition ignores XSD canonicalization because RDF applications like SPARQL perform this on the graph. RDF Plain literals may have a language tag. As the appropriate language tag is application-dependent (dependent on the local for some databases, dependent on a row or column for others), it is outside this algebra.</p>
+
+    <p>A <dfn id="defn-litUnmap">literal unmap</dfn> maps an RDF literal to a SQL term.</p>
+
+    <p>As an example, we can express the stem map of following table a as turtle, using <code>http://hr.example/DB/</code> as the stem URL:</p>
+
+    <div style="display: block; margin-left: auto; margin-right: auto;">
+    <table class="RDB">
+      <caption>Employee</caption>
+<thead>
+<tr><th                      >  id </th><th> lastName </th><th>                        manager   </th></tr>
+</thead>
+<tbody>
+<tr><td id="tb1_Person_ID_18" >  18 </td><td>  Johnson </td><td>                          NULL    </td></tr>
+<tr><td id="tb1_Person_ID_253"> 253 </td><td>    Smith </td><td><a href="#tb1_Person_ID_18" >18</a></td></tr>
+</tbody>
+    </table>
+<pre>
+<span class="stem">@prefix emplP: &lt;http://hr.example/DB/Employee#&gt; .</span>
+<span class="stem">@prefix emplN: &lt;http://hr.example/DB/Employee/&gt; .</span>
+<span class="stem">@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .</span>
+<span class="stem">emplN:id.18    emplP:lastName   "Johnson"^^xsd:string .</span>
+<span class="stem">emplN:id.253   emplP:lastName   "Smith"^^xsd:string .</span>
+<span class="stem">emplN:id.253   emplP:manager    emplN:id.18 .</span>
+</pre>
+    </div>
+
+    <h3 id="litMap_exp">Literal Maps</h3>
+
+    <p>The above relational <code>strings</code> (or <code>varchars</code>, or however the last names might be encoded) are expressed as <code>RDF literals</code>. For Common relational datatypes have corresponding <a>W3C XML Schema (XSD) datatypes</a>, which are available for a literal map, e.g. a mapping from a relational <code>date</code> to an <code>xsd:date</code>:</p>
+
+    <div>
+    <table class="RDB" style="float: left; margin-right: 2em;">
+      <caption>Employee</caption>
+<thead>
+<tr><th>  id </th><th>...</th><th>   birthday </th></tr>
+</thead>
+<tbody>
+<tr><td>  18 </td><td>...</td><td> <em>1969-11-08</em> </td></tr>
+<tr><td> 253 </td><td>...</td><td> <em>1979-01-18</em> </td></tr>
+</tbody>
+</table>
+<pre>
+<span class="stem">@prefix empl: &lt;http://hr.example/DB/Employee/&gt; .       </span>
+<span class="stem">empl:id.18    empl:birthday   <em>"1969-11-08"^^xsd:date</em> .</span>
+<span class="stem">empl:id.253   empl:birthday   <em>"1979-01-18"^^xsd:date</em> .</span>
+</pre>
+    </div>
+
+    <p style="clear:both; ">The literal mapping used in examples in this paper is:</p>
+
+    <table>
+     <thead>
+      <tr><th colspan="2">relational</th>		<th colspan="2">RDF</th>			</tr>
+      <tr><th>type</th>		<th>SQL</th>		<th>type</th>		<th>SPARQL</th>		</tr>
+     </thead>
+     <tbody>
+      <tr><td>varchar</td>	<td>"text"</td>		<td>literal</td>	<td>"text"</td>		</tr>
+      <tr><td>integer</td>	<td>123</td>		<td>xsd:integer</td>	<td>123</td>		</tr>
+      <tr><td>float</td>	<td>1.23</td>		<td>xsd:float</td>	<td>1.23</td>		</tr>
+      <tr><td>date</td>		<td>"2008-08-26"</td>	<td>xsd:date</td>	<td>"2008-08-26"</td>	</tr>
+     </tbody>
+    </table>
+
+
+    <p style="clear: both;">The core SPARQL language demands only a subset of these XSD datatypes, however, support for additional datatypes is well-defined, and trivial to implement by pushing evaluation into the SQL query. For example, a SPARQL constraint <code class="stem">?bday="1969-11-08"^^xsd:date</code> is easy to convert to an SQL constraint <code class="sql">manager.birthday="1969-11-08"</code>.</p>
+
+
+    <h2 id="asSQL">Stem Query as SQL</h2>
+
+    <p>Informally, a stem query is a SPARQL query which matches some possible stem graph created from a database.. The triple patterns and FILTERs must individually and collectively respect the relational schema. Following is a more formal definition of a stem query.</p>
+
+    <p>A <dfn id="defn-nodeVar">node var</dfn> is a variable in a triple pattern in place of a node, e.g. <code>emplN:id.18#record</code> in the above example. The <dfn id="defn-nodeVarRel">node var's relation</dfn> is the predicate's relation if the node var is in the subject position, or the predicate's target if the node var is in the object position of a foreign key predicate.</p>
+
+    <p>A <dfn id="defn-primitiveVar">primitive var</dfn> is a variable in the object position of a triple pattern whose predicate is a primitive attribute. The <dfn id="defn-primitiveVarRel">primitive var's datatype</dfn> is the datatype of the predicate's attribute.</p>
+    <p>A triple pattern is in S if it meets all of these conditions:</p>
+    <ul>
+      <li>The predicate is in some relation R in the stem graph.</li>
+      <li>The subject is a variable or is a node in the predicate's relation.</li>
+      <li>The object is a variable or is a node in the predicate's target relation (if the predicate's attribute is a foreign key) or is a literal with a datatype matching the predicate's datatype.</li>
+    </ul>
+
+    <p>A SPARQL query is a <dfn id="defn-stemQuery">stem query</dfn> for a relation schema S if it meets the following conditions:</p>
+    <ul>
+      <li>Every triple pattern is in S.</li>
+      <li>Every node var for a given variable is for the same relation.</li>
+      <li>Every primitive var for a given variable has the same datatype.</li>
+    </ul>
+
+    <p>Given the mapping from relational data to stem graphs, it is possible to convert stem queries to relational queries. A <em>mapped stem query</em> is a relational query that, when applied to any possible relational data in a given schema, produces the same result set as would the stem query performed on the stem graph for that data. Stem queries can be expressed as SQL, or as an execution plan in a relational databse. The following sections examine the logical components of SPARQL queries and illustrate how they are mapped to SQL.</p>
+
+    <p>The function <dfn id="defn-mapGraphPattern">mapGraphPattern</dfn> maps a SPARQL graph pattern (one of <code>BasicGraphPattern</code>, <code>Filter</code>, <code>GroupGraphPattern</code>, <code>UnionGraphPattern</code>, <code>OptionalGraphPattern</code>, but not <code>GraphGraphPattern</code>) to a <dfn id="defn-graphPatternMappingState">graphPatternMappingState</dfn> composed of a tableJoinList, varmap, and a graphPatternExpression. The <dfn id="defn-tableJoinList">tableJoinList</dfn> is a set of joined or outer joined relvars. Because the order of outer joins and joined UNIONs affects semantics, the tableJoinList preserves the order of the first time a table is inserted into the list. A <dfn id="defn-varmap">varmap</dfn> is a map of SPARQL variable to relvarattr for the variables in that graph pattern. The <dfn id="defn-graphPatternExpression">graphPatternExpression</dfn> expresses the SQL constraints representing SPARQL FILTERs and the coreferences of SPARQL variables within the graph patterns.</p>
+
+    <p>Applying mapGraphPattern to a BasicGraphPattern breaks that BGP into smaller patterns and aggregates their graphPatternMappingStates into a single state. The same aggregation is applied to produce a single graphPatternMappingState for all the graph patterns in a GroupGraphPattern.</p>
+
+
+    <h3 id="SQLbgp">Basic Graph Patterns</h3>
+
+    <p>A Basic Graph Pattern is set of triple patterns which have similar expressivity to their SQL counterparts, joins and restrictions. Just as tuple maps produce triples from tuple attributes, the process can be reversed, converting triple patterns to queries on tuples.</p>
+
+    <p>Taking advantage of the SPARQL join semantics, we can sequester the triple patterns in a BGP by subject, assign each a relvar, and emulate the SPARQL join in SQL by adding constraints that none of the predicate's attributes is non-null. <em class="note">Variable predicates are not treated in this document, though an explicit enumeration of table attributes would probably suffice.</em> The SPARQL definition in terms of "distinct RDF instance mappings" [SPARQL] is met by the cross product (INNER JOIN) of the aggregate tuple, restricted by a set of constraints coming from variable coreferences in the graph pattern.</p>
+
+    <p>In this SPARQL query to select the names of employees and their managers,</p>
+
+<pre class="stem" id="bgp1">
+PREFIX emplP: &lt;http://hr.example/DB/Employee#&gt;
+
+SELECT ?empName ?managName
+ WHERE { ?emp      emplP:lastName   ?empName .
+         ?emp      emplP:manager    ?manager .
+         ?manager  emplP:lastName   ?managName }
+</pre>
+
+    <p>the third triple pattern is on the same relation (Employee), but is intended to match managers, rather than their employees. This can be expressed using different table aliases for each tuple map with the same table and different subjet. For readability in this document, these table names are derived from the variable name in the subject of the triple pattern:</p>
+
+<pre class="sql">
+SELECT emp.lastName, manager.lastName
+  FROM Employee <em>as emp</em>
+       INNER JOIN Employee <em>as manager</em> ON emp.manager=manager.empid
+ WHERE emp.lastName IS NOT NULL AND manager.lastName IS NOT NULL
+</pre>
+
+    <p>This BGP has a coreference on <code>?manager</code>; it is used as the object of the second triple pattern, and the subject of the third. This coreference is enforced in the join constraint <code class="sql">emp.manager=manager.empid</code>.</p>
+
+    <p>The triple patterns in the BGP are grouped by subject (<code>{x∈BGP|sameSubjectBGP(x)}</code>) <span class="note">any triple patterns sharing a subject must have a predicate in the same relation in order to match the stem graph.</span>. Each group is assigned a relvar with a name unique within the query and the schema. The examples in the document generates a relvar name by a lexical trasformation of the subject, where subject variables produce a relvar with the same name as the variable, and subject URIs produce a relvar with a name composed of the key name and value which were unmapped from the URI.</p>
+
+
+    <p>Examining each triple in a subject BGP, a variable in the subject binds that variable to relvarattr composed of the relvar name and the relations's primary key. A variable in the object position binds that variable to a relvarattr composed of the relvar name and the predicate's attribute (eg. emp.lastName). Adding a variable mapping to a varmap which already maps that variable results in a varmap with only one of those bindings (the first binding in our examples) and a coreference constraint of the form relvarattr1=relvarattr2, e.g. emp.manager=manager.id in the above example.</p>
+
+    <h4 id="aggregation">Aggregation</h4>
+
+    <p>The result of a mapGraphPattern on a BGP consists of a tableList, a varmap and an expression. The tableList is the set of relvars for each subject bgp. The varmap is the union of the varmaps of the subject bgps, where co-references produce a co-reference constraint. This process is used to aggregate any graphPatternMappingStates into a singel state, for instance, to map a query with a BasicGraphPattern followed by a UNION.</p>
+
+    
+    <h4 id="nonnull">Non-NULL Constraints</h4>
+
+    <p>Each triple pattern in a SPARQL basic graph pattern must match a triple in the stem graph. NULL attributes in the relational database prevent the expression of that triple in the graph pattern. Therefor, we must take care to prevent SQL from matching NULL attributes in mapped stem query. <span class="note">Note: OPTIONAL patterns permitting the optional matching of entire graph patterns is discussed below in <a href="#sqlOpt">Optionals</a>.</span> mapGraphPattern adds to the resulting expression a set of "IS NOT NULL" constraints for each variable in the basic graph pattern. As an optimization, you can elide any NOT NULL constraints for variables which are used in the expression which would fail with NULL arguments (e.g. =, !=, &lt;, AND, ...).</p>
+
+
+    <h4 id="nodeIds">Parsing Node Identifiers</h4>
+
+    <p>Queries may include URLs in the subject position, or in the object position of predicates whose attribute is a foreign key. Any node identifiers in sequesterd BGPs produce a Node ID constraint, which is a conjunct in the whereCondition.</p>
+
+    <p class="defn">A <dfn id="defn-nodeIDs">Node ID constraint</dfn> in the subject position introduces a constraint that the predicate's primary key is equal to the node's key value derived from a node unmap. A <dfn id="defn-nodeIDo">Node ID constraint</dfn> in the object position introduces a constraint that the predicate's primary target is equal to the node's key value derived from a node unmap.</p>
+
+    <p>This query lists the names of the employees who work for Employee 18:</p>
+
+<pre class="stem" id="tup1">
+PREFIX emplP: &lt;http://hr.example/DB/Employee#&gt;
+PREFIX emplN: &lt;http://hr.example/DB/Employee/&gt;
+
+SELECT ?empName
+ WHERE { ?emp      emplP:lastName   ?empName .
+         ?emp      emplP:manager    <em>emplN:id.18</em> }
+</pre>
+
+    <p>The includesion of a foreign key (<code>manager</code>) introduces a join, and the value of that foreign key (<code>18</code>) produces a constraint <code>manager=18</code>. The query would be inconsistent if <code>http://hr.example/DB/Employee#manager</code> and <code>http://hr.example/DB/Employee/id.18</code> did not both refer to the same table.</p>
+
+<pre class="sql">
+SELECT emp.lastName
+  FROM Employee as emp
+ WHERE emp.manager=18 AND emp.lastName IS NOT NULL
+</pre>
+
+    <p>If <code>emplN:id.18</code> were replaced with a variable, say <code>?manager</code>, the SQL would need a join <code>Employee AS manager</code> only if <code>?manager</code> were selected or if some property of manager were referenced, e.g. <code>?manager emplP:lastName ?manName</code>.</p>
+
+
+    <h4 id="litNum">Parsing Literal and Numeric Constraints</h4>
+
+    <p>Literal and numeric value constraints in a graph pattern are represented as SQL constraints, expressed either in join constraints, on in an SQL WHERE expression.</p>
+
+    <p class="defn">A <dfn id="defn-literalConstraint">literal constraint</dfn> in the object position introduces a constraint that the predicate's attribute is equal to the value derived from a literal unmap.</p>
+
+    <p>For example, a constraint on the manager's last name:</p>
+
+<pre class="stem" id="litConst1">
+PREFIX emplP: &lt;http://hr.example/DB/Employee#&gt;
+
+SELECT ?empName
+ WHERE { ?emp      emplP:lastName   ?empName .
+         ?emp      emplP:manager    ?manager .
+         ?manager  emplP:lastName   <em>"Johnson"</em> }
+</pre>
+
+    <p>may be used to restriction of the candidate tuples for manager:</p>
+
+<pre class="sql">
+SELECT emp.lastName
+  FROM Employee as emp
+       INNER JOIN Employee as manager ON emp.manager=manager.empid
+                                       <em>AND manager.lastName="Johnson"</em>
+WHERE emp.lastName IS NOT NULL
+</pre>
+
+    <p>or as a restriction on the final product of the join:</p>
+
+<pre class="sql">
+SELECT emp.lastName
+  FROM Employee as emp
+       INNER JOIN Employee as manager ON emp.manager=manager.empid
+ <em>WHERE manager.lastName="Johnson"</em> AND emp.lastName IS NOT NULL
+</pre>
+
+    <h3 id="sqlFiltersBGP">Filters on Basic Graph Patterns</h3>
+
+    <p>SQL filters and SPARQL filters have similar arithmetic and boolean evaluation, e.g. <code class="stem">manager.birthday &gt; "1969-01-01"^^xsd:date</code> is expressed in SQL as <code class="sql">manager.birthday &gt; "1969-01-01"</code>. <em class="note">This document does not discuss the edges of datatype compatibility (e.g. maximum integer or float value) as this would require a survey of the SQL implementations.</em></p>
+
+    <p>A query for third-line employees include multiple joins. A constraint on the second-line manager can constrain the join of that table. For example, in this query with many joins:</p>
+
+    <pre class="stem" id="filter1">
+PREFIX emplP: &lt;http://hr.example/DB/Employee#&gt;
+
+SELECT ?empName ?grandManName
+ WHERE { ?emp          emplP:lastName   ?empName .
+         ?emp          emplP:birthday   ?empBday .
+         ?emp          emplP:manager    ?manager .
+         ?manager      emplP:birthday   ?manBday .
+         ?manager      emplP:manager    ?grandManager .
+         ?grandManager emplP:birthday   ?grandManBday .
+         ?grandManager emplP:lastName   ?grandManName
+         FILTER <em>(?manBday &lt; ?empBday &amp;&amp; ?grandManBday &lt; ?manBday)</em> }
+</pre>
+
+    <p>the filter constraint conjuncts (<code class="sql">?manBday &lt; ?empBday</code> and <code class="sql">?grandManBday &lt; ?manBday</code>), can be sorted into the join constraints:</p>
+
+<pre class="sql">
+SELECT emp.lastName AS empName, grandManager.lastName AS grandManagerName
+  FROM Employee AS emp
+       INNER JOIN Employee AS manager ON manager.empid=emp.manager
+       INNER JOIN Employee AS grandManager ON grandManager.empid=manager.manager
+ WHERE grandManager.birthday&lt;manager.birthday AND manager.birthday&lt;emp.birthday
+   AND emp.lastName IS NOT NULL AND grandManager.lastName IS NOT NULL
+</pre>
+
+    <p><a href="sqlOpt">Optionals</a> and <a href="sqlDisj">Disjunctions</a> can produce SQL subqueries. Filters on these subqueries should be treated as applying to the ON constraint when the subquery in joined to the rest of the query. Constants and variables introduced in an OPTIONAL or UNION may be pushed down into the subquery when generating SQL strings. When generating execution plans which exceed SQL expressivity, it may be possible to push into the subquery constraints against variables bound outside of the subquery.</p>
+
+
+    <h3 id="sqlDisj">Disjunctions</h3>
+
+    <p>SPARQL UNIONs can share variables with their surround context (for example, ?who and ?bday below). The disjoints in a UNION may bind different variables (?bday is only referenced in the second disjoint below).</p>
+
+    <pre class="stem" id="assymDisj1">
+SELECT ?name
+ WHERE { ?who emplP:name "Smith"
+         { ?manager emplP:manages   ?who .
+           ?manager emplP:lastName  ?name }
+         UNION
+         { ?who     emplP:manager   ?managed .
+           ?managed emplP:lastName  ?name .
+           ?managed emplP:birthday  ?bday } 
+         ?who emplP:birthday ?bday }
+</pre>
+
+    <p>The mapped stem query can invent relvarattrs ("union1._DISJOINT_" below) to identify which disjoint bound any tuple in the union. Constraints can use these relvarattrs to conditionally unify with relvarattrs bound elsewhere in the query.</p>
+
+    <pre class="sqlSHORT">
+SELECT union1.name
+  FROM Employee AS who
+       INNER JOIN (
+         SELECT 0 AS _DISJOINT_, manager.lastName AS name, manager.manages AS who, NULL AS bday
+                FROM Employee as manager
+          WHERE manager.lastName IS NOT NULL AND manager.lastName IS NOT NULL
+       UNION
+         SELECT 1 AS _DISJOINT_, managed.lastName AS name, who.empid AS who, managed.birthday AS bday
+                FROM Employee AS who
+                INNER JOIN Employee as managed ON below.manages=managed.empid
+          WHERE managed.lastName IS NOT NULL
+       ) AS union1 ON (_DISJOINT_=0 AND union1.who=who.empid) OR
+                      (_DISJOINT_=1 AND union1.who=who.empid AND union1.bday=who.birthday)
+ WHERE who.lastName="Smith"
+</pre>
+
+    <!-- p>The first constraint is handled as it is in basic graph patterns; the <code>Employee</code> table is aliased to <code>who</code>, the variable <code>?who</code> is bound to the attribute <code>who.empid</code>, and <code class="sql">who.lastName="Smith"</code> is added to the constraints</p -->
+
+    <p>The union is given a unique relvar name, "union1" above. Relational theory asserts that the attrlists in each of the subselects in a UNION need to have the same semantics (and datatype). This is ensured by ordering the selected variables from <dfn id="defn-unionVars">unionVars</dfn>, a list extracted from the set of all variables in all of the disjoints. The disjoints are numbered, and each is processed by mapGraphPattern, producing a graphPatternMappingState called the <dfn id="defn-disjointState">disjointState</dfn>. Each variable in the disjointState's varmap is mapped to a binding over the union's relvar by adding a binding to a relvarattr composed of the relvar name and the alias selected for that var in the subselect (e.g. "union1.who"). Constraints derived from earlier bindings are captured in the <dfn id="defn-unionExpression">unionExpression</dfn>. The unionExpression captures the assymetric bindings, such as the fact that ?who is bound only in the second disjoint above. The <dfn id="defn-disjointSubselect">disjointSubselect</dfn> is composed of an attrlist, tableJoinList, and graphPatternExpression. The latter two come directly from the disjointState, and the attrlist is the disjoint number followed by a mapping from the unionVars to the the union relvar.variable name if the varmap maps that variable, or NULL otherwise ("NULL AS bday" above).</p>
+
+    <pre class="defn">gen_relvar() → some unique name
+@@β(v) += RelVarAttr(gen_relvar, primaryKey(v))</pre>
+
+    <p>The SQL UNION of these disjointSubselects is joined as the relvar name, with a constraint of the unionExpression.</p>
+
+
+    <h3 id="sqlOpt" style="clear:both;">Optionals</h3>
+
+    <p>SPARQL OPTIONALs are treated similarly to UNIONs; they are, in the general case, represented as a subselect, and an extra relvarattr is assigned to some non-NULL constant in order to test if the LEFT OUTER JOIN on the subselect passed its ON constraint. Some OPTIONALs can tbe expressed as simple LEFT OUTER JOINs on a relvar (i.e., no subselect is required), but that is an optimization not discussed here.</p>
+
+    <p>Following is a query of employees (emp) and if they manage someone (flunky), that flunky's name and department, and, if they have a manager, that manager's name and departemnt. The coreference between the first and second OPTIONAL demands that the flunky and the manager are in the same department.</p>
+
+<pre class="stem" id="optJoin1">
+PREFIX emplP: &lt;http://hr.example/DB/Employee#&gt;
+PREFIX mangP: &lt;http://hr.example/DB/Manage#&gt;
+
+SELECT ?empName ?mangName ?flnkName ?dept
+ WHERE {          ?emp        emplP:lastName    ?empName .
+         OPTIONAL { ?flunky   emplP:manager     ?emp .
+                    ?flunky   emplP:lastName    ?flnkName .
+                    ?flunky   emplP:department  ?dept }
+         OPTIONAL { ?emp      emplP:manager     ?manager .
+                    ?manager  emplP:lastName    ?mangName .
+                    ?manager  emplP:department  ?dept }
+       }
+</pre>
+
+    <p>While the following SQL could be simplified to eliminate LEFT OUTER JOINs, it is left here in a general form which maps the OPTIONAL to a LEFT OUTER JOIN of a subselect. The enforcement of the coreference on dept is described below in <a href="#optEqual">Equivalence of Optionally Bound Variables</a>.</p>
+
+<pre class="sqlSHORT">
+SELECT emp.lastName AS empName, opt1.mangName AS mangName, opt2.flnkName AS flnkName,
+       IF(opt1._DISJOINT_ IS NOT NULL, opt1.dept,
+          IF(opt2._DISJOINT_ IS NOT NULL, opt2.dept, NULL)) AS dept
+  FROM Employee AS emp
+       LEFT OUTER JOIN (
+         SELECT 0 AS _DISJOINT_, manager.department AS dept,
+                manager.empid AS manager, manager.lastName AS mangName
+           FROM Employee AS manager
+          WHERE manager.department IS NOT NULL AND manager.empid IS NOT NULL
+            AND manager.lastName IS NOT NULL
+       ) AS opt1 ON opt1.manager=emp.manager
+       LEFT OUTER JOIN (
+         SELECT 0 AS _DISJOINT_, flunky.department AS dept, flunky.empid AS flunky,
+                flunky.lastName AS flnkName, flunky.manager AS emp
+           FROM Employee AS flunky
+          WHERE flunky.department IS NOT NULL AND flunky.empid IS NOT NULL
+           AND flunky.lastName IS NOT NULL AND flunky.manager IS NOT NULL
+       ) AS opt2 ON opt2.emp=emp.empid
+                AND (opt1._DISJOINT_ IS NULL OR opt2.dept=opt1.dept)
+</pre>
+
+
+    <h4 id="optEqual">Equivalence of Optionally Bound Variables</h4>
+
+    <p>SPARQL UNIONs with assymetric bindings and SPARQL OPTIONALs have a semantics where a variable is conditionally bound, here called a "partial binding". A <dfn id="defn-partial-binding">partial binding</dfn> for a variable is a set of pairs of a binding constraint and a relvarattr. Our mapping to SQL has required that variables in SPARQL are bound to relvarattrs in SQL. Partially bound variables must be bound to an expresion which will evaluate to the first binding of the variable to a non-NULL relvarattr, or to NULL if no relvarattr bound that variable. A <dfn id="defn-partial-coreference-constraint">partial co-reference constraint</dfn> for a new (potentially partial) binding is an SQL equivalence expression (a.b=c.d) between a the new binding and all of the existing members of the set of partial bindings.</p>
+
+    <p>Examining the results helps explain the effective SPARQL semantics and demonstrate how they were captured in the SQL:</p>
+
+    <table class="result" style="margin-left: 1.7em;">
+<thead>
+<tr><th>empName</th><th>mangName</th><th>flnkName</th><th>dept </th></tr>
+</thead>						                               
+<tbody>							                               
+<tr><td>Johnson</td><td>NULL    </td><td>Smith   </td><td>tools</td></tr>
+<tr><td>Smith  </td><td>Johnson </td><td>Jones   </td><td>tools</td></tr>
+<tr><td>Jones  </td><td>Smith   </td><td>NULL    </td><td>tools</td></tr>
+<tr><td>Xu     </td><td>NULL    </td><td>NULL    </td><td>NULL </td></tr>
+<tr><td>Ishita </td><td>Smith   </td><td>NULL    </td><td>tools</td></tr>
+</tbody>
+    </table>
+
+
+    <p>The first occurance of <code>?dept</code> in the SPARQL query demands that, if the first OPTIONAL is matched, ?dept is bound to the matched value. This is recorded in the varmap as by binding the variable to a set of tuples of the binding constraint and the relvarattr to which the variable is bound. After mapGraphPattern on the first OPTIONAL, ?dept is bound to {(opt1._DISJOINT_ IS NULL, opt1.dept)}. The second occurance demands that, if the first OPTIONAL was matched, any matching of the second OPTIONAL must have the same value for ?dept. The second optional binds ?dept to opt2.dept, so the partial co-reference constraint against opt2.dept is the SQL expression (opt1._DISJOINT_ IS NULL OR opt2.dept=opt1.dept). A subsequent binding (not included in this example) to e.g. emp.dept would include both of the earlier constraints: (opt1._DISJOINT_ IS NULL OR emp.dept=opt1.dept) AND (opt2._DISJOINT_ IS NULL OR emp.dept=opt2.dept). Once a variable has been fully bound, it remains fully bound; all partial bindings are discarded.</p>
+
+    <p>Projecting partially bound variables into an attrlist requires that a solution which successfully binds a variable select that relvarattr. If the variable was never bound in the solution, we use the SQL term NULL to stand for a lack of binding. This can be implemented in conventional SQL by a nested if else expression which selects the relvarattr of first successful binding of the variable. Above, ?dept is bound to either opt1.dept, opt2.dept or NULL. If a variable becomes full bound through a reference to it in a non-optional graph pattern, the corresponding relvarattr in the attrlist will simply be that fully bound relvarattr.</p>
+
+
+    <h4 id="leadOpt">Leading Optionals</h4>
+
+    <p>Pushing the <code>?emp            emplP:lastName   ?empName</code> constraint to the bottom is a very different, but illustrative query:</p>
+
+<pre class="stem" id="leadOpt1">
+PREFIX emplP: &lt;http://hr.example/DB/Employee#&gt;
+PREFIX mangP: &lt;http://hr.example/DB/Manage#&gt;
+
+SELECT ?empName ?mangName ?flnkName ?dept
+ WHERE { OPTIONAL { ?flunky    emplP:manager     ?emp .
+                    ?flunky    emplP:lastName    ?flnkName .
+                    ?flunky    emplP:department  ?dept }
+         OPTIONAL { ?emp       emplP:manager     ?manager .
+                    ?manager   emplP:lastName    ?mangName .
+                    ?manager   emplP:department  ?dept }
+                  ?emp         emplP:lastName    ?empName .
+        }
+</pre>
+
+    <p>The SPARQL semantics assert that <code class="stem">WHERE { OPTIONAL { X } }</code> is equivalent to <code class="stem">WHERE { { } OPTIONAL { X } }</code> and that the result set after processing <code class="stem">{ }</code> contains one soltion with no bindings. SQL has no syntax for starting off with an optional, but these semantics can be emulated by injecting into the tablelist a subselect with one (ignored) solution: <code class="sql">SELECT 1 AS _EMPTY_ ) AS _EMPTY_</code> . The selected value is unimportant, as is the relvar name so long as it does not conflict with another relvar name.</p>
+
+<pre class="sql">
+SELECT emp.lastName AS empName, opt1.grandManageName
+  FROM ( SELECT 1 AS _EMPTY_ ) AS _EMPTY_
+       LEFT OUTER JOIN (
+       LEFT OUTER JOIN (
+         SELECT 0 AS _DISJOINT_, manager.department AS dept,
+                manager.empid AS manager, manager.lastName AS mangName
+           FROM Employee AS manager
+          WHERE manager.department IS NOT NULL AND manager.empid IS NOT NULL
+            AND manager.lastName IS NOT NULL
+       ) AS opt1 ON TRUE
+       LEFT OUTER JOIN (
+         SELECT 0 AS _DISJOINT_, flunky.department AS dept, flunky.empid AS flunky,
+                flunky.lastName AS flnkName, flunky.manager AS emp
+           FROM Employee AS flunky
+          WHERE flunky.department IS NOT NULL AND flunky.empid IS NOT NULL
+           AND flunky.lastName IS NOT NULL AND flunky.manager IS NOT NULL
+       ) AS opt2 ON (opt1._DISJOINT_ IS NULL OR opt2.dept=opt1.dept)
+       INNER JOIN Employee AS emp
+                   ON (opt1._DISJOINT_ IS NULL OR emp.manager=opt1.manager)
+                  AND (opt2._DISJOINT_ IS NULL OR emp.empid=opt2.empid)
+</pre>
+
+
+    <h3 id="sqlgrp">SPARQL Group Graph Patterns</h3>
+
+    <p>SPARQL graph patterns are in the set {<code>BasicGraphPattern</code>, <code>Filter</code>, <code>GraphGraphPattern</code>, <code>GroupGraphPattern</code>, <code>UnionGraphPattern</code>, <code>OptionalGraphPattern</code>}. The first two have been addressed. We ignore GraphGraphPatterns as we're not sure what they'd mean in the context of a query over a relational database. GroupGraphPatterns and UnionGraphPatterns is handled by nesting SQL queries in subselects, as saw with disjunction.</p>
+
+
+    <h2 id="related" style="clear: both;">Related Work</h2>
+
+    <p>RDF query languages have been used over triple stores for at least seven years. As SPARQL began to coalesce, Perez et al [SSEM] explored the emerging semantics of SPARQL and compared them to SQL. Cyganiac [SPALG] extended this semantics to include most of SPARQL, eliding some corner cases around variables introduced in nested optionals. Harris presented a system using hashes for efficient triple storage and query in SQL [SHASH], including some practical datatype interoperability. Chebotko et al extended that to treat the translation of SPARQL OPTIONAL to SQL LEFT OUTER JOIN, including SQL's three-state logic.</p>
+
+    <p>SPARQL-to-SQL [S2S] and Ultrawrap [ULT] create triple views in the relational store, where the view is a union of selects from the set of conventional relations to be exposed to SPARQL. These systems then map SPARQL to SQL queries over the triples relation, relying on the performance of mature SQL optimizer and exectution engines.</p>
+
+    <p>Systems like D2R [D2R], FeDeRate [FDR], Virtuoso [VOS], Triplify [TRPL], SquirrelRDF [SQRL], DartQuery [DART] and Anzo [Anzo] addressed access to "legacy" data by extending this technology to include conventional (normalized) relational databases, but without providing a solid semantics upon which to base expectations and interoperability.</p>
+
+    <p>On the SQL side, the lack of a semantics in the specification led to the independent development of semantics, e.g. Negri et al, Formal semantics of SQL queries [SSQL]. Projects like SchemaSQL [SSQL] attempted to extend SQL to gracefully address addressing across different databases. While SSQL proposed a query language with variables in the graph pattern (like SPARQL), it did not introduce the gobal identifiers and binary propositions which characterize RDF.</p>
+
+    <p>Prolog's propositional structure is similar to RDF, and SPARQL BGP matching can be implemented using prolog unification. P2R [P2R] and TREQL [TREQL] are query languages which map prolog unification to SQL queries. The effort by Maier et al to develop a similar system, NED-2 [NED], which does not require a priori knowledge of the relational schema, could inspire a more agile variant of the algebra presented in this paper.</p>
+
+
+    <h2 id="conclusion">Conclusion</h2>
+
+    <p>The algebra described in this document was implemented and tested in a strongly-typed Scala implementation [SCALA] in less than two weeks. Extending this to other implementations will allow database vendors and data custodians to create a fabric of inter-linked data, allowing users much more agility in using this data in ways they never could before.</p>
+
+    <p>Earlier implementations of this algebra in SPASQL [SPASQL] and FeDeRate [FDR] demonstrated the practicality of this algebra. The message for all of this work as been that using the Semantic Web introduces no query execution performance penalty over conventional relational databases.</p>
+
+
+    <h2 id="references">References</h2>
+
+<pre>
+[RDF]
+RDF Semantics, Patrick Hayes, Brian McBride, February 2004
+http://www.w3.org/TR/rdf-mt/
+
+[SPARQL]
+SPARQL Query Language for RDF, Eric Prud'hommeaux, Andy Seaborne, January 2008
+http://www.w3.org/TR/rdf-sparql-query/
+
+[FSQL]
+Formal semantics of SQL queries, Negri, Pelagatti, Sbattella, September 1991
+ACM Transactions on Database Systems Volume 16, Issue 3 Pages: 513-534 
+
+[SSQL]
+SchemaSQL: An extension to SQL for multidatabase interoperability, Lakshmanan, Sadri, Subramanian, December 2001
+ACM Transactions on Database Systems Volume 26, Issue 4 476-519
+
+[S2S] @@betehess
+A complete translation from SPARQL into efficient SQL, Brendan Elliott, En Cheng, Chimezie Thomas-Ogbuji, Z. Meral Ozsoyoglu, 2009
+Proceedings of the 2009 International Database Engineering & Applications Symposium, Pages 31-42
+
+[ULT] @@betehess
+http://www.cs.utexas.edu/~miranker/studentWeb/UltrawrapHomePage.html
+
+[D2R]
+The D2RQ Plattform - Treating Non-RDF Databases as Virtual RDF Graphs, Prof. Dr. Chris Bizer, Richard Cyganiac?
+http://www4.wiwiss.fu-berlin.de/bizer/D2RQ/
+
+[VOS]
+Mapping Relational Data to RDF in Virtuoso, Orri Erling, Ivan Mikhailov
+http://virtuoso.openlinksw.com/dataspace/dav/wiki/Main/VOSSQLRDF
+
+[TRPL]
+Triplify Overview, Dr. Sören Auer, David Aumüller, Sebastian Dietzold
+http://triplify.org/Overview
+
+[SQRL]
+SquirrelRDF, Damian Steer
+http://jena.sourceforge.net/SquirrelRDF/
+
+[DART]
+Dartgrid: a Semantic Web Toolkit for Integrating Heterogeneous Relational Databases, Zhaohui Wu1, Huajun Chen1, Heng Wang1, Yimin Wang2, Yuxin Mao1, Jinmin Tang1, Cunyin Zhou1, 2008
+http://www.aifb.uni-karlsruhe.de/WBS/ywa/publications/wu06TCM_ISWC06.pdf
+
+[FDR]
+Optimal RDF Access to Relational Databases, Eric Prud'hommeaux, 2004
+http://www.w3.org/2004/04/30-RDF-RDB-access/
+
+[SSEM]
+Semantics and complexity of SPARQL. Jorge Pérez, Marcelo Arenas, Claudio Gutierrez 2006
+Proceedings of the International Semantic Web Conference (ISWC). 30--43.
+
+[SPALG]
+A relational algebra for SPARQL, Cyganiak, Richard, 2005.
+http://www.hpl.hp.com/techreports/2005/HPL-2005-170.html
+
+[SHASH]
+SPARQL query processing with conventional relational database systems, Steve Harris, 2005
+http://eprints.ecs.soton.ac.uk/11126/01/harris-ssws05.pdf
+
+[SOPT]
+Semantics Preserving SPARQL-to-SQL Query Translation for Optional Graph Patterns, Artem Chebotko, Shiyong Lu, Hasan M. Jamil, Farshad Fotouh, May 2006. Revised November 2006
+Technical Report TR-DB-052006-CLJF
+
+[TRNS]
+A complete translation from SPARQL into efficient SQL, Brendan Elliott, En Cheng, Chimezie Thomas-Ogbuji, Z. Meral Ozsoyoglu, 2009
+Proceedings of the 2009 International Database Engineering &amp; Applications Symposium
+
+[CPLX]
+Semantics and complexity of SPARQL, Jorge Pérez, Marcelo Arenas, Claudio Gutierrez, August 2009
+ACM Transactions on Database Systems Volume 34, Issue 3
+
+[TREQL]
+TREQL (Thornton research easy query language): an intelligent front-end to a relational database, K. Lunn, I. G. Archibald, 1989
+Prolog and databases: implementations and new directions book contents, pages: 39-51
+
+[P2R]
+P2R, Yves Raimond
+http://moustaki.org/p2r/
+
+[Anzo]
+The Anzo Data Collaboration Server, Cambridge Semantics
+http://www.cambridgesemantics.com/products/anzo_data_collaboration_server
+
+[NED]
+Efficient Integration of PROLOG and Relational Databases in the NED Intelligent Information System, F. Maier1, D. Nute1, W. D. Potter1, J. Wang1, M. Twery2, H. M. Rauscher3, P. Knopp2, S. Thomasma2, M. Dass1, H. Uchiyama1, 2002
+http://www.cs.uga.edu/~potter/dendrite/ike_submission.pdf
+
+[SPASQL]
+Adding SPARQL Support to MySQL, E. Prud'hommeaux, 2005
+http://www.w3.org/2005/05/22-SPARQL-MySQL/XTech
+
+[FDR]
+RDF Access to relational databases, E. Prud'hommeaux, 2003
+http://www.w3.org/2003/01/21-RDF-RDB-access/
+</pre>
+
+    <h4 id="ack">Acknowledgements</h4>
+
+    <p>This work was all done with funding from Eli Lilly. I would like to thank Susie Stephens (Eli Lilly) for her commitment to making the Semantic Web practical and easy to use. I would also like to thank C. M. Sperberg-McQueen for his rigorous examples and bug discoveries.</p>
+  </body>
+</html>

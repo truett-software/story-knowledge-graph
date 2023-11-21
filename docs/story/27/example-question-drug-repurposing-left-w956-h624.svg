@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="956" height="624" viewBox="0 0 717.144 467.893" xml:space="preserve" color-interpolation-filters="sRGB" style="fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3">
+<style>
+  .st1{fill:none}
+  .st2,.st3,.st4{stroke:#527dad;stroke-linecap:butt;stroke-width:2.59476}
+  .st3,.st4{fill:#1f64ff;stroke:none;stroke-width:.518952}
+  .st4{fill:none;stroke-width:.75}
+  .st5{fill:#000;font-family:Noto Sans;font-size:1.5em}
+  .st6{font-size:1em}
+  .st7{stroke:#527dad;stroke-linecap:butt;stroke-width:3.61446}
+</style>
+<g id="shape8-1" transform="translate(109.245 -226.393)">
+<path d="M0 467.89h18.39V350.6H0v117.29Z" class="st1"/>
+<path d="M0 467.89h18.39V350.6H0" class="st2"/></g>
+<g id="shape9-4" transform="translate(109.245 -269.063)">
+<path d="M0 467.89h18.39" class="st2"/></g>
+<g id="shape10-7" transform="translate(109.245 -305.234)">
+<path d="M0 467.89h17.97" class="st2"/></g>
+<g id="shape11-10" transform="rotate(180 70.372 322.93)">
+<path d="M0 467.89h13.53" class="st2"/></g>
+<g id="shape14-13" transform="translate(200.03 -170.41)">
+<path d="m103.89 265.86 8.88 3.74-86.93 183.87 10.23 4.61-26.47 9.81L0 440.7l10.85 5.09 93.04-179.93Z" class="st3"/></g>
+<g id="shape15-15" transform="translate(210.1 -114.111)">
+<path d="M.73 454.71 0 445.06l203.27-6.02-.52-11.21 20.76 19.15-19.87 20.91-.42-11.93L.73 454.71Z" class="st3"/></g>
+<g id="shape28-17" transform="translate(147.846 -255.429)">
+<path class="st4" d="M0 395.893h81v72H0z"/>
+<text y="426.49" class="st5">mode of 
+<tspan x="0" dy="1.2em" class="st6">action</tspan></text></g>
+<g id="shape30-21" transform="translate(12.31 -323.143)">
+<path class="st4" d="M0 440.893h87.234v27H0z"/>
+<text x="22.88" y="459.79" class="st5">Agonist</text></g>
+<g id="shape31-24" transform="translate(.75 -287.143)">
+<path class="st4" d="M0 440.893h98.795v27H0z"/>
+<text x="6.72" y="459.79" class="st5">Antagonist</text></g>
+<g id="shape32-27" transform="translate(37.22 -251.143)">
+<path class="st4" d="M0 440.893h62.324v27H0z"/>
+<text x="13.06" y="459.79" class="st5">Other</text></g>
+<g id="shape33-30" transform="translate(12.31 -215.143)">
+<path class="st4" d="M0 440.893h87.234v27H0z"/>
+<text x="6.05" y="459.79" class="st5">Unknown</text></g>
+<g id="shape34-33" transform="translate(147.846 -116.143)">
+<path class="st4" d="M0 431.893h49.869v36H0z"/>
+<text y="455.29" class="st5">GENE</text></g>
+<g id="shape35-36" transform="translate(107.774 -110.557)">
+<path d="M0 419.22h18.27v48.67H0v-48.67Z" class="st1"/>
+<path d="M0 419.22h18.27v48.67H0" class="st2"/></g>
+<g id="shape36-39" transform="translate(126.041 -135.104)">
+<path d="M0 467.89h13.96" class="st2"/></g>
+<g id="shape37-42" transform="translate(62.13 -143.226)">
+<path class="st4" d="M0 440.976h37.414v26.917H0z"/>
+<text x="2.96" y="457.18" class="st5">SNP</text></g>
+<g id="shape38-45" transform="translate(24.765 -93.684)">
+<path class="st4" d="M0 440.893h74.779v27H0z"/>
+<text x="13.54" y="457.09" class="st5">symbol</text></g>
+<g id="shape39-48" transform="translate(217.18 -54.75)">
+<path d="M0 467.89v-33.41h180v33.41H0Z" class="st1"/>
+<path d="M0 467.89v-33.41h180v33.41" class="st2"/></g>
+<g id="shape40-51" transform="rotate(90 205.344 574.229)">
+<path d="M0 467.89h44.26" class="st2"/></g>
+<g id="shape41-54" transform="translate(244.18 -85.09)">
+<path class="st4" d="M0 421.734h137.053v46.159H0z"/>
+<text x="21.14" y="450.21" class="st5">association</text></g>
+<g id="shape42-57" transform="translate(182.563 -18.75)">
+<path class="st4" d="M0 431.893h69.234v36H0z"/>
+<text x="2.86" y="448.09" class="st5">P-Value</text></g>
+<g id="shape43-60" transform="translate(271.18 -.75)">
+<path class="st4" d="M0 413.893h80.299v54H0z"/>
+<text x="17.74" y="430.09" class="st5">Odds 
+<tspan x="18.49" dy="1.2em" class="st6">Ratio</tspan></text></g>
+<g id="shape44-64" transform="translate(353.17 -.75)">
+<path class="st4" d="M0 413.893h93.509v54H0z"/>
+<text x="9.64" y="430.09" class="st5">GWAS or 
+<tspan x="11.61" dy="1.2em" class="st6">PheWAS</tspan></text></g>
+<g id="shape50-68" transform="translate(242.181 -416.94)">
+<path d="M.8 452.21C.58 454.45 0 465 9.61 465h50.32c19.3 0 38.53.15 57.83.65 11.85.29 28.99 2.24 28.99-15.32L.8 452.21Z" class="st1"/>
+<path d="M.8 452.21C.58 454.45 0 465 9.61 465h50.32c19.3 0 38.53.15 57.83.65 11.85.29 28.99 2.24 28.99-15.32" class="st7"/></g>
+<g id="shape51-71" transform="translate(242.977 -432.626)">
+<path d="M.07 467.46s0 .14-.07.43l.07-.43Z" class="st1"/>
+<path d="M.07 467.46s0 .14-.07.43" class="st7"/></g>
+<g id="shape52-74" transform="rotate(90 368.922 416.984)">
+<path d="M0 467.89h13.73" class="st7"/></g>
+<g id="shape53-77" transform="translate(522.992 -180.268)">
+<path d="M14.1 279.22H0v188.67h14.1V279.22Z" class="st1"/>
+<path d="M14.1 279.22H0v188.67h14.1" class="st7"/></g>
+<g id="shape54-80" transform="translate(522.992 -251.043)">
+<path d="M0 467.89h14.1" class="st7"/></g>
+<g id="shape55-83" transform="translate(523.57 -314.088)">
+<path d="M0 467.89h12.87" class="st7"/></g>
+<g id="shape56-86" transform="rotate(180 261.785 320.869)">
+<path d="M0 467.89h13.59" class="st7"/></g>
+<g id="shape57-89" transform="translate(530.821 -134.143)">
+<path d="M0 467.89h23.64" class="st7"/></g>
+<g id="shape59-92" transform="translate(291.57 -376.812)">
+<path class="st4" d="M0 447.074h69.448v20.819H0z"/>
+<text y="462.88" class="st5">DRUG</text></g>
+<g id="shape60-95" transform="translate(204.652 -431.143)">
+<path class="st4" d="M0 431.893h69.448v36H0z"/>
+<text x="9.34" y="455.29" class="st5">Name</text></g>
+<g id="shape61-98" transform="translate(276.798 -431.143)">
+<path class="st4" d="M0 431.893h221.625v36H0z"/>
+<text x="20.56" y="455.29" class="st5">Registered Indication</text></g>
+<g id="shape62-101" transform="translate(565.278 -123.733)">
+<path class="st4" d="M0 447.074h151.115v20.819H0z"/>
+<text y="462.88" class="st5">New Indication</text></g>
+<g id="shape63-104" transform="translate(374.394 -257.374)">
+<path class="st4" d="M0 395.893h126v72H0z"/>
+<text x="21.37" y="426.49" class="st5">repurposing 
+<tspan x="50.38" dy="1.2em" class="st6">potential</tspan></text></g>
+<g id="shape64-108" transform="translate(446.394 -107.143)">
+<path class="st4" d="M0 413.893h84.375v54H0z"/>
+<text y="446.29" class="st5">DISEASE</text></g>
+<g id="shape65-111" transform="translate(540.731 -350.143)">
+<path class="st4" d="M0 431.893h157.662v36H0z"/>
+<text y="444.49" class="st5">Known Drug in 
+<tspan x="0" dy="1.2em" class="st6">DrugBank</tspan></text></g>
+<g id="shape66-115" transform="translate(540.731 -287.143)">
+<path class="st4" d="M0 413.893h168.35v54H0z"/>
+<text y="435.49" class="st5">Number of Medline 
+<tspan x="0" dy="1.2em" class="st6">Abstracts</tspan></text></g>
+<g id="shape67-119" transform="translate(540.731 -217.912)">
+<path class="st4" d="M0 407.662h175.662v60.231H0z"/>
+<text y="432.38" class="st5">Number in Clinical 
+<tspan x="0" dy="1.2em" class="st6">Trial Registry</tspan></text></g>
+<g id="shape68-123" transform="translate(540.731 -170.143)">
+<path class="st4" d="M0 431.893h168.066v36H0z"/>
+<text y="444.49" class="st5">Repurposing 
+<tspan x="0" dy="1.2em" class="st6">Potential</tspan></text></g>
+<g id="shape69-127" transform="rotate(-55 52.272 -26.071)">
+<path d="m103.89 265.86 8.88 3.74-86.93 183.87 10.23 4.61-26.47 9.81L0 440.7l10.85 5.09 93.04-179.93Z"   style="fill:#bb9155;stroke:none;stroke-linecap:butt;stroke-width:.518952"/></g>
+</svg>

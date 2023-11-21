@@ -1,0 +1,3849 @@
+<!--
+source: https://pubchem.ncbi.nlm.nih.gov/docs/rdf-intro#section=PubChemRDF-Graphs
+-->
+<!doctype html>
+<html amp lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<link rel="canonical"
+  href="https://example.io/DIR/"/>
+<title>
+PubChem RDF
+</title>
+<link rel="shortcut icon"
+  href="https://ontomatica.io/static/image/logo/onto-symbol-w252-h252.svg"/>
+
+<link rel="preload" as="font" href="https://s3.amazonaws.com/benetta.net/fonts/noto-sans/NotoSans-Regular.ttf" crossorigin />
+<link rel="preload" as="font" href="https://s3.amazonaws.com/benetta.net/fonts/noto-serif/NotoSerif-Regular.ttf" crossorigin />
+
+
+<script async
+  src="https://cdn.ampproject.org/v0.js"></script>
+<script async custom-element="amp-accordion"
+  src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
+
+<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
+<style amp-custom>
+
+@font-face {
+  font-family: ZillaSlab;
+  src: url("https://s3.amazonaws.com/benetta.net/fonts/zilla-slab/ZillaSlab-Regular.ttf")
+    format("truetype");
+  font-style: normal;
+  text-align: initial;
+  font-weight: 100 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: NotoSans;
+  src: url("https://s3.amazonaws.com/benetta.net/fonts/noto-sans/NotoSans-Regular.ttf")
+    format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: NotoSerif;
+  src:
+    url("https://s3.amazonaws.com/benetta.net/fonts/noto-serif/NotoSerif-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Recursive-VF;
+  font-style: normal;
+  src: url("https://s3.amazonaws.com/benetta.net/fonts/recursive/Recursive-VF.ttf")
+    format("truetype");
+  font-display: swap;
+}
+
+.Recursive-VF {
+  font-family: Recursive-VF;
+  font-style: normal;
+}
+
+body {
+  padding-left: 10px;
+}
+
+
+h1 {
+  font-family: ZillaSlab;
+  font-size: 3em;
+  color: #1f64ff;
+  margin-bottom: 7.5px;
+}
+
+h2 {
+  font-family: NotoSans;
+  font-size: 1.7em;
+  color: #1f64ff;
+  margin-bottom: 7.5px;
+}
+
+h3 {
+  font-family: NotoSans;
+  font-size: 1.4em;
+}
+
+h4 {
+  font-family: NotoSans;
+  font-size: 1.1em;
+}
+
+
+h2,h3,h4 {
+  font-weight: 500;
+}
+
+p {
+  margin: 7.5px;
+}
+
+ul {
+  display: block;
+  list-style-type: none;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}
+
+p,th,td,li {
+  font-family: Recursive-VF;
+  font-size: 0.85em;
+  color:#000;
+}
+
+/* use standard version */
+a {
+  text-decoration: none;
+}
+
+.hiq-t table tr td, .hiq-t table tr th {
+  border-right: 1px dotted #ccc;
+  border-left: 1px dotted #ccc;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 0.6em 0.6em 0.6em;
+  vertical-align: top;
+}
+
+.computer_code {
+  font-family: Recursive-VF,monospace;
+  background-color:#f9f9f9;
+  font-size:14px;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  line-height: 1.7em;
+  padding:10px;
+  padding-left: 15px;
+  border: 0;
+  border-left: 2px solid #ddd;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.section {
+  margin: 0 0.625rem 1.25rem;
+}
+
+.footer-h2 {
+  padding-top: 4px;
+  padding-left: 50px;
+}
+.footer-h3 {
+  padding-top: 4px;
+  padding-left: 50px;
+}
+
+.primary-bg {
+  background: linear-gradient(225deg, #00dcc0, #1f64ff 75%);
+  color: #fff;
+}
+
+.background {
+  background: #fff;
+}
+
+.amp-accordion__section {
+  border: 1px solid #00f;
+  margin-top: 10px;
+}
+.amp-accordion__header {
+  height: 40px;
+}
+.amp-accordion__header-use-case {
+  height: 80px;
+}
+.amp-accordion__header-use-case-2 {
+  height: 100px;
+}
+.amp-accordion__content {
+  padding-left: 10px;
+  color: #000;
+}
+.amp-accordion__header-expand {
+  display: inline-block;
+  position: absolute;
+  left: 10px;
+}
+.amp-accordion__header-collapse {
+  display: none;
+  position: absolute;
+  left: 10px;
+}
+.amp-accordion__section[expanded] {
+  border: 2px solid red;
+}
+.amp-accordion__section[expanded]
+  > .amp-accordion__header
+  > .amp-accordion__header-expand {
+  display: none;
+}
+.amp-accordion__section[expanded]
+  > .amp-accordion__header
+  > .amp-accordion__header-collapse {
+  display: inline-block;
+}
+
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<h1>
+<table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+<tr>
+<td>
+<span>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="20%" height="20%" viewBox="0 0 685 200" preserveAspectRatio="xMidYMid meet" fill="#5b616b"><g><g><path stroke="#0071bc" fill="none" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" d="M329.5,19.5 L396.8,61.3 L396.6,140.5 L329.0,178.0 L261.7,136.2 L261.9,56.9 L329.5,19.5 Z"></path><path d="M351.6,83.5 L371.0,83.5 C370.4,78.1 369.0,73.3 366.7,69.1 C364.4,64.9 361.5,61.4 357.9,58.5 C354.4,55.7 350.4,53.5 345.9,52.1 C341.4,50.6 336.7,49.8 331.6,49.8 C324.6,49.8 318.3,51.1 312.7,53.6 C307.2,56.2 302.4,59.6 298.6,64.1 C294.8,68.5 291.8,73.8 289.8,79.7 C287.7,85.7 286.7,92.2 286.7,99.2 C286.7,106.0 287.7,112.3 289.8,118.2 C291.8,124.1 294.8,129.3 298.6,133.6 C302.4,138.0 307.2,141.4 312.7,143.9 C318.3,146.4 324.6,147.6 331.6,147.6 C337.3,147.6 342.4,146.8 347.1,145.0 C351.8,143.3 355.9,140.7 359.4,137.4 C362.9,134.1 365.7,130.1 367.8,125.4 C370.0,120.7 371.3,115.4 371.8,109.5 L352.4,109.5 C351.6,115.8 349.5,120.9 346.0,124.7 C342.6,128.6 337.8,130.5 331.6,130.5 C327.1,130.5 323.3,129.6 320.1,127.8 C316.9,126.0 314.4,123.6 312.4,120.7 C310.5,117.7 309.0,114.3 308.1,110.6 C307.2,106.9 306.8,103.1 306.8,99.2 C306.8,95.1 307.2,91.1 308.1,87.3 C309.0,83.4 310.5,80.0 312.4,77.0 C314.4,74.0 316.9,71.6 320.1,69.8 C323.3,68.0 327.1,67.1 331.6,67.1 C334.1,67.1 336.5,67.5 338.7,68.4 C341.0,69.2 343.0,70.3 344.8,71.8 C346.6,73.3 348.1,75.0 349.3,77.0 C350.5,79.0 351.2,81.1 351.6,83.5 Z"></path></g><g><path d="M34.9,95.2 L34.9,67.8 L50.5,67.8 C52.8,67.8 55.1,68.0 57.2,68.3 C59.3,68.7 61.2,69.3 62.8,70.3 C64.4,71.3 65.7,72.7 66.7,74.5 C67.7,76.3 68.2,78.6 68.2,81.5 C68.2,84.4 67.7,86.8 66.7,88.6 C65.7,90.3 64.4,91.7 62.8,92.7 C61.2,93.7 59.3,94.4 57.2,94.7 C55.1,95.0 52.8,95.2 50.5,95.2 L34.9,95.2 ZM14.8,52.2 L14.8,143.6 L34.9,143.6 L34.9,110.8 L56.0,110.8 C61.7,110.8 66.6,110.0 70.6,108.3 C74.6,106.7 77.9,104.5 80.4,101.7 C82.9,99.0 84.8,95.9 85.9,92.3 C87.1,88.8 87.6,85.2 87.6,81.5 C87.6,77.8 87.1,74.1 85.9,70.6 C84.8,67.1 82.9,64.0 80.4,61.3 C77.9,58.6 74.6,56.4 70.6,54.7 C66.6,53.0 61.7,52.2 56.0,52.2 L14.8,52.2 Z"></path><path d="M160.4,143.6 L160.4,77.4 L142.2,77.4 L142.2,112.1 C142.2,118.8 141.1,123.7 138.8,126.6 C136.6,129.6 133.0,131.0 128.1,131.0 C123.7,131.0 120.7,129.7 119.0,127.0 C117.3,124.3 116.4,120.3 116.4,114.8 L116.4,77.4 L98.3,77.4 L98.3,118.1 C98.3,122.2 98.6,125.9 99.4,129.3 C100.1,132.7 101.3,135.5 103.1,137.9 C104.9,140.2 107.4,142.1 110.5,143.3 C113.6,144.6 117.6,145.3 122.5,145.3 C126.3,145.3 130.1,144.4 133.7,142.7 C137.4,141.0 140.4,138.2 142.7,134.4 L143.1,134.4 L143.1,143.6 L160.4,143.6 Z"></path><path d="M222.7,110.6 C222.7,113.3 222.4,115.9 221.8,118.5 C221.2,121.1 220.3,123.3 219.0,125.3 C217.7,127.2 216.1,128.8 214.2,130.0 C212.3,131.1 209.9,131.7 207.2,131.7 C204.6,131.7 202.3,131.1 200.3,130.0 C198.3,128.8 196.7,127.2 195.4,125.3 C194.1,123.3 193.2,121.1 192.6,118.5 C192.0,115.9 191.7,113.3 191.7,110.6 C191.7,107.8 192.0,105.1 192.6,102.5 C193.2,99.9 194.1,97.7 195.4,95.7 C196.7,93.8 198.3,92.2 200.3,91.0 C202.3,89.9 204.6,89.3 207.2,89.3 C209.9,89.3 212.3,89.9 214.2,91.0 C216.1,92.2 217.7,93.8 219.0,95.7 C220.3,97.7 221.2,99.9 221.8,102.5 C222.4,105.1 222.7,107.8 222.7,110.6 ZM174.2,52.2 L174.2,143.6 L191.5,143.6 L191.5,135.1 L191.7,135.1 C193.7,138.8 196.6,141.4 200.4,143.0 C204.3,144.5 208.6,145.3 213.5,145.3 C216.8,145.3 220.1,144.6 223.3,143.2 C226.6,141.8 229.5,139.8 232.1,136.9 C234.7,134.1 236.8,130.5 238.4,126.1 C240.1,121.7 240.9,116.5 240.9,110.4 C240.9,104.4 240.1,99.2 238.4,94.8 C236.8,90.4 234.7,86.8 232.1,83.9 C229.5,81.1 226.6,79.0 223.3,77.7 C220.1,76.3 216.8,75.6 213.5,75.6 C209.4,75.6 205.4,76.4 201.6,78.0 C197.8,79.6 194.8,82.1 192.6,85.5 L192.4,85.5 L192.4,52.2 L174.2,52.2 Z"></path></g><g><path d="M419.8,52.2 L419.8,143.6 L438.0,143.6 L438.0,108.9 C438.0,102.2 439.1,97.3 441.3,94.4 C443.5,91.4 447.1,90.0 452.1,90.0 C456.4,90.0 459.5,91.3 461.2,94.0 C462.9,96.7 463.7,100.8 463.7,106.2 L463.7,143.6 L481.9,143.6 L481.9,102.9 C481.9,98.8 481.5,95.1 480.8,91.7 C480.1,88.3 478.8,85.5 477.0,83.1 C475.2,80.8 472.8,78.9 469.7,77.6 C466.6,76.3 462.6,75.6 457.7,75.6 C454.3,75.6 450.8,76.5 447.2,78.2 C443.6,80.0 440.7,82.8 438.4,86.6 L438.0,86.6 L438.0,52.2 L419.8,52.2 Z"></path><path d="M540.3,103.4 L510.7,103.4 C510.8,102.1 511.1,100.7 511.5,99.0 C512.0,97.4 512.8,95.9 514.0,94.4 C515.1,93.0 516.7,91.8 518.6,90.8 C520.5,89.8 522.9,89.3 525.8,89.3 C530.2,89.3 533.6,90.5 535.7,92.9 C537.9,95.3 539.4,98.8 540.3,103.4 ZM510.7,114.9 L558.4,114.9 C558.8,109.8 558.4,104.9 557.2,100.2 C556.0,95.5 554.0,91.3 551.3,87.7 C548.7,84.0 545.2,81.1 541.0,78.9 C536.9,76.7 532.0,75.6 526.3,75.6 C521.3,75.6 516.7,76.5 512.6,78.3 C508.4,80.1 504.9,82.6 501.9,85.7 C498.9,88.8 496.6,92.5 495.0,96.7 C493.3,101.0 492.5,105.6 492.5,110.6 C492.5,115.7 493.3,120.4 494.9,124.6 C496.5,128.9 498.7,132.6 501.6,135.7 C504.5,138.7 508.1,141.1 512.2,142.8 C516.4,144.4 521.1,145.3 526.3,145.3 C533.8,145.3 540.2,143.5 545.5,140.1 C550.8,136.7 554.7,131.0 557.3,123.1 L541.3,123.1 C540.7,125.2 539.1,127.1 536.4,128.9 C533.8,130.8 530.6,131.7 527.0,131.7 C521.8,131.7 517.9,130.4 515.2,127.7 C512.5,125.1 511.0,120.8 510.7,114.9 Z"></path><path d="M569.7,77.4 L569.7,143.6 L587.9,143.6 L587.9,105.2 C587.9,101.9 588.4,99.3 589.3,97.3 C590.2,95.3 591.4,93.8 592.7,92.7 C594.0,91.6 595.4,90.9 596.8,90.5 C598.2,90.2 599.3,90.0 600.2,90.0 C603.1,90.0 605.3,90.4 606.8,91.4 C608.3,92.4 609.3,93.7 610.0,95.3 C610.6,97.0 611.0,98.7 611.1,100.6 C611.1,102.6 611.2,104.5 611.2,106.5 L611.2,143.6 L629.4,143.6 L629.4,106.7 C629.4,104.7 629.5,102.7 629.8,100.6 C630.1,98.6 630.7,96.8 631.6,95.3 C632.5,93.7 633.7,92.4 635.3,91.4 C636.9,90.4 639.0,90.0 641.5,90.0 C644.1,90.0 646.1,90.4 647.6,91.2 C649.1,92.1 650.2,93.2 651.0,94.7 C651.8,96.1 652.2,97.9 652.4,99.8 C652.6,101.8 652.7,103.9 652.7,106.1 L652.7,143.6 L670.8,143.6 L670.8,99.3 C670.8,95.0 670.2,91.4 669.0,88.4 C667.8,85.3 666.2,82.9 664.0,81.0 C661.9,79.1 659.4,77.8 656.4,76.9 C653.4,76.0 650.1,75.6 646.6,75.6 C642.0,75.6 638.0,76.7 634.7,79.0 C631.3,81.2 628.6,83.7 626.7,86.6 C624.9,82.5 622.3,79.7 618.8,78.1 C615.3,76.4 611.5,75.6 607.3,75.6 C603.0,75.6 599.1,76.6 595.8,78.4 C592.4,80.3 589.5,83.0 587.1,86.4 L586.9,86.4 L586.9,77.4 L569.7,77.4 Z"></path></g></g></svg>
+</span>
+<span style="vertical-align: top; text-align: left; color: #5b616b;">
+RDF
+</span>
+</td>
+</tr>
+</table>
+</h1>
+
+<!-- master accordion -->
+<amp-accordion animate expand-single-section>
+
+<section class="amp-accordion__section" data-item-label="Introduction">
+
+<h2 class="amp-accordion__header primary-bg footer-h2">
+<span>Introduction</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h2>
+
+<div class="amp-accordion__content">
+
+<amp-accordion animate expand-single-section>
+
+<section class="amp-accordion__section">
+
+<h3 class="amp-accordion__header primary-bg footer-h3">
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+<span>Semantic Web</span>
+</h3>
+
+<div>
+<p>
+<a href='http://www.w3.org/standards/semanticweb/'>Semantic Web</a> technologies are emerging as an increasingly important approach to distribute and integrate scientific data. These technologies include the trio of the <a href='http://www.w3.org/TR/rdf-primer/'>Resource Description Framework</a> (RDF), <a href='http://www.w3.org/TR/owl-features/'>Web Ontology Language</a> (OWL), and <a href='http://www.w3.org/TR/rdf-sparql-query/'>SPARQL query language</a>. The <a href='https://pubchemdocs.ncbi.nlm.nih.gov/rdf/'>PubChemRDF project</a> provides RDF formatted information for the PubChem <a href='https://www.ncbi.nlm.nih.gov/pccompound'>Compound</a>, <a href='https://www.ncbi.nlm.nih.gov/pcsubstance'>Substance</a>, and <a href='https://www.ncbi.nlm.nih.gov/pcassay'>BioAssay</a> databases.
+</p>
+</div>
+
+</section>
+
+<section class="amp-accordion__section">
+
+<h3 class="amp-accordion__header primary-bg footer-h3">
+<span>What is RDF?</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h3>
+
+<div>
+<p>
+RDF constitutes a family of World Wide Web Consortium (W3C) specifications for data interchange on the Web. RDF breaks down knowledge into machine-readable discrete pieces, called &ldquo;triples.&rdquo; Each &ldquo;triple&rdquo; is organized as a trio of &lsquo;subject-predicate-object&rsquo;. For example, in the phrase &ldquo;atorvastatin <em>may treat</em> hypercholesterolemia,&rdquo; the subject is &ldquo;atorvastatin&rdquo;, the predicate is &ldquo;<em>may treat</em>&rdquo;, and the object is &ldquo;hypercholesterolemia.&rdquo; RDF uses a Uniform Resource Identifier (<a href='http://en.wikipedia.org/wiki/Uniform_resource_identifier'>URI</a>) to name each part of the &ldquo;subject-predicate-object&rdquo; triple. A URI looks just like a typical web <a href='http://en.wikipedia.org/wiki/Uniform_resource_locator'>URL</a>. RDF is a core part of <a href='http://semanticweb.org/wiki/Semantic_Web_standards'>semantic web standards</a>. As an extension of the existing <a href='http://en.wikipedia.org/wiki/World_Wide_Web'>World Wide Web</a>, the semantic web attempts to make it easier for users to find, share, and combine information. Semantic web leverages the following technologies: extensible markup language (<a href='http://en.wikipedia.org/wiki/XML'>XML</a>), which provides syntax for RDF; web ontology language (<a href='http://en.wikipedia.org/wiki/Web_Ontology_Language'>OWL</a>), which extends the ability of RDF to encode information; resource description framework (RDF), which expresses knowledge; and RDF query language (<a href='http://en.wikipedia.org/wiki/SPARQL'>SPARQL</a>), which enables query and manipulation of RDF content.
+</p>
+</div>
+
+</section>
+
+<section class="amp-accordion__section">
+
+<h3 class="amp-accordion__header primary-bg footer-h3">
+<span>How can PubChemRDF help your research?</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h3>
+
+<div>
+<p>
+PubChem users have frequently expressed interest in having a downloadable database. Using PubChemRDF, one can download the desired RDF formatted data files from the PubChem <a href='https://ftp.ncbi.nlm.nih.gov/pubchem/RDF/'>FTP site</a>, import them into a <a href='http://en.wikipedia.org/wiki/Triplestore'>triplestore</a>, and query using a <a href='http://www.w3.org/TR/rdf-sparql-query/'>SPARQL query interface</a>. Together these tools enable the schema-less database access and query. There are a number of open-source and commercial triplestores such as the <a href='http://jena.apache.org/documentation/tdb/'>Apache Jena TDB</a> and <a href='http://virtuoso.openlinksw.com/'>OpenLink Virtuoso</a> (a list can be found here: <a href='http://en.wikipedia.org/wiki/Triplestore'>http://en.wikipedia.org/wiki/Triplestore</a>). Other than triplestores, PubChemRDF data can also be loaded into RDF-aware graph databases such as <a href='http://www.neo4j.org/'>Neo4j</a>, and the <a href='http://en.wikipedia.org/wiki/Graph_traversal'>graph traversal algorithms</a> can be used to query the RDF graphs. And last but not least, the ontological representation of the PubChem knowledge base allows logical inference, such as forward/backward chaining. The RDF data on the PubChem FTP site is arranged in <a href='ftp://ftp.ncbi.nlm.nih.gov/pubchem/RDF/README'>such a way</a> that you only need to download the type of information in which you are interested, thus allowing you to avoid downloading parts of PubChem data you will not use. For example, if you are just interested in computed chemical properties, you only need to download PubChemRDF data in the <a href='https://ftp.ncbi.nlm.nih.gov/pubchem/RDF/descriptor/compound/'>compound descriptor directory</a>. In addition to bulk download, PubChemRDF also provides programmatic data access through <a href='http://en.wikipedia.org/wiki/Representational_state_transfer'>RESTful interface</a>.
+</p>
+
+<p>This document provides detailed technical information (release notes) about the <a href="https://pubchemdocs.ncbi.nlm.nih.gov/rdf/">PubChemRDF project</a>.</p>
+<p>Additional information is available as follows:</p>
+<ul class="squares">
+<li>Slide presentation: <a href="https://ftp.ncbi.nlm.nih.gov/pubchem/presentations/pubchem_rdf_intro.pdf">PubChemRDF introduction</a></li>
+<li>Slide presentation: <a href="https://ftp.ncbi.nlm.nih.gov/pubchem/presentations/pubchem_rdf_details.pdf">PubChemRDF detail</a></li>
+<li>Slide presentation: <a href="https://ftp.ncbi.nlm.nih.gov/pubchem/presentations/pubchem_rdf_tutorial.pdf">PubChemRDF tutorial</a></li>
+<li>Publication: <a href="https://www.ncbi.nlm.nih.gov/pubmed/26175801">PubChemRDF: towards the semantic annotation of PubChem compound and substance databases.</a></li>
+<li><a href="http://pubchemblog.ncbi.nlm.nih.gov/">PubChem Blog</a></li>
+<li><a href="https://ftp.ncbi.nlm.nih.gov/pubchem/RDF/">PubChemRDF FTP Site</a></li>
+</ul>
+
+</div>
+
+</section>
+
+<section class="amp-accordion__section">
+
+<h3 class="amp-accordion__header primary-bg footer-h3">
+<span>PubChemRDF Graphs</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h3>
+
+<div>
+<amp-img
+  src="kg-37-w5975-h3013.jpg"
+  width="5975"
+  height="3013"
+  layout="responsive"
+></amp-img>
+
+</div>
+
+</section>
+
+</amp-accordion>
+</div>
+</section>
+
+<section class="amp-accordion__section" data-item-label="Ontology-based Data Integration">
+
+<h2 class="amp-accordion__header primary-bg footer-h2">
+<span>Ontology-based Data Integration</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h2>
+
+<div class="amp-accordion__content">
+
+<amp-accordion animate expand-single-section>
+
+<section class="amp-accordion__section">
+
+<h3 class="amp-accordion__header primary-bg footer-h3">
+<span>Background</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h3>
+
+<div>
+<p>
+As depicted in <strong>Figure 1</strong> below, the PubChemRDF content includes a number of semantic relationships, such as those between compounds and substances, the chemical descriptors associated with compounds and substances, the relationships between compounds, the provenance and attribution metadata of substances, and the concise bioactivity data view of substances. Whenever possible, pre-existing ontological frameworks were used to semantically describe information available in the <a href='https://pubchem.ncbi.nlm.nih.gov/'>PubChem archive</a>, rather than creating new ones. However, in some cases, no suitable types or relations were defined in standard ontologies, and a <a href='https://rdf.ncbi.nlm.nih.gov/pubchem/vocabulary'>PubChem vocabulary</a> was created to define these terms. The set of standardized ontologies used to define the domain-specific knowledge are found in <strong>Table 1</strong> and includes: <a href='http://www.ebi.ac.uk/chebi/'>Chemical Entities of Biological Interest (ChEBI)</a>, <a href='https://code.google.com/p/semanticchemistry/'>CHEMical INFormation ontology (CHEMINF)</a>, <a href='http://pir.georgetown.edu/pro/'>Protein Ontology (PRO)</a>, <a href='http://www.geneontology.org/'>Gene Ontology (GO)</a>, <a href='https://code.google.com/p/semanticscience/'>Semanticscience Integrated Ontology (SIO)</a>, <a href='http://basic-formal-ontology.org/'>Basic Formal Ontology (BFO)</a>, <a href='http://obi-ontology.org'>Ontology for Biomedical Investigations (OBI)</a>, <a href='https://code.google.com/p/information-artifact-ontology/'>Information Artifact Ontology (IAO)</a>, <a href='http://bioassayontology.org/wp/bao/'>BioAssay Ontology (BAO)</a>, <a href='https://code.google.com/p/unit-ontology/'>Units of Measurement (UO)</a>, <a href='http://purl.org/spar/cito'>Citation Typing Ontology (CiTO)</a>, <a href='http://purl.org/spar/fabio'>FRBR-aligned Bibliographic Ontology (FaBiO)</a>, <a href='http://dublincore.org/documents/dcmi-terms/'>Dublin Core Metadata Initiative (DCMI) Terms</a>, <a href='http://www.w3.org/2004/02/skos/'>Simple Knowledge Organization System (SKOS)</a>, <a href='http://www.biopax.org/'>BioPAX</a>, <a href='http://www.va.gov/TRM/StandardPage.asp?tid=5221%5E'>National Drug File-Reference Terminology (NDF-RT)</a>, and <a href='http://ncit.nci.nih.gov/'>National Center Institute thesaurus (NCIt)</a>. All of the biomedical ontologies, such as ChEBI, CHEMINF, PRO, GO, BFO, SIO, and BAO, are interfaced by the NIH Roadmap <a href='http://www.bioontology.org/'>National Center for Biomedical Ontology</a> (NCBO) through its <a href='http://bioportal.bioontology.org/'>BioPortal</a>, and comply with an evolving set of shared principles established by the <a href='http://www.obofoundry.org/'>Open Biomedical Ontologies</a> (OBO) foundry. Adoption of these core ontologies helps to ensure that the mapping of chemical and biological information is compatible across multiple Semantic Web resources.
+</p>
+</div>
+
+</section>
+
+<section class="amp-accordion__section">
+
+<h3 class="amp-accordion__header primary-bg footer-h3">
+<span>Standardized ontologies used in PubChemRDF.</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h3>
+
+<div class="hiq-t">
+<table border="0" cellpadding="0" cellspacing="0" style="width:100%;">
+
+<thead>
+<tr>
+<th scope="col" style="text-align: left;">Vocabulary</th>
+<th scope="col" style="text-align: left;">Namespace</th>
+<th scope="col" style="text-align: left;">Prefix</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><span style="color:#cd2026;"><strong>RDF Schema</strong></span></td>
+<td><span style="color:#cd2026;"><em>http://www.w3.org/2000/01/rdf-schema#</em></span></td>
+<td><span style="color:#cd2026;">rdfs</span></td>
+</tr>
+<tr>
+<td colspan="3"><span style="font-size:12px;">Vocabulary predicate used in PubChemRDF</span>
+<ul class="squares">
+<li><span style="font-size:12px;"><strong>rdfs:label</strong></span></li>
+</ul>
+</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td><span style="color:#cd2026;"><strong>RDF</strong></span></td>
+<td><span style="color:#cd2026;"><em>http://www.w3.org/1999/02/22-rdf-syntax-ns#</em></span></td>
+<td><span style="color:#cd2026;">rdf</span></td>
+</tr>
+<tr>
+<td colspan="3"><span style="font-size:12px;">Vocabulary predicate used in PubChemRDF</span>
+<ul class="squares">
+<li><strong><span style="font-size:12px;">rdf:type</span></strong></li>
+</ul>
+</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td><span style="color:#cd2026;"><strong>OWL</strong></span></td>
+<td><span style="color:#cd2026;"><em>http://www.w3.org/2002/07/owl#</em></span></td>
+<td><span style="color:#cd2026;">owl</span></td>
+</tr>
+<tr>
+<td colspan="3"><span style="font-size:12px;">OWL is mainly used to define the classes and predicates in PubChemRDF vocabulary that has namespace: http://rdf.ncbi.nlm.nih.gov/pubchem/vocabulary#.</span></td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td><span style="color:#cd2026;"><strong>XML Schema</strong></span></td>
+<td><span style="color:#cd2026;"><em>http://www.w3.org/2001/XMLSchema#</em></span></td>
+<td><span style="color:#cd2026;">xsd</span></td>
+</tr>
+<tr>
+<td colspan="3"><span style="font-size:12px;">XML Schema is used to define the data type of literals; typical data types used in PubChemRDF includes integer, float, date, and so on.</span></td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td><span style="color:#cd2026;"><strong>NDF-RT</strong></span></td>
+<td><span style="color:#cd2026;"><em>http://evs.nci.nih.gov/ftp1/NDF-RT/NDF-RT.owl#</em></span></td>
+<td><span style="color:#cd2026;">ndfrt</span></td>
+</tr>
+<tr>
+<td colspan="3"><span style="font-size:12px;">The National Drug File - Reference Terminology (NDF-RT) classfication of drugs and drug ingredients is used to annotate PubChemRDF compounds.</span></td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td><span style="color:#cd2026;"><strong>NCIt</strong></span></td>
+<td><span style="color:#cd2026;"><em>http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#</em></span></td>
+<td><span style="color:#cd2026;">ncit</span></td>
+</tr>
+<tr>
+<td colspan="3"><span style="font-size:12px;">National Cancer Institute Thesaurus (NCIt) classification of chemicals and drugs is used to annotate PubChemRDF compounds.</span></td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td><span style="color:#cd2026;"><strong>SIO</strong></span></td>
+<td><span style="color:#cd2026;"><em>http://semanticscience.org/resource/</em></span></td>
+<td><span style="color:#cd2026;">sio<em><sup>a</sup></em></span></td>
+</tr>
+<tr>
+<td colspan="3"><span style="font-size:12px;">Semanticscience Integrated Ontology (SIO) predicates used in PubChemRDF</span>
+<ul class="squares">
+<li><strong><span style="font-size:12px;">sio:has-value</span></strong></li>
+<li><strong><span style="font-size:12px;">sio:has-attribute</span></strong></li>
+<li><strong><span style="font-size:12px;">sio:has-unit</span></strong></li>
+<li><strong><span style="font-size:12px;">sio:is-output-of</span></strong></li>
+<li><strong><span style="font-size:12px;">sio:has-measurement-value</span></strong></li>
+<li><strong><span style="font-size:12px;">sio:refers-to</span></strong></li>
+<li><strong><span style="font-size:12px;">sio:gene-symbol</span></strong></li>
+</ul>
+</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td><span style="color:#cd2026;"><strong>CHEMINF</strong></span></td>
+<td><span style="color:#cd2026;"><em>http://semanticscience.org/resource/</em></span></td>
+<td><span style="color:#cd2026;">cheminf<em><sup>a</sup></em></span></td>
+</tr>
+<tr>
+<td colspan="3"><span style="font-size:12px;">Chemical Information Ontology (CHEMINF) predicates used in PubChemRDF</span>
+<ul class="squares">
+<li>
+<div><span style="font-size:12px;">c<strong>heminf</strong><strong>:CHEMINF_000477</strong> (has PubChem normalized counterpart)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>cheminf:CHEMINF_000480</strong> (has component)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>cheminf:CHEMINF_000455</strong> (is isotopologue of)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>cheminf:CHEMINF_000461</strong> (is stereoisomer of)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>cheminf:CHEMINF_000462</strong> (has same connectivity as)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>cheminf:CHEMINF_000482</strong> (similar to by PubChem 2-D similarity algorithm)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>cheminf:CHEMINF_000483</strong> (similar to by PubChem 3-D similarity algorithm)</span></div>
+</li>
+</ul>
+<p><span style="font-size:12px;">Chemical Information Ontology (CHEMINF) classes used in PubChemRDF</span></p>
+<ul class="squares">
+<li>
+<div><span style="font-size:12px;"><strong>cheminf:CHEMINF_000334</strong> (Molecular Weight)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>cheminf:CHEMINF_000335</strong> (Molecular Formula)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>cheminf:CHEMINF_000336</strong> (Total Formal Charge)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>cheminf:CHEMINF_000337</strong> (Mono Isotopic Weight)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>cheminf:CHEMINF_000338</strong> (Exact Mass)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>cheminf:CHEMINF_000140</strong> (Compound Identifier)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>cheminf:CHEMINF_000369</strong> (Covalent Unit Count)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>cheminf:CHEMINF_000370</strong> (Defined Atom Stereocenter Count)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>cheminf:CHEMINF_000371</strong> (Defined Bond Stereocenter Count)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>cheminf:CHEMINF_000372</strong> (Isotope Atom Count)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>cheminf:CHEMINF_000373</strong> (Heavy Atome Count)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>cheminf:CHEMINF_000374</strong> (Undefined Atom Stereocenter Count)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>cheminf:CHEMINF_000375</strong> (Undefined Bond Stereocenter Count)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>cheminf:CHEMINF_000376</strong> (Canonical SMILES)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>cheminf:CHEMINF_000379</strong> (Isomeric SMILES)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>cheminf:CHEMINF_000382</strong> (Preferred IUPAC Name)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>cheminf:CHEMINF_000387</strong> (Hydrogen Bond Donor Count)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>cheminf:CHEMINF_000388</strong> (Hydrogen Bond Acceptor Count)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>cheminf:CHEMINF_000389</strong> (Rotatable Bond Count)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>cheminf:CHEMINF_000390</strong> (Structure Complexity)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>cheminf:CHEMINF_000391</strong> (Tautomer Count)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>cheminf:CHEMINF_000392</strong> (TPSA)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>cheminf:CHEMINF_000395</strong> (XLogP3)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>cheminf:CHEMINF_000396</strong> (IUPAC InChI)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>cheminf:CHEMINF_000399</strong> (IUPAC InChIKey</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>cheminf:CHEMINF_000412</strong> (ChEMBL identifier)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>cheminf:CHEMINF_000409</strong> (KEGG identifier)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>cheminf:CHEMINF_000408</strong> (Human Metabolome Database identifier)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>cheminf:CHEMINF_000405</strong> (ChemSpider identifier)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>cheminf:CHEMINF_000406</strong> (DrugBank identifier)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>cheminf:CHEMINF_000407</strong> (ChEBI identifier)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>cheminf:CHEMINF_000446</strong> (CAS registry number)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>cheminf:CHEMINF_000447</strong> (EC number, a&nbsp;seven-digit identifier for regulatory purposes within the European Union)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>cheminf:CHEMINF_000564</strong> (LipidMaps identifier)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>cheminf:CHEMINF_000565</strong> (National service center number)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>cheminf:CHEMINF_000563</strong> (Unique ingredient identifier)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>cheminf:CHEMINF_000467</strong> (Validated chemical database identifier, superclass of other database identifiers)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>cheminf:CHEMINF_000561</strong> (Drug trade name, brand name)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>cheminf:CHEMINF_000562</strong> (International nonproprietary name, INN)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>cheminf:CHEMINF_000339</strong> (PubChem depositor-supplied name)</span></div>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td><span style="color:#cd2026;"><strong>SKOS</strong></span></td>
+<td><span style="color:#cd2026;"><em>http://www.w3.org/2004/02/skos/core#</em></span></td>
+<td><span style="color:#cd2026;">skos</span></td>
+</tr>
+<tr>
+<td colspan="3"><span style="font-size:12px;">Simple Knowledge Organization System (SKOS) predicates used in PubChemRDF</span>
+<ul class="squares">
+<li>
+<div><strong><span style="font-size:12px;">skos:exactMatch (used for depositor-provided external links)</span></strong></div>
+</li>
+<li>
+<div><strong><span style="font-size:12px;">skos:closeMatch (used for similarity links derived from structure-/sequence-based calculations)</span></strong></div>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td><span style="color:#cd2026;"><strong>BFO, OBI, IAO, RO, SO, UO</strong></span></td>
+<td><span style="color:#cd2026;"><em>http://purl.obolibrary.org/obo/</em></span></td>
+<td><span style="color:#cd2026;">obo</span></td>
+</tr>
+<tr>
+<td colspan="3"><span style="font-size:12px;">Basic Formal Ontology (BFO), Ontology for biomedical Investigations (OBI), Information Artifact Ontology (IAO), Relation Ontology (RO) predicates used in PubChemRDF</span>
+<ul class="squares">
+<li>
+<div><span style="font-size:12px;"><strong>obo:RO_0000057</strong> (has participant) (was&nbsp;<strong>obo:BFO_0000057</strong>)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>obo:RO_0000056</strong> (participates in) (was <strong>obo:BFO_0000056</strong>)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>obo:OBI_0000299</strong> (has specified output)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>obo:IAO_0000136</strong> (is about)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>obo:RO_0002180</strong> (has component) (was <strong>obo:BFO_0000110</strong>)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>obo:RO_0001025</strong>&nbsp;(located in) (was:&nbsp;<strong>obo:BFO_0000171)</strong></span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>obo:RO_0000085</strong>&nbsp;(has function) (was:&nbsp;<strong>obo:BFO_0000160)</strong></span></div>
+</li>
+</ul>
+<p><span style="font-size:12px;">Sequence Ontology (SO), Gene Ontology (GO), Basic Formal Ontology (BFO), Unit Ontology (UO) classes used in PubChemRDF</span></p>
+<ul class="squares">
+<li>
+<div><span style="font-size:12px;"><strong>obo:SO_0000417</strong> (polypeptide domain)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>obo:GO_0001516</strong> (prostaglandin biosynthetic process)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>obo:GO_0005737</strong> (cytoplasm)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>obo:BFO_0000034</strong> (function)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>obo:UO_0000055</strong> (molar mass unit)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>obo:UO_0000324</strong> (square angstrom)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>obo:UO_0000064</strong> (micromolar)</span></div>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td><span style="color:#cd2026;"><strong>ChEBI, PR, GO</strong></span></td>
+<td><span style="color:#cd2026;"><em>http://purl.obolibrary.org/obo/</em></span></td>
+<td><span style="color:#cd2026;">obo</span></td>
+</tr>
+<tr>
+<td colspan="3">
+<p><span style="font-size:12px;">Chemical Entities of Biological Interest (ChEBI) classifcation is used to annotate PubChemRDF compounds and substancs; Protein Ontology (PR), Gene Ontology (GO) classifications is used to annotate PubChemRDF protein targets;</span></p>
+</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td><span style="color:#cd2026;"><strong>BAO</strong></span></td>
+<td><span style="color:#cd2026;"><em>http://www.bioassayontology.org/bao#</em></span></td>
+<td><span style="color:#cd2026;">bao</span></td>
+</tr>
+<tr>
+<td colspan="3"><span style="font-size:12px;">BioAssay Ontology (BAO) predicate used in PubChemRDF</span>
+<ul class="squares">
+<li>
+<div><span style="font-size:12px;"><strong>bao:BAO_0000210</strong> (has assay stage)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>bao:BAO_0000809</strong> (has confirmatory assay)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>bao:BAO_0000812</strong> (has summary assay)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>bao:BAO_0000808</strong> (has primary assay)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>bao:BAO_0000209</strong> (has measure group)</span></div>
+</li>
+</ul>
+<p><span style="font-size:12px;">BioAssay Ontology (BAO) classes used in PubChemRDF</span></p>
+<ul class="squares">
+<li>
+<div><span style="font-size:12px;"><strong>bao:BAO_0000015</strong> (bioassay)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>bao:BAO_0000040</strong> (measure group)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>bao:BAO_0000030</strong> (confirmatory assay)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>bao:BAO_0000031</strong> (primary assay)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>bao:BAO_0000517</strong> (summary assay)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>bao:BAO_0002162</strong> (concentration response endpoint)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>bao:BAO_0002862</strong> (EC 5 hour)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>bao:BAO_0000186</strong> (AC50)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>bao:BAO_0002877</strong> (AC1000 absolute)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>bao:BAO_0002878</strong> (AC10 absolute)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>bao:BAO_0002879</strong> (AC26 absolute)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>bao:BAO_0002880</strong> (AC35 absolute)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>bao:BAO_0002881</strong> (AC40 absolute)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>bao:BAO_0002882</strong> (AC500 absolute)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>bao:BAO_0002144</strong> (IC90)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>bao:BAO_0000192</strong> (Ki)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>bao:BAO_0000187</strong> (CC50)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>bao:BAO_0002886</strong> (ECMax_fold increase)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>bao:BAO_0002887</strong> (ECMax_percent inhibition)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>bao:BAO_0000188</strong> (EC50)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>bao:BAO_0002883</strong> (ECMax)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>bao:BAO_0003036</strong> (ED50)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>bao:BAO_0000189</strong> (GI50)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>bao:BAO_0000190</strong> (IC50)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>bao:BAO_0000034</strong> (Kd)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>bao:BAO_0000477</strong> (Km)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>bao:BAO_0002145</strong> (LC50)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>bao:BAO_0002117</strong> (LD50)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>bao:BAO_0002146</strong> (MIC)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>bao:BAO_0002884</strong> (ECMax_Tm)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>bao:BAO_0000349</strong> (50 percent cell viability)</span></div>
+</li>
+<li>
+<div><span style="font-size:12px;"><strong>bao:BAO_0000194</strong> (TGI)</span></div>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td><span style="color:#cd2026;"><strong>BioPAX</strong></span></td>
+<td><span style="color:#cd2026;"><em>http://www.biopax.org/release/biopax-level3.owl#</em></span></td>
+<td><span style="color:#cd2026;">bp</span></td>
+</tr>
+<tr>
+<td colspan="3"><span style="font-size:12px;">Biological PAthway eXchange ontology (BioPAX) predicates used in PubChemRDF</span>
+<ul class="squares">
+<li><strong><span style="font-size:12px;">bp:organism</span></strong></li>
+<li><strong><span style="font-size:12px;">bp:pathwayComponent</span></strong></li>
+</ul>
+<span style="font-size:12px;"> Biological PAthway eXchange ontology (BioPAX) classes used in PubChemRDF</span>
+<ul class="squares">
+<li><strong><span style="font-size:12px;">bp:SmallMolecule</span></strong></li>
+<li><strong><span style="font-size:12px;">bp:Gene</span></strong></li>
+<li><strong><span style="font-size:12px;">bp:Protein</span></strong></li>
+<li><strong><span style="font-size:12px;">bp:Pathway</span></strong></li>
+</ul>
+</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td><span style="color:#cd2026;"><strong>CiTO</strong></span></td>
+<td><span style="color:#cd2026;"><em>http://purl.org/spar/cito/</em></span></td>
+<td><span style="color:#cd2026;">cito</span></td>
+</tr>
+<tr>
+<td colspan="3"><span style="font-size:12px;">The Cytation Typing Ontology (CiTO) predicates used in PubChemRDF</span>
+<ul class="squares">
+<li><span style="font-size:12px;"><strong>cito:citesAsDataSource</strong></span></li>
+<li><span style="font-size:12px;"><strong>cito:isDiscussedBy</strong></span></li>
+<li><span style="font-size:12px;"><strong>cito:discusses</strong></span></li>
+</ul>
+</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td><span style="color:#cd2026;"><strong>FaBiO</strong></span></td>
+<td><span style="color:#cd2026;"><em>http://purl.org/spar/fabio/</em></span></td>
+<td><span style="color:#cd2026;">fabio</span></td>
+</tr>
+<tr>
+<td colspan="3"><span style="font-size:12px;">The FRBR-aligned Bibliographic Ontology (FaBiO) predicate used in PubChemRDF</span>
+<ul class="squares">
+<li><strong><span style="font-size:12px;">fabio:hasSubjectTerm</span></strong></li>
+</ul>
+<p><span style="font-size:12px;">The FRBR-aligned Bibliographic Ontology (FaBiO) classes used in PubChemRDF</span></p>
+<ul class="squares">
+<li><strong><span style="font-size:12px;">fabio:ReviewArticle</span></strong></li>
+<li><strong><span style="font-size:12px;">fabio:JournalArticle</span></strong></li>
+</ul>
+</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td><span style="color:#cd2026;"><strong>PDBo</strong></span></td>
+<td><span style="color:#cd2026;"><em>http://rdf.wwpdb.org/schema/pdbx-v40.owl#</em></span></td>
+<td><span style="color:#cd2026;">pdbo</span></td>
+</tr>
+<tr>
+<td colspan="3"><span style="font-size:12px;">Protein Data Bank Ontology (PDBo) predicate used in PubChemRDF</span>
+<ul class="squares">
+<li><strong><span style="font-size:12px;">pdbo:link_to_pdb</span></strong></li>
+</ul>
+</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td><span style="color:#cd2026;"><strong>DCMI Terms</strong></span></td>
+<td><span style="color:#cd2026;"><em>http://purl.org/dc/terms/</em></span></td>
+<td><span style="color:#cd2026;">dcterms</span></td>
+</tr>
+<tr>
+<td colspan="3"><span style="font-size:12px;">Dublin Core Metadata Initiative (DCMI) terms predicates used in PubChemRDF</span>
+<ul class="squares">
+<li><span style="font-size:12px;"><strong>dcterms:title</strong></span></li>
+<li><span style="font-size:12px;"><strong>dcterms:alternative</strong></span></li>
+<li><span style="font-size:12px;"><strong>dcterms:abstract</strong></span></li>
+<li><span style="font-size:12px;"><strong>dcterms:description</strong></span></li>
+<li><span style="font-size:12px;"><strong>dcterms:source</strong></span></li>
+<li><span style="font-size:12px;"><strong>dcterms:subject</strong></span></li>
+<li><span style="font-size:12px;"><strong>dcterms:available</strong></span></li>
+<li><span style="font-size:12px;"><strong>dcterms:modified</strong></span></li>
+<li><span style="font-size:12px;"><strong>dcterms:date</strong></span></li>
+<li><span style="font-size:12px;"><strong>dcterms:bibliographicCitation</strong></span></li>
+</ul>
+<span style="font-size:12px;"> Dublin Core Metadata Initiative (DCMI) terms classes used in PubChemRDF</span>
+<ul class="squares">
+<li><span style="font-size:12px;"><strong>dcterms:Dataset</strong></span></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+
+</div>
+</amp-accordion>
+
+</section>
+
+<section class="amp-accordion__section" data-item-label="PubChemRDF URI Constructions">
+
+<h2 class="amp-accordion__header primary-bg footer-h2">
+<span>PubChemRDF URI Constructions</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h2>
+
+<div>
+<p>
+In this document, PubChemRDF statements are written in the <a href='http://www.w3.org/TeamSubmission/turtle/'>Turtle syntax</a> with <a href='http://www.w3.org/Addressing/'>Uniform Resource Identifiers</a> (URIs) in relative form. The Turtle prefix directives can be used to resolve the base URIs relative to the local part. A list of the <a href='https://pubchem.ncbi.nlm.nih.gov/'>PubChem</a> subdomain namespaces is&nbsp;listed in <strong>Table 2</strong>. Both &ldquo;<a href='http://www.w3.org/TR/cooluris/#r303gendocument'>303 URI</a>&rdquo; and &ldquo;<a href='http://www.w3.org/TR/cooluris/#hashuri'>hash URI</a>&rdquo; were employed in the PubChemRDF project according to <a href='http://www.w3.org/TR/cooluris/'>W3C recommendations</a>; however, the &ldquo;hash URI&rdquo; was only used for the PubChem vocabulary subdomain, and the &quot;303 URIs&quot; were used for the rest of PubChemRDF subdomains. <a href='https://rdf.ncbi.nlm.nih.gov/pubchem/vocabulary.owl'>PubChem vocabulary</a> serves as a terminology defining the types and relations of some PubChem-specific terms.
+</p>
+<p>
+For instance, the URI for the type of PubChem specific 3-D structural similarity defined in the PubChem vocabulary is as follows:
+</p>
+<p>
+<a href="https://rdf.ncbi.nlm.nih.gov/pubchem/vocabulary#3D_structural_similarity">http://rdf.ncbi.nlm.nih.gov/pubchem/vocabulary#3D_structural_similarity</a>
+</p>
+<p>
+<strong>Table 2.</strong> The prefixes and corresponding namespaces of subdomains used in PubChemRDF. (For the latest statistics on counts of triples, see RDF Statistics)
+</p>
+<table>
+<thead>
+<tr>
+<th>Prefix</th>
+<th>Namespace</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>compound</td>
+<td>http://rdf.ncbi.nlm.nih.gov/pubchem/compound/</td>
+</tr>
+<tr>
+<td>substance</td>
+<td>http://rdf.ncbi.nlm.nih.gov/pubchem/substance/</td>
+</tr>
+<tr>
+<td>descriptor</td>
+<td>http://rdf.ncbi.nlm.nih.gov/pubchem/descriptor/</td>
+</tr>
+<tr>
+<td>inchikey</td>
+<td>http://rdf.ncbi.nlm.nih.gov/pubchem/inchikey/</td>
+</tr>
+<tr>
+<td>synonym</td>
+<td>http://rdf.ncbi.nlm.nih.gov/pubchem/synonym/</td>
+</tr>
+<tr>
+<td>bioassay</td>
+<td>http://rdf.ncbi.nlm.nih.gov/pubchem/bioassay/</td>
+</tr>
+<tr>
+<td>measuregroup</td>
+<td>http://rdf.ncbi.nlm.nih.gov/pubchem/measuregroup/</td>
+</tr>
+<tr>
+<td>endpoint</td>
+<td>http://rdf.ncbi.nlm.nih.gov/pubchem/endpoint/</td>
+</tr>
+<tr>
+<td>protein</td>
+<td>http://rdf.ncbi.nlm.nih.gov/pubchem/protein/</td>
+</tr>
+<tr>
+<td>conserveddomain</td>
+<td>http://rdf.ncbi.nlm.nih.gov/pubchem/conserveddomain/</td>
+</tr>
+<tr>
+<td>pathway</td>
+<td>http://rdf.ncbi.nlm.nih.gov/pubchem/pathway/</td>
+</tr>
+<tr>
+<td>gene</td>
+<td>http://rdf.ncbi.nlm.nih.gov/pubchem/gene/</td>
+</tr>
+<tr>
+<td>reference</td>
+<td>http://rdf.ncbi.nlm.nih.gov/pubchem/reference/</td>
+</tr>
+<tr>
+<td>nbr<em><sup>a</sup></em></td>
+<td>http://rdf.ncbi.nlm.nih.gov/pubchem/neighbor/</td>
+</tr>
+<tr>
+<td>source</td>
+<td>http://rdf.ncbi.nlm.nih.gov/pubchem/source/</td>
+</tr>
+<tr>
+<td>concept</td>
+<td>http://rdf.ncbi.nlm.nih.gov/pubchem/concept/</td>
+</tr>
+</tbody>
+</table>
+<p>
+<em><sup>a </sup></em> The RDF triples for the neighbor subdomain are currently only available through the RESTful interface.
+</p>
+<p>
+The URIs for PubChem compounds and substances were constructed based on primary accession identifiers (CID and SID). For instance, the URIs for <a href="https://pubchem.ncbi.nlm.nih.gov/compound/60823">CID60823</a> and <a href="https://pubchem.ncbi.nlm.nih.gov/substance/103554720">SID103554720</a> can be represented as:
+</p>
+<p class="ind20">
+<a href="https://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID60823">http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID60823</a>&nbsp;
+</p>
+<p class="ind20">
+<a href="https://rdf.ncbi.nlm.nih.gov/pubchem/substance/SID103554720">http://rdf.ncbi.nlm.nih.gov/pubchem/substance/SID103554720</a>&nbsp;
+</p>
+<p>
+which can be abbreviated as <em>compound:CID60823</em> and <em>substance:SID103554720</em>, respectively. The <a href="https://iupac.org/who-we-are/divisions/division-details/inchi/">InChIKey</a> URIs were constructed based on the value of InChIKey. For instance, the URI for InChIKey with value of &ldquo;XUKUURHRXDUEBC-KAYWLYCHSA-N&rdquo; (case-insensitive) can be represented as:
+</p>
+<p class="ind20">
+<a href="https://rdf.ncbi.nlm.nih.gov/pubchem/inchikey/XUKUURHRXDUEBC-KAYWLYCHSA-N">http://rdf.ncbi.nlm.nih.gov/pubchem/inchikey/XUKUURHRXDUEBC-KAYWLYCHSA-N</a>
+</p>
+<p>
+Most chemical descriptor namespace URIs were constructed based on a combination of CID/SID and descriptor labels, except in the case of depositor-provided synonyms. For instance, the URI for the molecular weight of <a href="https://pubchem.ncbi.nlm.nih.gov/compound/60823">CID60823</a> can be represented as:
+</p>
+<p class="ind20">
+<a href="https://rdf.ncbi.nlm.nih.gov/pubchem/descriptor/CID60823_Molecular_Weight">http://rdf.ncbi.nlm.nih.gov/pubchem/descriptor/CID60823_Molecular_Weight </a>
+</p>
+<p>
+or simply as <em>descriptor:CID60823_Molecular_Weight</em>. The URI for the depositor-provided synonyms were constructed based on <a href="http://en.wikipedia.org/wiki/MD5">MD5 hash</a> values, after first converting chemical names to lower-case. For example, &lsquo;Atorvastatin [INN:BAN]&rsquo; becomes &lsquo;atorvastatin [inn:ban]&rsquo; to produce the MD5 hash &lsquo;7be8fb160fff31a7beea9df539fd36bd&rsquo; and &lsquo;(3R,5R)-7-[3-(anilinocarbonyl)-5-(4-fluorophenyl)-2-isopropyl-4-phenyl-1H-pyrrol-1-yl]-3,5-dihydroxyheptanoic acid&rsquo; becomes &lsquo;(3r,5r)-7-[3-(anilinocarbonyl)-5-(4-fluorophenyl)-2-isopropyl-4-phenyl-1h-pyrrol-1-yl]-3,5-dihydroxyheptanoic acid&rsquo; to produce the MD5 hash &lsquo;c576a26b0c67fa6b072b61a0b4c57a6c&rsquo;. The use of an MD5 hash in place of the actual chemical name allows PubChem information associated with any given chemical name to be directly accessed using RDF. For instance, the depositor-provided synonym of &lsquo;Atorvastatin&rsquo; can be represented as:
+</p>
+<p class="ind20">
+<a href="https://rdf.ncbi.nlm.nih.gov/pubchem/synonym/MD5_9a05646d461669f86de312d88ab5748a">http://rdf.ncbi.nlm.nih.gov/pubchem/synonym/MD5_9a05646d461669f86de312d88ab5748a </a>
+</p>
+<p>
+or simply as <em>syno:MD5_9a05646d461669f86de312d88ab5748a</em>.
+</p>
+<p>
+Some of the PubChem synonyms that are equivalent to <a href="http://www.who.int/medicines/services/inn/en/">World Health Organization (WHO) International Nonproprietary Names (INNs)</a> represent pharmaceutical substances, and some of them are assigned with <a href="http://www.whocc.no/atc/application_for_atc_codes/">WHO Anatomical Therapeutic Chemical (ATC)</a> codes. The ATC classification system can be used to search and group active ingredients in clinical drugs. Each ATC class was exposed as a skos:concept in the PubChemRDF concept subdomain, and the ATC codes were used to construct the URIs of those concepts. For instance, protein kinase inhibitors have the ATC code &ldquo;L01XE&rdquo;, and the URI for this concept is:
+</p>
+<p class="ind20">
+<a href="https://rdf.ncbi.nlm.nih.gov/pubchem/concept/ATC_L01XE">http://rdf.ncbi.nlm.nih.gov/pubchem/concept/ATC_L01XE</a>&nbsp;
+</p>
+<p>
+PubChem BioAssay records were annotated in different ways depending on the assay type in accordance with the <a href="http://bioassayontology.org/wp/bao/">BioAssay Ontology</a> (BAO). Literature extracted bioassays, such as those from <a href="http://www.ebi.ac.uk/chembl/">ChEMBL</a>, were represented as an instance of BAO measure group (<a href="http://www.bioassayontology.org/bao#BAO_0000040">BAO_0000040</a>), since these are summary results abstracted from the literature and missing specific information on how the biological experiment was performed. The URIs for assays records are constructed based on the PubChem BioAssay accession identifiers (AID). For instance, the URI for <a href="https://pubchem.ncbi.nlm.nih.gov/bioassay/447528">AID447528</a> can be assigned as:
+</p>
+<p class="ind20">
+<a href="https://rdf.ncbi.nlm.nih.gov/pubchem/measuregroup/AID447528">http://rdf.ncbi.nlm.nih.gov/pubchem/measuregroup/AID447528</a>
+</p>
+<p>
+or abbreviated as <em>measuregroup:AID447528</em>.
+</p>
+<p>
+Some assays in PubChem aggregate literature abstracted bioactivity data from multiple publications. For instance, <a href="https://pubchem.ncbi.nlm.nih.gov/bioassay/578">AID578</a>&nbsp;deposited by <a href="http://www.bindingdb.org/">BindingDB</a> contains bioactivity data tested against the&nbsp;epidermal growth factor receptor from&nbsp;different publications. In literature-derived assays of this type, a single bioassay record is broken down into multiple measure groups, and the fragment identifier of each individual measure group is based on the combination of AID and <a href="https://www.ncbi.nlm.nih.gov/pubmed">PubMed</a> identifier (PMID), for example:
+</p>
+<p class="ind20">
+<a href="http://rdf.ncbi.nlm.nih.gov/pubchem/measuregroup/AID578_PMID8879541">http://rdf.ncbi.nlm.nih.gov/pubchem/measuregroup/AID578_PMID8879541</a>
+</p>
+<p>
+or abbreviated as <em>measuregroup:AID578_PMID8879541</em>. However, in contrast to literature-extracted assays, biological screening experiments, such as those from the <a href="https://mli.nih.gov/mli/">NIH Molecular Library Program</a> (MLP), were represented as an instance of BAO bioassay (<a href="http://www.bioassayontology.org/bao#BAO_0000015">BAO_0000015</a>). For instance, the URI for <a href="https://pubchem.ncbi.nlm.nih.gov/bioassay/1788">AID1788</a> can be assigned as:
+</p>
+<p class="ind20">
+<a href="https://rdf.ncbi.nlm.nih.gov/pubchem/bioassay/AID1788">http://rdf.ncbi.nlm.nih.gov/pubchem/bioassay/AID1788</a>
+</p>
+<p>
+or abbreviated as <em>bioassay:AID1788</em>.
+</p>
+<p>
+Although screening assays and literature-extracted assays are different, they are related. Each screening assay refers to an operational unit and may have one or more instances of BAO measure group (<a href="http://www.bioassayontology.org/bao#BAO_0000040">BAO_0000040</a>). If the screening assay is a panel assay (for instance, testing against a panel of multiple targets as occurs when performing a lead profiling screen), the URIs are constructed based on the combination of AID and panel component identifier (PID), for example:
+</p>
+<p class="ind20">
+<a href="https://rdf.ncbi.nlm.nih.gov/pubchem/measuregroup/AID1788_1">http://rdf.ncbi.nlm.nih.gov/pubchem/measuregroup/AID1788_1</a>
+</p>
+<p>
+or abbreviated as <em>measuregroup:AID1788_1</em>. Therefore, the measure group serves as a basic concept interlinking chemical substances, molecular targets, and the bioactivity endpoints for a given PubChem BioAssay record.
+</p>
+<p>
+The URIs of bioactivity endpoints were constructed based on the combination of SID and AID, plus PID if the endpoints were produced by panel screening assays or PMID if the endpoints were derived from aggregated literature-extracted assay. The following URIs demonstrate the different reference approaches used for bioactivity endpoints:
+</p>
+<p class="ind20">
+<a href="https://rdf.ncbi.nlm.nih.gov/pubchem/endpoint/SID103164874_AID443491">http://rdf.ncbi.nlm.nih.gov/pubchem/endpoint/SID103164874_AID443491</a>
+</p>
+<p class="ind20">
+<a href="https://rdf.ncbi.nlm.nih.gov/pubchem/endpoint/SID99445338_AID2202_1">http://rdf.ncbi.nlm.nih.gov/pubchem/endpoint/SID99445338_AID2202_1</a>
+</p>
+<p class="ind20">
+<a href="http://rdf.ncbi.nlm.nih.gov/pubchem/endpoint/SID8034062_AID578_PMID8879541">http://rdf.ncbi.nlm.nih.gov/pubchem/endpoint/SID8034062_AID578_PMID8879541</a>
+</p>
+<p>
+or abbreviated as <em>endpoint:SID103164874_AID443491</em>, <em>endpoint:SID99445338_AID2202_1</em>, and <em>endpoint:SID8034062_AID578_PMID8879541</em>, respectively.
+</p>
+<p>
+The first URI above refers to an endpoint derived from a <a href="https://www.ebi.ac.uk/chembl/">ChEMBL</a> assay, the second URI refers to an endpoint produced by a panel screening assay (assay panel PID is 1), and the last URI refers to an endpoint derived from a literature-extracted assay (PMID is 10395478).
+</p>
+<p>
+In the case of protein targets, the URIs are created based upon the <a href="https://www.ncbi.nlm.nih.gov/">National Center for Biotechnology Information (NCBI)</a> <a href="https://www.ncbi.nlm.nih.gov/protein">Protein</a>&nbsp;Accessions (note that <a href="https://ncbiinsights.ncbi.nlm.nih.gov/2016/07/15/ncbi-is-phasing-out-sequence-gis-heres-what-you-need-to-know/">NCBI phased out GI number)</a>:
+</p>
+<p class="ind20">
+<a href="http://rdf.ncbi.nlm.nih.gov/pubchem/protein/ACCAAI32976">http://rdf.ncbi.nlm.nih.gov/pubchem/protein/ACCAAI32976</a>
+</p>
+<p>
+or abbreviated as <em>protein:</em>ACCAAI32976. In the case of protein complexes as bioassay targets, the URIs are constructed based on a combination of accessions, which are in the ascending order:
+</p>
+<p class="ind20">
+<a href="http://rdf.ncbi.nlm.nih.gov/pubchem/protein/ACCNP_056953ACCNP_858045">http://rdf.ncbi.nlm.nih.gov/pubchem/protein/ACCNP_056953ACCNP_858045</a>
+</p>
+<p>
+The protein targets tested in PubChem BioAssay database can be linked to other NCBI databases, including the NCBI: <a href="https://www.ncbi.nlm.nih.gov/Structure/cdd/wrpsb.cgi">Conserved Domain</a>, <a href="https://www.ncbi.nlm.nih.gov/gene">Gene</a>, and <a href="https://www.ncbi.nlm.nih.gov/pubmed">PubMed</a>. <a href="https://www.ncbi.nlm.nih.gov/Structure/cdd/cdd_help.shtml#CDWhat">Protein conserved domains</a> contain recurring sequence patterns, which define the functional and/or structural units of protein sequences. NCBI conserved domains were identified through multiple sequence alignment, and were distinguished through <a href="https://www.ncbi.nlm.nih.gov/Structure/cdd/cdd_help.shtml#CD_PSSM">position-specific scoring matrix (PSSM)</a> models. Each PSSM model has a unique PSSM identifier (PSSMID). The NCBI Gene integrates gene information for various species. Each gene has a unique Gene ID (GID). NCBI PubMed database comprises more than 23 million citations from the biomedical literature. Each PubMed record is assigned with a unique identifier (PMID). PubChemRDF provides the RDF triples to expose the linkage information and the basic descriptions of those resources.
+</p>
+<p>
+The URIs for conserved domains use PSSMIDs:
+</p>
+<p class="ind20">
+<a href="https://rdf.ncbi.nlm.nih.gov/pubchem/conserveddomain/PSSMID132758">http://rdf.ncbi.nlm.nih.gov/pubchem/conserveddomain/PSSMID132758</a>
+</p>
+<p>
+or abbreviated as <em>domain:PSSMID132758</em>. The URIs for genes use NCBI gene IDs:
+</p>
+<p class="ind20">
+<a href="https://rdf.ncbi.nlm.nih.gov/pubchem/gene/GID367">http://rdf.ncbi.nlm.nih.gov/pubchem/gene/GID367</a>
+</p>
+<p>
+or abbreviated as <em>gene:GID367</em>. The URIs for pathways use PubChem Pathway internal identifiers (PWIDs):
+</p>
+<p class="ind20">
+<a href="http://rdf.ncbi.nlm.nih.gov/pubchem/pathway/PWID10790">http://rdf.ncbi.nlm.nih.gov/pubchem/pathway/PWID10790</a>
+</p>
+<p>
+or abbreviated as pathway:PWID10790. The URIs for publication references use PMIDs:
+</p>
+<p class="ind20">
+<a href="https://rdf.ncbi.nlm.nih.gov/pubchem/reference/PMID10395478">http://rdf.ncbi.nlm.nih.gov/pubchem/reference/PMID10395478</a>
+</p>
+<p>
+or abbreviated as <em>reference:PMID10395478</em>.
+</p>
+<p>
+The URIs for PubChem depositors are based on the names of depositors:
+</p>
+<p class="ind20">
+<a href="https://rdf.ncbi.nlm.nih.gov/pubchem/source/ChEMBL">http://rdf.ncbi.nlm.nih.gov/pubchem/source/ChEMBL</a>
+</p>
+<p>
+or abbreviated as <em>source:ChEMBL</em>. If the names of depositors are numeric numbers, a prefix &ldquo;ID&rdquo; was added; or if the names contains the symbols including &ldquo;,&rdquo;, &ldquo;.&rdquo;, &ldquo;&amp;&rdquo;, &ldquo;(&rdquo;, &ldquo;)&rdquo;, and &ldquo;/&rdquo;, those symbols were deleted; or if the names contains spaces, they were replaced by &ldquo;_&rdquo;.
+</p>
+<p>
+The URIs for PubChem Compound 2-D and 3-D similarity neighbors and PubChem BioAssay protein target sequence similarity neighbors are available in these examples:
+</p>
+<p class="ind20">
+<a href="https://rdf.ncbi.nlm.nih.gov/pubchem/neighbor/CID60823_CID68019409_2DSimilarity">http://rdf.ncbi.nlm.nih.gov/pubchem/neighbor/CID60823_CID68019409_2DSimilarity </a>
+</p>
+<p class="ind20">
+<a href="https://rdf.ncbi.nlm.nih.gov/pubchem/neighbor/CID60823_CID11330946_3DSimilarity">http://rdf.ncbi.nlm.nih.gov/pubchem/neighbor/CID60823_CID11330946_3DSimilarity </a>
+</p>
+<p>
+or abbreviated as nbr:<em>CID60823_CID68019409_2DSimilarity</em>, and <em> nbr:CID60823_CID11330946_3DSimilarity</em>, respectively.</p>
+
+</div>
+</section>
+
+<section class="amp-accordion__section" data-item-label="PubChemRDF Subdomains">
+
+<h2 class="amp-accordion__header primary-bg footer-h2">
+<span>PubChemRDF Subdomains</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h2>
+
+<amp-accordion animate expand-single-section>
+
+<section>
+
+<h3 class="amp-accordion__header primary-bg footer-h3">
+<span>PubChem Compound</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h3>
+
+<div>
+<p>PubChem Compound RDF triples expose the linkage from compound to the chemical descriptor resources and interrelated compounds, such as <a href="https://pubchem.ncbi.nlm.nih.gov/search/help_search.html#IdSimi">compound identity groups (CIGs)</a>. [See Figure 1 for a diagram of links to other RDF subdomains.] For example, to resolve the URI in the RESTful interface for compound <a href="https://pubchem.ncbi.nlm.nih.gov/compound/60823">CID60823</a>:</p>
+<p class="ind20"><a href="https://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID60823">http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID60823</a></p>
+<p class="ind20">&nbsp;</p>
+<table border="0" cellpadding="0" cellspacing="0">
+<thead>
+<tr>
+<th>Link Type</th>
+<th>Example RDF Triple</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<p>calculated chemical descriptor</p>
+</td>
+<td>
+<p>compound:CID60823 sio:has-attribute descriptor:CID60823_Molecular_Weight .</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>parent compound</p>
+</td>
+<td>
+<p>compound:CID23665101 vocab:has_parent compound:CID60823 .</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>component compound</p>
+</td>
+<td>
+<p>compound:CID22765305 cheminf:CHEMINF_000478 compound:CID2244 .</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>compound identity group (CIG)</p>
+</td>
+<td>
+<p>compound:CID60823 cheminf:CHEMINF_000462 compound:CID53233926 .</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>2-D similarity neighbor<em><sup>a</sup></em></p>
+</td>
+<td>
+<p>compound:CID60823 cheminf:CHEMINF_000482 compound:CID60822 .</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>3-D similarity neighbor<em><sup>a</sup></em></p>
+</td>
+<td>
+<p>compound:CID60823 cheminf:CHEMINF_000483 compound:CID10745515 .</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><em><sup>a</sup></em> Given the large number of similarity neighbors for a given compound, the RDF statements for similarity neighbors are moved to a separate URI: <a href="https://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID60823/nbr">http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID60823/nbr</a></p>
+<p>If the compound has links to the corresponding <a href="https://www.wikidata.org">Wikidata</a> records, the RDF triples representing the cross-reference relations are provided:</p>
+<div class="computer_code">compound:CID60823 skos:closeMatch &lt;http://www.wikidata.org/entity/Q668093&gt; .</div>
+<p>If the compound can be mapped to the drug ontologies (i.e., ChEBI, NDF-RT and NCIt), the drug classes defined in the classification terminologies are used to annotate the compound:</p>
+<div class="computer_code">compound:CID60823 rdf:type obo:CHEBI_39548 .<br />
+compound:CID60823 rdf:type ndfrt:N0000022046 .<br />
+compound:CID60823 rdf:type ncit:C61527 .</div>
+
+</div>
+</section>
+
+<section>
+
+<h3 class="amp-accordion__header primary-bg footer-h3">
+<span>PubChem Substance</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h3>
+
+<div>
+<p>PubChem Substance RDF triples expose the linkage between: substance and chemical descriptor resources, substance and standardized compound resources, substance and measure group resources, and substance and data source resources. For example, to resolve the URI for <a href="https://pubchem.ncbi.nlm.nih.gov/substance/8032774">SID8032774</a>:</p>
+<p class="ind20"><a href="https://rdf.ncbi.nlm.nih.gov/pubchem/substance/SID8032774">http://rdf.ncbi.nlm.nih.gov/pubchem/substance/SID8032774</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<thead>
+<tr>
+<th>Link Type</th>
+<th>Example RDF Triple</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<p>depositor-provided descriptor</p>
+</td>
+<td>
+<p>substance:SID8032774 sio:has-attribute descriptor:SID8032774_Depositor_Identifier .</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>standardized compound</p>
+</td>
+<td>
+<p>substance:SID8032774 cheminf:CHEMINF_000477 compound:CID5327844 .</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>data source</p>
+</td>
+<td>
+<p>substance:SID8032774 dcterms:source source:BindingDB .</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>measure group</p>
+</td>
+<td>
+<p>substance:SID8032774 obo:RO_0000056 measuregroup:AID578_PMID9357527&nbsp;.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>If the substance was deposited by ChEMBL database, a cross-link to the <a href="http://www.ebi.ac.uk/rdf/services/chembl/">ChEMBL RDF</a> resource is provided:</p>
+<div class="computer_code">substance:SID194189249 skos:exactMatch &lt;http://rdf.ebi.ac.uk/resource/chembl/molecule/CHEMBL3138729&gt; .</div>
+<p>If the substance was deposited by <a href="https://www.ncbi.nlm.nih.gov/Structure/MMDB/mmdb.shtml">NCBI MMDB</a>, a cross-link to the <a href="http://rdf.wwpdb.org/pdb">RDF-based PDB resource</a> is provided:</p>
+<div class="computer_code">substance:SID198184368 pdbo:link_to_pdb &lt;http://rdf.wwpdb.org/pdb/4UUB&gt; .</div>
+
+</div>
+</section>
+
+<section>
+
+<h3 class="amp-accordion__header primary-bg footer-h3">
+<span>PubChem Descriptors</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h3>
+
+<div>
+<p>
+<p>PubChem descriptor RDF triples expose the type, value and unit for a given descriptor.</p>
+<p>For example, to resolve URI in the RESTful interface for the molecular weight of PubChem Compound record <a href="https://pubchem.ncbi.nlm.nih.gov/compound/60823">CID60823</a> and to provide the external depositor identifier for PubChem Substance record <a href="https://pubchem.ncbi.nlm.nih.gov/substance/8032774">SID8032774</a>:</p>
+<p class="ind20"><a href="https://rdf.ncbi.nlm.nih.gov/pubchem/descriptor/CID60823_Molecular_Weight">http://rdf.ncbi.nlm.nih.gov/pubchem/descriptor/CID60823_Molecular_Weight </a></p>
+<p class="ind20"><a href="https://rdf.ncbi.nlm.nih.gov/pubchem/descriptor/SID8032774_Substance_Version">http://rdf.ncbi.nlm.nih.gov/pubchem/descriptor/SID8032774_Substance_Version </a></p>
+<p class="ind20">&nbsp;</p>
+<table border="0" cellpadding="0" cellspacing="0">
+<thead>
+<tr>
+<th>Link Type</th>
+<th>Example RDF Triple</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<p>type</p>
+</td>
+<td>
+<p>descriptor:CID60823_Molecular_Weight rdf:type cheminf:CHEMINF_000334 .</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>value</p>
+</td>
+<td>
+<p>descriptor:CID60823_Molecular_Weight sio:has-value &quot;558.639803&quot;^^xsd:double .</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>unit</p>
+</td>
+<td>
+<p>descriptor:CID60823_Molecular_Weight sio:has-unit obo:UO_0000055 .</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+</p>
+</div>
+</section>
+
+<section>
+
+<h3 class="amp-accordion__header primary-bg footer-h3">
+<span>PubChem InChIKey</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h3>
+
+<div>
+<p>
+<p>PubChem InChIKey RDF triples expose the type, value and the link to the corresponding compound(s) for a given InChIKey. For example, to resolve the URI for the InChIKey with a value of &ldquo;BSYNRYMUTXBXSQ-UHFFFAOYSA-N&rdquo; (case-insensitive):</p>
+<p class="ind20"><a href="https://rdf.ncbi.nlm.nih.gov/pubchem/inchikey/BSYNRYMUTXBXSQ-UHFFFAOYSA-N">http://rdf.ncbi.nlm.nih.gov/pubchem/inchikey/BSYNRYMUTXBXSQ-UHFFFAOYSA-N </a></p>
+
+<table border="0" cellpadding="0" cellspacing="0">
+<thead>
+<tr>
+<th>Link Type</th>
+<th>Example RDF Triple</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<p>type</p>
+</td>
+<td>
+<p>inchikey:BSYNRYMUTXBXSQ-UHFFFAOYSA-N rdf:type cheminf:CHEMINF_000399 .</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>value</p>
+</td>
+<td>
+<p>inchikey:BSYNRYMUTXBXSQ-UHFFFAOYSA-N sio:has-value &quot;BSYNRYMUTXBXSQ-UHFFFAOYSA-N&quot;@en .</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>compound</p>
+</td>
+<td>
+<p>inchikey:BSYNRYMUTXBXSQ-UHFFFAOYSA-N sio:is-attribute-of compound:CID2244 .</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>If the InChKey represents a chemical structure in the <a href="https://fdasis.nlm.nih.gov/srs/srs.jsp">FDA UNII database</a> , and the UNII code is incorporated as registry number in a <a href="https://www.nlm.nih.gov/mesh/concept_structure.html">MeSH concept</a>, the annotation of InChIKey using MeSH concept is provided:</p>
+<div class="computer_code">inchikey:ADUKCCWBEDSMEB-NSHDSACASA-N dcterms:subject &lt;http://id.nlm.nih.gov/mesh/M0017537&gt; .</div>
+
+</p>
+</div>
+</section>
+
+<section>
+
+<h3 class="amp-accordion__header primary-bg footer-h3">
+<span>PubChem Synonym</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h3>
+
+<div>
+<p>
+<p>PubChem synonym RDF triples expose the type and value of a given MD5 hash string, and the link to the corresponding compound(s). For example, to resolve the URI for the synonym &ldquo;aspirin [ban:jan]&rdquo;:</p>
+<p class="ind20"><a href="https://rdf.ncbi.nlm.nih.gov/pubchem/synonym/MD5_f90df4a14db08de040a09d3546c1bb58">http://rdf.ncbi.nlm.nih.gov/pubchem/synonym/MD5_f90df4a14db08de040a09d3546c1bb58 </a></p>
+<p class="ind20">&nbsp;</p>
+<table border="0" cellpadding="0" cellspacing="0">
+<thead>
+<tr>
+<th>Link Type</th>
+<th>Example RDF Triple</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<p>compound</p>
+</td>
+<td>synonym:MD5_f90df4a14db08de040a09d3546c1bb58 sio:is-attribute-of compound:CID2244 .</td>
+</tr>
+<tr>
+<td>
+<p>type</p>
+</td>
+<td>synonym:MD5_f90df4a14db08de040a09d3546c1bb58 rdf:type cheminf:CHEMINF_000339 .</td>
+</tr>
+<tr>
+<td>
+<p>value</p>
+</td>
+<td>synonym:MD5_f90df4a14db08de040a09d3546c1bb58 sio:has-value &quot;aspirin [ban:jan]&quot;@en .</td>
+</tr>
+</tbody>
+</table>
+<p>If the synonym represents a MeSH term, or a registry number for a <a href="https://www.nlm.nih.gov/mesh/concept_structure.html">MeSH concept</a> , the annotation of synonym using a MeSH concept is provided:</p>
+<div class="computer_code">synonym:MD5_f90df4a14db08de040a09d3546c1bb58 dcterms:subject &lt;http://id.nlm.nih.gov/mesh/M0001864&gt; .</div>
+<p>If the synonym represents a <a href="http://www.who.int/medicines/services/inn/en/">WHO INN</a> that has been assigned with an ATC code, the annotation of synonym using an ATC classification system is provided:</p>
+<div class="computer_code">synonym:MD5_47a63fc97978537204b7a7371de13662 dcterms:subject concept:ATC_L01XE01 .</div>
+
+</p>
+</div>
+</section>
+
+<section>
+
+<h3 class="amp-accordion__header primary-bg footer-h3">
+<span>PubChem BioAssay</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h3>
+
+<div>
+<p>PubChem BioAssay RDF triples expose the type, title, data source and the linkage to measure groups for a given assay. For example, to resolve the URI for the PubChem Assay record <a href="https://pubchem.ncbi.nlm.nih.gov/bioassay/1788">AID1788</a>:</p>
+<p class="ind20"><a href="https://rdf.ncbi.nlm.nih.gov/pubchem/bioassay/AID1788">http://rdf.ncbi.nlm.nih.gov/pubchem/bioassay/AID1788</a></p>
+<p class="ind20">&nbsp;</p>
+<table border="0" cellpadding="0" cellspacing="0">
+<thead>
+<tr>
+<th>Link Type</th>
+<th>Example RDF Triple</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<p>type</p>
+</td>
+<td>bioassay:AID1788 rdf:type bao:BAO_0000015 .</td>
+</tr>
+<tr>
+<td>
+<p>title</p>
+</td>
+<td>bioassay:AID1788 dcterms:title &quot;Discovery of novel allosteric modulators of the M1 muscarinic receptor: Agonist Ancillary Activity&quot;@en .</td>
+</tr>
+<tr>
+<td>
+<p>data source</p>
+</td>
+<td>bioassay:AID1788 dcterms:source source:Vanderbilt_Screening_Center_for_GPCRs__Ion_Channels_and_Transporters .</td>
+</tr>
+<tr>
+<td>
+<p>measure group</p>
+</td>
+<td>bioassay:AID1788 bao:BAO_0000209 measuregroup:AID1788_1 .</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</section>
+
+<section>
+
+<h3 class="amp-accordion__header primary-bg footer-h3">
+<span>PubChem MeasureGroup</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h3>
+
+<div>
+<p>For high throughput screening assays, including panel assays, PubChem measure group RDF triples expose the title, type, as well as the linkage to the participating proteins and endpoints. For example, to resolve the URI for assay panel 1 from the PubChem Assay record <a href="https://pubchem.ncbi.nlm.nih.gov/bioassay/1788">AID1788</a>:</p>
+<p class="ind20"><a href="https://rdf.ncbi.nlm.nih.gov/pubchem/measuregroup/AID1788_1">http://rdf.ncbi.nlm.nih.gov/pubchem/measuregroup/AID1788_1</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<thead>
+<tr>
+<th>Link Type</th>
+<th>Example RDF Triple</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<p>type</p>
+</td>
+<td>measuregroup:AID1788_1 rdf:type bao:BAO_0000040 .</td>
+</tr>
+<tr>
+<td>
+<p>title</p>
+</td>
+<td>measuregroup:AID1788_1 dcterms:title &quot;Adenosine A1 (human)&quot;@en .</td>
+</tr>
+<tr>
+<td>
+<p>protein</p>
+</td>
+<td>measuregroup:AID1788_1 obo:RO_0000057 protein:ACCNP_000665 .</td>
+</tr>
+<tr>
+<td>
+<p>endpoint</p>
+</td>
+<td>measuregroup:AID1788_1 obo:OBI_0000299 endpoint:SID56353039_AID1788_1 .</td>
+</tr>
+</tbody>
+</table>
+<p>For literature-extracted assays, PubChem measure group RDF triples expose the title, type, data source, as well as the linkage to the participating proteins and endpoints. For example, to resolve the URI for literature-extracted assay <a href="https://pubchem.ncbi.nlm.nih.gov/bioassay/447528">AID447528</a>:</p>
+<p><a href="https://rdf.ncbi.nlm.nih.gov/pubchem/measuregroup/AID447528">http://rdf.ncbi.nlm.nih.gov/pubchem/measuregroup/AID447528</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<thead>
+<tr>
+<th>Link Type</th>
+<th>Example RDF Triple</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<p>type</p>
+</td>
+<td>measuregroup:AID447528 rdf:type bao:BAO_0000040 .</td>
+</tr>
+<tr>
+<td>
+<p>
+title
+</p>
+</td>
+<td>measuregroup:AID447528 dcterms:title &quot;Inhibition of ovine COX1 by enzyme immunoassay&quot;@en .</td>
+</tr>
+<tr>
+<td>
+<p>data source</p>
+</td>
+<td>measuregroup:AID447528 dcterms:source source:ChEMBL .</td>
+</tr>
+<tr>
+<td>
+<p>protein</p>
+</td>
+<td>measuregroup:AID447528 obo:RO_0000057 protein:ACCP05979.</td>
+</tr>
+<tr>
+<td>
+<p>endpoint</p>
+</td>
+<td>measuregroup:AID447528 obo:OBI_0000299 endpoint:SID103164874_AID447528 .</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</section>
+
+<section>
+
+<h3 class="amp-accordion__header primary-bg footer-h3">
+<span>PubChem Endpoint</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h3>
+
+<div>
+<p>PubChem endpoint RDF triples expose the type, value, unit, <a href="https://www.ncbi.nlm.nih.gov/pubmed">reference</a>, and the linkage to substance. For example, to resolve the URI for the bioassay endpoint between PubChem records <a href="https://pubchem.ncbi.nlm.nih.gov/substance/103164874">SID103164874</a> and <a href="https://pubchem.ncbi.nlm.nih.gov/bioassay/443491">AID443491</a>:</p>
+<p class="ind20"><a href="https://rdf.ncbi.nlm.nih.gov/pubchem/endpoint/SID103164874_AID443491">http://rdf.ncbi.nlm.nih.gov/pubchem/endpoint/SID103164874_AID443491</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<thead>
+<tr>
+<th>Link Type</th>
+<th>Example RDF Triple</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<p>type</p>
+</td>
+<td>endpoint:SID103164874_AID443491 rdf:type bao:BAO_0000190 .</td>
+</tr>
+<tr>
+<td>
+<p>value</p>
+</td>
+<td>endpoint:SID103164874_AID443491 sio:has-value &quot;0.162&quot;^^xsd:float .</td>
+</tr>
+<tr>
+<td>
+<p>unit</p>
+</td>
+<td>endpoint:SID103164874_AID443491 sio:has-unit uo:micromolar .</td>
+</tr>
+<tr>
+<td>
+<p>substance</p>
+</td>
+<td>endpoint:SID103164874_AID443491 obo:IAO_0000136 substance:SID103164874 .</td>
+</tr>
+<tr>
+<td>
+<p>reference</p>
+</td>
+<td>endpoint:SID103164874_AID443491 cito:citesAsDataSource reference:PMID19880317 .</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section>
+
+<h3 class="amp-accordion__header primary-bg footer-h3">
+<span>PubChem Protein</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h3>
+
+<div>
+<p>PubChem protein RDF triples expose the type (<a href="http://pir.georgetown.edu/pro/">Protein Ontology</a>), title, similarity neighbors, <a href="https://www.ncbi.nlm.nih.gov/Structure/cdd/cdd.shtml">conserved domains</a>, encoding <a href="https://www.ncbi.nlm.nih.gov/gene">genes</a>, <a href="https://www.ncbi.nlm.nih.gov/taxonomy">organisms</a>,&nbsp;<a href="https://www.ncbi.nlm.nih.gov/pubmed">references</a>, and the cross-links to <a href="https://sparql.uniprot.org/">UniProt RDF</a>. For example, to resolve the URI for the <a href="https://www.ncbi.nlm.nih.gov/protein/">NCBI Protein</a> record <a href="https://www.ncbi.nlm.nih.gov/P00533">ACCP00533</a>:</p>
+<p class="ind20"><a href="http://rdf.ncbi.nlm.nih.gov/pubchem/protein/ACCP00533">http://rdf.ncbi.nlm.nih.gov/pubchem/protein/ACCP00533</a></p>
+<p class="ind20">&nbsp;</p>
+<table border="0" cellpadding="0" cellspacing="0">
+<thead>
+<tr>
+<th>Link Type</th>
+<th>Example RDF Triple</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<p>type</p>
+</td>
+<td>protein:ACCP00533 rdf:type bp:Protein .<br />
+      protein:ACCP00533 rdf:type obo:PR_000006933 .</td>
+</tr>
+<tr>
+<td>
+<p>title</p>
+</td>
+<td>protein:ACCP00533 dcterms:title &quot;Epidermal growth factor receptor&quot;@en .</td>
+</tr>
+<tr>
+<td>
+<p>similarity neighbor</p>
+</td>
+<td>protein:ACCP00533 vocab:hasSimilarProtein&nbsp;protein:ACCQ01279 .</td>
+</tr>
+<tr>
+<td>
+<p>conserved domain</p>
+</td>
+<td>protein:ACCP00533 obo:RO_0002180 conserveddomain:PSSMID213054 .</td>
+</tr>
+<tr>
+<td>
+<p>encoding gene</p>
+</td>
+<td>protein:ACCP00533&nbsp;up:encodedBy gene:GID1956 .</td>
+</tr>
+<tr>
+<td>
+<p>cross link to Uniprot</p>
+</td>
+<td>protein:ACCP00533 skos:closeMatch uniprot:P00533 .</td>
+</tr>
+<tr>
+<td>
+<p>organism</p>
+</td>
+<td>protein:ACCP00533 bp:organism taxonomy:9606 .</td>
+</tr>
+</tbody>
+</table>
+<p>If protein entity has crystallized 3D structure in PDB database, a cross link to the <a href="http://rdf.wwpdb.org/pdb">RDF-based PDB resource</a> is provided, for example:</p>
+<div class="computer_code">protein:ACC2ER0_E pdbo:link_to_pdb &lt;http://rdf.wwpdb.org/pdb/2ER0&gt; .</div>
+<p>If the protein complexes have been tested in the bioassays, the measure groups are linked to the protein complexes, which are typed and linked to their component protein units, for example:</p>
+<div class="computer_code">measuregroup:AID1048 obo:RO_0000057 protein:ACCNP_056953ACCNP_858045&nbsp;.<br />
+protein:ACCNP_056953ACCNP_858045 rdf:type obo:GO_0043234 .<br />
+protein:ACCNP_056953ACCNP_858045 obo:BFO_0000178 protein:ACCNP_056953 .<br />
+protein:ACCNP_056953ACCNP_858045 obo:BFO_0000178 protein:ACCNP_858045 .</div>
+
+</div>
+</section>
+
+<section>
+
+<h3 class="amp-accordion__header primary-bg footer-h3">
+<span>PubChem ConservedDomain</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h3>
+
+<div>
+<p>PubChem conserved domain RDF triples expose the type, title, and <a href="https://www.ncbi.nlm.nih.gov/pubmed">references</a> of a given conserved protein domain. For example, to resolve the URI for the <a href="https://www.ncbi.nlm.nih.gov/Structure/cdd/cdd.shtml">NCBI Conserved Domain</a> record <a href="https://www.ncbi.nlm.nih.gov/Structure/cdd/cddsrv.cgi?uid=132758">PSSMID132758</a>:</p>
+<p class="ind20"><a href="https://rdf.ncbi.nlm.nih.gov/pubchem/conserveddomain/PSSMID132758">http://rdf.ncbi.nlm.nih.gov/pubchem/conserveddomain/PSSMID132758</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<thead>
+<tr>
+<th>Link Type</th>
+<th>Example RDF Triple</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<p>type</p>
+</td>
+<td>conserveddomain:PSSMID132758 rdf:type obo:SO_0000417 .</td>
+</tr>
+<tr>
+<td>
+<p>title</p>
+</td>
+<td>conserveddomain:PSSMID132758 dcterms:title &quot;NR_LBD_AR&quot;@en .</td>
+</tr>
+<tr>
+<td>
+<p>reference<em><sup>a</sup></em></p>
+</td>
+<td>conserveddomain:PSSMID132758 cito:isDiscussedBy reference:PMID17940184 .</td>
+</tr>
+</tbody>
+</table>
+<p><em><sup>a </sup></em> The links to literature references are obtained from <a href="https://www.ncbi.nlm.nih.gov/Class/MLACourse/Original8Hour/Entrez/">NCBI Entrez</a> system.</p>
+</div>
+</section>
+
+<section>
+
+<h3 class="amp-accordion__header primary-bg footer-h3">
+<span>PubChem Gene</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h3>
+
+<div>
+<p>PubChem gene RDF triples expose the type, title, symbol, description, <a href="https://www.ncbi.nlm.nih.gov/taxonomy">organism</a>, and <a href="https://www.ncbi.nlm.nih.gov/pubmed">references</a>. For example, to resolve the URI for <a href="https://www.ncbi.nlm.nih.gov/gene">NCBI Gene</a> record <a href="https://www.ncbi.nlm.nih.gov/gene/?term=367">GID367</a>:</p>
+<p class="ind20"><a href="https://rdf.ncbi.nlm.nih.gov/pubchem/gene/GID367">http://rdf.ncbi.nlm.nih.gov/pubchem/gene/GID367</a></p>
+<p class="ind20">&nbsp;</p>
+<table border="0" cellpadding="0" cellspacing="0">
+<thead>
+<tr>
+<th>Link Type</th>
+<th>Example RDF Triple</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<p>type</p>
+</td>
+<td>gene:GID367 rdf:type bp:Gene .</td>
+</tr>
+<tr>
+<td>
+<p>title<em><sup>a</sup></em></p>
+</td>
+<td>gene:GID367 dcterms:title &quot;androgen receptor&quot;@en .</td>
+</tr>
+<tr>
+<td>
+<p>organism</p>
+</td>
+<td>gene:GID367 bp:organism taxonomy:9606 .</td>
+</tr>
+<tr>
+<td>
+<p>symbol</p>
+</td>
+<td>gene:GID367 vocab:geneSymbol &quot;AR&quot;@en .</td>
+</tr>
+<tr>
+<td>
+<p>reference<em><sup>a</sup></em></p>
+</td>
+<td>gene:GID367 cito:isDiscussedBy reference:PMID19815331 .</td>
+</tr>
+</tbody>
+</table>
+<p><em><sup>a </sup></em> The links to literature references are obtained from <a href="https://www.ncbi.nlm.nih.gov/Class/MLACourse/Original8Hour/Entrez/">NCBI Entrez</a> system.</p>
+</div>
+</section>
+
+<section>
+
+<h3 class="amp-accordion__header primary-bg footer-h3">
+<span>PubChem Pathway</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h3>
+
+<div>
+<p>PubChem is superseding&nbsp;the NCBI BioSystem database with&nbsp;<a href="https://pubchemdocs.ncbi.nlm.nih.gov/pathways">PubChem Pathways</a>.&nbsp;PubChem pathway RDF triples expose the type, title, data source, <a href="https://www.ncbi.nlm.nih.gov/taxonomy">organism</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/">references</a>, and participant (e.g. proteins, genes, and chemicals). For example, to resolve the URI for the PubChem Pathway&nbsp;<a href="https://pubchem.ncbi.nlm.nih.gov/pathway/Reactome:R-HSA-1474228">Reactome:R-HSA-1474228</a>:</p>
+<p class="ind20"><a href="http://rdf.ncbi.nlm.nih.gov/pubchem/pathway/PWID10790">http://rdf.ncbi.nlm.nih.gov/pubchem/pathway/PWID10790</a></p>
+<p class="ind20">&nbsp;</p>
+<table border="0" cellpadding="0" cellspacing="0">
+<thead>
+<tr>
+<th>Link Type</th>
+<th>Example RDF Triple</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<p>type</p>
+</td>
+<td>pathway:PWID10790 rdf:type bp:Pathway .</td>
+</tr>
+<tr>
+<td>
+<p>title</p>
+</td>
+<td>pathway:PWID10790 dcterms:title &quot;Degradation of the extracellular matrix&quot;@en .</td>
+</tr>
+<tr>
+<td>
+<p>organism</p>
+</td>
+<td>pathway:PWID10790 bp:organism taxonomy:9606 .</td>
+</tr>
+<tr>
+<td>
+<p>reference<em><sup>a</sup></em></p>
+</td>
+<td>pathway:PWID10790 cito:isDiscussedBy reference:PMID21917992 .</td>
+</tr>
+<tr>
+<td>
+<p>source</p>
+</td>
+<td>
+<p>pathway:PWID10790 dcterms:source source:ID23465&nbsp;.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>has-participant</p>
+</td>
+<td>
+<p>pathway:PWID10790 obo:RO_0000057 protein:ACCP08254&nbsp;.<br />
+      pathway:PWID10790 obo:RO_0000057 compound:CID271&nbsp;.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><em><sup>a </sup></em> The links to literature references are obtained from <a href="https://www.ncbi.nlm.nih.gov/Class/MLACourse/Original8Hour/Entrez/">NCBI Entrez</a> system.</p>
+<p>If the pathway is from the <a href="http://www.reactome.org/">Reactome pathway database</a>, a cross-link to the <a href="http://www.ebi.ac.uk/rdf/services/reactome/">Reactome RDF</a> is provided, for example:</p>
+<div class="computer_code">pathway:PWID10790 skos:exactMatch reactome:R-HSA-1474228 .</div>
+
+</div>
+</section>
+
+<section>
+
+<h3 class="amp-accordion__header primary-bg footer-h3">
+<span>PubChem Neighbor</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h3>
+
+<div>
+<p>PubChem neighbor RDF triples describe similarity relationships and their supporting information. Currently, these exist between chemical records and between protein sequences, and the information is only available through RESTful interface The chemical 2-D similarity neighbor RDF triples expose the similarity relation type, compounds involved in the neighboring relation, the value and type of the similarity score, as well as the linkage between the neighboring relation and the evaluating score. For example, to resolve the URI for the neighboring relationship between the <a href="https://www.ncbi.nlm.nih.gov/pccompound">PubChem Compound</a> records <a href="https://pubchem.ncbi.nlm.nih.gov/compound/60823">CID60823</a> and <a href="https://pubchem.ncbi.nlm.nih.gov/compound/68019409">CID68019409</a>:</p>
+<p class="ind20"><a href="https://rdf.ncbi.nlm.nih.gov/pubchem/neighbor/CID60823_CID68019409_2DSimilarity">http://rdf.ncbi.nlm.nih.gov/pubchem/neighbor/CID60823_CID68019409_2DSimilarity </a></p>
+<p class="ind20"><a href="https://rdf.ncbi.nlm.nih.gov/pubchem/neighbor/CID60823_CID68019409_2DTanimotoScore">http://rdf.ncbi.nlm.nih.gov/pubchem/neighbor/CID60823_CID68019409_2DTanimotoScore </a></p>
+<p class="ind20">&nbsp;</p>
+<table border="0" cellpadding="0" cellspacing="0">
+<thead>
+<tr>
+<th>Link Type</th>
+<th>Example RDF Triple</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<p>relation type</p>
+</td>
+<td>nbr:CID60823_CID10030610_2DSimilarity rdf:type vocab:PC2D_structural_similarity.</td>
+</tr>
+<tr>
+<td>
+<p>compound</p>
+</td>
+<td>nbr:CID60823_CID10030610_2DSimilarity sio:refers-to compound:CID60823 , compound:CID10030610 .</td>
+</tr>
+<tr>
+<td>
+<p>supporting score</p>
+</td>
+<td>nbr:CID60823_CID10030610_2DSimilarity sio:has-measurement-value nbr:CID60823_CID10030610_2DTanimotoScore</td>
+</tr>
+<tr>
+<td>
+<p>score type</p>
+</td>
+<td>nbr:CID60823_CID10030610_2DTanimotoScore rdf:type vocab:PC2D_Fingerprint_TanimotoScore .</td>
+</tr>
+<tr>
+<td>
+<p>score value</p>
+</td>
+<td>nbr:CID60823_CID10030610_2DTanimotoScore sio:has-value &quot;0.98&quot;^^xsd:double .</td>
+</tr>
+</tbody>
+</table>
+<p>The chemical 3-D similarity neighbor RDF triples expose the similarity relation type, compounds involved in the neighboring relation, the value and type of the <a href="https://pubchem.ncbi.nlm.nih.gov/release3d.html">shape and feature similarity scores</a> (ST and CT, respectively), as well as the linkage between the neighboring relation and the evaluating score. For example, to resolve the URI for the neighboring relationship between the <a href="https://www.ncbi.nlm.nih.gov/pccompound">PubChem Compound</a> records <a href="https://pubchem.ncbi.nlm.nih.gov/compound/60823">CID60823</a> and <a href="https://pubchem.ncbi.nlm.nih.gov/compound/11330946">CID11330946</a>:</p>
+<p class="ind20"><a href="https://rdf.ncbi.nlm.nih.gov/pubchem/neighbor/CID60823_CID11330946_3DSimilarity">http://rdf.ncbi.nlm.nih.gov/pubchem/neighbor/CID60823_CID11330946_3DSimilarity </a></p>
+<p class="ind20"><a href="https://rdf.ncbi.nlm.nih.gov/pubchem/neighbor/CID60823_CID11330946_3DFeatureTanimotoScore">http://rdf.ncbi.nlm.nih.gov/pubchem/neighbor/CID60823_CID11330946_3DFeatureTanimotoScore </a></p>
+<p class="ind20">&nbsp;</p>
+<table border="0" cellpadding="0" cellspacing="0">
+<thead>
+<tr>
+<th>Link Type</th>
+<th>Example RDF Triple</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<p>relation type</p>
+</td>
+<td>nbr:CID60823_CID11330946_3DSimilarity rdf:type vocab:PC3D_structural_similarity .</td>
+</tr>
+<tr>
+<td>
+<p>compound</p>
+</td>
+<td>nbr:CID60823_CID10030610_2DSimilarity sio:refers-to compound:CID60823 , compound:11330946 .</td>
+</tr>
+<tr>
+<td>
+<p>supporting score</p>
+</td>
+<td>nbr:CID60823_CID10030610_2DSimilarity sio:has-measurement-value nbr:CID60823_CID11330946_3DFeatureTanimotoScore , nbr:CID60823_CID11330946_3DShapeTanimotoScore .</td>
+</tr>
+<tr>
+<td>
+<p>score type</p>
+</td>
+<td>nbr:CID60823_CID11330946_3DFeatureTanimotoScore rdf:type vocab:PC3D_Feature_TanimotoScore . nbr:CID60823_CID11330946_3DShapeTanimotoScore rdf:type vocab:PC3D_Shape_TanimotoScore .</td>
+</tr>
+<tr>
+<td>
+<p>value</p>
+</td>
+<td>nbr:CID60823_CID11330946_3DFeatureTanimotoScore sio:has-value &quot;0.59&quot;^^xsd:double . nbr:CID60823_CID11330946_3DShapeTanimotoScore sio:has-value &quot;0.88&quot;^^xsd:double .</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section>
+
+<h3 class="amp-accordion__header primary-bg footer-h3">
+<span>PubChem Source</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h3>
+
+<div>
+<p>PubChem data source RDF triples expose the type, title, contributor, homepage, and substance categorization classification for a given <a href="https://pubchem.ncbi.nlm.nih.gov/sources/">data source</a>. For example, to resolve the URI for the PubChem data source &ldquo;<a href="https://pubchem.ncbi.nlm.nih.gov/sources/ChEMBL">ChEMBL</a>&rdquo;:</p>
+<p class="ind20"><a href="https://rdf.ncbi.nlm.nih.gov/pubchem/source/ChEMBL">http://rdf.ncbi.nlm.nih.gov/pubchem/source/ChEMBL</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<thead>
+<tr>
+<th>Link Type</th>
+<th>Example RDF Triple</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<p>type</p>
+</td>
+<td>source:ChEMBL rdf:type dcterms:Dataset .</td>
+</tr>
+<tr>
+<td>
+<p>title</p>
+</td>
+<td>source:ChEMBL dcterms:title &quot;ChEMBL&quot;@en .</td>
+</tr>
+<tr>
+<td>
+<p>
+subject
+</p>
+</td>
+<td>source:ChEMBL dcterms:subject concept:Research_and_Development .<br />
+      source:ChEMBL dcterms:subject concept:Curation_Efforts .</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</section>
+
+<section>
+
+<h3 class="amp-accordion__header primary-bg footer-h3">
+<span>PubChem Reference</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h3>
+
+<div>
+<p>PubChem reference RDF triples expose the type, publication date, citation, title, MeSH headings/subheadings (in the <a href="https://www.nlm.nih.gov/bsd/licensee/elements_descriptions.html#meshheadinglist">MeshHeadingList</a> of PubMed XML files), as well as the literature abstract mentionings of the chemicals (in the <a href="https://www.nlm.nih.gov/bsd/licensee/elements_descriptions.html#chemicallist">ChemicalList</a> of of PubMed XML files) and diseases (in the <a href="https://www.nlm.nih.gov/bsd/licensee/elements_descriptions.html#supplmesh">SupplMeshList</a> of PubMed XML file) provided by Medline indexers. All of the headings/subheadings are represented by MeSH <a href="https://www.nlm.nih.gov/mesh/intro_record_types.html">Descriptor (identifier starts with &lsquo;D&rsquo;)/Qualifier (identifier starts with &lsquo;Q&rsquo;) pairs</a>, and all of the chemicals are represented by <a href="https://www.nlm.nih.gov/mesh/concept_structure.html">MeSH concepts (identifier starts with &lsquo;M&rsquo;)</a>, and all of the diseases are represented by <a href="https://www.nlm.nih.gov/mesh/intro_record_types.html">MeSH supplementary concept records (SCRs, identifier starts with &lsquo;C&rsquo;)</a>. For example, to resolve the URI for the <a href="https://www.ncbi.nlm.nih.gov/pubmed/">NCBI PubMed</a> record <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10395478">PMID 10395478</a>:</p>
+<p class="ind20"><a href="https://rdf.ncbi.nlm.nih.gov/pubchem/reference/PMID10395478">http://rdf.ncbi.nlm.nih.gov/pubchem/reference/PMID10395478</a></p>
+<p class="ind20">&nbsp;</p>
+<table border="0" cellpadding="0" cellspacing="0">
+<thead>
+<tr>
+<th>Link Type</th>
+<th>Example RDF Triple</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<p>type</p>
+</td>
+<td>reference:PMID10395478 rdf:type fabio:JournalArticle .</td>
+</tr>
+<tr>
+<td>
+<p>citation</p>
+</td>
+<td>reference:PMID10395478 dcterms:bibliographicCitation &quot;B D Palmer, A J Kraker, B G Hartl, A D Panopoulos, R L Panek, B L Batley, G H Lu, S Trumpp-Kallmeyer, H D Showalter, W A Denny; Journal of medicinal chemistry; 1999 Jul; 42(13):2373-82&quot; .</td>
+</tr>
+<tr>
+<td>
+<p>title</p>
+</td>
+<td>reference:PMID10395478 dcterms:title &quot;Structure-activity relationships for 5-substituted 1-phenylbenzimidazoles as selective inhibitors of the platelet-derived growth factor receptor&quot;@en .</td>
+</tr>
+<tr>
+<td>
+<p>publication date</p>
+</td>
+<td>reference:PMID10395478 dcterms:date &quot;1999-07-01&quot;^^xsd:date .</td>
+</tr>
+<tr>
+<td>
+<p>heading/subheading</p>
+</td>
+<td>reference:PMID10395478 fabio:hasSubjectTerm mesh:D000255Q000378 .</td>
+</tr>
+<tr>
+<td>
+<p>chemical list</p>
+</td>
+<td>reference:PMID10395478 cito:discusses mesh:M0000395 .</td>
+</tr>
+</tbody>
+</table>
+<p>The literature abstract mentionings of diseases are optional, for instance:</p>
+<div class="computer_code">reference:PMID15835820 cito:discusses mesh:C538339 .</div>
+
+</div>
+</section>
+
+<section>
+
+<h3 class="amp-accordion__header primary-bg footer-h3">
+<span>PubChem Concept</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h3>
+
+<div>
+<p>The PubChem &ldquo;concept&rdquo; subdomain exposes RDF triples related to the biomedical concepts used to annotate the PubChemRDF resource, for instance, the WHO ATC codes used to annotate synonym instances. For example, to resolve the URI for the WHO ATC code L01XE:</p>
+<p class="ind20"><a href="https://rdf.ncbi.nlm.nih.gov/pubchem/concept/ATC_L01XE">http://rdf.ncbi.nlm.nih.gov/pubchem/concept/ATC_L01XE</a></p>
+<p class="ind20">&nbsp;</p>
+<table border="0" cellpadding="0" cellspacing="0">
+<thead>
+<tr>
+<th>Link Type</th>
+<th>Example RDF Triple</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<p>type</p>
+</td>
+<td>concept:ATC_L01XE rdf:type skos:concept .</td>
+</tr>
+<tr>
+<td>
+<p>concept scheme</p>
+</td>
+<td>concept:ATC_L01XE skos:inScheme concept:ATC .</td>
+</tr>
+<tr>
+<td>
+<p>source</p>
+</td>
+<td>concept:ATC_L01XE pav:importedFrom source:WHO .</td>
+</tr>
+<tr>
+<td>
+<p>parent concept</p>
+</td>
+<td>concept:ATC_L01XE skos:broader concept:ATC_L01X .</td>
+</tr>
+<tr>
+<td>
+<p>label</p>
+</td>
+<td>concept:ATC_L01XE skos:prefLabel &quot;protein kinase inhibitors&quot;@en .</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+
+</amp-accordion>
+
+</section>
+
+<section class="amp-accordion__section" data-item-label="RESTful Interface">
+
+<h2 class="amp-accordion__header primary-bg footer-h2">
+<span>RESTful Interface</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h2>
+
+<amp-accordion animate expand-single-section>
+
+<section>
+
+<h3 class="amp-accordion__header primary-bg footer-h3">
+<span>URI Dereferencing</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h3>
+
+<div>
+<p>URIs can be resolved through the&nbsp;RESTful interface by either&nbsp;URI Suffix Extention or HTTP Accept Header. By default, it uses URI Suffix Extension first, then HTTP Accept Header. If neigher of them is provided, it will return RDF triples in HTML format.&nbsp;The supported formats are listed in <strong>Table 3</strong>.</p>
+<p><strong>Table 3.</strong> The MIME types supported in the PubChemRDF REST interface for dereferencing URIs.</p>
+<table border="0" cellpadding="0" cellspacing="0">
+<thead>
+<tr>
+<th>MIME Type</th>
+<th>HTTP Accept Header</th>
+<th>URI Suffix Extension</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<p>Abbreviated RDF/XML</p>
+</td>
+<td>
+<p>application/rdf+xml+abbrev</p>
+</td>
+<td>
+<p>rdfxml-abbrev</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>RDF/XML</p>
+</td>
+<td>
+<p>application/rdf+xml</p>
+<p>text/rdf</p>
+</td>
+<td>
+<p>rdfxml</p>
+<p>rdf</p>
+<p>xml</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>HTML</p>
+</td>
+<td>
+<p>application/xhtml+xml</p>
+<p>text/html</p>
+</td>
+<td>
+<p>html</p>
+<p>htm</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>TURTLE<em><sup>a</sup></em></p>
+</td>
+<td>
+<p>application/n3</p>
+<p>application/rdf+n3</p>
+<p>application/turtle</p>
+<p>application/x-turtle</p>
+<p>text/n3</p>
+<p>text/turtle</p>
+<p>text/rdf+n3</p>
+<p>text/rdf+turtle</p>
+</td>
+<td>
+<p>turtle</p>
+<p>ttl</p>
+<p>n3</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>JSON<em><sup>b</sup></em></p>
+</td>
+<td>
+<p>application/json</p>
+<p>text/json</p>
+</td>
+<td>
+<p>json</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>JSON-LD<em><sup>c</sup></em></p>
+</td>
+<td>
+<p>application/x-json+ld</p>
+<p>application/x-json+rdf</p>
+<p>application/json+ld</p>
+<p>application/json+rdf</p>
+<p>application/ld+json</p>
+<p>application/rdf+json</p>
+</td>
+<td>
+<p>Jsonld</p>
+<p>Json-ld</p>
+<p>ldjson</p>
+<p>ld-json</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>N-TRIPLES</p>
+</td>
+<td>
+<p>text/plain</p>
+</td>
+<td>
+<p>ntriples<br />
+      nt</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><em><sup>a</sup></em> Turtle is an abbreviation for Terse RDF Triples Language; <em><sup>b</sup></em> JSON is short for JavaScript Object Notation; <em><sup>c</sup></em> JSON-LD is short for JavaScript Object Notation for Linked Data.</p>
+<p>For instance, the following URLs can present the RDF triples with respect to&nbsp;<a href="https://pubchem.ncbi.nlm.nih.gov/compound/2244">CID2244</a>&nbsp;(Aspirin) in various RDF data formats:</p>
+<p class="ind20"><a href="https://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID2244.rdf">http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID2244.rdf</a></p>
+<p class="ind20"><a href="https://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID2244.html">http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID2244.html</a></p>
+<p class="ind20"><a href="https://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID2244.turtle">http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID2244.turtle</a></p>
+<p class="ind20"><a href="https://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID2244.json">http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID2244.json</a></p>
+<p class="ind20"><a href="https://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID2244.jsonld">http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID2244.jsonld</a></p>
+<p class="ind20"><a href="http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID2244.ntriples">http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID2244.ntriples</a></p>
+<p class="ind20">&nbsp;</p>
+<p>Different types of presentations can be produced through specifying the HTTP accept header&nbsp;as well. For instance, if the Linux cURL command is used to retrieve RDF triples regarding to CID2244, the following commands will output the RDF triples into the files:</p>
+<ul>
+<li><em>curl -L -H &quot;Accept: text/rdf&quot; -o CID2244.rdf http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID2244</em></li>
+</ul>
+<p>If no HTTP header is specified, the default output format is html (text/html).</p>
+<p>If web browsers are used to retrieve RDF triples, HTML format is typically the default. For instance, what Google Chrome sends in the accept header would be something like:</p>
+<p><em>Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</em></p>
+<p>which means that it will take HTML or XML or others, but it prefers HTML (q=1.0) to XML (q=0.9) and others (q=0.8).</p>
+<p class="ind20">&nbsp;</p>
+
+</div>
+</section>
+
+<section>
+
+<h3 class="amp-accordion__header primary-bg footer-h3">
+<span>Query RESTful Interface</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h3>
+
+<div>
+<p>The resolution of URIs under http://rdf.ncbi.nlm.nih.gov/pubchem/ domain will return a 303 redirect HTTP status code, and the request will be redirected to https://pubchem.ncbi.nlm.nih.gov/rest/rdf/ domain. The RESTful interface under the later domain can also be used to query RDF triples. The query calls share the same base URL:</p>
+<p>https://pubchem.ncbi.nlm.nih.gov/rest/rdf/query?</p>
+<p>The input queries can be provided through key-value pairs, and the keys can be as follows (all lowercase): &ldquo;graph&rdquo; (or &ldquo;domain&rdquo;), &ldquo;name&rdquo; (or &ldquo;string&rdquo;), &ldquo;return&rdquo; (or &ldquo;retrieve&rdquo;), &ldquo;contain&rdquo; (or &ldquo;substring&rdquo;), &ldquo;subject&rdquo; (or &ldquo;subj&rdquo;), &ldquo;predicate&rdquo; (or &ldquo;pred&rdquo;), &ldquo;object&rdquo; (or &ldquo;obj&rdquo;), &ldquo;offset&rdquo;, and &ldquo;format&rdquo;.</p>
+</div>
+
+</section>
+
+<section>
+
+<h3 class="amp-accordion__header primary-bg footer-h3">
+<span>Queries Based on String Values</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h3>
+
+<div>
+<p>The following string values can be used to query PubChemRDF resources: substance synonyms, inchikey values, protein names, gene symbols, data source names, conserved domain titles, pathway&nbsp;titles, bioassay titles, measuregroup titles, reference titles, and concept labels. Two basic parameters must be provided including &ldquo;graph&rdquo; (or &ldquo;domain&rdquo;) and &ldquo;name&rdquo; (or &ldquo;string&rdquo;). For instance, the following query can retrieve the PubChemRDF synonym resource having the value of &ldquo;aspirin&rdquo;:</p>
+<p class="ind20"><a href="https://pubchem.ncbi.nlm.nih.gov/rest/rdf/query?graph=synonym&amp;name=aspirin">https://pubchem.ncbi.nlm.nih.gov/rest/rdf/query?graph=synonym&amp;name=aspirin </a></p>
+<p>Substring search is supported as well with the parameter &ldquo;contain&rdquo; (or &ldquo;substring&rdquo;), which can be either true or false:</p>
+<p class="ind20"><a href="https://pubchem.ncbi.nlm.nih.gov/rest/rdf/query?graph=synonym&amp;name=aspirin&amp;contain=true">https://pubchem.ncbi.nlm.nih.gov/rest/rdf/query?graph=synonym&amp;name=aspirin&amp;contain=true </a></p>
+<p>The above queries return synonym resources. If the related compounds or substances are intended, another parameter, &ldquo;return&rdquo; (or &ldquo;retrieve&rdquo;), should be provided, which can be either &ldquo;compound&rdquo; (or &ldquo;cid&rdquo;) or &ldquo;substance&rdquo; (or &ldquo;sid&rdquo;):</p>
+<p class="ind20"><a href="https://pubchem.ncbi.nlm.nih.gov/rest/rdf/query?graph=synonym&amp;name=aspirin&amp;return=compound">https://pubchem.ncbi.nlm.nih.gov/rest/rdf/query?graph=synonym&amp;name=aspirin&amp;return=compound </a></p>
+<p>The query functions support content negotiation with parameter &ldquo;format&rdquo; specified in&nbsp;<strong>Table 4</strong>. For instance, the following query will return JSON format:</p>
+<p class="ind20"><a href="https://pubchem.ncbi.nlm.nih.gov/rest/rdf/query?graph=synonym&amp;name=aspirin&amp;format=json">https://pubchem.ncbi.nlm.nih.gov/rest/rdf/query?graph=synonym&amp;name=aspirin&amp;format=json </a></p>
+<p class="ind20">&nbsp;</p>
+<p><strong>Table 4.</strong>&nbsp;The MIME types allowed and used in the PubChemRDF REST interface for query functions.</p>
+<table border="0" cellpadding="0" cellspacing="0">
+<thead>
+<tr>
+<th>MIME Type</th>
+<th>HTTP Accept Header</th>
+<th>URI Suffix Extension</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<p>RDF/XML</p>
+</td>
+<td>
+<p>application/rdf+xml</p>
+<p>text/rdf</p>
+</td>
+<td>
+<p>rdfxml</p>
+<p>rdf</p>
+<p>xml</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>HTML</p>
+</td>
+<td>
+<p>application/xhtml+xml</p>
+<p>text/html</p>
+</td>
+<td>
+<p>html</p>
+<p>htm</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>JSON<em><sup>a</sup></em></p>
+</td>
+<td>
+<p>application/json</p>
+<p>text/json</p>
+</td>
+<td>
+<p>json</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>CSV<em><sup>b</sup></em></p>
+</td>
+<td>
+<p>text/csv</p>
+</td>
+<td>
+<p>csv</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><em><sup>a </sup></em> JSON is short for JavaScript Object Notation; <em><sup>b</sup></em> CSV is short for comma-seperated values.</p>
+
+</div>
+</section>
+
+<section>
+
+<h3 class="amp-accordion__header primary-bg footer-h3">
+<span>Queries Based on Triple Patterns</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h3>
+
+<div>
+<p>PubChemRDF REST interface provides simple SPARQL-like query capabilities for grouping and filtering relevant resources. Given the high computational costs of complicated SPARQL queries, only one triple pattern is allowed in the PubChemRDF REST interface. In addition, two basic parameters must be provided as well including &ldquo;graph&rdquo; (or &ldquo;domain&rdquo;) and &ldquo;predicate&rdquo; (or &ldquo;pred&rdquo;). For instance, the following query can retrieve the ChEBI class assignments for the PubChem substances:</p>
+<p class="ind20"><a href="https://pubchem.ncbi.nlm.nih.gov/rest/rdf/query?graph=substance&amp;predicate=rdf:type">https://pubchem.ncbi.nlm.nih.gov/rest/rdf/query?graph=substance&amp;predicate=rdf:type </a></p>
+<p>The number of records returned by each query request can be configured using parameter &ldquo;limit&rdquo;, which has maximum and default value as 10 000. Since all of the records have been pre-sorted, the rest of the records can be retrieved by specifying the &ldquo;offset&rdquo; parameter. For instance, the next 10 000 records (10 001 to 20 000) can be retrieved using the following query:</p>
+<p class="ind20"><a href="https://pubchem.ncbi.nlm.nih.gov/rest/rdf/query?graph=substance&amp;predicate=rdf:type&amp;offset=10000">https://pubchem.ncbi.nlm.nih.gov/rest/rdf/query?graph=substance&amp;predicate=rdf:type&amp;offset=10000 </a></p>
+<p>In addition to the two basic parameters, either &ldquo;subject&rdquo; (or &ldquo;subj&rdquo;) or &ldquo;object&rdquo; (or &ldquo;obj&rdquo;) can be provided for filtering and grouping purpose. For instance, the following query can retrieve the first 10 000 synonyms that are drug brand names (trademarks):</p>
+<p class="ind20"><a href="https://pubchem.ncbi.nlm.nih.gov/rest/rdf/query?graph=synonym&amp;pred=rdf:type&amp;obj=sio:CHEMINF_000561">https://pubchem.ncbi.nlm.nih.gov/rest/rdf/query?graph=synonym&amp;pred=rdf:type&amp;obj=sio:CHEMINF_000561 </a></p>
+<p>Multiple values of the given &ldquo;subject&rdquo; (or &ldquo;subj&rdquo;) or &ldquo;object&rdquo; can be supplied and queried, which should be delimited by comma (&quot;,&quot;). For instance, the following query can retrieve the synonyms that are either Chemical Abstracts Service registry numbers or European Commission numbers:</p>
+<p class="ind20"><a href="https://pubchem.ncbi.nlm.nih.gov/rest/rdf/query?graph=synonym&amp;pred=rdf:type&amp;object=sio:CHEMINF_000446,sio:CHEMINF_000447&amp;offset=1275000">https://pubchem.ncbi.nlm.nih.gov/rest/rdf/query?graph=synonym&amp;pred=rdf:type&amp;object=sio:CHEMINF_000446,sio:CHEMINF_000447&amp;offset=1275000 </a></p>
+<p>where the pagination parameter &quot;offset&quot; is useful to control which page to demonstrate.</p>
+</div>
+</section>
+
+<section>
+
+<h3 class="amp-accordion__header primary-bg footer-h3">
+<span>HTTP Response Status</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h3>
+
+<div>
+<p>If the operation after redirection on RESTful interface was successful, the RDF triples will be retrieved along with a 200 HTTP status code. If the server encounters an error, it will return an HTTP status code other than 200 in the response header. The HTTP codes in the 400 range indicate errors on the request side (invalid input of some form), and the HTTP codes in the 500 range indicate errors on the PubChem side (timeout or other issue). In the response content, some descriptive messages will be returned, indicating the potential causes of the errors.</p>
+<p>The HTTP status codes and corresponding descriptions are as follows:</p>
+<table border="0" cellpadding="0" cellspacing="0">
+<thead>
+<tr>
+<th>HTTP Status</th>
+<th>Error</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<p>400</p>
+</td>
+<td>
+<p>eBadRequest</p>
+</td>
+<td>
+<p>Bad Query URL or Request URI</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>404</p>
+</td>
+<td>
+<p>eNotFound</p>
+</td>
+<td>
+<p>Input URI is invalid or cannot be identified in databases</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>405</p>
+</td>
+<td>
+<p>eNotAllowed</p>
+</td>
+<td>
+<p>MIME output format is unspecified or invalid</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>500</p>
+</td>
+<td>
+<p>eServerError</p>
+</td>
+<td>
+<p>Some problem on the server side occurs</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>504</p>
+</td>
+<td>
+<p>eTimeout</p>
+</td>
+<td>
+<p>The request timed out (over 28 second)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Please note that the <a href="http://en.wikipedia.org/wiki/HTTP_Secure">HTTPS protocol</a> works seamlessly in place of <a href="http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol">HTTP protocol</a> for all URIs in the PubChemRDF RESTful interface. If you request data using &lsquo;HTTPS&rsquo;, URIs returned will be &lsquo;https&rsquo;. This is a feature and it may cause issues for some software packages that depend on the URI uniquely identifying an entity, down to the protocol requesting the URI. Generally speaking, all PubChem web-based resources are configured to work seamlessly with or without HTTP encryption (via &lsquo;https&rsquo; or &lsquo;http&rsquo; protocol, respectively). By default, and on the <a href="https://ftp.ncbi.nlm.nih.gov/pubchem/RDF/">PubChemRDF FTP site</a>, all URIs are specified using the HTTP protocol to the NCBI RDF website (http://rdf.ncbi.nlm.nih.gov).</p>
+
+</div>
+</section>
+</amp-accordion>
+</section>
+
+<section class="amp-accordion__section" data-item-label="RDF FTP Download Directory Layout">
+
+<h2 class="amp-accordion__header primary-bg footer-h2">
+<span>RDF FTP Download Directory Layout</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h2>
+
+<amp-accordion animate expand-single-section>
+
+<section>
+<h3 class="amp-accordion__header primary-bg footer-h3">
+<span>Background</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h3>
+<div>
+<p>
+PubChemRDF data is available for bulk download at&nbsp;the PubChem FTP site (<a href="https://ftp.ncbi.nlm.nih.gov/pubchem/RDF/">https://ftp.ncbi.nlm.nih.gov/pubchem/RDF/</a>). It is highly recommended to use the FTP URL (<a href="ftp://ftp.ncbi.nlm.nih.gov/pubchem/RDF/">ftp://ftp.ncbi.nlm.nih.gov/pubchem/RDF/</a>)&nbsp;to avoid restrictions, such as&nbsp;<a href="https://en.wikipedia.org/wiki/Robots_exclusion_standard">Robot Exclusion Standard (robots.txt)</a>.&nbsp;</p>
+<p>
+Data is updated in its entirety approximately once per week [i<em>.e.</em>, no incremental update is provided at this time]. A <a href="http://www.w3.org/TR/void/">Vocabulary of Interlinked Dataset (VoID)</a> description file (<a href="ftp://ftp.ncbi.nlm.nih.gov/pubchem/RDF/void.ttl">void.ttl</a>) is provided at the root directory of the PubChemRDF FTP site. This file provides general metadata information about each release of PubChemRDF, such as provenance information, statistics (<em>e.g.</em>, triple counts), dataset release date, and files.</p>
+<p>
+The fundamental layout of the PubChemRDF FTP site is such that it is partitioned into subsets corresponding to different PubChemRDF subdomains. This allows individual subdomains to be downloaded. The top level FTP directories correspond to the subdomains: compound, substance, descriptor, inchikey, synonym, bioassay, measuregroup, endpoint, protein, conserveddomain, gene, pathway, source, concept, and reference. Since compound and descriptor subdomains have the most number of triples, additional partitions have been applied to them. Compound subdomain has three subsets: general, nbr2d, and nbr3d; descriptor subdomain has two subsets: compound and substance. Within each subdomain, the RDF triples were further split based on the different semantic relations, such that the RDF predicates in each downloadable file are same.
+</p>
+<p>
+All RDF data files are in turtle format and gzip compressed, as indicated by the suffix &ldquo;.ttl.gz&rdquo;. Data from one RDF subdomain may refer to other subdomains. Figure 1 helps to depict these interdependencies by means of arrows indicating out-going references to other subdomains. Each file name has the pattern as &ldquo;pc_&lt;link&gt;_&lt;range&gt;.ttl.gz&rdquo;. The &lt;link&gt; indicates the file content type, the &ldquo;.ttl.gz&rdquo; suffix indicates the file is in turtle RDF format and gzip compressed, and the &lt;range&gt; (optional) is a number to differentiate the file contents that is only available for large data sets. For example, &ldquo;pc_compound2descriptor_000001.ttl.gz&rdquo; indicates the semantic links are from compound to descriptor subdomains, and the number indicates that there are other files containing the same semantic associations.
+</p>
+</div>
+</section>
+
+<section>
+
+<h3 class="amp-accordion__header primary-bg footer-h3">
+<span>PubChem Compound</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h3>
+
+<div>
+<p>
+Data for the PubChem &ldquo;compound&rdquo; RDF subdomain directory can be found here:
+</p>
+<p class="ind20">
+<a href="https://ftp.ncbi.nlm.nih.gov/pubchem/RDF/compound/">https://ftp.ncbi.nlm.nih.gov/pubchem/RDF/compound/</a>
+</p>
+<p>
+There are three subdirectories: &ldquo;general&rdquo;, &ldquo;nbr2d&rdquo;, and &ldquo;nbr3d&rdquo;. Each directory may have a &lsquo;README&rsquo; file with more current information or additional information.
+</p>
+
+<h4>
+<span>PubChem Compound &ldquo;general&rdquo;</span>
+</h4>
+
+<p>Information contained here includes the links to chemical descriptors, ChEBI types, and the non-similarity based compound interrelationships, including parent, components, and <a href="https://pubchem.ncbi.nlm.nih.gov/docs/subcmpd_summary_page_help.html#DataProcessingIdentifySameCompounds">compound identity group (CIG)</a>. CIGs consider related chemicals by varying degrees of identity. For example, cases of chemicals with identical connectivity (same atoms and bonds) but where stereo isomer and isotopic information may vary. The semantic links with the corresponding file names or prefixes are listed in the following table:</p>
+<table border="0" cellpadding="0" cellspacing="0">
+<thead>
+<tr>
+<th>Semantic link</th>
+<th>File name or prefix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<p>sio:has-attribute<em><sup>a</sup></em></p>
+</td>
+<td>
+<p>pc_compound2descriptor_</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>vocab:has-parenta</p>
+</td>
+<td>
+<p>pc_compound2parent_</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>cheminf:has-component</p>
+</td>
+<td>
+<p>pc_compound2component.ttl.gz</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>cheminf:has-stereoisomer</p>
+</td>
+<td>
+<p>pc_compound2stereoisomer.ttl.gz</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>cheminf:has-isotopologue</p>
+</td>
+<td>
+<p>pc_compound2isotopologue.ttl.gz</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>cheminf:has-uncharged-counterpart</p>
+</td>
+<td>
+<p>pc_compound2uncharged.ttl.gz</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>cheminf:has-same-connectivity-with<em><sup>a</sup></em></p>
+</td>
+<td>
+<p>pc_compound2sameconnectivity_</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>rdf:type</p>
+</td>
+<td>
+<p>pc_compound_type.ttl.gz</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><em><sup>a </sup></em> File prefixes followed by the range numbers.</p>
+
+<h4>
+<span>PubChem Compound &ldquo;nbr2d&rdquo;</span>
+</h4>
+
+<p>Information contained here includes links between compounds according to the <a href="https://pubchem.ncbi.nlm.nih.gov/docs/subcmpd_summary_page_help.html#DataProcessingSimilarCompounds"> PubChem 2-D &ldquo;Similar Compounds&rdquo; neighboring relationship </a> . The semantic link is &ldquo;cheminf:has-2D-similar-compound&rdquo;.</p>
+
+<h4>
+PubChem Compound &ldquo;nbr3d&rdquo;
+</h4>
+
+<p>Information contained here includes links between compounds according to the <a href="https://pubchem.ncbi.nlm.nih.gov/docs/subcmpd_summary_page_help.html#DataProcessingSimilarConformers"> PubChem 3-D &ldquo;Similar Conformers&rdquo; neighboring relationship </a> . The semantic link is &ldquo;cheminf:has-3D-similar-compound&rdquo;.</p>
+
+</div>
+</section>
+
+<section>
+
+<h3 class="amp-accordion__header primary-bg footer-h3">
+<span>PubChem Substance</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h3>
+
+<div>
+<p>Data for the &ldquo;substance&rdquo; RDF subdomain directory can be found here:</p>
+<p class="ind20"><a href="https://ftp.ncbi.nlm.nih.gov/pubchem/RDF/substance/">https://ftp.ncbi.nlm.nih.gov/pubchem/RDF/substance/</a></p>
+<p class="ind20">&nbsp;</p>
+<p>Information contained here includes the links to the ChEBI types, the PDB crystal structures, depositor-provided descriptors including synonyms, the depositor-provided PubMed references, the <a href="https://pubchem.ncbi.nlm.nih.gov/docs/subcmpd_summary_page_help.html#DataProcessingChemicalStructure">standardized compound</a> records, the measure groups, data sources, and the cross links to ChEMBL RDF. The semantic links with the corresponding file names or prefixes are listed in the following table:</p>
+<table border="0" cellpadding="0" cellspacing="0">
+<thead>
+<tr>
+<th>Semantic link</th>
+<th>File name or prefix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<p>rdf:type</p>
+</td>
+<td>
+<p>pc_substance_type.ttl.gz</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>pdbo:link_to_pdb</p>
+</td>
+<td>
+<p>pc_substance2pdb.ttl.gz</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>sio:has-attribute<em><sup>a</sup></em></p>
+</td>
+<td>
+<p>pc_substance2descriptor_</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>cito:isDiscussedBy</p>
+</td>
+<td>
+<p>pc_substance2reference.ttl.gz</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>cheminf:has-standardized-compound<em><sup>a</sup></em></p>
+</td>
+<td>
+<p>pc_substance2compound_</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>bfo:participates-in<em><sup>a</sup></em></p>
+</td>
+<td>
+<p>pc_substance2measuregroup_</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>dcterms:source<em><sup>a</sup></em></p>
+</td>
+<td>
+<p>pc_substance_source_</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>skos:exactMatch</p>
+</td>
+<td>
+<p>pc_substance_match.ttl.gz</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><em><sup>a </sup></em> File prefixes followed by the range numbers.</p>
+
+</div>
+</section>
+
+<section>
+
+<h3 class="amp-accordion__header primary-bg footer-h3">
+<span>PubChem Descriptor</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h3>
+
+<div>
+<p>Data for the &ldquo;descriptor&rdquo; RDF subdomain directory can be found here:</p>
+<p class="ind20"><a href="https://ftp.ncbi.nlm.nih.gov/pubchem/RDF/descriptor/">https://ftp.ncbi.nlm.nih.gov/pubchem/RDF/descriptor/</a></p>
+<p>There are two subdirectories: &ldquo;compound&rdquo; and &ldquo;substance&rdquo;.</p>
+
+<h4>
+<span>PubChem Descriptor &ldquo;compound&rdquo;</span>
+</h4>
+
+<p>Information contained here includes the type, value and unit (when applicable) of chemical descriptors (not including InChIKey). Since the chemical descriptor is a very large subdomain, it is further categorized into different descriptor types, and the downloadable files are organized accordingly. The file prefixes have the following pattern: pc_descr_&lt;type&gt;_&lt;link&gt;_&lt;range&gt;.ttl.gz. The descriptor types include InChI, canSMILES, isoSMILES, IUPACName, HBondDonor, HBondAcceptor, RotatableBond, Complexity, TautomerCount, XLogP3, DefinedAtomStereoCount, DefinedBondStereoCount, IsotopeAtomCount, HeavyAtomCount, UndefinedAtomStereoCount, UndefinedBondStereoCount, CovalentUnitCount, MolecularFormula, FormalCharge, MolecularWeight, MonoIsotopicWeight, ExactMass, and TPSA.</p>
+<p>Representative semantic links with the corresponding file prefixes are listed in the following table:</p>
+<table border="0" cellpadding="0" cellspacing="0">
+<thead>
+<tr>
+<th>Semantic type</th>
+<th>Semantic link</th>
+<th>File prefix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<p>TPSA</p>
+</td>
+<td>
+<p>rdf:type</p>
+</td>
+<td>
+<p>pc_descr_TPSA_type_ <em><sup>a</sup></em></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>TPSA</p>
+</td>
+<td>
+<p>sio:has-value</p>
+</td>
+<td>
+<p>pc_descr_TPSA_value_ <em><sup>a</sup></em></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>TPSA</p>
+</td>
+<td>
+<p>sio:has-unit</p>
+</td>
+<td>
+<p>pc_descr_TPSA_unit_ <em><sup>a</sup></em></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><em><sup>a </sup></em> File prefixes followed by the range numbers.</p>
+
+<h4>
+<span>PubChem Descriptor &ldquo;substance&rdquo;</span>
+</h4>
+
+<p>Information contained here includes the type and value for a given descriptor (i.e. substance version). The semantic links with the corresponding file prefixes are listed in the following table:</p>
+<table border="0" cellpadding="0" cellspacing="0">
+<thead>
+<tr>
+<th>Semantic link</th>
+<th>File prefix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<p>rdf:type</p>
+</td>
+<td>
+<p>pc_SubstanceVersion_type_ <em><sup>a</sup></em></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>sio:has-value</p>
+</td>
+<td>
+<p>pc_SubstanceVersion_value_ <em><sup>a</sup></em></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><em><sup>a </sup></em> File prefixes followed by the range numbers.</p>
+</div>
+</section>
+
+<section>
+
+<h3 class="amp-accordion__header primary-bg footer-h3">
+<span>PubChem InChIKey</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h3>
+
+<div>
+<p>Data for the PubChem &ldquo;inchikey&rdquo; RDF subdomain directory can be found here:</p>
+<p class="ind20"><a href="https://ftp.ncbi.nlm.nih.gov/pubchem/RDF/inchikey/">https://ftp.ncbi.nlm.nih.gov/pubchem/RDF/inchikey/</a></p>
+<p>Information contained here includes the type and the value of a given InChIKey.</p>
+<p>The semantic links with the corresponding file names or prefixes are listed in the following table:</p>
+<table border="0" cellpadding="0" cellspacing="0">
+<thead>
+<tr>
+<th>Semantic link</th>
+<th>File name or prefix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<p>rdf:type</p>
+</td>
+<td>
+<p>pc_inchikey_type_</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>sio:has-value</p>
+</td>
+<td>
+<p>pc_inchikey_value_</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>dcterms:subject</p>
+</td>
+<td>
+<p>pc_inchikey_topic.ttl.gz</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>sio:is-attribute-of</p>
+</td>
+<td>
+<p>pc_inchikey2compound_ <em><sup>a</sup></em></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><em><sup>a </sup></em> File prefixes followed by the range numbers.</p>
+</div>
+</section>
+
+<section>
+
+<h3 class="amp-accordion__header primary-bg footer-h3">
+<span>PubChem Synonym</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h3>
+
+<div>
+<p>Data for the PubChem &ldquo;synonym&rdquo; RDF subdomain directory can be found here:</p>
+<p class="ind20"><a href="https://ftp.ncbi.nlm.nih.gov/pubchem/RDF/synonym/">https://ftp.ncbi.nlm.nih.gov/pubchem/RDF/synonym/</a></p>
+<p>Information contained here includes the type and the corresponding name string of a given MD5 hash string, as well as the links to the corresponding CID(s). The MD5 hash is used to provide a stable identifier for a given synonym. The mappings of synonyms to CIDs may be a subset of those possible from corresponding SID(s). PubChem performs processing on aggregated chemical information between PubChem contributors. This consistency filtering helps to eliminate promiscuous synonyms that correspond to multiple chemical structures (perhaps erroneously). The semantic links with the corresponding file names or prefixes are listed in the following table:</p>
+<table border="0" cellpadding="0" cellspacing="0">
+<thead>
+<tr>
+<th>Semantic link</th>
+<th>File name or prefix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<p>rdf:type</p>
+</td>
+<td>
+<p>pc_synonym_type_</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>sio:has-value</p>
+</td>
+<td>
+<p>pc_synonym_value_</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>dcterms:subject</p>
+</td>
+<td>
+<p>pc_synonym_topic.ttl.gz</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>sio:is-attribute-of</p>
+</td>
+<td>
+<p>pc_synonym2compound_ <em><sup>a</sup></em></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><em><sup>a </sup></em> File prefixes followed by the range numbers.</p>
+</div>
+</section>
+
+<section>
+
+<h3 class="amp-accordion__header primary-bg footer-h3">
+<span>PubChem BioAssay</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h3>
+
+<div>
+<p>Data for the &ldquo;bioassay&rdquo; RDF subdomain directory can be found here:</p>
+<p class="ind20"><a href="https://ftp.ncbi.nlm.nih.gov/pubchem/RDF/bioassay/">https://ftp.ncbi.nlm.nih.gov/pubchem/RDF/bioassay/</a></p>
+<p>The file &ldquo;<a href="https://ftp.ncbi.nlm.nih.gov/pubchem/RDF/bioassay/pc_bioassay.ttl.gz">pc_bioassay.ttl.gz</a>&rdquo; contains the descriptive information for a given AID that is represented as an instance of <a href="http://www.bioassayontology.org/bao#BAO_0000015">BAO_0000015</a>, including the type, title, depositor, as well as the links to <a href="http://www.biomedcentral.com/1471-2105/11/549">bioassay neighbors</a> (if it has any) and the corresponding measure groups. The semantic links are &ldquo;rdf:type&rdquo;, &ldquo;dcterms:title&rdquo;, &ldquo;dcterms:source&rdquo;, &ldquo;bao:has-measure-group&rdquo;, and &ldquo;bao:has-summary-assay&rdquo; (optional).</p>
+</div>
+</section>
+
+<section>
+
+<h3 class="amp-accordion__header primary-bg footer-h3">
+<span>PubChem MeasureGroup</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h3>
+
+<div>
+<p>Data for the &ldquo;measuregroup&rdquo; RDF subdomain directory can be found here:</p>
+<p class="ind20"><a href="https://ftp.ncbi.nlm.nih.gov/pubchem/RDF/measuregroup/">https://ftp.ncbi.nlm.nih.gov/pubchem/RDF/measuregroup/</a></p>
+<p class="ind20">&nbsp;</p>
+<p>The files contain the descriptive information for a given AID that cannot be represented as an instance of <a href="http://www.bioassayontology.org/bao#BAO_0000015">BAO_0000015</a>, as well as the links from measure group to the participating protein targets (if it has any), and the links from measure group to the corresponding endpoints (if it has any). The semantic links with the corresponding file names or prefixes are listed in the following table:</p>
+<table border="0" cellpadding="0" cellspacing="0">
+<thead>
+<tr>
+<th>Semantic link</th>
+<th>File name or prefix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<p>rdf:type</p>
+</td>
+<td>
+<p>pc_measuregroup_type.ttl.gz</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>dcterms:title</p>
+</td>
+<td>
+<p>pc_measuregroup_title.ttl.gz</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>dcterms:source</p>
+</td>
+<td>
+<p>pc_measuregroup_source.ttl.gz</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>bfo:has-participants</p>
+</td>
+<td>
+<p>pc_measuregroup2protein.ttl.gz</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>obi:has-specified-output</p>
+</td>
+<td>
+<p>pc_measuregroup2endpoint_ <em><sup>a</sup></em></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><em><sup>a </sup></em> File prefixes followed by the range numbers.</p>
+
+</div>
+</section>
+
+<section>
+
+<h3 class="amp-accordion__header primary-bg footer-h3">
+<span>PubChem Endpoint</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h3>
+
+<div>
+<p>Data for the &ldquo;endpoint&rdquo; RDF subdomain directory can be found here:</p>
+<p class="ind20"><a href="https://ftp.ncbi.nlm.nih.gov/pubchem/RDF/endpoint/">https://ftp.ncbi.nlm.nih.gov/pubchem/RDF/endpoint/</a></p>
+<p>There are several files containing the type, value, unit, and label of a given endpoint, as well as the links to the substance and reference. The semantic links with the corresponding file names or prefixes are listed in the following table:</p>
+<table border="0" cellpadding="0" cellspacing="0">
+<thead>
+<tr>
+<th>Semantic link</th>
+<th>File name or prefix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<p>rdf:type</p>
+</td>
+<td>
+<p>pc_endpoint_type.ttl.gz</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>sio:has-value</p>
+</td>
+<td>
+<p>pc_endpoint_value.ttl.gz</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>sio:has-unit</p>
+</td>
+<td>
+<p>pc_endpoint_unit.ttl.gz</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>vocab:PubChemAssayOutcome</p>
+</td>
+<td>
+<p>pc_endpoint_outcome_ <em><sup>a</sup></em></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>rdfs:label</p>
+</td>
+<td>
+<p>pc_endpoint_label.ttl.gz</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>iao:is-about</p>
+</td>
+<td>
+<p>pc_endpoint2substance_ <em><sup>a</sup></em></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>cito:citeAsDataSource</p>
+</td>
+<td>
+<p>pc_endpoint2reference.ttl.gz</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><em><sup>a </sup></em> File prefixes followed by the range numbers.</p>
+</div>
+</section>
+
+<section>
+
+<h3 class="amp-accordion__header primary-bg footer-h3">
+<span>PubChem Protein</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h3>
+
+<div>
+<p>Data for the &ldquo;protein&rdquo; RDF subdomain directory can be found here:</p>
+<p class="ind20"><a href="https://ftp.ncbi.nlm.nih.gov/pubchem/RDF/protein/">https://ftp.ncbi.nlm.nih.gov/pubchem/RDF/protein/</a></p>
+<p>The file &ldquo;<a href="https://ftp.ncbi.nlm.nih.gov/pubchem/RDF/protein-target/pc_protein.ttl.gz">pc_protein.ttl.gz</a>&rdquo; contains descriptive information for a given protein accession, including the type, title, alternative names, cross-links, <a href="https://www.ncbi.nlm.nih.gov/Structure/cdd/cdd.shtml">conserved domain associations</a>, and encoding gene information, as well as the links to the measure groups and the neighboring relationship between proteins. The semantic links are &ldquo;rdf:type&rdquo;, &ldquo;dcterms:title&rdquo;, &ldquo;dcterms:alternative&rdquo;, &ldquo;skos:closeMatch&rdquo;, &ldquo;bfo:has-part&rdquo;, &ldquo;uniprot:encodedBy&rdquo;, &ldquo;bp:organism&rdquo;, &ldquo;cito:isDiscussedBy&rdquo; &ldquo;pdbo:link_to_pdb&rdquo;, and &ldquo;vocab:has-similar-protein&rdquo;.</p>
+</div>
+</section>
+
+<section>
+
+<h3 class="amp-accordion__header primary-bg footer-h3">
+<span>PubChem ConservedDomain</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h3>
+
+<div>
+<p>Data for the &ldquo;conserveddomain&rdquo; RDF subdomain directory can be found here:</p>
+<p class="ind20"><a href="https://ftp.ncbi.nlm.nih.gov/pubchem/RDF/conserveddomain/">https://ftp.ncbi.nlm.nih.gov/pubchem/RDF/conserveddomain/</a></p>
+<p>The file &ldquo;<a href="https://ftp.ncbi.nlm.nih.gov/pubchem/RDF/protein-target/pc_protein.ttl.gz">pc_conserveddomain.ttl.gz</a>&rdquo; contains the type of a given PSSMID. The semantic link is &ldquo;rdf:type&rdquo;, &ldquo;dcterms:title&rdquo;, &ldquo;dcterms:abstract&rdquo;, and &ldquo;cito:isDiscussedBy&rdquo;.</p>
+</div>
+</section>
+
+<section>
+
+<h3 class="amp-accordion__header primary-bg footer-h3">
+<span>PubChem Gene</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h3>
+
+<div>
+<p>Data for the &ldquo;gene&rdquo; RDF subdomain directory can be found here:</p>
+<p class="ind20"><a href="https://ftp.ncbi.nlm.nih.gov/pubchem/RDF/gene/">https://ftp.ncbi.nlm.nih.gov/pubchem/RDF/gene/</a></p>
+<p>The file &ldquo;<a href="https://ftp.ncbi.nlm.nih.gov/pubchem/RDF/protein-target/pc_protein.ttl.gz">pc_gene.ttl.gz</a>&rdquo; contains the type and symbol of a given GID. The semantic links are &ldquo;rdf:type&rdquo;, &ldquo;bp:organism&rdquo;, &ldquo;cito:isDiscussedBy&rdquo;, &ldquo;dcterms:title&rdquo;, &ldquo;dcterms:description&rdquo;, &ldquo;skos:closeMatch&rdquo;, and &ldquo;sio:gene-symbol&rdquo;.</p>
+</div>
+</section>
+
+<section>
+
+<h3 class="amp-accordion__header primary-bg footer-h3">
+<span>PubChem Pathway</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h3>
+
+<div>
+<p>Data for the &ldquo;pathway&rdquo; RDF subdomain directory can be found here:</p>
+<p class="ind20"><a href="https://ftp.ncbi.nlm.nih.gov/pubchem/RDF/pathway/">https://ftp.ncbi.nlm.nih.gov/pubchem/RDF/pathway/</a></p>
+<p>The RDF statements contained in the file &ldquo;<a href="https://ftp.ncbi.nlm.nih.gov/pubchem/RDF/pathway/pc_pathway.ttl.gz">pc_pathway.ttl.gz</a>&rdquo; provide the basic descriptions, including the type, title, and source for a given PWID. The semantic links are &ldquo;rdf:type&rdquo;, &ldquo;bp:organism&rdquo;, &ldquo;cito:isDiscussedBy&rdquo;, &ldquo;skos:exactMatch&rdquo;, &ldquo;dcterms:title&rdquo;, and &ldquo;dcterms:source&rdquo;.</p>
+</div>
+</section>
+
+<section>
+
+<h3 class="amp-accordion__header primary-bg footer-h3">
+<span>PubChem Source</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h3>
+
+<div>
+<p>Data for the &ldquo;source&rdquo; RDF subdomain directory can be found here:</p>
+<p class="ind20"><a href="https://ftp.ncbi.nlm.nih.gov/pubchem/RDF/source/">https://ftp.ncbi.nlm.nih.gov/pubchem/RDF/source/</a></p>
+<p>The file &ldquo;<a href="https://ftp.ncbi.nlm.nih.gov/pubchem/RDF/data-source/pc_source.ttl.gz">pc_source.ttl.gz</a>&rdquo; contains descriptive information for a given <a href="https://pubchem.ncbi.nlm.nih.gov/sources/">PubChem contributor</a>; including data source identifier, display name, alternative names, organization, and homepage, as well as any classification of the given source, such as the <a href="https://pubchem.ncbi.nlm.nih.gov/docs/subcmpd_summary_page_help.html#ClassificationSubstanceCategorization"> Substance Categorization Classification </a> information.</p>
+</div>
+</section>
+
+<section>
+
+<h3 class="amp-accordion__header primary-bg footer-h3">
+<span>PubChem Reference</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h3>
+
+<div>
+<p>Data for the &ldquo;reference&rdquo; RDF subdomain directory can be found here:</p>
+<p class="ind20"><a href="https://ftp.ncbi.nlm.nih.gov/pubchem/RDF/reference/">https://ftp.ncbi.nlm.nih.gov/pubchem/RDF/reference/</a></p>
+<p>There are several files containing the type, topics, citation, title, and date of a given reference. The semantic links with the corresponding file names or prefixes are listed in the following table:</p>
+<table border="0" cellpadding="0" cellspacing="0">
+<thead>
+<tr>
+<th>Semantic link</th>
+<th>File name or prefix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<p>rdf:type</p>
+</td>
+<td>
+<p>pc_reference_type.ttl.gz</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>cito:discusses</p>
+</td>
+<td>
+<p>pc_reference2chemical_disease_ <em><sup>a</sup></em></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>fabio:hasSubjectTerm</p>
+</td>
+<td>
+<p>pc_reference2meshheading_ <em><sup>a</sup></em></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>dcterms:bibliographicCitation</p>
+</td>
+<td>
+<p>pc_reference_citation_ <em><sup>a</sup></em></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>dcterms:title</p>
+</td>
+<td>
+<p>pc_reference_title_ <em><sup>a</sup></em></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>dcterms:date</p>
+</td>
+<td>
+<p>pc_reference_date.ttl.gz</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><em><sup>a </sup></em> File prefixes followed by the range numbers.</p>
+
+</div>
+</section>
+</amp-accordion>
+</section>
+
+<section class="amp-accordion__section" data-item-label="Loading PubChemRDF">
+
+<h2 class="amp-accordion__header primary-bg footer-h2">
+<span>Loading PubChemRDF</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h2>
+
+<div>
+<p>This section gives some SPARQL query examples of how PubChemRDF can be used under available Semantic Web frameworks. [Please note that these use cases assume some familiarity and proficiency with these tools.] Three popular Semantic Web frameworks that provide multiple collections of API functions to process RDF data are <a href="http://jena.apache.org/index.html">Apache Jena</a>, <a href="http://www.openrdf.org/index.jsp">OpenRDF Sesame</a>, and <a href="http://librdf.org/">Redland RDF libraries</a>. Jena and Sesame are publically available Java frameworks, and Redland comprises a set of open source C libraries. All of them can be readily used to read, write, parse, serialize, and interpret RDF statements, and all of them provide both in memory and persistent storage, as well as SPARQL querying mechanisms.</p>
+<p>Recent technology development has changed the landscape, in particular, for <a href="http://www.w3.org/wiki/LargeTripleStores">very large RDF stores</a> (such as <a href="https://allegrograph.com/">FRANZ AllegroGraph</a>, <a href="http://virtuoso.openlinksw.com/">OpenLink Virtuoso</a>, <a href="http://www.ontotext.com/owlim">Ontotext OWLIM</a>, <a href="http://4store.org/">Garlik 4store</a>, and <a href="https://www.blazegraph.com/">SYSTAP Blazegraph</a>) that can handle fast loading and querying of billions of triples. AllegroGraph is compatible with Jena framework. Virtuoso provides fully operational data access and management through interface implementations of Jena, Sesame, and Redland frameworks. Blazegraph supports Sesame API functions. OWLIM can deliver extensible and configurable performance with Jena and Sesame frameworks. According to the most recent <a href="http://db-engines.com/en/ranking">DB-Engines ranking</a>, Jena and Virtuoso are among the most popular RDF persistent stores. The open source version of the Virtuoso 7 installed on single server can readily handle the core subset of PubChemRDF data (over 7 billion triples), which does not include the compound 2D/3D similarity triples. Therefore, we will describe how to load and query the PubChemRDF data (the core subset) using CentOS 6 Linux system.</p>
+<p>The core subset of PubChemRDF data can be downloaded using any FTP software. Here, we use a popular command line tool,&nbsp;<a href="https://www.gnu.org/software/wget/">wget</a>,&nbsp;as an example. You can copy the following shell script and save it&nbsp;in a file&nbsp;named as&nbsp;&quot;download_script.sh&quot;.</p>
+<div class="computer_code">#!/bin/sh<br />
+wget -r -A ttl.gz -nH --cut-dirs=3 -P compound ftp://ftp.ncbi.nlm.nih.gov/pubchem/RDF/compound/general<br />
+wget -r -A ttl.gz -nH --cut-dirs=2 ftp://ftp.ncbi.nlm.nih.gov/pubchem/RDF/substance<br />
+wget -r -A ttl.gz -nH --cut-dirs=2 ftp://ftp.ncbi.nlm.nih.gov/pubchem/RDF/descriptor<br />
+wget -r -A ttl.gz -nH --cut-dirs=2 ftp://ftp.ncbi.nlm.nih.gov/pubchem/RDF/synonym<br />
+wget -r -A ttl.gz -nH --cut-dirs=2 ftp://ftp.ncbi.nlm.nih.gov/pubchem/RDF/inchikey<br />
+wget -r -A ttl.gz -nH --cut-dirs=2 ftp://ftp.ncbi.nlm.nih.gov/pubchem/RDF/bioassay<br />
+wget -r -A ttl.gz -nH --cut-dirs=2 ftp://ftp.ncbi.nlm.nih.gov/pubchem/RDF/measuregroup<br />
+wget -r -A ttl.gz -nH --cut-dirs=2 ftp://ftp.ncbi.nlm.nih.gov/pubchem/RDF/endpoint<br />
+wget -r -A ttl.gz -nH --cut-dirs=2 ftp://ftp.ncbi.nlm.nih.gov/pubchem/RDF/protein<br />
+wget -r -A ttl.gz -nH --cut-dirs=2 ftp://ftp.ncbi.nlm.nih.gov/pubchem/RDF/pathway<br />
+wget -r -A ttl.gz -nH --cut-dirs=2 ftp://ftp.ncbi.nlm.nih.gov/pubchem/RDF/conserveddomain<br />
+wget -r -A ttl.gz -nH --cut-dirs=2 ftp://ftp.ncbi.nlm.nih.gov/pubchem/RDF/gene<br />
+wget -r -A ttl.gz -nH --cut-dirs=2 ftp://ftp.ncbi.nlm.nih.gov/pubchem/RDF/source<br />
+wget -r -A ttl.gz -nH --cut-dirs=2 ftp://ftp.ncbi.nlm.nih.gov/pubchem/RDF/concept<br />
+wget -r -A ttl.gz -nH --cut-dirs=2 ftp://ftp.ncbi.nlm.nih.gov/pubchem/RDF/reference</div>
+<p>Then make the file executable:</p>
+<div class="computer_code">chmod u+x download_script.sh</div>
+<p>This script will download all of the PubChemRDF data in the current working directory except compound 2D/3D similarity triples, and the downloaded files (over 40 GB) are organized in the same way as shown on FTP site.</p>
+<p>It is recommended to install Virtuoso on a server with at least 64 GB memory and a 500 GB SSD(solid state disk), and to configure the performance of Virtuoso quad store through editing <a href="http://docs.openlinksw.com/virtuoso/rdfperformancetuning.html">the &ldquo;virtuoso.ini&rdquo; file</a>. Linux swapping should be rendered as well. Extensive experiments have shown that the default index scheme of Virtuoso 7 can already yield acceptable performance.</p>
+<p>To further improve the query performance, one more indexes OGSP, (O: object; G: graph; S: subject; P: predict) should be added by running the following command in &ldquo;isql&rdquo; command line:</p>
+<div class="computer_code">CREATE COLUMN INDEX RDF_QUAD_OGSP on DB.DBA.RDF_QUAD (O, G, S, P);</div>
+<p>Virtuoso has <a href="http://virtuoso.openlinksw.com/dataspace/doc/dav/wiki/Main/VirtBulkRDFLoader">built-in bulk load functions</a> to load RDF triples from multiple files in parallel. Before running bulk load, it is recommended to change the <a href="http://docs.openlinksw.com/virtuoso/ptune.html"> transaction isolation as &ldquo;read commited&rdquo;</a> to avoid deadlock during bulk loading. The transaction isolation level can be changed by adding the following line in the &ldquo;virtuoso.ini&rdquo; file:</p>
+<div class="computer_code">DefaultIsolation = 2</div>
+<p>Another way to change the transaction isolation is through the &ldquo;isql&rdquo; command line:</p>
+<div class="computer_code">SET TRANSACTION ISOLATION LEVEL READ COMMITTED;</div>
+<p>It is highly recommended to load PubChemRDF data into multiple graphs, and specify the graph using FROM clause in SPARQL queries. If so, the graph index provided by Virtuoso can be readily used to avoid full index scanning and, as a result, to improve the query performance. The bulk loading can be achieved through two steps:</p>
+<p><strong>First</strong>, you should register all the files to be loaded in a given directory to the corresponding graph. The following scripts can be run in &ldquo;isql&rdquo; command line to register datasets to be loaded in the given graphs (&lt;Path&gt; should be substituted by the local directory):</p>
+<div class="computer_code">ld_dir (&#39;&lt;Path&gt;/compound/general&#39;, &#39;*.ttl.gz&#39;, &#39;http://rdf.ncbi.nlm.nih.gov/pubchem/compound&#39;);<br />
+ld_dir_all (&#39;&lt;Path&gt;/substance&#39;, &#39;*.ttl.gz&#39;, &#39;http://rdf.ncbi.nlm.nih.gov/pubchem/substance&#39;);<br />
+ld_dir (&#39;&lt;Path&gt;/descriptor/compound&#39;, &#39;*.ttl.gz&#39;, &#39;http://rdf.ncbi.nlm.nih.gov/pubchem/descriptor/compound&#39;);<br />
+ld_dir (&#39;&lt;Path&gt;/descriptor/substance&#39;, &#39;*.ttl.gz&#39;, &#39;http://rdf.ncbi.nlm.nih.gov/pubchem/descriptor/substance&#39;);<br />
+ld_dir_all (&#39;&lt;Path&gt;/synonym&#39;, &#39;*.ttl.gz&#39;, &#39;http://rdf.ncbi.nlm.nih.gov/pubchem/synonym&#39;);<br />
+ld_dir_all (&#39;&lt;Path&gt;/inchikey&#39;, &#39;*.ttl.gz&#39;, &#39;http://rdf.ncbi.nlm.nih.gov/pubchem/inchikey&#39;);<br />
+ld_dir (&#39;&lt;Path&gt;/measuregroup&#39;, &#39;*.ttl.gz&#39;, &#39;http://rdf.ncbi.nlm.nih.gov/pubchem/measuregroup&#39;);<br />
+ld_dir (&#39;&lt;Path&gt;/endpoint&#39;, &#39;*.ttl.gz&#39;, &#39;http://rdf.ncbi.nlm.nih.gov/pubchem/endpoint&#39;);<br />
+ld_dir (&#39;&lt;Path&gt;/bioassay&#39;, &#39;*.ttl.gz&#39;, &#39;http://rdf.ncbi.nlm.nih.gov/pubchem/bioassay&#39;);<br />
+ld_dir (&#39;&lt;Path&gt;/protein&#39;, &#39;*.ttl.gz&#39;, &#39;http://rdf.ncbi.nlm.nih.gov/pubchem/protein&#39;);<br />
+ld_dir (&#39;&lt;Path&gt;/pathway&#39;, &#39;*.ttl.gz&#39;, &#39;http://rdf.ncbi.nlm.nih.gov/pubchem/pathway&#39;);<br />
+ld_dir (&#39;&lt;Path&gt;/conserveddomain&#39;, &#39;*.ttl.gz&#39;, &#39;http://rdf.ncbi.nlm.nih.gov/pubchem/conserveddomain&#39;);<br />
+ld_dir (&#39;&lt;Path&gt;/gene&#39;, &#39;*.ttl.gz&#39;, &#39;http://rdf.ncbi.nlm.nih.gov/pubchem/gene&#39;);<br />
+ld_dir (&#39;&lt;Path&gt;/reference&#39;, &#39;*.ttl.gz&#39;, &#39;http://rdf.ncbi.nlm.nih.gov/pubchem/reference&#39;);<br />
+ld_dir (&#39;&lt;Path&gt;/source&#39;, &#39;*.ttl.gz&#39;, &#39;http://rdf.ncbi.nlm.nih.gov/pubchem/source&#39;);<br />
+ld_dir (&#39;&lt;Path&gt;/concept&#39;, &#39;*.ttl.gz&#39;, &#39;http://rdf.ncbi.nlm.nih.gov/pubchem/source&#39;);<br />
+checkpoint;</div>
+<p><strong>Second</strong>,&nbsp; you can execute the bulk load function (&ldquo;rdf_loader_run()&rdquo;) multiple times, like:</p>
+<div class="computer_code">isql 1111 dba dba exec=&quot;rdf_loader_run();&quot; &amp;<br />
+isql 1111 dba dba exec=&quot;rdf_loader_run();&quot; &amp;<br />
+isql 1111 dba dba exec=&quot;rdf_loader_run();&quot; &amp;<br />
+isql 1111 dba dba exec=&quot;rdf_loader_run();&quot; &amp;<br />
+isql 1111 dba dba exec=&quot;rdf_loader_run();&quot; &amp;<br />
+isql 1111 dba dba exec=&quot;rdf_loader_run();&quot; &amp;<br />
+isql 1111 dba dba exec=&quot;rdf_loader_run();&quot; &amp;<br />
+wait<br />
+isql 111 dba dba exec=&quot;checkpoint;&quot;</div>
+<p>The number of threads for bulk loading depends on the number of available processors. The core subset of PubChemRDF data can be loaded into Virtuoso quad store using 10 processes within 10 hours, and the loaded datasets will take approximately 500 GB SSD at the time of writing.</p>
+<p>After loading, it is recommended to check the loading registry table (DB.DBA.load_list) to check if any job was killed or failed due to errors, by running the following command in &ldquo;isql&rdquo; command:</p>
+<div class="computer_code">select * from DB.DBA.load_list;</div>
+<p>It is always a good practice to check &ldquo;virtuoso.log&rdquo; file after any operation. If the files to be loaded contain syntax errors, you may see the error messages in the log file.</p>
+<p>Virtuoso has &ldquo;dash board&rdquo; graphical user interface (GUI) called Virtuoso conductor, which can be accessed through http://&lt;server-name&gt;:&lt;port-number&gt;. You can run SPARQL queries through the Virtuoso conductor after login, like you run queries through the &ldquo;isql&rdquo; command line. Another option is the <a href="http://virtuoso.openlinksw.com/dataspace/doc/dav/wiki/Main/VOSSparqlProtocol">Virtuoso SPARQL endpoint</a> that can be accessed through http://&lt;server-name&gt;:&lt;port-number&gt;/sparql. The SPARQL endpoint is protected through a set of parameters defined in &ldquo;virtuoso.ini&rdquo; file, like timeout limit and the maximum number of concurrent users. You can change the configurations either through the Virtuoso conductor or by editing &ldquo;virtuoso.ini&rdquo; file directly.</p>
+<p>You can either access the SPARQL endpoint service using a browser or by sending HTTP GET/POST requests to the <a href="http://docs.openlinksw.com/virtuoso/rdfsparql.html">SPARQL query service</a>:</p>
+<div class="computer_code">curl &ndash;F &ldquo;query=&lt;your SPARQL query here&gt; from &lt;graphURI&gt;&rdquo; http://&lt;server-name&gt;:&lt;port-number&gt;/sparql</div>
+<p>It is recommended to set namespace prefixes for the ontologies used in PubChemRDF using the predefined function (DB.DBA.XML_SET_NS_DECL) that can run in &ldquo;isql&rdquo; command:</p>
+<div class="computer_code">DB.DBA.XML_SET_NS_DECL (&#39;compound&#39;, &#39;http://rdf.ncbi.nlm.nih.gov/pubchem/compound/&#39;, 2);<br />
+DB.DBA.XML_SET_NS_DECL (&#39;substance&#39;, &#39;http://rdf.ncbi.nlm.nih.gov/pubchem/substance/&#39;, 2);<br />
+DB.DBA.XML_SET_NS_DECL (&#39;descriptor&#39;, &#39;http://rdf.ncbi.nlm.nih.gov/pubchem/descriptor/&#39;, 2);<br />
+DB.DBA.XML_SET_NS_DECL (&#39;synonym&#39;, &#39;http://rdf.ncbi.nlm.nih.gov/pubchem/synonym/&#39;, 2);<br />
+DB.DBA.XML_SET_NS_DECL (&#39;inchikey&#39;, &#39;http://rdf.ncbi.nlm.nih.gov/pubchem/inchikey/&#39;, 2);<br />
+DB.DBA.XML_SET_NS_DECL (&#39;bioassay&#39;, &#39;http://rdf.ncbi.nlm.nih.gov/pubchem/bioassay/&#39;, 2);<br />
+DB.DBA.XML_SET_NS_DECL (&#39;measuregroup&#39;, &#39;http://rdf.ncbi.nlm.nih.gov/pubchem/measuregroup/&#39;, 2);<br />
+DB.DBA.XML_SET_NS_DECL (&#39;endpoint&#39;, &#39;http://rdf.ncbi.nlm.nih.gov/pubchem/endpoint/&#39;, 2);<br />
+DB.DBA.XML_SET_NS_DECL (&#39;reference&#39;, &#39;http://rdf.ncbi.nlm.nih.gov/pubchem/reference/&#39;, 2);<br />
+DB.DBA.XML_SET_NS_DECL (&#39;protein&#39;, &#39;http://rdf.ncbi.nlm.nih.gov/pubchem/protein/&#39;, 2);<br />
+DB.DBA.XML_SET_NS_DECL (&#39;conserveddomain&#39;, &#39;http://rdf.ncbi.nlm.nih.gov/pubchem/conserveddomain/&#39;, 2);<br />
+DB.DBA.XML_SET_NS_DECL (&#39;gene&#39;, &#39;http://rdf.ncbi.nlm.nih.gov/pubchem/gene/&#39;, 2);<br />
+DB.DBA.XML_SET_NS_DECL (&#39;pathway&#39;, &#39;http://rdf.ncbi.nlm.nih.gov/pubchem/pathway/&#39;, 2);<br />
+DB.DBA.XML_SET_NS_DECL (&#39;source&#39;, &#39;http://rdf.ncbi.nlm.nih.gov/pubchem/source/&#39;, 2);<br />
+DB.DBA.XML_SET_NS_DECL (&#39;concept&#39;, &#39;http://rdf.ncbi.nlm.nih.gov/pubchem/concept/&#39;, 2);<br />
+DB.DBA.XML_SET_NS_DECL (&#39;vocab&#39;, &#39;http://rdf.ncbi.nlm.nih.gov/pubchem/vocabulary#&#39;, 2);<br />
+DB.DBA.XML_SET_NS_DECL (&#39;obo&#39;, &#39;http://purl.obolibrary.org/obo/&#39;, 2);<br />
+DB.DBA.XML_SET_NS_DECL (&#39;sio&#39;, &#39;http://semanticscience.org/resource/&#39;, 2);<br />
+DB.DBA.XML_SET_NS_DECL (&#39;skos&#39;, &#39;http://www.w3.org/2004/02/skos/core#&#39;, 2);<br />
+DB.DBA.XML_SET_NS_DECL (&#39;bao&#39;, &#39;http://www.bioassayontology.org/bao#&#39;, 2);<br />
+DB.DBA.XML_SET_NS_DECL (&#39;bp&#39;, &#39;http://www.biopax.org/release/biopax-level3.owl#&#39;, 2);<br />
+DB.DBA.XML_SET_NS_DECL (&#39;ndfrt&#39;, &#39;http://evs.nci.nih.gov/ftp1/NDF-RT/NDF-RT.owl#&#39;, 2);<br />
+DB.DBA.XML_SET_NS_DECL (&#39;ncit&#39;, &#39;http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#&#39;, 2);<br />
+DB.DBA.XML_SET_NS_DECL (&#39;wikidata&#39;, &#39;http://www.wikidata.org/entity/&#39;, 2);<br />
+DB.DBA.XML_SET_NS_DECL (&#39;ops&#39;, &#39;http://www.openphacts.org/units/&#39;, 2);<br />
+DB.DBA.XML_SET_NS_DECL (&#39;cito&#39;, &#39;http://purl.org/spar/cito/&#39;, 2);<br />
+DB.DBA.XML_SET_NS_DECL (&#39;fabio&#39;, &#39;http://purl.org/spar/fabio/&#39;, 2);<br />
+DB.DBA.XML_SET_NS_DECL (&#39;uniprot&#39;, &#39;http://purl.uniprot.org/uniprot/&#39;, 2);<br />
+DB.DBA.XML_SET_NS_DECL (&#39;up&#39;, &#39;http://purl.uniprot.org/core/&#39;, 2);<br />
+DB.DBA.XML_SET_NS_DECL (&#39;pdbo&#39;, &#39;http://rdf.wwpdb.org/schema/pdbx-v40.owl#&#39;, 2);<br />
+DB.DBA.XML_SET_NS_DECL (&#39;pdbr&#39;, &#39;http://rdf.wwpdb.org/pdb/&#39;, 2);<br />
+DB.DBA.XML_SET_NS_DECL (&#39;taxonomy&#39;, &#39;http://identifiers.org/taxonomy/&#39;, 2);<br />
+DB.DBA.XML_SET_NS_DECL (&#39;reactome&#39;, &#39;http://identifiers.org/reactome/&#39;, 2);<br />
+DB.DBA.XML_SET_NS_DECL (&#39;chembl&#39;, &#39;http://rdf.ebi.ac.uk/resource/chembl/molecule/&#39;, 2);<br />
+DB.DBA.XML_SET_NS_DECL (&#39;chemblchembl&#39;, &#39;http://linkedchemistry.info/chembl/chemblid/&#39;, 2);<br />
+DB.DBA.XML_SET_NS_DECL (&#39;foaf&#39;, &#39;http://xmlns.com/foaf/0.1/&#39;, 2);<br />
+DB.DBA.XML_SET_NS_DECL (&#39;void&#39;, &#39;http://rdfs.org/ns/void#&#39;, 2);<br />
+DB.DBA.XML_SET_NS_DECL (&#39;dcterms&#39;, &#39;http://purl.org/dc/terms/&#39;, 2);</div>
+<p>By doing this the query results can be visualized and understood much easier, in particular, using the RDF turtle format. It is noteworthy that the &ldquo;isql&rdquo; command cannot override the existing namespaces, so if there is an existing prefix with the same name, you need to either use another predefined function (DB.DBA.XML_REMOVE_NS_BY_PREFIX) or manually locate them and change them through theVirtuoso conductor, under the tab of &ldquo;Linked Data&rdquo;-&gt; &ldquo;Namespaces&rdquo;.</p>
+<p>For example, to remove the existing namespace for the prefix &lsquo;obo&rsquo;, the following &lsquo;isql&rsquo; command can be used:</p>
+
+<div class="computer_code">DB.DBA.XML_REMOVE_NS_BY_PREFIX (&#39;obo&#39;, 2);</div>
+
+</div>
+</section>
+
+<section class="amp-accordion__section" data-item-label="PubChemRDF Use Cases">
+
+<h2 class="amp-accordion__header primary-bg footer-h2">
+<span>PubChemRDF Use Cases</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h2>
+
+<amp-accordion animate expand-single-section>
+
+<!-- <p> -->
+<!-- The following sample SPARQL queries can help you to understand more about the PubChemRDF dataset. You can build other SPARQL queries based on the sample queries below. -->
+<!-- </p> -->
+
+<section>
+
+<h3 class="amp-accordion__header-use-case primary-bg footer-h3">
+<span>Case 1: What protein targets does donepezil (CHEBI_53289) inhibit with an IC50 less than 10 microMolar?</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h3>
+
+<div class="computer_code">
+SELECT distinct ?protein ?title<br />
+from &lt;http://rdf.ncbi.nlm.nih.gov/pubchem/protein&gt;<br />
+from &lt;http://rdf.ncbi.nlm.nih.gov/pubchem/measuregroup&gt;<br />
+from &lt;http://rdf.ncbi.nlm.nih.gov/pubchem/endpoint&gt;<br />
+from &lt;http://rdf.ncbi.nlm.nih.gov/pubchem/substance&gt;<br />
+WHERE {<br />
+&nbsp; ?sub rdf:type obo:CHEBI_53289 ; obo:RO_0000056 ?mg .<br />
+&nbsp; ?mg obo:RO_0000057&nbsp;?protein ; obo:OBI_0000299 ?ep .<br />
+&nbsp; ?protein rdf:type bp:Protein ; dcterms:title ?title .<br />
+&nbsp; ?ep rdf:type bao:BAO_0000190 ; obo:IAO_0000136 ?sub ; sio:has-value ?value .<br />
+&nbsp; filter (?value &lt; 10 )<br />
+}
+</div>
+</section>
+
+<section>
+
+<h3 class="amp-accordion__header primary-bg footer-h3">
+<span>Case 2: What pharmacological roles of SID46505803 are defined by CHEBI?</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h3>
+
+<div class="computer_code">
+PREFIX obov: &lt;http://purl.obolibrary.org/obo#&gt;<br />
+SELECT DISTINCT ?rolelabel<br />
+from &lt;http://rdf.ncbi.nlm.nih.gov/pubchem/substance&gt;<br />
+from &lt;http://rdf.ncbi.nlm.nih.gov/pubchem/compound&gt;<br />
+from &lt;http://rdf.ncbi.nlm.nih.gov/pubchem/ruleset&gt;<br />
+WHERE {<br />
+&nbsp; substance:SID46505803 sio:CHEMINF_000477 ?comp .<br />
+&nbsp; ?comp rdf:type ?chebi .<br />
+&nbsp; ?chebi rdfs:subClassOf [ a owl:Restriction ;<br />
+&nbsp; owl:onProperty obov:has_role ;<br />
+&nbsp; owl:someValuesFrom ?role ] .<br />
+&nbsp; ?role rdfs:label ?rolelabel .<br />
+}
+</div>
+</section>
+
+<section>
+
+<h3 class="amp-accordion__header-use-case primary-bg footer-h3">
+<span>Case 3: What compound have a pharmacological role of NSAID as defined by CHEBI and molecular weight less than 200 g/mol?</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h3>
+
+<div class="computer_code">
+PREFIX obov: &lt;http://purl.obolibrary.org/obo#&gt;<br />
+SELECT distinct ?compound<br />
+from &lt;http://rdf.ncbi.nlm.nih.gov/pubchem/compound&gt;<br />
+from &lt;http://rdf.ncbi.nlm.nih.gov/pubchem/descriptor&gt;<br />
+from &lt;http://rdf.ncbi.nlm.nih.gov/pubchem/ruleset&gt;<br />
+WHERE {<br />
+&nbsp; ?compound rdf:type ?chebi .<br />
+&nbsp; ?chebi rdfs:subClassOf [ a owl:Restriction ;<br />
+&nbsp; owl:onProperty obov:has_role ;<br />
+&nbsp; owl:someValuesFrom obo:CHEBI_35475 ] .<br />
+&nbsp; ?comp sio:has-attribute ?MW .<br />
+&nbsp; ?MW rdf:type sio:CHEMINF_000334 .<br />
+&nbsp; ?MW sio:has-value ?MWValue .<br />
+&nbsp; filter (?MWValue &lt; 200 )<br />
+}
+</div>
+</section>
+
+<section>
+
+<h3 class="amp-accordion__header-use-case primary-bg footer-h3">
+<span>Case 4: What substances have a pharmacological role of NSAID as defined by CHEBI and the depositor-provided 3D X-ray structure information?</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h3>
+
+<div class="computer_code">
+PREFIX obov: &lt;http://purl.obolibrary.org/obo#&gt;<br />
+SELECT DISTINCT ?substance ?source<br />
+from &lt;http://rdf.ncbi.nlm.nih.gov/pubchem/substance&gt;<br />
+from &lt;http://rdf.ncbi.nlm.nih.gov/pubchem/source&gt;<br />
+from &lt;http://rdf.ncbi.nlm.nih.gov/pubchem/ruleset&gt;<br />
+WHERE {<br />
+&nbsp; ?substance dcterms:source ?source .<br />
+&nbsp; ?source dcterms:subject concept:Protein_3D_Structures .<br />
+&nbsp; ?substance rdf:type ?chebi .<br />
+&nbsp; ?chebi rdfs:subClassOf [ a owl:Restriction ;<br />
+&nbsp; owl:onProperty obov:has_role ;<br />
+&nbsp; owl:someValuesFrom obo:CHEBI_35475 ] .<br />
+}
+</div>
+</section>
+
+<section>
+
+<h3 class="amp-accordion__header-use-case-2 primary-bg footer-h3">
+<span>Case 5: What protein targets are inhibited by substances with an IC<sub>50</sub> less than 10 &micro;M and have a pharmacological role of cholinesterase inhibitors as defined by CHEBI?</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h3>
+
+<div class="computer_code">
+PREFIX obov: &lt;http://purl.obolibrary.org/obo#&gt;<br />
+select distinct ?title<br />
+from &lt;http://purl.obolibrary.org/obo&gt;<br />
+from &lt;http://rdf.ncbi.nlm.nih.gov/pubchem/substance&gt;<br />
+from &lt;http://rdf.ncbi.nlm.nih.gov/pubchem/measuregroup&gt;<br />
+from &lt;http://rdf.ncbi.nlm.nih.gov/pubchem/endpoint&gt;<br />
+from &lt;http://rdf.ncbi.nlm.nih.gov/pubchem/protein&gt;<br />
+from &lt;http://rdf.ncbi.nlm.nih.gov/pubchem/ruleset&gt;<br />
+where {<br />
+&nbsp; ?chebi rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obov:has_role ; owl:someValuesFrom obo:CHEBI_37733 ] .<br />
+&nbsp; ?sub rdf:type ?chebi ; obo:RO_0000056 ?mg .<br />
+&nbsp; ?mg obo:RO_0000057 ?protein ; obo:OBI_0000299 ?ep .<br />
+&nbsp; ?protein rdf:type bp:Protein ; dcterms:title ?title .<br />
+&nbsp; ?ep rdf:type bao:BAO_0000190 ; obo:IAO_0000136 ?sub ; sio:has-value ?value .<br />
+&nbsp; filter (?value &lt; 10 )<br />
+}
+</div>
+</section>
+
+<section>
+
+<h3 class="amp-accordion__header-use-case primary-bg footer-h3">
+<span>Case 6: Which substances inhibit protein targets similar to ACCP05979 and have the function domain PSSMID188648?</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h3>
+
+<div class="computer_code">
+select distinct ?substance ?protein ?value<br />
+from &lt;http://rdf.ncbi.nlm.nih.gov/pubchem/substance&gt;<br />
+from &lt;http://rdf.ncbi.nlm.nih.gov/pubchem/measuregroup&gt;<br />
+from &lt;http://rdf.ncbi.nlm.nih.gov/pubchem/endpoint&gt;<br />
+from &lt;http://rdf.ncbi.nlm.nih.gov/pubchem/protein&gt;<br />
+from &lt;http://rdf.ncbi.nlm.nih.gov/pubchem/conserveddomain&gt;<br />
+where {<br />
+&nbsp; ?substance obo:RO_0000056 ?measuregroup .<br />
+&nbsp; ?measuregroup obo:RO_0000057 ?protein .<br />
+&nbsp; protein:ACCP05979 vocab:hasSimilarProtein ?protein .<br />
+&nbsp; ?protein obo:RO_0002180&nbsp;conserveddomain:PSSMID188648 .<br />
+&nbsp; ?measuregroup obo:OBI_0000299 ?endpoint .<br />
+&nbsp; ?endpoint obo:IAO_0000136 ?substance .<br />
+&nbsp; ?endpoint rdf:type bao:BAO_0000190 .<br />
+&nbsp; ?endpoint sio:has-value ?value .<br />
+}
+</div>
+</section>
+
+<section>
+
+<h3 class="amp-accordion__header-use-case primary-bg footer-h3">
+<span>Case 7: What protein targets are inhibited by substances with IC<sub>50</sub> less than 10 &micro;M and have the same standardized chemical structure (CID3152)?</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h3>
+
+<div class="computer_code">
+select distinct ?sub ?protein ?title<br />
+from &lt;http://rdf.ncbi.nlm.nih.gov/pubchem/protein&gt;<br />
+from &lt;http://rdf.ncbi.nlm.nih.gov/pubchem/measuregroup&gt;<br />
+from &lt;http://rdf.ncbi.nlm.nih.gov/pubchem/endpoint&gt;<br />
+from &lt;http://rdf.ncbi.nlm.nih.gov/pubchem/substance&gt;<br />
+where {<br />
+&nbsp; ?sub sio:CHEMINF_000477 compound:CID3152 ; obo:RO_0000056 ?mg .<br />
+&nbsp; ?mg obo:RO_0000057 ?protein ; obo:OBI_0000299 ?ep .<br />
+&nbsp; ?protein rdf:type bp:Protein ; dcterms:title ?title .<br />
+&nbsp; ?ep rdf:type bao:BAO_0000190 ; obo:IAO_0000136 ?sub ; sio:has-value ?value .<br />
+&nbsp; filter (?value &lt; 10 )<br />
+}
+</div>
+</section>
+
+<section>
+
+<h3 class="amp-accordion__header-use-case-2 primary-bg footer-h3">
+<span>Case 8: What substances inhibit the proteins involved in the same biological pathway: prostaglandin biosynthetic process (GO:0001516), with an IC <sub>50</sub> less than 10 &micro;M?</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h3>
+
+<div class="computer_code">
+select distinct ?substance ?protein<br />
+from &lt;http://rdf.ncbi.nlm.nih.gov/pubchem/substance&gt;<br />
+from &lt;http://rdf.ncbi.nlm.nih.gov/pubchem/measuregroup&gt;<br />
+from &lt;http://rdf.ncbi.nlm.nih.gov/pubchem/endpoint&gt;<br />
+from &lt;http://rdf.ncbi.nlm.nih.gov/pubchem/protein&gt;<br />
+from &lt;http://rdf.ncbi.nlm.nih.gov/pubchem/gene&gt;<br />
+from &lt;http://rdf.ncbi.nlm.nih.gov/pubchem/pathway&gt;<br />
+where {<br />
+&nbsp; ?substance obo:RO_0000056 ?measuregroup .<br />
+&nbsp; ?measuregroup obo:RO_0000057 ?protein .<br />
+&nbsp; ?protein rdf:type bp:Protein .<br />
+&nbsp; ?protein up:encodedBy ?gene .<br />
+&nbsp; ?gene rdf:type bp:Gene .<br />
+&nbsp; ?gene obo:RO_0000056 obo:GO_0001516 .<br />
+&nbsp; ?measuregroup obo:OBI_0000299 ?endpoint .<br />
+&nbsp; ?endpoint obo:IAO_0000136 ?substance .<br />
+&nbsp; ?endpoint rdf:type bao:BAO_0000190 .<br />
+&nbsp; ?endpoint sio:has-value ?value .<br />
+&nbsp; filter (?value &lt; 10)<br />
+}
+</div>
+</section>
+
+<section>
+
+<h3 class="amp-accordion__header-use-case primary-bg footer-h3">
+<span>Case 9: What the pharmacological roles defined by CHEBI are for the substances that inhibit protein target ACCQ12809 with an IC<sub>50</sub> less than 10 &micro;M?</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h3>
+
+<div class="computer_code">
+select distinct ?rolelabel<br />
+from &lt;http://rdf.ncbi.nlm.nih.gov/pubchem/measuregroup&gt;<br />
+from &lt;http://rdf.ncbi.nlm.nih.gov/pubchem/endpoint&gt;<br />
+from &lt;http://rdf.ncbi.nlm.nih.gov/pubchem/substance&gt;<br />
+from &lt;http://rdf.ncbi.nlm.nih.gov/pubchem/ruleset&gt;<br />
+from &lt;http://purl.obolibrary.org/obo&gt;<br />
+where {<br />
+&nbsp; ?sub obo:RO_0000056 ?mg .<br />
+&nbsp; ?mg obo:RO_0000057 protein:ACCQ12809&nbsp;; obo:OBI_0000299 ?ep .<br />
+&nbsp; ?sub rdf:type ?chebi .<br />
+&nbsp; ?chebi rdfs:subClassOf _:I .<br />
+&nbsp; _:I a owl:Restriction .<br />
+&nbsp; _:I owl:onProperty &lt;http://purl.obolibrary.org/obo#has_role&gt; .<br />
+&nbsp; _:I owl:someValuesFrom ?role .<br />
+&nbsp; ?role rdfs:label ?rolelabel .<br />
+&nbsp; ?ep obo:IAO_0000136 ?sub ; rdf:type bao:BAO_0000190 ; sio:has-value ?value .<br />
+&nbsp; filter (?value &lt; 10 )<br />
+}
+</div>
+</section>
+
+<section>
+
+<h3 class="amp-accordion__header-use-case primary-bg footer-h3">
+<span>Case 10: Summarize the statistics about the total number of substances tested in the PubChem database against each protein target.</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h3>
+
+<div class="computer_code">
+select (count(?sub) as ?subcnt) ?protein<br />
+from &lt;http://rdf.ncbi.nlm.nih.gov/pubchem/substance&gt;<br />
+from &lt;http://rdf.ncbi.nlm.nih.gov/pubchem/measuregroup&gt;<br />
+from &lt;http://rdf.ncbi.nlm.nih.gov/pubchem/endpoint&gt;<br />
+from &lt;http://rdf.ncbi.nlm.nih.gov/pubchem/protein&gt;<br />
+where {<br />
+&nbsp; ?sub obo:RO_0000056 ?mg .<br />
+&nbsp; ?mg obo:RO_0000057 ?protein .<br />
+&nbsp; ?protein rdf:type bp:Protein .<br />
+&nbsp; ?mg obo:OBI_0000299 ?ep .<br />
+&nbsp; ?ep rdf:type bao:BAO_0000190 ; obo:IAO_0000136 ?sub ; sio:has-value ?value .<br />
+}<br />
+group by ?protein<br />
+order by ?subcnt
+</div>
+</section>
+</amp-accordion>
+
+</section>
+
+<section class="amp-accordion__section" data-item-label="Document Version History">
+
+<h2 class="amp-accordion__header primary-bg footer-h2">
+<span>Document Version History</span>
+<span class="amp-accordion__header-expand"><svg><use xlink:href="#accordion-circle-plus"></use></svg></span>
+<span class="amp-accordion__header-collapse"><svg><use xlink:href="#accordion-circle-minus"></use></svg></span>
+</h2>
+
+<div>
+<p>V1.7.2.b - 2022Feb&nbsp;- Fixed bug in the&nbsp;docs of downloading data with wget over&nbsp;ftp instead of https to avoid robots.txt restrictions.</p>
+<p>V1.7.1.b - 2021Sep - Fixed bug in the&nbsp;docs of Endpoint to make it consistent with data: qudt:numericValue to sio:has-value; xsd:double to xsd:float; qudt:unit to sio:has-unit;&nbsp; ops:Micromolar to uo:micromolar.&nbsp;</p>
+<p>V1.7.0.b &ndash; 2020Apr - overview of major changes:</p>
+<ol>
+<li>Now using NCBI accession as protein identifier (<a href="https://ncbiinsights.ncbi.nlm.nih.gov/2016/07/15/ncbi-is-phasing-out-sequence-gis-heres-what-you-need-to-know/">NCBI phased out GI</a>).</li>
+<li>biosystem subdomain was replaced by pathway (<a href="https://pubchemdocs.ncbi.nlm.nih.gov/pathways">PubChem superseded the NCBI BioSystems database</a>). Compounds, proteins, and genes are defined as participants of pathways, i.e. outgoing links (vs. incoming links).</li>
+<li>Added a new disease subdomain</li>
+<li>GO links were removed from the protein subdomain in favor of gene-GO links in the gene subdomain</li>
+<li>The source subdomain nows includes pathway sources</li>
+<li>Some predicates from PubChem internal vocabulary were replaced in favor of external ones (e.g. <a href="http://rdf.ncbi.nlm.nih.gov/pubchem/vocabulary.owl#geneSymbol">vocab:geneSymbol</a>&nbsp;&nbsp;-&gt; <a href="http://semanticscience.org/resource/gene-symbol">sio:gene-symbol</a>); Non-addressable predicates were updated, e.g. <a href="http://purl.obolibrary.org/obo/BFO_0000057">obo:BFO_0000057</a>&nbsp;-&gt; <a href="http://purl.obolibrary.org/obo/RO_0000057">obo:RO_0000057</a></li>
+</ol>
+<ul>
+</ul>
+<p>V1.6.3.b &ndash; 2019Nov25&nbsp;&ndash; Fix bugs of&nbsp;an&nbsp;empty link in the example&nbsp;of measuregroup due to a&nbsp;revoked assay.</p>
+<p>V1.6.2.b &ndash; 2018Dec19&nbsp;&ndash; Fix bugs&nbsp;in URI resolving and content negotiation&nbsp;in RESTful Interfaces.&nbsp;</p>
+<p>V1.6.1.b &ndash; 2016Sep14 &ndash; PubChemRDF is HTTPS-only now. All of the URIs are redirect to &#39;https&#39;, including the URLs in the PubChemRDF Release Notes</p>
+<p>V1.6.b &ndash; 2016March &ndash; overview of major changes:</p>
+<ul class="squares">
+<li>Added more figures to demonstrate PubChemRDF graphs</li>
+<li>listed the classes and predicates used for each existing ontologies leveraged by PubChemRDF</li>
+<li>include up-to-date statistics, i.e. total number of triples in the release note</li>
+<li>&nbsp;</li>
+<li>V1.5.2.b &ndash; 2015Oct01 &ndash; updated Section 5.2.2. The simple SPARQL-like queries allow multiple values to be provided for subject and object; Changed &quot;SYSTAP Bigdata&quot; to &quot;SYSTAP Blazegraph&quot;.</li>
+<li>&nbsp;</li>
+<li>V1.5.1.b &ndash; 2015Aug04 &ndash; updated Figure&nbsp;1 with synonym type link and changed the namespace of NDFRT.</li>
+<li>&nbsp;</li>
+<li>
+<p>V1.5.b &ndash; 2015June &ndash; overview of major changes:</p>
+</li>
+<li>Added more figures to demonstrate PubChemRDF graphs</li>
+<li>the classes and predicates used for each existing ontologies leveraged by PubChemRDF</li>
+<li>Added the subdomain &ldquo;conserveddomain&rdquo; to help organize and complement protein annotation</li>
+<li>Integrated MeSH with the &ldquo;reference&rdquo; subdomain</li>
+<li>Added direct links to external RDF triple stores: NLM&rsquo;s MeSH RDF; EBI&rsquo;s ChEMBL RDF, PDB RDF, UniProt RDF, and Reactome RDF; and WikiData RDF</li>
+<li>Added dependencies on the ontologies: &ldquo;ncit&rdquo; and &ldquo;ndfrt&rdquo;</li>
+<li>Inferable (and therefore redundant) predicates were removed to reduce triple count</li>
+<li>JSON-LD format is now available in URI de-referencing</li>
+<li>New RESTful API functions for substring search and simple SPARQL-like query</li>
+<li>Numerous improvements to documentation, including major changes to <strong>Figure 1</strong> reflecting external ontology and external RDF triple store linking information</li>
+<li>&nbsp;</li>
+<li>V1.1.b &ndash; 2014Mar05 &ndash; added sections 1.1 and 1.2 and added Virtuoso bulk loading description.</li>
+<li>&nbsp;</li>
+</ul>
+<p>V1.0.b &ndash; 2014Jan13 &ndash; Initial beta release.</p>
+
+</div>
+</section>
+
+</amp-accordion>
+<!-- close master accordion -->
+</div>
+<!-- close container -->
+<svg style="position:absolute;width:0;height:0;overflow:hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+
+<svg id="accordion-circle-plus" viewBox="0 0 40 40" height="36" width="36"><path fill="#fff" d="M20 28.5c-4.7 0-8.5-3.8-8.5-8.5s3.8-8.5 8.5-8.5 8.5 3.8 8.5 8.5-3.8 8.5-8.5 8.5zm0-16c-4.1 0-7.5 3.4-7.5 7.5s3.4 7.5 7.5 7.5 7.5-3.4 7.5-7.5-3.4-7.5-7.5-7.5z"/><path fill="#fff" d="M22.5 20.5h-5c-.3 0-.5-.2-.5-.5s.2-.5.5-.5h5c.3 0 .5.2.5.5s-.2.5-.5.5z"/><path fill="#fff" d="M20 23c-.3 0-.5-.2-.5-.5v-5c0-.3.2-.5.5-.5s.5.2.5.5v5c0 .3-.2.5-.5.5z"/></svg>
+
+<svg id="accordion-circle-minus" viewBox="0 0 40 40" height="36" width="36"><path fill="#fff" d="M20 28.5c-4.7 0-8.5-3.8-8.5-8.5s3.8-8.5 8.5-8.5 8.5 3.8 8.5 8.5-3.8 8.5-8.5 8.5zm0-16c-4.1 0-7.5 3.4-7.5 7.5s3.4 7.5 7.5 7.5 7.5-3.4 7.5-7.5-3.4-7.5-7.5-7.5z"/><path fill="#fff" d="M22.5 20.5h-5c-.3 0-.5-.2-.5-.5s.2-.5.5-.5h5c.3 0 .5.2.5.5s-.2.5-.5.5z"/></svg>
+
+<svg id="accordion-circle-close" viewBox="0 0 40 40" height="36" width="36"><path fill="#fff" d="M20 28.5c-4.7 0-8.5-3.8-8.5-8.5s3.8-8.5 8.5-8.5 8.5 3.8 8.5 8.5-3.8 8.5-8.5 8.5zm0-16c-4.1 0-7.5 3.4-7.5 7.5s3.4 7.5 7.5 7.5 7.5-3.4 7.5-7.5-3.4-7.5-7.5-7.5z"/><path fill="#fff" d="M22.1 22.6c-.1 0-.3 0-.4-.1l-4.2-4.2c-.2-.2-.2-.5 0-.7s.5-.2.7 0l4.2 4.2c.2.2.2.5 0 .7-.1 0-.2.1-.3.1z"/><path fill="#fff" d="M17.9 22.6c-.1 0-.3 0-.4-.1-.2-.2-.2-.5 0-.7l4.2-4.2c.2-.2.5-.2.7 0s.2.5 0 .7l-4.2 4.2s-.2.1-.3.1z"/></svg>
+
+<svg id="svg-angle-down-solid" viewBox="0 0 64 64"><path d="M56.293 16.003c1.761-1.645 4.553-1.645 6.314 0 1.857 1.734 1.857 4.623 0 6.357l-27.45 25.638c-1.761 1.645-4.553 1.645-6.314 0l-27.45-25.638c-0.899-0.839-1.393-1.963-1.393-3.178s0.494-2.339 1.393-3.178c1.761-1.645 4.553-1.645 6.314 0l24.293 22.689 24.293-22.689z"></path></svg>
+
+<svg id="svg-close" viewBox="0 0 64 64"><path d="M39.503 32l22.963-22.963c2.046-2.046 2.046-5.457 0-7.503s-5.456-2.046-7.503 0l-22.963 22.963-22.963-22.963c-2.046-2.046-5.457-2.046-7.503 0s-2.046 5.457 0 7.503l22.963 22.963-22.963 22.963c-2.046 2.046-2.046 5.456 0 7.503s5.457 2.046 7.503 0l22.963-22.963 22.963 22.963c2.046 2.046 5.456 2.046 7.503 0s2.046-5.456 0-7.503l-22.963-22.963z"></path></svg>
+
+</defs>
+</svg>
+
+</body>
+</html>

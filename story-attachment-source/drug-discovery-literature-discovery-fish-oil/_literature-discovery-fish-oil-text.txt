@@ -1,0 +1,86 @@
+Implicit relations for hypothesis generation
+
+H2
+Hypothesis generation, data discover and the ABC paradigm
+
+Literature-based discovery (LBD) is a form of knowledge extraction and automated hypothesis generation that uses papers and other academic publications (the "literature") to find new relationships between existing knowledge (the "discovery").
+Literature-based discovery aims to discover new knowledge by connecting information which have been explicitly stated in literature to deduce connections which have not been explicitly stated.
+
+LBD can help researchers to quickly discover and explore hypotheses as well as gain information on relevant advances inside and outside of their niches and increase interdisciplinary information sharing.
+
+The most basic and widespread type of LBD is called the ABC paradigm because it centers around three concepts called A, B and C.
+It states that if there is a connection between A and B and one between B and C, then there is one between A and C which, if not explicitly stated, is yet to be explored.
+
+The follow is an excerpt from:
+
+Fish Oil, Raynaud's Syndrome, and Undiscovered Public Knowledge
+  Swanson, Don R. "Fish Oil, Raynaud's Syndrome, and Undiscovered Public Knowledge." Perspectives in Biology and Medicine, vol. 30 no. 1, 1986, p. 7-18. Project MUSE, https://doi.org/10.1353/pbm.1986.0087.
+  http://muse.jhu.edu/article/403510/pdf
+
+Donald R. Swanson was an American information scientist, most known for his work in literature-based discovery in the biomedical domain.
+  https://en.wikipedia.org/wiki/Don_R._Swanson
+  https://muse.jhu.edu/search?action=search&query=author:Don%20R.%20Swanson:and&min=1&max=10&t=query_term
+
+<p>
+
+Divide and conquer — the strategy that science uses to cope with the mountains of printed matter it produces — appears on the surface to serve us well.
+Science organizes itself into manageable units — scientific specialties — and so its literature is created and assimilated in manageable chunks or units.
+But a few clouds on the horizon ought not to go unexamined.
+First, most of the units are no doubt logically related to other units.
+Second, there are far more combinations of units, therefore far more potential relationships among the units, than there are units.
+Third, the system is not organized to cope with combinations.
+
+I suggest that important relationships might be escaping our notice.
+
+Individual units of literature are created to some degree independently of one another, and, insofar as that is so, the logical connections among the units, though inevitable, may be unintended by and even unknown to their creators.
+Until those fragments, like scattered pieces of a puzzle, are brought together, the relationships among them may remain undiscovered — even though the isolated pieces might long have been public knowledge.
+
+My purpose in this essay is to show, by means of an example, how this might happen.
+
+I shall identify two units of literature that are logically connected but noninteractive; neither seems to acknowledge the other to any substantial degree.
+Yet the logical connections, once apparent, lead to a potentially useful and possibly new hypothesis.
+
+<h3>
+A Hidden Hypothesis
+-------------------
+
+Dietary fish oil has been shown in many experiments, human and animal, to lead to reductions in blood lipids, platelet aggregability, blood viscosity, and vascular reactivity — changes that are likely to improve blood circulation. 
+
+Raynaud's syndrome is a peripheral circulatory disorder associated with and exacerbated by high platelet aggregability, high blood viscosity, and vasoconstriction.
+
+These two ideas — the fish oil/blood connection and the Raynaud/blood connection — are each supported by a substantial body of scientific evidence and literature; each idea separately represents knowledge that is publicly available.
+
+What is notable about the two ideas is that, apparently, they have not heretofore been brought together in print.
+
+Together they obviously suggest the hypothesis that dietary fish oil might ameliorate or prevent Raynaud's syndrome.
+So far as I have been able to determine, that hypothesis also has never appeared in print.
+In some sense it has existed implicitly for years simply because the above two premises that lead to it have existed in published form for years.
+
+We can presume that the hypothesis has remained hidden because the separate literatures on fish oil and on Raynaud's syndrome have never been brought together in a way that would reveal their logical connection and so reveal the hypothesis.
+
+<h3>
+Noninteracting Literatures
+--------------------------
+
+During the past decade almost 2,000 papers on Raynaud's syndrome and around 1,000 papers related to dietary fish oil have been published, as estimated roughly from searching a few large data bases.
+The two groups of papers have many attributes in common that are relevant to the proposed hypothesis, attributes related to blood viscosity, platelet aggregability, and vascular reactivity.
+These connections notwithstanding, the two literatures appear to be remarkably isolated from one another, so far as either common authors or references from one literature to the other are concerned.
+
+The two main groups of papers in the attached list of references — the fish-oil group [1—25] and the Raynaud group [26—59] — were selected specifically for their logical connections with one another and with the proposed hypothesis, connections that will be discussed and made explicit in the next two sections of this paper.
+
+Yet none of the articles in the first group mentions or refers to any Raynaud work, and no article in the second group mentions or refers to research on fish oil.
+
+The isolation of the two literatures goes well beyond the two groups of references just mentioned.
+
+
+--------------------------
+Literature-based_discovery
+  https://en.wikipedia.org/wiki/Literature-based_discovery
+
+Raynaud's disease
+  https://www.mayoclinic.org/diseases-conditions/raynauds-disease/symptoms-causes/syc-20363571
+
+Fish-oil dietary supplementation in patients with Raynaud's phenomenon
+  https://pubmed.ncbi.nlm.nih.gov/2536517/
+  DiGiacomo RA, Kremer JM, Shah DM. Fish-oil dietary supplementation in patients with Raynaud's phenomenon: a double-blind, controlled, prospective study. Am J Med. 1989 Feb;86(2):158-64. doi: 10.1016/0002-9343(89)90261-1. PMID: 2536517.
+

@@ -1,0 +1,387 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1333.498" height="673.834" viewBox="0 0 1000.12 505.375" xml:space="preserve" color-interpolation-filters="sRGB" style="fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3">
+		<style>
+		.st1,.st2{fill:#fff;stroke:#000;stroke-linecap:butt;stroke-width:1}
+		.st2{fill:none;stroke:none;stroke-width:.75}
+		.st3{fill:#000;font-family:Noto Sans;font-size:.916672em}
+		.st4{fill:none}
+		.st5,.st6{stroke:#000;stroke-linecap:butt;stroke-width:1}
+		.st6{fill:#000}
+		.st9{fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:.75}
+		.st10{fill:#1f64ff;font-family:Noto Sans;font-size:1.5em}
+		</style>
+<defs id="Markers">
+<marker id="mrkr5-370" refX="-4.06" orient="auto" markerUnits="strokeWidth" overflow="visible" 	style="fill:#a5a5a5;fill-opacity:1;stroke:#a5a5a5;stroke-opacity:1;stroke-width:.43103448275862">
+<use xlink:href="#lend5" transform="scale(-2.32)"/></marker>
+<path d="M2 1 0 0l1.981-.993A2.25 2.25 0 0 0 1.985 1" 	style="stroke:none" id="lend5"/></defs>
+<g id="group5-1" transform="translate(439.375 -463.171)">
+<g id="shape6-2" transform="translate(65.53)">
+<path d="M120.94 464.17H0v41.2h120.94v-41.2Z" 	class="st1"/></g>
+<g id="shape7-4" transform="translate(56 -20.602)">
+<path 	class="st2" d="M0 488.575h140v16.8H0z"/>
+<text x="38.2" y="500.27" 	class="st3">GO:0008150</text></g>
+<g id="shape8-7" transform="translate(0 -3.802)">
+<path 	class="st2" d="M0 488.575h252v16.8H0z"/>
+<text x="78.74" y="500.27" 	class="st3">biological_process</text></g></g>
+<g id="group12-10" transform="translate(214.375 -59.972)">
+<g id="shape13-11" transform="translate(64.313)">
+<path d="M123.37 446.57H0v58.8h123.37v-58.8Z" 	class="st1"/></g>
+<g id="shape14-13" transform="translate(56 -37.801)">
+<path 	class="st2" d="M0 488.575h140v16.8H0z"/>
+<text x="38.2" y="500.27" 	class="st3">GO:0022607</text></g>
+<g id="shape15-16" transform="translate(0 -21.001)">
+<path 	class="st2" d="M0 488.575h252v16.8H0z"/>
+<text x="76.11" y="500.27" 	class="st3">cellular component</text></g>
+<g id="shape16-19" transform="translate(70 -4.201)">
+<path 	class="st2" d="M0 488.575h112v16.8H0z"/>
+<text x="31.79" y="500.27" 	class="st3">assembly</text></g></g>
+<g id="group17-22" transform="translate(307.375 -257.172)">
+<g id="shape18-23" transform="translate(64.313)">
+<path d="M123.37 446.57H0v58.8h123.37v-58.8Z" 	class="st1"/></g>
+<g id="shape19-25" transform="translate(56 -37.801)">
+<path 	class="st2" d="M0 488.575h140v16.8H0z"/>
+<text x="38.2" y="500.27" 	class="st3">GO:0016043</text></g>
+<g id="shape20-28" transform="translate(0 -21.001)">
+<path 	class="st2" d="M0 488.575h252v16.8H0z"/>
+<text x="76.11" y="500.27" 	class="st3">cellular component</text></g>
+<g id="shape21-31" transform="translate(42 -4.201)">
+<path 	class="st2" d="M0 488.575h168v16.8H0z"/>
+<text x="51.31" y="500.27" 	class="st3">organization</text></g></g>
+<g id="group22-34" transform="translate(334.067 -118.776)">
+<g id="shape23-35">
+<path d="M2.35 505.37C0 477.32.23 434.72 17.31 402.78c5.89-11.01 14.51-20.81 23.99-29.24L2.35 505.37Z" 	class="st4"/>
+<path d="M2.35 505.37C0 477.32.23 434.72 17.31 402.78c5.89-11.01 14.51-20.81 23.99-29.24" 	class="st5"/></g>
+<g id="shape24-38" transform="translate(39.121 -129.213)">
+<path d="m0 500 9.92-3.72-5.43 9.09L0 500Z" 	class="st6"/></g></g>
+<g id="group25-40" transform="translate(453.375 -368.771)">
+<g id="shape26-41" transform="translate(60.044)">
+<path d="M103.91 464.17H0v41.2h103.91v-41.2Z" 	class="st1"/></g>
+<g id="shape27-43" transform="translate(42 -20.602)">
+<path 	class="st2" d="M0 488.575h140v16.8H0z"/>
+<text x="38.2" y="500.27" 	class="st3">GO:0009987</text></g>
+<g id="shape28-46" transform="translate(0 -3.802)">
+<path 	class="st2" d="M0 488.575h224v16.8H0z"/>
+<text x="71.82" y="500.27" 	class="st3">cellular process</text></g></g>
+<g id="group29-49" transform="translate(471.201 -316.031)">
+<g id="shape30-50">
+<path d="m0 505.37 59.57-46.39L0 505.37Z" 	class="st4"/>
+<path d="m0 505.37 59.57-46.39" 	class="st5"/></g>
+<g id="shape31-53" transform="translate(57.613 -43.781)">
+<path d="m0 499.85 10.04-3.38-5.74 8.9-4.3-5.52Z" 	class="st6"/></g></g>
+<g id="group32-55" transform="translate(307.375 -351.673)">
+<g id="shape33-56" transform="translate(64.313)">
+<path d="M123.37 429.97H0v75.4h123.37v-75.4Z" 	class="st1"/></g>
+<g id="shape34-58" transform="translate(56 -54.5)">
+<path 	class="st2" d="M0 488.575h140v16.8H0z"/>
+<text x="38.2" y="500.27" 	class="st3">GO:0071840</text></g>
+<g id="shape35-61" transform="translate(0 -37.7)">
+<path 	class="st2" d="M0 488.575h252v16.8H0z"/>
+<text x="76.11" y="500.27" 	class="st3">cellular component</text></g>
+<g id="shape36-64" transform="translate(21 -20.9)">
+<path 	class="st2" d="M0 488.575h210v16.8H0z"/>
+<text x="65.28" y="500.27" 	class="st3">organization or</text></g>
+<g id="shape37-67" transform="translate(56 -4.1)">
+<path 	class="st2" d="M0 488.575h140v16.8H0z"/>
+<text x="42.2" y="500.27" 	class="st3">biogenesis</text></g></g>
+<g id="group38-70" transform="translate(429.875 -316.031)">
+<g id="shape39-71" transform="translate(3.5)">
+<path d="M0 505.37v-25.38 25.38Z" 	class="st4"/>
+<path d="M0 505.37v-25.38" 	class="st5"/></g>
+<g id="shape40-74" transform="translate(0 -25.427)">
+<path d="m0 505.37 3.5-10 3.5 10H0Z" 	class="st6"/></g></g>
+<g id="group41-76" transform="translate(561.875 -410.323)">
+<g id="shape42-77" transform="translate(3.5)">
+<path d="M0 505.37v-42.42 42.42Z" 	class="st4"/>
+<path d="M0 505.37v-42.42" 	class="st5"/></g>
+<g id="shape43-80" transform="translate(0 -42.558)">
+<path d="m0 505.37 3.5-10 3.5 10H0Z" 	class="st6"/></g></g>
+<g id="group44-82" transform="translate(486.304 -427.225)">
+<g id="shape45-83">
+<path d="M0 505.37c14-10.01 28.82-20.61 41.8-29.89L0 505.37Z" 	class="st4"/>
+<path d="M0 505.37c14-10.01 28.82-20.61 41.8-29.89" 	class="st5"/></g>
+<g id="shape46-86" transform="translate(39.87 -27.122)">
+<path d="m0 499.68 10.17-2.97-6.1 8.66L0 499.68Z" 	class="st6"/></g></g>
+<g id="group92-88" transform="translate(84.375 -162.772)">
+<g id="shape93-89" transform="translate(75.103)">
+<path d="M129.79 446.57H0v58.8h129.79v-58.8Z" 	class="st1"/></g>
+<g id="shape94-91" transform="translate(70 -37.801)">
+<path 	class="st2" d="M0 488.575h140v16.8H0z"/>
+<text x="38.2" y="500.27" 	class="st3">GO:0048856</text></g>
+<g id="shape95-94" transform="translate(0 -21.001)">
+<path 	class="st2" d="M0 488.575h280v16.8H0z"/>
+<text x="86.29" y="500.27" 	class="st3">anatomical structure</text></g>
+<g id="shape96-97" transform="translate(63 -4.201)">
+<path 	class="st2" d="M0 488.575h154v16.8H0z"/>
+<text x="42.86" y="500.27" 	class="st3">development</text></g></g>
+<g id="group104-100" transform="translate(109.375 -257.172)">
+<g id="shape105-101" transform="translate(92.322)">
+<path d="M151.36 446.57H0v58.8h151.36v-58.8Z" 	class="st1"/></g>
+<g id="shape106-103" transform="translate(98 -37.801)">
+<path 	class="st2" d="M0 488.575h140v16.8H0z"/>
+<text x="38.2" y="500.27" 	class="st3">GO:0044763</text></g>
+<g id="shape107-106" transform="translate(0 -21.001)">
+<path 	class="st2" d="M0 488.575h336v16.8H0z"/>
+<text x="106.03" y="500.27" 	class="st3">single-organism cellular</text></g>
+<g id="shape108-109" transform="translate(119 -4.201)">
+<path 	class="st2" d="M0 488.575h98v16.8H0z"/>
+<text x="29.01" y="500.27" 	class="st3">process</text></g></g>
+<g id="group118-112" transform="translate(353.275 -312.994)">
+<g id="shape119-113">
+<path d="M0 505.37c3.07-.95 6.11-1.88 9.1-2.77 62.4-18.6 82.04-10.63 142-36 7.57-3.21 15.3-7.26 22.6-11.52L0 505.37Z" 	class="st4"/>
+<path d="M0 505.37c3.07-.95 6.11-1.88 9.1-2.77 62.4-18.6 82.04-10.63 142-36 7.57-3.21 15.3-7.26 22.6-11.52" 	class="st5"/></g>
+<g id="shape120-116" transform="translate(172.307 -47.559)">
+<path d="m0 499.39 10.36-2.2-6.73 8.18L0 499.39Z" 	class="st6"/></g></g>
+<g id="group148-118" transform="translate(343.375 -59.972)">
+<g id="shape149-119" transform="translate(76.996)">
+<path d="M126.01 446.57H0v58.8h126.01v-58.8Z" 	class="st1"/></g>
+<g id="shape150-121" transform="translate(70 -37.801)">
+<path 	class="st2" d="M0 488.575h140v16.8H0z"/>
+<text x="38.2" y="500.27" 	class="st3">GO:0030198</text></g>
+<g id="shape151-124" transform="translate(0 -21.001)">
+<path 	class="st2" d="M0 488.575h280v16.8H0z"/>
+<text x="89.65" y="500.27" 	class="st3">extracellular matrix</text></g>
+<g id="shape152-127" transform="translate(56 -4.201)">
+<path 	class="st2" d="M0 488.575h168v16.8H0z"/>
+<text x="51.31" y="500.27" 	class="st3">organization</text></g></g>
+<g id="group159-130" transform="translate(268.375 -162.772)">
+<g id="shape160-131" transform="translate(91.567)">
+<path d="M138.87 446.57H0v58.8h138.87v-58.8Z" 	class="st1"/></g>
+<g id="shape161-133" transform="translate(91 -37.801)">
+<path 	class="st2" d="M0 488.575h140v16.8H0z"/>
+<text x="38.2" y="500.27" 	class="st3">GO:0043062</text></g>
+<g id="shape162-136" transform="translate(0 -21.001)">
+<path 	class="st2" d="M0 488.575h322v16.8H0z"/>
+<text x="103.77" y="500.27" 	class="st3">extracellular structure</text></g>
+<g id="shape163-139" transform="translate(77 -4.201)">
+<path 	class="st2" d="M0 488.575h168v16.8H0z"/>
+<text x="51.31" y="500.27" 	class="st3">organization</text></g></g>
+<g id="group164-142" transform="translate(444.851 -118.831)">
+<g id="shape165-143" transform="translate(4.731)">
+<path d="M18.32 505.37C12.61 494.51 6.06 482.04 0 470.5l18.32 34.87Z" 	class="st4"/>
+<path d="M18.32 505.37C12.61 494.51 6.06 482.04 0 470.5" 	class="st5"/></g>
+<g id="shape166-146" transform="translate(0 -33.398)">
+<path d="M1.55 505.37 0 494.89l7.75 7.23-6.2 3.25Z" 	class="st6"/></g></g>
+<g id="group167-148" transform="translate(428.212 -221.524)">
+<g id="shape168-149" transform="translate(2.407)">
+<path d="M0 505.37c.34-8.08.72-16.97 1.08-25.53L0 505.37Z" 	class="st4"/>
+<path d="M0 505.37c.34-8.08.72-16.97 1.08-25.53" 	class="st5"/></g>
+<g id="shape169-152" transform="translate(0 -25.576)">
+<path d="m0 505.08 3.92-9.84 3.07 10.13-6.99-.29Z" 	class="st6"/></g></g>
+<g id="group170-154" transform="translate(324.606 -221.524)">
+<g id="shape171-155" transform="translate(8.749)">
+<path d="M48.76 505.37C33.32 495.78 16.02 485.04 0 475.09l48.76 30.28Z" 	class="st4"/>
+<path d="M48.76 505.37C33.32 495.78 16.02 485.04 0 475.09" 	class="st5"/></g>
+<g id="shape172-158" transform="translate(0 -27.466)">
+<path d="M6.65 505.37 0 497.13l10.34 2.3-3.69 5.94Z" 	class="st6"/></g></g>
+<g id="group173-160" transform="translate(72.375 -68.771)">
+<g id="shape174-161" transform="translate(64.299)">
+<path d="M123.4 464.17H0v41.2h123.4v-41.2Z" 	class="st1"/></g>
+<g id="shape175-163" transform="translate(56 -20.602)">
+<path 	class="st2" d="M0 488.575h140v16.8H0z"/>
+<text x="38.2" y="500.27" 	class="st3">GO:0009888</text></g>
+<g id="shape176-166" transform="translate(0 -3.802)">
+<path 	class="st2" d="M0 488.575h252v16.8H0z"/>
+<text x="75.26" y="500.27" 	class="st3">tissue development</text></g></g>
+<g id="group177-169" transform="translate(203.636 -110.176)">
+<g id="shape178-170">
+<path d="M0 505.37c3.11-12.29 7.15-28.27 10.84-42.84L0 505.37Z" 	class="st4"/>
+<path d="M0 505.37c3.11-12.29 7.15-28.27 10.84-42.84" 	class="st5"/></g>
+<g id="shape179-173" transform="translate(7.472 -42.102)">
+<path d="m0 503.66 5.85-8.84.94 10.55L0 503.66Z" 	class="st6"/></g></g>
+<g id="group185-175" transform="translate(557.375 -59.972)">
+<g id="shape186-176" transform="translate(77.654)">
+<path d="M124.69 446.57H0v58.8h124.69v-58.8Z" 	class="st1"/></g>
+<g id="shape187-178" transform="translate(70 -37.801)">
+<path 	class="st2" d="M0 488.575h140v16.8H0z"/>
+<text x="38.2" y="500.27" 	class="st3">GO:0071470</text></g>
+<g id="shape188-181" transform="translate(0 -21.001)">
+<path 	class="st2" d="M0 488.575h280v16.8H0z"/>
+<text x="89.22" y="500.27" 	class="st3">cellular response to</text></g>
+<g id="shape189-184" transform="translate(42 -4.201)">
+<path 	class="st2" d="M0 488.575h196v16.8H0z"/>
+<text x="60.83" y="500.27" 	class="st3">osmotic stress</text></g></g>
+<g id="group193-187" transform="translate(703.375 -68.771)">
+<g id="shape194-188" transform="translate(74.814)">
+<path d="M144.37 464.17H0v41.2h144.37v-41.2Z" 	class="st1"/></g>
+<g id="shape195-190" transform="translate(77 -20.602)">
+<path 	class="st2" d="M0 488.575h140v16.8H0z"/>
+<text x="38.2" y="500.27" 	class="st3">GO:0006972</text></g>
+<g id="shape196-193" transform="translate(0 -3.802)">
+<path 	class="st2" d="M0 488.575h294v16.8H0z"/>
+<text x="86.28" y="500.27" 	class="st3">hyperosmotic response</text></g></g>
+<g id="group200-196" transform="translate(439.375 -162.772)">
+<g id="shape201-197" transform="translate(77.654)">
+<path d="M124.69 446.57H0v58.8h124.69v-58.8Z" 	class="st1"/></g>
+<g id="shape202-199" transform="translate(70 -37.801)">
+<path 	class="st2" d="M0 488.575h140v16.8H0z"/>
+<text x="38.2" y="500.27" 	class="st3">GO:0071214</text></g>
+<g id="shape203-202" transform="translate(0 -21.001)">
+<path 	class="st2" d="M0 488.575h280v16.8H0z"/>
+<text x="89.22" y="500.27" 	class="st3">cellular response to</text></g>
+<g id="shape204-205" transform="translate(28 -4.201)">
+<path 	class="st2" d="M0 488.575h224v16.8H0z"/>
+<text x="71.28" y="500.27" 	class="st3">abiotic stimulus</text></g></g>
+<g id="group205-208" transform="translate(613.194 -118.831)">
+<g id="shape206-209" transform="translate(7.601)">
+<path d="M42.77 505.37C29.43 493.76 13.99 480.31 0 468.12l42.77 37.25Z" 	class="st4"/>
+<path d="M42.77 505.37C29.43 493.76 13.99 480.31 0 468.12" 	class="st5"/></g>
+<g id="shape207-212" transform="translate(0 -34.671)">
+<path d="M5.24 505.37 0 496.17l9.84 3.93-4.6 5.27Z" 	class="st6"/></g></g>
+<g id="group208-214" transform="translate(733.375 -162.772)">
+<g id="shape209-215" transform="translate(69.3)">
+<path d="M127.4 446.57H0v58.8h127.4v-58.8Z" 	class="st1"/></g>
+<g id="shape210-217" transform="translate(63 -37.801)">
+<path 	class="st2" d="M0 488.575h140v16.8H0z"/>
+<text x="38.2" y="500.27" 	class="st3">GO:0006970</text></g>
+<g id="shape211-220" transform="translate(0 -21.001)">
+<path 	class="st2" d="M0 488.575h266v16.8H0z"/>
+<text x="80.5" y="500.27" 	class="st3">response to osmotic</text></g>
+<g id="shape212-223" transform="translate(91 -4.201)">
+<path 	class="st2" d="M0 488.575h84v16.8H0z"/>
+<text x="26.74" y="500.27" 	class="st3">stress</text></g></g>
+<g id="group213-226" transform="translate(745.804 -118.831)">
+<g id="shape214-227">
+<path d="M0 505.37c19.89-12.09 43.05-26.18 63.73-38.76L0 505.37Z" 	class="st4"/>
+<path d="M0 505.37c19.89-12.09 43.05-26.18 63.73-38.76" 	class="st5"/></g>
+<g id="shape215-230" transform="translate(62.066 -35.87)">
+<path d="m0 499.39 10.36-2.2-6.72 8.18L0 499.39Z" 	class="st6"/></g></g>
+<g id="group216-232" transform="translate(582.375 -162.772)">
+<g id="shape217-233" transform="translate(77.654)">
+<path d="M124.69 446.57H0v58.8h124.69v-58.8Z" 	class="st1"/></g>
+<g id="shape218-235" transform="translate(70 -37.801)">
+<path 	class="st2" d="M0 488.575h140v16.8H0z"/>
+<text x="38.2" y="500.27" 	class="st3">GO:0033554</text></g>
+<g id="shape219-238" transform="translate(0 -21.001)">
+<path 	class="st2" d="M0 488.575h280v16.8H0z"/>
+<text x="89.22" y="500.27" 	class="st3">cellular response to</text></g>
+<g id="shape220-241" transform="translate(98 -4.201)">
+<path 	class="st2" d="M0 488.575h84v16.8H0z"/>
+<text x="26.74" y="500.27" 	class="st3">stress</text></g></g>
+<g id="group221-244" transform="translate(704.539 -118.831)">
+<g id="shape222-245">
+<path d="M0 505.37c2.56-10.53 5.49-22.59 8.23-33.84L0 505.37Z" 	class="st4"/>
+<path d="M0 505.37c2.56-10.53 5.49-22.59 8.23-33.84" 	class="st5"/></g>
+<g id="shape223-248" transform="translate(4.907 -33.335)">
+<path d="m0 503.72 5.76-8.89 1.04 10.54-6.8-1.65Z" 	class="st6"/></g></g>
+<g id="group224-250" transform="translate(853.613 -110.176)">
+<g id="shape225-251">
+<path d="M0 505.37c1.9-12.18 4.35-27.96 6.6-42.42L0 505.37Z" 	class="st4"/>
+<path d="M0 505.37c1.9-12.18 4.35-27.96 6.6-42.42" 	class="st5"/></g>
+<g id="shape226-254" transform="translate(3.199 -42.235)">
+<path d="m0 504.3 5-9.34 1.92 10.41L0 504.3Z" 	class="st6"/></g></g>
+<g id="group227-256" transform="translate(587.375 -257.172)">
+<g id="shape228-257" transform="translate(72.53)">
+<path d="M120.94 446.57H0v58.8h120.94v-58.8Z" 	class="st1"/></g>
+<g id="shape229-259" transform="translate(63 -37.801)">
+<path 	class="st2" d="M0 488.575h140v16.8H0z"/>
+<text x="38.2" y="500.27" 	class="st3">GO:0009628</text></g>
+<g id="shape230-262" transform="translate(0 -21.001)">
+<path 	class="st2" d="M0 488.575h266v16.8H0z"/>
+<text x="83.71" y="500.27" 	class="st3">response to abiotic</text></g>
+<g id="shape231-265" transform="translate(77 -4.201)">
+<path 	class="st2" d="M0 488.575h112v16.8H0z"/>
+<text x="33.97" y="500.27" 	class="st3">stimulus</text></g></g>
+<g id="group232-268" transform="translate(623.215 -221.524)">
+<g id="shape233-269">
+<path d="M0 505.37c14.19-9.5 30.07-20.13 44.82-30L0 505.37Z" 	class="st4"/>
+<path d="M0 505.37c14.19-9.5 30.07-20.13 44.82-30" 	class="st5"/></g>
+<g id="shape234-272" transform="translate(43.09 -27.244)">
+<path d="m0 499.56 10.26-2.66-6.37 8.47L0 499.56Z" 	class="st6"/></g></g>
+<g id="group235-274" transform="translate(439.375 -257.172)">
+<g id="shape236-275" transform="translate(77.654)">
+<path d="M124.69 446.57H0v58.8h124.69v-58.8Z" 	class="st1"/></g>
+<g id="shape237-277" transform="translate(70 -37.801)">
+<path 	class="st2" d="M0 488.575h140v16.8H0z"/>
+<text x="38.2" y="500.27" 	class="st3">GO:0051716</text></g>
+<g id="shape238-280" transform="translate(0 -21.001)">
+<path 	class="st2" d="M0 488.575h280v16.8H0z"/>
+<text x="89.22" y="500.27" 	class="st3">cellular response to</text></g>
+<g id="shape239-283" transform="translate(84 -4.201)">
+<path 	class="st2" d="M0 488.575h112v16.8H0z"/>
+<text x="33.97" y="500.27" 	class="st3">stimulus</text></g></g>
+<g id="group240-286" transform="translate(575.875 -221.524)">
+<g id="shape241-287" transform="translate(3.5)">
+<path d="M0 505.37v-25.53 25.53Z" 	class="st4"/>
+<path d="M0 505.37v-25.53" 	class="st5"/></g>
+<g id="shape242-290" transform="translate(0 -25.715)">
+<path d="m0 505.37 3.5-10 3.5 10H0Z" 	class="st6"/></g></g>
+<g id="group243-292" transform="translate(765.742 -221.524)">
+<g id="shape244-293" transform="translate(8.403)">
+<path d="M46.83 505.37 0 475.09l46.83 30.28Z" 	class="st4"/>
+<path d="M46.83 505.37 0 475.09" 	class="st5"/></g>
+<g id="shape245-296" transform="translate(0 -27.347)">
+<path d="M6.5 505.37 0 497.01l10.3 2.49-3.8 5.87Z" 	class="st6"/></g></g>
+<g id="group246-298" transform="translate(735.375 -265.971)">
+<g id="shape247-299" transform="translate(69.03)">
+<path d="M113.94 464.17H0v41.2h113.94v-41.2Z" 	class="st1"/></g>
+<g id="shape248-301" transform="translate(56 -20.602)">
+<path 	class="st2" d="M0 488.575h140v16.8H0z"/>
+<text x="38.2" y="500.27" 	class="st3">GO:0006950</text></g>
+<g id="shape249-304" transform="translate(0 -3.802)">
+<path 	class="st2" d="M0 488.575h252v16.8H0z"/>
+<text x="78.71" y="500.27" 	class="st3">response to stress</text></g></g>
+<g id="group250-307" transform="translate(859.503 -221.524)">
+<g id="shape251-308" transform="translate(3.499)">
+<path d="M1.82 505.37C1.24 494.46.58 482.06 0 471.03l1.82 34.34Z" 	class="st4"/>
+<path d="M1.82 505.37C1.24 494.46.58 482.06 0 471.03" 	class="st5"/></g>
+<g id="shape252-311" transform="translate(0 -34.228)">
+<path d="m0 505.37 2.97-10.17 4.02 9.8-6.99.37Z" 	class="st6"/></g></g>
+<g id="group253-313" transform="translate(623.81 -221.524)">
+<g id="shape254-314" transform="translate(8.65)">
+<path d="M45.45 505.37c-14.39-9.5-30.5-20.13-45.45-30l45.45 30Z" 	class="st4"/>
+<path d="M45.45 505.37c-14.39-9.5-30.5-20.13-45.45-30" 	class="st5"/></g>
+<g id="shape255-317" transform="translate(0 -27.285)">
+<path d="M6.42 505.37 0 496.94l10.27 2.59-3.85 5.84Z" 	class="st6"/></g></g>
+<g id="group256-319" transform="translate(765.593 -221.524)">
+<g id="shape257-320">
+<path d="M0 505.37c18.22-12.37 39.26-26.66 56.98-38.69L0 505.37Z" 	class="st4"/>
+<path d="M0 505.37c18.22-12.37 39.26-26.66 56.98-38.69" 	class="st5"/></g>
+<g id="shape258-323" transform="translate(55.138 -35.886)">
+<path d="m0 499.58 10.24-2.72-6.31 8.51L0 499.58Z" 	class="st6"/></g></g>
+<g id="group259-325" transform="translate(560.375 -368.771)">
+<g id="shape260-326" transform="translate(74.678)">
+<path d="M130.64 464.17H0v41.2h130.64v-41.2Z" 	class="st1"/></g>
+<g id="shape261-328" transform="translate(70 -20.602)">
+<path 	class="st2" d="M0 488.575h140v16.8H0z"/>
+<text x="38.2" y="500.27" 	class="st3">GO:0050896</text></g>
+<g id="shape262-331" transform="translate(0 -3.802)">
+<path 	class="st2" d="M0 488.575h280v16.8H0z"/>
+<text x="85.94" y="500.27" 	class="st3">response to stimulus</text></g></g>
+<g id="group263-334" transform="translate(702.868 -316.031)">
+<g id="shape264-335" transform="translate(3.437)">
+<path d="M8.34 505.37c-2.61-13.42-5.7-29.31-8.34-42.86l8.34 42.86Z" 	class="st4"/>
+<path d="M8.34 505.37c-2.61-13.42-5.7-29.31-8.34-42.86" 	class="st5"/></g>
+<g id="shape265-338" transform="translate(0 -42.203)">
+<path d="m0 505.37 1.53-10.48 5.34 9.15L0 505.37Z" 	class="st6"/></g></g>
+<g id="group266-340" transform="translate(566.069 -316.031)">
+<g id="shape267-341" transform="translate(3.51)">
+<path d="M5.78 505.37c-1.81-13.29-3.95-29-5.78-42.46l5.78 42.46Z" 	class="st4"/>
+<path d="M5.78 505.37c-1.81-13.29-3.95-29-5.78-42.46" 	class="st5"/></g>
+<g id="shape268-344" transform="translate(0 -42.306)">
+<path d="m0 505.37 2.12-10.38 4.82 9.44-6.94.94Z" 	class="st6"/></g></g>
+<g id="group269-346" transform="translate(614.049 -316.031)">
+<g id="shape270-347">
+<path d="M0 505.37c17.04-14.48 37.45-31.82 54.15-46L0 505.37Z" 	class="st4"/>
+<path d="M0 505.37c17.04-14.48 37.45-31.82 54.15-46" 	class="st5"/></g>
+<g id="shape271-350" transform="translate(52.128 -43.545)">
+<path d="m0 500.04 9.89-3.81-5.36 9.14L0 500.04Z" 	class="st6"/></g></g>
+<g id="group272-352" transform="translate(732.907 -307.376)">
+<g id="shape273-353" transform="translate(8.503)">
+<path d="M87.38 505.37C62.18 489.28 27.12 466.9 0 449.58l87.38 55.79Z" 	class="st4"/>
+<path d="M87.38 505.37C62.18 489.28 27.12 466.9 0 449.58" 	class="st5"/></g>
+<g id="shape274-356" transform="translate(0 -52.893)">
+<path d="M6.54 505.37 0 497.04l10.31 2.44-3.77 5.89Z" 	class="st6"/></g></g>
+<g id="group275-358" transform="translate(594.932 -410.09)">
+<g id="shape276-359" transform="translate(8.223)">
+<path d="M67.59 505.37C47.72 491.48 21.38 473.06 0 458.11l67.59 47.26Z" 	class="st4"/>
+<path d="M67.59 505.37C47.72 491.48 21.38 473.06 0 458.11" 	class="st5"/></g>
+<g id="shape277-362" transform="translate(0 -44.416)">
+<path d="M6.19 505.37 0 496.78l10.2 2.86-4.01 5.73Z" 	class="st6"/></g></g>
+<g id="shape278-364" transform="translate(110.045 -423.375)">
+<path d="m8.67 505.37.64 356.82" 	style="marker-end:url(#mrkr5-370);stroke:#a5a5a5;stroke-linecap:round;stroke-linejoin:round;stroke-width:3"/></g>
+<g id="shape279-371" transform="translate(1.71 -.375)">
+<path 	class="st9" d="M0 469.375h236.672v36H0z"/>
+<text x="26.45" y="489.58" 	class="st10">More specific concept</text></g>
+<g id="shape280-374" transform="translate(.375 -432.375)">
+<path 	class="st9" d="M0 469.375h236.672v36H0z"/>
+<text x="30.43" y="495.98" 	class="st10">Less specific concept</text></g>
+</svg>

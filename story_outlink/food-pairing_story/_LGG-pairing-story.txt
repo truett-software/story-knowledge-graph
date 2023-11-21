@@ -1,0 +1,51 @@
+
+TODO
+make local copy:
+  RDFa
+  SVG avec slider
+  LODE
+-----------------
+
+LGG story
+
+conventional technique: pairing A and B
+example: wine and cheese
+conventional charts for humans
+  https://winefolly.com/wine-pairing/6-tips-on-pairing-wine-and-cheese/
+  https://www.pinterest.com/haleycbecker/wine/
+PNG
+  https://www.pinterest.com/pin/270849365082197508/
+  https://www.pinterest.com/pin/304978206030162646/
+  https://www.pinterest.com/pin/4151824649459254/
+
+but my goal is to augment and automate human decisions by training computers to process machine readable instructions, present advice and make decisions
+
+let's look at the wine and cheese pairing
+
+step 1
+classify cheese (using WEDGE-client)
+specifically Italian Cheese
+https://benetta.s3.amazonaws.com/16418936110000000061/index.html
+
+
+now let's classify wine
+French wine ontology
+The below links use a third-party processor to read our machine-language ontology and reder it in human-readable form
+a table (RDFa)
+https://redefer.rhizomik.net/rdf2html?rdf=https://afdsi-ontology.s3.amazonaws.com/wine-france.rdf&mode=html&namespaces=true&language=en
+a graph (rendered as an SVG)
+https://rdf2svg.redefer.rhizomik.net/render?url=https%3A%2F%2Fafdsi-ontology.s3.amazonaws.com%2Fwine-france.rdf
+
+
+now a pairing application
+  wine and cheese
+
+Here's an example
+using Italian Cheese, look for
+  Taleggio
+
+now, using the Wine Cheese pairing app, search for
+  Taleggio
+
+
+
