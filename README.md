@@ -1,5 +1,5 @@
 # Story - Knowledge Graph
 
-## Visualization
+## Visualization diagram
 
 ![Visualization of the codebase](./diagram.svg)
