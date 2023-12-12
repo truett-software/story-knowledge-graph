@@ -1,0 +1,12 @@
+
+grid is basically correct
+  upgrade to use new terse structure
+fonts
+  used on cover: ZillaSlab-Bold-700
+localize
+    publisher-logo-src="https://ontomatica.io/static/image/logo/onto-symbol-w252-h252.svg"
+    poster-portrait-src="https://benetta.net/media/background-svg/background-sun-tornado-w2000-h1500.svg"
+    poster-square-src="https://benetta.net/media/background-svg/background-sun-tornado-w2000-h1500.svg"
+    poster-landscape-src="https://benetta.net/media/background-svg/background-sun-tornado-w2000-h1500.svg"
+
+    <a href="https://s3.amazonaws.com/benetta.net/truett/story-knowledge-graph/story-outlink/index.html">More about PubChem RDF</a>
